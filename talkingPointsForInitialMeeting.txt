@@ -7,3 +7,5 @@ Talking Points:
 - [Ben] Should we decide on loose roles based on our strengths or should everyone do a little bit of everything? 
 
 - [Ben] How often should we check in like this? Should we do standups?
+
+-[Ben] Should we push our branches upstream for review?
