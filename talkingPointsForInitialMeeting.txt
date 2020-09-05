@@ -1,5 +1,17 @@
 This text document is for us to add talking points for our initial meeting. Please sign off on them like I do below so we know who to look to for elaboration during the meeting.
 
+9/5/2020
+
 Talking Points:
 
+- Bitbucket Hot Potato 
+ Went super well, we are all git pros. Discussed and practiced using branching to make changes to the project and review before things are added to the final submission.
 
+- Trello Setup
+    We have a trello board set up for the first phase of the project. We have added appropriate tasks and will add specific tasks for use cases asynchronously as we discuss the project on slack. We also discussed a process for how we're going to complete, review, and merge completed deliverables into our bitbucket.
+
+- Time Tracking
+    We are going to be using a shared google doc for tracking hours. That doc is set up and the link is in slack.
+
+- Project Breakdown
+    We briefly discussed the content of the project and will be breaking it down further on Trello asynchronously.
