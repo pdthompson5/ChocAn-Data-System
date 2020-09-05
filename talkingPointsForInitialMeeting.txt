@@ -2,12 +2,4 @@ This text document is for us to add talking points for our initial meeting. Plea
 
 Talking Points:
 
-- [Ben] How should we manage task assignment and tracking? Manual or with Software? CanBan or agree who does what now?
 
-- [Ben] Should we decide on loose roles based on our strengths or should everyone do a little bit of everything? 
-
-- [Ben] How often should we check in like this? Should we do standups?
-
--[Ben] Should we push our branches upstream for review?
-
--[Ben] How comfortable is everyone with git? We have to use it for remote collaboration so it might be a good idea to get some practice in.
