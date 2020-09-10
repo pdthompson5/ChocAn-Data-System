@@ -1,0 +1,9 @@
+Accounting Procedure - it produces the provider and member reports and electronic funds transfer (EFT) data.
+
+Accounts Payable - All the accounts that must be paid by ChocAn for services provided to ChocAn members, listed in the Summary Report.
+
+Electronic Funds Transfer report - A report documenting an electronic transaction
+
+File of Services Provided - A running file updated throughout the week that contains a list of services provided.
+
+Interactive Mode - A mode that the software at the ChocAn Data Center is run in. Allows operators to add, update, and delete member and provider records.
