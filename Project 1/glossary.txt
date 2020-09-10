@@ -27,3 +27,13 @@ Membership Fees - a monthly amount paid by members to ChocAn.
 Operator - Person responsible for updating member and provider records.
 
 Overall Fee - Amount to be paid by ChocAn to all providers for that week.
+
+Provider Directory - Alphabetically ordered list of service names and corresponding codes and fees
+
+Provider Number - Unique nine-digit identification number used by a provider to access a Provider Terminal.
+
+Provider Report - A report sent to each provider that has billed ChocAn during the week. The report contains a list of services he/she provided to ChocAn members.
+
+Provider Terminal - Similar to a credit card terminal. Specially designed for providers to verify member status.
+
+Service - A treatment or consultation given to a member by a provider.
