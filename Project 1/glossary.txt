@@ -7,3 +7,13 @@ Electronic Funds Transfer report - A report documenting an electronic transactio
 File of Services Provided - A running file updated throughout the week that contains a list of services provided.
 
 Interactive Mode - A mode that the software at the ChocAn Data Center is run in. Allows operators to add, update, and delete member and provider records.
+
+Manager - Person who can produce any report at any time of the week and receives the summary report for accounts payable.
+
+Manager Terminal - Simulated through the same keyboard and display as the provider terminal. Allows performance of various manager tasks.
+
+Member - Person who pays a monthly fee in exchange for consultations and treatments from ChocAn providers. 
+
+Member Card - Plastic card given to members embossed with key information. Used with the provider terminal to access ChocAn services.
+
+Member Number - Unique nine-digit member identification number stored magnetically on member card.
