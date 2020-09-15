@@ -1,3 +1,4 @@
+
 /**
  * Verify Member Status use case
  */
@@ -10,7 +11,7 @@ public class VerifyMemberStatus {
         verificationResult = verifyMemberNumber(memberNumber);
     }
 
-    public String getVerificationResult(){
+    public String getVerificationResult() {
         return this.verificationResult;
     }
 
@@ -21,23 +22,13 @@ public class VerifyMemberStatus {
 
         // Dial the ChocAn database (hardcoding to validMember)
         String chocAnResult = validMember;
-        if(chocAnResult == validMember){
+        if (chocAnResult == validMember) {
             System.out.println(validMember);
-        }
-        else{
+        } else {
             System.out.println(invalidMember);
         }
-    
+
         return validMember;
     }
 
-    private static String promptForMemberNumber() {
-        // Prompt the user for the member number
-        Scanner myObj = new Scanner(System.in); // Create a Scanner object
-        System.out.println("Please enter member number: ");
-
-        String memberNumber = myObj.nextLine(); // Read user input
-        return memberNumber;
-    }
-    
 }

@@ -21,7 +21,14 @@ public class BillChocAnon {
 
         String serviceComments = promptForServiceComments();
 
-        // createServiceRecord(); 
+        ProduceReports report = new ProduceReports();
+
+        report.produceBillingReport(memberNumber, dateOfService, serviceCode, serviceComments);
+
+        String billingReport = report.getReport();
+        
+        String fee = lookUpFeeToBePaid();
+
 
     }
 
@@ -66,5 +73,12 @@ public class BillChocAnon {
 
         String dateOfService = myObj.nextLine(); // Read user input
         return dateOfService;
+    }
+
+    private static String lookUpFeeToBePaid() {
+        // Find the fee that corresponds to the service code
+        String fee = "$100.00";
+        System.out.println(fee);
+        return fee;
     }
 }
