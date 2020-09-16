@@ -5,7 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team 13 Project Submission</title>
 
-    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    position: relative;
+
+    /* Layout */
+    display: grid;
+    grid-template-areas: 
+    "nav header header header"
+    "nav main main main"
+    "nav main main main"
+    "nav main main main"
+    "nav footer footer footer";
+
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/* Navigation */
+nav {
+    grid-area: nav;
+    padding: 10px 50px;
+    position: sticky;
+    top: 0;
+}
+
+#sticky {
+    position: sticky;
+    top: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    line-height: 2rem;
+}
+
+nav li {
+    color: black;
+    font-size: 1.1rem;
+}
+
+nav ul ul {
+    padding-left: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: crimson;
+}
+
+/* Header */
+header {
+    grid-area: header;
+    padding: 5px; 
+}
+
+header h1 {
+    text-align: center;
+    margin-top: 5px;
+}
+
+header table {
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+header table td {
+    text-align: center;
+    padding: 2px;
+}
+
+header iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Main  */
+main {
+    grid-area: main;
+    padding: 20px;
+}
+
+main h2 {
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: crimson;
+    margin: 5px;
+}
+
+main > div {
+    width: 70%;
+    margin: 0 auto;
+    line-height: 2rem;
+}
+
+main > div ul {
+    list-style-type: none;
+}
+
+main > div ol {
+    padding-left: 30px;
+}
+
+main > div p {
+    font-size: 1.2rem;
+}
+
+main > div li {
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    
+}
+
+header, nav, main, footer {
+    border: 1px solid crimson;
+}
+    </style>
 </head>
 <body>
     <nav>
@@ -14,7 +147,7 @@
             <li><a href="#system-diagram">System Diagram</a></li>
             <li>Use Cases</li>
             <ul>
-                <li><a href="#verify">Verify Member Status</a></li>
+                <li><a href="#verify-member-status">Verify Member Status</a></li>
                 <li><a href="#bill">Bill ChocAn for Service</a></li>
                 <li><a href="#request-directory">Request Provider Directory</a></li>
                 <li><a href="#read-files">Read Files from the Week</a></li>
@@ -30,6 +163,7 @@
     <header>
         <h1>Team 13 | CS 200 Project Submission</h1>
 
+        <br>
         <table>
             <title>Student Information</title>
             <thead>
@@ -57,13 +191,14 @@
                     <td>11990280</td>
                     <td>pdthompson5@crimson.ua.edu</td>
                 </tr>
-
-                <tr>
-                    <td colspan="3"><a href="#hours">See total hours</a></td>
-                </tr>
             </tbody>
         </table>
+
+        <!-- Hours Chart -->
+        <br>
+        <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzzAvAhmspBvIbOTQBMVbB494QD6NoRsO0B9GwpvX_7j7y7jkPvk8nutdhm3JNuLc_hol-U8EoO6M2/pubchart?oid=842031039&amp;format=interactive"></iframe>
     </header>
+        <br>
 
     <main>
         <!-- Glossary -->
@@ -100,6 +235,34 @@
                 <li>Suspended Member - a member who has not paid membership fees for at least a month.</li>
                 <li>Total Fee (Total Provider Fee) - Amount to be paid by ChocAn to a specific provider for that week.</li>
             </ul>
+        </div>
+
+        <!-- Use Cases -->
+
+        <!-- Verify Member Status Use Case -->
+        <br><hr><br>
+        <div id="verify-member-status">
+            <h2>Verify Member Status</h2>
+            <br>
+            <h3>Brief Description</h3>
+            <p>The “Verify Member Status” use case allows a provider to access the member status of a member via the member’s unique ID.</p>
+            <br>
+            <h3>Step By Step Description</h3>
+            <ol>
+                <li>The member’s card is swiped through the terminal, and their unique ID number is read by the system.</li>
+                <li>The user is prompted whether they want to “Validate Member” or “Validate Member and Charge for Service”.</li>
+                <li>After the user makes a selection, the terminal dials* the ChocAn Data Center, which returns something indicating the member’s status.</li>
+                <ol type="a">
+                    <li>Possible statuses include “Validated”, “Invalid Number”, and “Member Suspended”.</li>
+                </ol>
+                <li>The member’s status is interpreted by the system.</li>
+                <li>The appropriate message is printed to the screen.</li>
+                <ol>
+                    <li>If the user chose to “Validate Member and Charge for Service” and the Member’s Status is “Valid”, the Bill ChocAn use case is triggered.</li>
+                </ol>
+            </ol>
+            <br>
+            <p>* “dials” is the language provided by the project description. This will be updated when the method of communication is made more specific.</p>
         </div>
 
     </main>
