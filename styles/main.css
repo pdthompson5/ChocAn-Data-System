@@ -6,6 +6,8 @@
 
 body {
 
+    position: relative;
+
     /* Layout */
     display: grid;
     grid-template-areas: 
@@ -22,8 +24,14 @@ body {
 /* Navigation */
 nav {
     grid-area: nav;
-    padding: 10px;
-    padding-left: 50px;
+    padding: 10px 50px;
+    position: sticky;
+    top: 0;
+}
+
+#sticky {
+    position: sticky;
+    top: 0;
 }
 
 nav a {
@@ -66,6 +74,7 @@ header h1 {
 header table {
     margin: 0 auto;
     margin-top: 20px;
+    font-size: 1.2rem;
 }
 
 header table td {
@@ -76,9 +85,31 @@ header table td {
 /* Main  */
 main {
     grid-area: main;
-    
+    padding: 20px;
 }
 
+main h2 {
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: crimson;
+    margin: 5px;
+}
+
+#glossary {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#glossary ul {
+    list-style-type: none;
+    line-height: 2rem;
+}
+
+#glossary li {
+    font-size: 1.2rem;
+}
+
+/* Footer */
 footer {
     grid-area: footer;
     
