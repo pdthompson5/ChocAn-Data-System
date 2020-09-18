@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 13 Project Submission</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            position: relative;
+
+            /* Layout */
+            display: grid;
+            grid-template-areas:
+                "nav header header header"
+                "nav main main main"
+                "nav main main main"
+                "nav main main main";
+
+            width: 100vw;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            grid-area: header;
+            padding: 5px;
+        }
+
+        header h1 {
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        header table {
+            margin: 0 auto;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+
+        header table td {
+            text-align: center;
+            padding: 2px;
+        }
+
+        header iframe {
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Main  */
+        main {
+            grid-area: main;
+            padding: 20px;
+        }
+
+        main h2 {
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: crimson;
+            margin: 5px;
+        }
+
+        main>div {
+            width: 70%;
+            margin: 0 auto;
+            line-height: 2rem;
+        }
+
+        main>div ul {
+            list-style-type: none;
+        }
+
+        main>div ol {
+            padding-left: 30px;
+        }
+
+        main>div p {
+            font-size: 1.2rem;
+        }
+
+        main>div li {
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            grid-area: footer;
+
+        }
+
+        header,
+        nav,
+        main,
+        footer {
+            border: 1px solid crimson;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Team 13 | CS 200 Project Submission</h1>
+
+        <br>
+        <table>
+            <title>Student Information</title>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>CWID</th>
+                    <th>Email Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Griffin Mack</td>
+                    <td>11713813</td>
+                    <td>gmack@crimson.ua.edu</td>
+            </tbody>
+        </table>
+
+        <!-- Hours Chart -->
+        <br>
+        <iframe width="600" height="371" seamless frameborder="0" scrolling="no"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzzAvAhmspBvIbOTQBMVbB494QD6NoRsO0B9GwpvX_7j7y7jkPvk8nutdhm3JNuLc_hol-U8EoO6M2/pubchart?oid=842031039&amp;format=interactive"></iframe>
+    </header>
+    <br>
