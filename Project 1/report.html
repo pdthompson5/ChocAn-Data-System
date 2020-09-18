@@ -129,6 +129,20 @@
             font-size: 1.2rem;
         }
 
+        main a {
+            color: black;
+            text-decoration: none;
+        }
+
+        main a:hover {
+            text-decoration: underline;
+            text-decoration-color: crimson;
+        }
+
+        main ul {
+            padding-left: 15px;
+        }
+
         /* Footer */
         footer {
             grid-area: footer;
@@ -279,31 +293,44 @@
         <div id="verify-member-status">
             <h2>Verify Member Status</h2>
             <br>
-            <h3>Brief Description</h3>
+            <h3>Context</h3>
             <p>The “Verify Member Status” use case allows a provider to access the member status of a member via the
                 member’s unique ID.</p>
             <br>
-            <h3>Step By Step Description</h3>
+
+            <h3>Actors</h3>
+            <p>Provider, Member</p>
+            <br>
+            
+            <h3>Main Success Scenario</h3>
             <ol>
-                <li>The member’s card is swiped through the terminal, and their unique ID number is read by the system.
+                <li>The member’s card is swiped through the terminal by the provider, and the member's unique ID number is read by the software product.
                 </li>
-                <li>The user is prompted whether they want to “Validate Member” or “Validate Member and Charge for
+                <li>The provider is prompted whether they want to “Validate Member” or “Validate Member and Charge for
                     Service”.</li>
-                <li>After the user makes a selection, the terminal dials* the ChocAn Data Center, which returns
-                    something indicating the member’s status.</li>
-                <ol type="i">
-                    <li>Possible statuses include “Validated”, “Invalid Number”, and “Member Suspended”.</li>
-                </ol>
-                <li>The member’s status is interpreted by the system.</li>
-                <li>The appropriate message is printed to the screen.</li>
-                <ol type="i">
-                    <li>If the user chose to “Validate Member and Charge for Service” and the Member’s Status is
-                        “Valid”, the <u>Bill ChocAn</u> use case is triggered.</li>
-                </ol>
+                <li>The provider selects “Validate Member and Charge for Service”.</li>
+                <li>“Member Valid” appears on the terminal.</li>
+                <li>The Software Product triggers the <a href="#bill">Bill ChocAn</a> use case.</li>
             </ol>
             <br>
-            <p>* “dials” is the language provided by the project description. This will be updated when the method of
-                communication is made more specific.</p>
+            <h3>Extensions</h3>
+            <ul>
+                <li>3a. The provider selects “Validate Member”</li>
+                <li>4a. The member’s status is suspended.</li>
+                <ul>
+                    <li>4a.1. “Member Suspended” is displayed to the terminal.</li>
+                    <li>4a.2. The use case is terminated.</li>
+                </ul>
+                <li>4b. The member number is invalid.</li>
+                <ul>
+                    <li>4b.1. “Invalid number” is displayed to the terminal.</li>
+                    <li>4b.2. Return to Step 1.</li>
+                </ul>
+                <li>5a. “Validate Member” was chosen.</li>
+                <ul>
+                    <li>5a.1. The use case terminates.</li>
+                </ul>
+            </ul>
         </div>
         <br><br>
         <!-- Bill ChocAn for Service Use Case -->
