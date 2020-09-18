@@ -154,11 +154,14 @@
                 <li><a href="#verify-member-status">Verify Member Status</a></li>
                 <li><a href="#bill">Bill ChocAn for Service</a></li>
                 <li><a href="#request-directory">Request Provider Directory</a></li>
-                <li><a href="#read-files">Read Files from the Week</a></li>
-                <li><a href="#update-member-status">Update Member Status</a></li>
                 <li><a href="#update-provider-records">Update Provider Records</a></li>
                 <li><a href="#update-member-records">Update Member Records</a></li>
-                <li><a href="#produce-reports">Produce Reports</a></li>
+                <li><a href="#main-accounting">Main Accounting Procedure</a></li>
+                <li><a href="#provider-report">Produce Provider Report</a></li>
+                <li><a href="#member-report">Produce Member Report</a></li>
+                <li><a href="#eft-report">Produce EFT Report</a></li>
+                <li><a href="#summary-report">Produce Summary Report</a></li>
+
             </ul>
             <li><a href="#statistics">Bitbucket Statistics</a></li>
         </ul>
@@ -260,6 +263,7 @@
                 <li>Service Fee - Amount to be paid by ChocAn to a provider for a service/consultation or treatment.
                 </li>
                 <li>Service Record - A record of a specific service provided to a ChocAn member. </li>
+                <li>Software Product - The ChocAn data processing software.</li>
                 <li>Summary Report - A report listing every provider to be paid that week, the number of consultations
                     each had, and his or her total fee for that week.</li>
                 <li>Suspended Member - a member who has not paid membership fees for at least a month.</li>
@@ -306,7 +310,7 @@
         <div id="bill">
             <h2>Bill ChocAn for Service</h2>
             <br>
-            <h3>Brief Description</h3>
+            <h3>Context</h3>
             <p>The “Bill ChocAn for Service” use case allows a provider to log information about a service provided to a
                 member. </p>
             <br>
@@ -342,41 +346,208 @@
                 <br>
                 &emsp;&nbsp; 2a.1. The terminal informs the provider.
                 <br>
-
                 &emsp;&nbsp; 2a.2. The use case continues at step 1
                 <br>
-
                 &nbsp;&nbsp; 4a. An invalid service code is entered
                 <br>
-
                 &emsp;&nbsp; 4a.1. The terminal informs the provider.
                 <br>
-
                 &emsp;&nbsp; 4a.2. The use case continues at step 3
                 <br>
-
                 &nbsp;&nbsp; 5.1a. The provider indicates that the service name is not correct
                 <br>
-
                 &emsp;&nbsp; 5.1a.1. The terminal informs the provider.
                 <br>
-
                 &emsp;&nbsp; 5.1a.2. The use case continues at step 3
                 <br>
-
                 &nbsp;&nbsp; 6a. The provider enters additional comments over 100 characters.
                 <br>
-
                 &emsp;&nbsp; 6a.1. The terminal informs the provider.
                 <br>
-
                 &emsp;&nbsp; 6a.2. The use case continues at step 6
                 <br>
             </p>
         </div>
         <br><br>
 
+        <!-- Request the Provider Directory -->
+        <div id="request-directory">
+            <h2>Request Provider Directory</h2>
+            <br>
+            <h3>Context</h3>
+            <p>The “Request Provider Directory” use case allows a provider to request an email with the provider
+                directory attached.</p>
+            <br>
+            <h3>Actors</h3>
+            <p>Provider</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ol>
+                <li>The terminal prompts the provider to enter their email address.</li>
+                <li>The provider keys in their email address.</li>
+                <li>The software product looks up the provider directory.</li>
+                <li>The software product sends the provider directory to the provider’s email address as an attachment.
+                </li>
 
+            </ol>
+            <br>
+            <h3>Extensions</h3>
+            <p> &nbsp;&nbsp; 2a. An invalid email address is entered.
+                <br>
+                &emsp;&nbsp; 2a.1. The terminal informs the provider.
+                <br>
+                &emsp;&nbsp; 2a.2. The use case continues at step 1.
+                <br>
+            </p>
+        </div>
+        <br><br>
+
+        <!-- Update Provider Records-->
+        <div id="#update-provider-records">
+            <h2>Update Provider Records</h2>
+            <br>
+            <h3>Context</h3>
+            <p>The "Update Provider Records" use case adds new providers, deletes providers who have resigned, and
+                updates current provider records.</p>
+            <br>
+            <h3>Actors</h3>
+            <p>Operator</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ol>
+                <li>The operator accesses the terminal.</li>
+                <li>The terminal prompts the operator to “Add Provider,” “Delete Provider,” or “Update Provider
+                    Information”.</li>
+                <li>The operator selects “Add Provider.”</li>
+                <li>The terminal prompts the operator to enter a provider number.</li>
+                <ol type="i">
+                    <li>The operator enters a provider number.</li>
+                </ol>
+                <li>The terminal displays that the provider number is “valid.”</li>
+                <li>The terminal will prompt the operator to input new provider information.</li>
+                <ol type="a">
+                    <li>Provider name (25 characters)</li>
+                    <li>Provider street address (25 characters)</li>
+                    <li>Provider city (14 characters)</li>
+                    <li>Provider state (2 letter abbreviation)</li>
+                    <li>Provider ZIP code (5 digits)</li>
+                </ol>
+                <li>The software product records the data.</li>
+                <li>The terminal displays “Provider Added.”</li>
+
+            </ol>
+            <br>
+            <h3>Extensions</h3>
+            <p> &nbsp;&nbsp;1a. The Software Product is not in interactive mode
+                <br>
+                &emsp;&nbsp;1a.1. The Software Product informs the operator that the Software Product is not
+                in Interactive mode.
+                <br>
+                &emsp;&nbsp;1a.2. The use case terminates.
+                <br>
+                &nbsp;&nbsp;3a. The operator selects “Delete Provider.”
+                <br>
+                &emsp;&nbsp;3a.1. The use case continues at step 4.
+                <br>
+                &nbsp;&nbsp;3b. The operator selects “Update Provider.”
+                <br>
+                &emsp;&nbsp;3b.1. The use case continues at step 4.
+                <br>
+                &nbsp;&nbsp;5a. The operator entered an invalid provider number
+                <br>
+                &emsp;&nbsp;5a.1. “Invalid number” will be displayed on the terminal.
+                <br>
+                &emsp;&nbsp;5a.2. The use case returns to Step 4.
+                <br>
+                &nbsp;&nbsp;6a. The operator had selected “Delete Provider.”
+                <br>
+                &emsp;&nbsp;6a.1. The software product deletes the provider records.
+                <br>
+                &emsp;&nbsp;6a.2. The terminal then displays “Provider Deleted.”
+                <br>
+                &emsp;&nbsp;6a.3. The use case terminates.
+                <br>
+                &nbsp;&nbsp;8a. The operator had selected “Update Provider.”
+                <br>
+                &emsp;&nbsp;8a.1. The terminal displays “Provider Updated”.
+                <br>
+
+            </p>
+        </div>
+        <br><br>
+        <!-- Update Member Records-->
+        <div id="#update-member-records">
+            <h2>Update Member Records</h2>
+            <br>
+            <h3>Context</h3>
+            <p>The "Update Member Records" use case adds new member, deletes members who have resigned, and
+                updates current member records.</p>
+            <br>
+            <h3>Actors</h3>
+            <p>Operator</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ol>
+                <li>The operator accesses the terminal.</li>
+                <li>The terminal prompts the operator to “Add member,” “Delete member,” or “Update member
+                    Information”.</li>
+                <li>The operator selects “Add member.”</li>
+                <li>The terminal prompts the operator to enter a member number.</li>
+                <ol type="i">
+                    <li>The operator enters a member number.</li>
+                </ol>
+                <li>The terminal displays that the member number is “valid.”</li>
+                <li>The terminal will prompt the operator to input new member information.</li>
+                <ol type="a">
+                    <li>member name (25 characters)</li>
+                    <li>member street address (25 characters)</li>
+                    <li>member city (14 characters)</li>
+                    <li>member state (2 letter abbreviation)</li>
+                    <li>member ZIP code (5 digits)</li>
+                </ol>
+                <li>The software product records the data.</li>
+                <li>The terminal displays “member Added.”</li>
+
+            </ol>
+            <br>
+            <h3>Extensions</h3>
+            <p> &nbsp;&nbsp;1a. The Software Product is not in interactive mode
+                <br>
+                &emsp;&nbsp;1a.1. The Software Product informs the operator that the Software Product is not
+                in Interactive mode.
+                <br>
+                &emsp;&nbsp;1a.2. The use case terminates.
+                <br>
+                &nbsp;&nbsp;3a. The operator selects “Delete member.”
+                <br>
+                &emsp;&nbsp;3a.1. The use case continues at step 4.
+                <br>
+                &nbsp;&nbsp;3b. The operator selects “Update member.”
+                <br>
+                &emsp;&nbsp;3b.1. The use case continues at step 4.
+                <br>
+                &nbsp;&nbsp;5a. The operator entered an invalid member number
+                <br>
+                &emsp;&nbsp;5a.1. “Invalid number” will be displayed on the terminal.
+                <br>
+                &emsp;&nbsp;5a.2. The use case returns to Step 4.
+                <br>
+                &nbsp;&nbsp;6a. The operator had selected “Delete member.”
+                <br>
+                &emsp;&nbsp;6a.1. The software product deletes the member records.
+                <br>
+                &emsp;&nbsp;6a.2. The terminal then displays “member Deleted.”
+                <br>
+                &emsp;&nbsp;6a.3. The use case terminates.
+                <br>
+                &nbsp;&nbsp;8a. The operator had selected “Update member.”
+                <br>
+                &emsp;&nbsp;8a.1. The terminal displays “member Updated”.
+                <br>
+
+            </p>
+        </div>
+        <br><br>
     </main>
 
     <footer>

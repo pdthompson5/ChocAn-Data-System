@@ -44,6 +44,8 @@ Service Fee - Amount to be paid by ChocAn to a provider for a service/consultati
 
 Service Record - A record of a specific service provided to a ChocAn member.  
 
+Software Product - The ChocAn data processing software.
+
 Summary Report - A report listing every provider to be paid that week, the number of consultations each had, and his or her total fee for that week.
 
 Suspended Member - a member who has not paid membership fees for at least a month.
