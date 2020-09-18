@@ -610,6 +610,70 @@
                 </p>
         </div>
         <br><br>
+
+        <div id="provider-report">
+            <h2>Produce Provider Report</h2>
+            <br>
+            <h3>Context</h3>
+            <p>The Produce Provider Report use case produces a list of services that a provider administered in a given week.</p>
+            <br>
+            <h3>Actors</h3>
+            <p>Manager, End-of-Week</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ul>
+                <li>1. The manager accesses the manager’s terminal.</li>
+                <li>2. The terminal displays a menu of options.</li>
+                <li>3. The manager selects “Produce Provider Report”.</li>
+                <li>4. The software product produces a file containing the following information:</li>
+                <ul>
+                    <li>a. Provider Name</li>
+                    <li>b. Provider Number</li>
+                    <li>c. Provider City </li>
+                    <li>d. Provider State</li>
+                    <li>e. Provider ZIP code</li>
+                    <li>f. For every service</li>
+                    <ul>
+                        <li>i. Date of service</li>
+                        <li>ii. Date and time that service report was received </li>
+                        <li>iii. Member name</li>
+                        <li>iv. Member number</li>
+                        <li>v. Service code</li>
+                        <li>vi. Fee to be paid</li>
+                    </ul>
+                    <li>g. Total number of consultations (3 digits)</li>
+                    <li>h. Total fee for week (up to $99,999.99)</li>
+                </ul>
+                <li>5. The report is displayed on the terminal.</li>
+                <li>6. The terminal displays the option to print.</li>
+                <li>7. The manager selects to print the report.</li>
+                <li>8. The Provider Report is printed at the terminal.</li>
+                <li>9. The terminal returns to the menu of options.</li>
+                <li>10. The manager exits the terminal.</li>
+            </ul>
+
+            <br>
+            <h3>Extensions</h3>
+            <ul>
+                <li>1a. The <a href="#main-accounting">Main Accounting Procedure</a> is running.</li>
+                <ul>
+                    <li>1a.1 Skip to Step 4.</li>
+                </ul>
+                <li>5a. The <a href="#main-accounting">Main Accounting Procedure</a> is running.</li>
+                <ul>
+                    <li>5a.1. The software product writes the Provider Report to a disk.</li>
+                    <li>5a.2. The use case ends here.</li>
+                </ul>
+                <li>7a. The manager selects not to print the report.</li>
+                <ul>
+                    <li>7a.1 Skip to Step 9.</li>
+                </ul>
+                <li>10a. The manager makes no selection.</li>
+                <ul>
+                    <li>10a.1 The terminal exits after an amount of time of inactivity.</li>
+                </ul>
+            </ul>
+        </div>
     </main>
 
     <footer>
