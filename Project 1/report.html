@@ -298,7 +298,7 @@
                 <li>The appropriate message is printed to the screen.</li>
                 <ol type="i">
                     <li>If the user chose to “Validate Member and Charge for Service” and the Member’s Status is
-                        “Valid”, the Bill ChocAn use case is triggered.</li>
+                        “Valid”, the <u>Bill ChocAn</u> use case is triggered.</li>
                 </ol>
             </ol>
             <br>
@@ -543,6 +543,29 @@
                 &nbsp;&nbsp;8a. The operator had selected “Update member.”
                 <br>
                 &emsp;&nbsp;8a.1. The terminal displays “member Updated”.
+                <br>
+
+            </p>
+        </div>
+        <br><br>
+
+        <!-- Main Accounting Procedure -->
+        <div id="#main-accounting">
+            <h2>Run Main Accounting Procedure</h2>
+            <br>
+            <h3>Context</h3>
+            <p>The <u>Run Main Accounting Procedure</u> use case creates reports at the end of the week 
+                and writes them to a disk.</p>
+            <br>
+            <h3>Actors</h3>
+            <p>End-of-Week</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ol>
+                <li>The Software Product triggers the use case <u>Produce Provider Report</u> for every provider.</li>
+                <li>The Software Product triggers the use case <u>Produce Summary Report</u>.</li>
+                <li>The Software Product triggers the use case <u>Produce Member Report</u> for every member.</li>
+                <li>The Software Product triggers the use case <u>Produce EFT Report</u>.</li>
                 <br>
 
             </p>
