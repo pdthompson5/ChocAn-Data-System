@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 13 Project Submission</title>
+
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    position: relative;
+
+    /* Layout */
+    display: grid;
+    grid-template-areas: 
+    "nav header header header"
+    "nav main main main"
+    "nav main main main"
+    "nav main main main";
+
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/* Navigation */
+nav {
+    grid-area: nav;
+    padding: 10px 50px;
+    position: sticky;
+    top: 0;
+}
+
+#sticky {
+    position: sticky;
+    top: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    line-height: 2rem;
+}
+
+nav li {
+    color: black;
+    font-size: 1.1rem;
+}
+
+nav ul ul {
+    padding-left: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: crimson;
+}
+
+/* Header */
+header {
+    grid-area: header;
+    padding: 5px; 
+}
+
+header h1 {
+    text-align: center;
+    margin-top: 5px;
+}
+
+header table {
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+header table td {
+    text-align: center;
+    padding: 2px;
+}
+
+header iframe {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Main  */
+main {
+    grid-area: main;
+    padding: 20px;
+}
+
+main h2 {
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: crimson;
+    margin: 5px;
+}
+
+main > div {
+    width: 70%;
+    margin: 0 auto;
+    line-height: 2rem;
+}
+
+main > div ul {
+    list-style-type: none;
+}
+
+main > div ol {
+    padding-left: 30px;
+}
+
+main > div p {
+    font-size: 1.2rem;
+}
+
+main > div li {
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    
+}
+
+header, nav, main, footer {
+    border: 1px solid crimson;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <ul id="sticky">
+            <li><a href="#glossary">Glossary</a></li>
+            <li><a href="#system-diagram">System Diagram</a></li>
+            <li>Use Cases</li>
+            <ul>
+                <li><a href="#verify-member-status">Verify Member Status</a></li>
+                <li><a href="#bill">Bill ChocAn for Service</a></li>
+                <li><a href="#request-directory">Request Provider Directory</a></li>
+                <li><a href="#read-files">Read Files from the Week</a></li>
+                <li><a href="#update-member-status">Update Member Status</a></li>
+                <li><a href="#update-provider-records">Update Provider Records</a></li>
+                <li><a href="#update-member-records">Update Member Records</a></li>
+                <li><a href="#produce-reports">Produce Reports</a></li>
+            </ul>
+            <li><a href="#statistics">Bitbucket Statistics</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Team 13 | CS 200 Project Submission</h1>
+
+        <br>
+        <table>
+            <title>Student Information</title>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>CWID</th>
+                    <th>Email Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Benjamin Peinhardt</td>
+                    <td>11469936</td>
+                    <td>bcpeinhardt@crimson.ua.edu</td>
+                </tr>
+
+                <tr>
+                    <td>Christopher Fryzel</td>
+                    <td>11971451</td>
+                    <td>cmfryzel@crimson.ua.edu</td>
+                </tr>
+
+                <tr>
+                    <td>Philip Thompson</td>
+                    <td>11990280</td>
+                    <td>pdthompson5@crimson.ua.edu</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Hours Chart -->
+        <br>
+        <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzzAvAhmspBvIbOTQBMVbB494QD6NoRsO0B9GwpvX_7j7y7jkPvk8nutdhm3JNuLc_hol-U8EoO6M2/pubchart?oid=842031039&amp;format=interactive"></iframe>
+    </header>
+        <br>
+
+    <main>
+        <!-- Glossary -->
+        <div id="glossary">
+            <h2>Glossary</h2>
+            <ul>
+                <li>Accounting Procedure - it produces the provider and member reports and electronic funds transfer (EFT) data.</li>
+
+                <li>Accounts Payable - All the accounts that must be paid by ChocAn for services provided to ChocAn members, listed in the Summary Report.</li>
+
+                <li>Electronic Funds Transfer report - A report documenting an electronic transaction</li>
+
+                <li>File of Services Provided - A running file updated throughout the week that contains a list of services provided.</li>
+                <li>Interactive Mode - A mode that the software at the ChocAn Data Center is run in. Allows operators to add, update, and delete member and provider records.</li>
+                <li>Manager - Person who can produce any report at any time of the week and receives the summary report for accounts payable.</li>
+                <li>Manager Terminal - Simulated through the same keyboard and display as the provider terminal. Allows performance of various manager tasks.</li>
+                <li>Member - Person who pays a monthly fee in exchange for consultations and treatments from ChocAn providers. </li>
+                <li>Member Card - Plastic card given to members embossed with key information. Used with the provider terminal to access ChocAn services.</li>
+                <li>Member Number - Unique nine-digit member identification number stored magnetically on member card.</li>
+                <li>Member Report - A report sent to each member who utilized one or more ChocAn service during the week.</li>
+                <li>Member Status - Indication of a member’s standing with ChocAn. (i.e. Valid, Suspended). </li>
+                <li>Membership Fees - a monthly amount paid by members to ChocAn.</li>
+                <li>Operator - Person responsible for updating member and provider records.</li>
+                <li>Overall Fee - Amount to be paid by ChocAn to all providers for that week.</li>
+                <li>Provider Directory - Alphabetically ordered list of service names and corresponding codes and fees</li>
+                <li>Provider Number - Unique nine-digit identification number used by a provider to access a Provider Terminal.</li>
+                <li>Provider Report - A report sent to each provider that has billed ChocAn during the week. The report contains a list of services he/she provided to ChocAn members.</li>
+                <li>Provider Terminal - Similar to a credit card terminal. Specially designed for providers to verify member status.</li>
+                <li>Service - A treatment or consultation given to a member by a provider.</li>
+                <li>Service Code - Six digit code which corresponds to a specific service or treatment. </li>
+                <li>Service Fee - Amount to be paid by ChocAn to a provider for a service/consultation or treatment.</li>
+                <li>Service Record - A record of a specific service provided to a ChocAn member.  </li>
+                <li>Summary Report - A report listing every provider to be paid that week, the number of consultations each had, and his or her total fee for that week.</li>
+                <li>Suspended Member - a member who has not paid membership fees for at least a month.</li>
+                <li>Total Fee (Total Provider Fee) - Amount to be paid by ChocAn to a specific provider for that week.</li>
+            </ul>
+        </div>
+
+        <!-- Use Cases -->
+
+        <!-- Verify Member Status Use Case -->
+        <br><br>
+        <div id="verify-member-status">
+            <h2>Verify Member Status</h2>
+            <br>
+            <h3>Brief Description</h3>
+            <p>The “Verify Member Status” use case allows a provider to access the member status of a member via the member’s unique ID.</p>
+            <br>
+            <h3>Step By Step Description</h3>
+            <ol>
+                <li>The member’s card is swiped through the terminal, and their unique ID number is read by the system.</li>
+                <li>The user is prompted whether they want to “Validate Member” or “Validate Member and Charge for Service”.</li>
+                <li>After the user makes a selection, the terminal dials* the ChocAn Data Center, which returns something indicating the member’s status.</li>
+                <ol type="a">
+                    <li>Possible statuses include “Validated”, “Invalid Number”, and “Member Suspended”.</li>
+                </ol>
+                <li>The member’s status is interpreted by the system.</li>
+                <li>The appropriate message is printed to the screen.</li>
+                <ol>
+                    <li>If the user chose to “Validate Member and Charge for Service” and the Member’s Status is “Valid”, the Bill ChocAn use case is triggered.</li>
+                </ol>
+            </ol>
+            <br>
+            <p>* “dials” is the language provided by the project description. This will be updated when the method of communication is made more specific.</p>
+        </div>
+
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
