@@ -72,10 +72,10 @@
             grid-area: header;
             padding: 5px;
             display: grid;
-            grid-template-areas: 
-            "header header"
-            "table graph"
-            "list list";
+            grid-template-areas:
+                "header header"
+                "table graph"
+                "list list";
             gap: 20px;
         }
 
@@ -263,11 +263,20 @@
 
         <br><br>
         <ul>
-            <li><strong>Benjamin Peinhardt</strong> -  Glossary, Use Case Description Review and Editing, Produce Summary Report Use Case, Verify Member Status Use Case, report.html <strong>(20%)</strong></li>
-            <li><strong>Christopher Fryzel</strong> -  Glossary, UML Use Case Diagram, Use Case Description Review and Editing, Update Member Records Use Case, Produce Provider Report Use Case, Document Management <strong>(20%)</strong></li>
-            <li><strong>Philip Thompson</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and Editing, Produce Member Report Use Case, Update Provider Records Use Case, Document Management <strong>(20%)</strong></li>
-            <li><strong>Griffin Mack</strong> -  Glossary, UML Use Case Diagram, Use Case Description Review and Editing, Bill ChocAn Use Case, Request Provider Directory Use Case, report.html, Prototype <strong>(20%)</strong></li>
-            <li><strong>Hannah Perkins</strong> -  Glossary, UML Use Case Diagram, Use Case Description Review and Editing, Produce EFT Report Use Case, Run Main Accounting Procedure Use Case, report.html <strong>(20%)</strong></li>
+            <li><strong>Benjamin Peinhardt</strong> - Glossary, Use Case Description Review and Editing, Produce Summary
+                Report Use Case, Verify Member Status Use Case, report.html <strong>(20%)</strong></li>
+            <li><strong>Christopher Fryzel</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and
+                Editing, Update Member Records Use Case, Produce Provider Report Use Case, Document Management
+                <strong>(20%)</strong></li>
+            <li><strong>Philip Thompson</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and
+                Editing, Produce Member Report Use Case, Update Provider Records Use Case, Document Management
+                <strong>(20%)</strong></li>
+            <li><strong>Griffin Mack</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and Editing,
+                Bill ChocAn Use Case, Request Provider Directory Use Case, report.html, Prototype
+                <strong>(20%)</strong><strong> (submitter) </strong></li>
+            <li><strong>Hannah Perkins</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and
+                Editing, Produce EFT Report Use Case, Run Main Accounting Procedure Use Case, report.html
+                <strong>(20%)</strong></li>
         </ul>
         <br><br>
     </header>
@@ -348,10 +357,11 @@
             <h3>Actors</h3>
             <p>Provider, Member</p>
             <br>
-            
+
             <h3>Main Success Scenario</h3>
             <ol>
-                <li>The member’s card is swiped through the terminal by the provider, and the member's unique ID number is read by the software product.
+                <li>The member’s card is swiped through the terminal by the provider, and the member's unique ID number
+                    is read by the software product.
                 </li>
                 <li>The provider is prompted whether they want to “Validate Member” or “Validate Member and Charge for
                     Service”.</li>
@@ -635,9 +645,12 @@
             <br>
             <h3>Main Success Scenario</h3>
             <ol>
-                <li>The Software Product triggers the use case <a href="#provider-report">Produce Provider Report</a> for every provider.</li>
-                <li>The Software Product triggers the use case <a href="#summary-report">Produce Summary Report</a>.</li>
-                <li>The Software Product triggers the use case <a href="#member-report">Produce Member Report</a> for every member.</li>
+                <li>The Software Product triggers the use case <a href="#provider-report">Produce Provider Report</a>
+                    for every provider.</li>
+                <li>The Software Product triggers the use case <a href="#summary-report">Produce Summary Report</a>.
+                </li>
+                <li>The Software Product triggers the use case <a href="#member-report">Produce Member Report</a> for
+                    every member.</li>
                 <li>The Software Product triggers the use case <a href="#eft-report">Produce EFT Report</a>.</li>
                 <br>
 
@@ -645,12 +658,13 @@
         </div>
         <br><br>
 
-            <!-- Produce Provider Report -->
+        <!-- Produce Provider Report -->
         <div id="provider-report">
             <h2>Produce Provider Report</h2>
             <br>
             <h3>Context</h3>
-            <p>The Produce Provider Report use case produces a list of services that a provider administered in a given week.</p>
+            <p>The Produce Provider Report use case produces a list of services that a provider administered in a given
+                week.</p>
             <br>
             <h3>Actors</h3>
             <p>Manager, End-of-Week</p>
@@ -717,7 +731,8 @@
             <h2>Produce Member Report</h2>
             <br>
             <h3>Context</h3>
-            <p>The Produce Member Report use case produces a list of each service that a member received in a given week.</p>
+            <p>The Produce Member Report use case produces a list of each service that a member received in a given
+                week.</p>
             <br>
             <h3>Actors</h3>
             <p>Manager, End-of-Week</p>
@@ -758,8 +773,8 @@
                 </ul>
                 <li>5a. <a href="#main-accounting">Main Accounting Procedure</a> is running.</li>
                 <ul>
-                    <li>5a.1.  The software product writes the Member Report to a disk.</li>
-                    <li>5a.2.  The use case ends here.</li>
+                    <li>5a.1. The software product writes the Member Report to a disk.</li>
+                    <li>5a.2. The use case ends here.</li>
                 </ul>
                 <li>7a. The manager selects not to print the report.</li>
                 <ul>
@@ -777,7 +792,8 @@
             <h2>Produce EFT Report</h2>
             <br>
             <h3>Context</h3>
-            <p>The Produce EFT Report use case creates a list of electronic transactions and details about those transactions.</p>
+            <p>The Produce EFT Report use case creates a list of electronic transactions and details about those
+                transactions.</p>
             <br>
             <h3>Actors</h3>
             <p>Manager, End-of-Week</p>
@@ -809,8 +825,8 @@
                 </ul>
                 <li>5a. The <a href="#main-accounting">Main Accounting Procedure</a> is running</li>
                 <ul>
-                    <li>5a.1.  The software product writes the EFT Report to a disk.</li>
-                    <li>5a.2.  The use case terminates.</li>
+                    <li>5a.1. The software product writes the EFT Report to a disk.</li>
+                    <li>5a.2. The use case terminates.</li>
                 </ul>
                 <li>7a. The manager selects not to print the report.</li>
                 <ul>
@@ -859,24 +875,24 @@
             <ul>
                 <li>1a. The <a href="#main-accounting">Main Accounting Procedure</a> is running</li>
                 <ul>
-                    <li>1a.1.  Skip to Step 4.</li>
+                    <li>1a.1. Skip to Step 4.</li>
                 </ul>
                 <li>5a. The <a href="#main-accounting">Main Accounting Procedure</a> is running</li>
                 <ul>
-                    <li>5a.1.  The software product writes the Summary Report to a disk.</li>
-                    <li>5a.2.  The use case ends here.</li>
+                    <li>5a.1. The software product writes the Summary Report to a disk.</li>
+                    <li>5a.2. The use case ends here.</li>
                 </ul>
                 <li>7a. The manager selects not to print the report.</li>
                 <ul>
-                    <li>7a.1.  Skip to Step 9.</li>
+                    <li>7a.1. Skip to Step 9.</li>
                 </ul>
                 <li>10a. The manager makes no selection.</li>
                 <ul>
-                    <li>10a.1.  The terminal exits after an amount of time of inactivity.</li>
+                    <li>10a.1. The terminal exits after an amount of time of inactivity.</li>
                 </ul>
             </ul>
         </div>
-        
+
     </main>
 
     <footer>
