@@ -646,6 +646,7 @@
         </div>
         <br><br>
 
+            <!-- Produce Provider Report -->
         <div id="provider-report">
             <h2>Produce Provider Report</h2>
             <br>
@@ -712,6 +713,7 @@
 
         <br><br>
 
+        <!-- Produce Member Report -->
         <div id="member-report">
             <h2>Produce Member Report</h2>
             <br>
@@ -770,6 +772,112 @@
                 </ul>
             </ul>
         </div>
+
+        <!-- Produce EFT Report -->
+        <div id="eft-report">
+            <h2>Produce EFT Report</h2>
+            <br>
+            <h3>Context</h3>
+            <p>The Produce EFT Report use case creates a list of electronic transactions and details about those transactions.</p>
+            <br>
+            <h3>Actors</h3>
+            <p>Manager, End-of-Week</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ul>
+                <li>1. The manager accesses the manager’s terminal.</li>
+                <li>2. The terminal displays a menu of options.</li>
+                <li>3. The manager selects Produce EFT Report.</li>
+                <li>4. The software product produces a file containing the following information:</li>
+                <ul>
+                    <li>a. Provider Name</li>
+                    <li>b. Provider Number</li>
+                    <li>c. Amounts to be Transferred</li>
+                </ul>
+                <li>5. The report is displayed on the terminal.</li>
+                <li>6. The terminal displays the option to print.</li>
+                <li>7. The manager selects to print the report.</li>
+                <li>8. The EFT Report is printed at the terminal.</li>
+                <li>9. The terminal returns to the menu of options.</li>
+                <li>10. The manager exits the terminal.</li>
+            </ul>
+            <br>
+            <h3>Extensions</h3>
+            <ul>
+                <li>1a. The <a href="#main-accounting">Main Accounting Procedure</a> is running.</li>
+                <ul>
+                    <li>1a.1 Skip to Step 4.</li>
+                </ul>
+                <li>5a. The <a href="#main-accounting">Main Accounting Procedure</a> is running</li>
+                <ul>
+                    <li>5a.1.  The software product writes the EFT Report to a disk.</li>
+                    <li>5a.2.  The use case terminates.</li>
+                </ul>
+                <li>7a. The manager selects not to print the report.</li>
+                <ul>
+                    <li>7a.1 Skip to Step 9.</li>
+                </ul>
+                <li>10a. The manager makes no selection.</li>
+                <ul>
+                    <li>10a.1 The terminal exits after an amount of time of inactivity.</li>
+                </ul>
+            </ul>
+        </div>
+
+        <!-- Produce Summary Report -->
+        <div id="summary-report">
+            <h2>Produce Summary Report</h2>
+            <br>
+            <h3>Context</h3>
+            <p>The Produce Summary Report use case produces a summary of the week’s accounts payable.</p>
+            <br>
+            <h3>Actors</h3>
+            <p>Manager, End-of-Week</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ul>
+                <li>1. The manager accesses the terminal.</li>
+                <li>2. The terminal displays a menu of options.</li>
+                <li>3. The manager selects “Produce Summary Report”.</li>
+                <li>4. The software product produces a file containing the following information:</li>
+                <ul>
+                    <li>a. A list of every provider to be payed that week</li>
+                    <li>b. Number of consultations for each provider</li>
+                    <li>c. Total fee for each provider</li>
+                    <li>d. Number of providers who provided services that week</li>
+                    <li>e. Total number of consultations from all providers that week</li>
+                    <li>f. Overall fee</li>
+                </ul>
+                <li>5. The report is displayed on the terminal.</li>
+                <li>6. The terminal displays the option to print.</li>
+                <li>7. The manager selects to print the report.</li>
+                <li>8. The Summary Report is printed at the terminal.</li>
+                <li>9. The terminal returns to the menu of options.</li>
+                <li>10. The manager exits the terminal.</li>
+            </ul>
+            <br>
+            <h3>Extensions</h3>
+            <ul>
+                <li>1a. The <a href="#main-accounting">Main Accounting Procedure</a> is running</li>
+                <ul>
+                    <li>1a.1.  Skip to Step 4.</li>
+                </ul>
+                <li>5a. The <a href="#main-accounting">Main Accounting Procedure</a> is running</li>
+                <ul>
+                    <li>5a.1.  The software product writes the Summary Report to a disk.</li>
+                    <li>5a.2.  The use case ends here.</li>
+                </ul>
+                <li>7a. The manager selects not to print the report.</li>
+                <ul>
+                    <li>7a.1.  Skip to Step 9.</li>
+                </ul>
+                <li>10a. The manager makes no selection.</li>
+                <ul>
+                    <li>10a.1.  The terminal exits after an amount of time of inactivity.</li>
+                </ul>
+            </ul>
+        </div>
+        
     </main>
 
     <footer>
