@@ -196,6 +196,7 @@
             <li><a href="#system-diagram">System Diagram</a></li>
             <li>Use Cases</li>
             <ul>
+                <li><a href="#">Task Distribution</a></li>
                 <li><a href="#verify-member-status">Verify Member Status</a></li>
                 <li><a href="#bill">Bill ChocAn for Service</a></li>
                 <li><a href="#request-directory">Request Provider Directory</a></li>
@@ -697,6 +698,67 @@
                 <ul>
                     <li>5a.1. The software product writes the Provider Report to a disk.</li>
                     <li>5a.2. The use case ends here.</li>
+                </ul>
+                <li>7a. The manager selects not to print the report.</li>
+                <ul>
+                    <li>7a.1 Skip to Step 9.</li>
+                </ul>
+                <li>10a. The manager makes no selection.</li>
+                <ul>
+                    <li>10a.1 The terminal exits after an amount of time of inactivity.</li>
+                </ul>
+            </ul>
+        </div>
+
+        <br><br>
+
+        <div id="member-report">
+            <h2>Produce Member Report</h2>
+            <br>
+            <h3>Context</h3>
+            <p>The Produce Member Report use case produces a list of each service that a member received in a given week.</p>
+            <br>
+            <h3>Actors</h3>
+            <p>Manager, End-of-Week</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ul>
+                <li>1. The manager accesses the manager’s terminal.</li>
+                <li>2. The terminal displays a menu of options.</li>
+                <li>3. The manager selects “Produce Member Report”.</li>
+                <li>4. The Software Product produces a file containing the following information:</li>
+                <ul>
+                    <li>a. Member Name</li>
+                    <li>b. Member Number</li>
+                    <li>c. Member City</li>
+                    <li>d. Member State</li>
+                    <li>e. Member ZIP code</li>
+                    <li>f. For every service</li>
+                    <ul>
+                        <li>i. Date of service</li>
+                        <li>ii. Provider name</li>
+                        <li>iii. Service name</li>
+                    </ul>
+                    <li>5. The report is displayed on the terminal.</li>
+                    <li>6. The terminal displays the option to print.</li>
+                    <li>7. The manager selects to print the report.</li>
+                    <li>8. The Member Report is printed at the terminal.</li>
+                    <li>9. The terminal returns to the menu of options.</li>
+                    <li>10. The manager exits the terminal.</li>
+                </ul>
+            </ul>
+
+            <br>
+            <h3>Extensions</h3>
+            <ul>
+                <li>1a. The <a href="#main-accounting">Main Accounting Procedure</a> is running.</li>
+                <ul>
+                    <li>1a.1 Skip to Step 4.</li>
+                </ul>
+                <li>5a. <a href="#main-accounting">Main Accounting Procedure</a> is running.</li>
+                <ul>
+                    <li>5a.1.  The software product writes the Member Report to a disk.</li>
+                    <li>5a.2.  The use case ends here.</li>
                 </ul>
                 <li>7a. The manager selects not to print the report.</li>
                 <ul>
