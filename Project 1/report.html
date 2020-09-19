@@ -357,7 +357,7 @@
                     Service”.</li>
                 <li>The provider selects “Validate Member and Charge for Service”.</li>
                 <li>“Member Valid” appears on the terminal.</li>
-                <li>The Software Product triggers the <a href="#bill">Bill ChocAn</a> use case.</li>
+                <li>The Software Product triggers the <a href="#bill"><u>Bill ChocAn</u></a> use case.</li>
             </ol>
             <br>
             <h3>Extensions</h3>
@@ -404,11 +404,10 @@
                 </ol>
                 <li>The terminal prompts the provider to enter any additional optional comments about the service
                     provided (up to 100 characters).</li>
-                <ol type="i">
-                    <li>The software product writes a record to the disk containing the ‘Current date and time’, ‘Date
-                        service was provided’, ‘Provider Number’, ‘Member Number’, ‘Service Code’ and optionally,
-                        ‘Comments.’</li>
-                </ol>
+                <li>The provider enters optional comments between 0 and 100 characters.</li>
+                <li>The software product writes a record to the disk containing the ‘Current date and time’, ‘Date
+                    service was provided’, ‘Provider Number’, ‘Member Number’, ‘Service Code’ and optionally,
+                    ‘Comments.’</li>
                 <li>The software product looks up the fee to be paid for the inputted service.</li>
                 <ol type="i">
                     <li>The software product displays the fee on the provider’s terminal.</li>
@@ -434,11 +433,11 @@
                 <br>
                 &emsp;&nbsp; 5.1a.2. The use case continues at step 3
                 <br>
-                &nbsp;&nbsp; 6a. The provider enters additional comments over 100 characters.
+                &nbsp;&nbsp; 7a. The provider enters additional comments over 100 characters.
                 <br>
-                &emsp;&nbsp; 6a.1. The terminal informs the provider.
+                &emsp;&nbsp; 7a.1. The terminal informs the provider.
                 <br>
-                &emsp;&nbsp; 6a.2. The use case continues at step 6
+                &emsp;&nbsp; 7a.2. The use case continues at step 6
                 <br>
             </p>
         </div>
