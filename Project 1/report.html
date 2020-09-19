@@ -363,10 +363,10 @@
                     is read by the software product.
                 </li>
                 <li>The provider is prompted whether they want to “Validate Member” or “Validate Member and Charge for
-                    Service”.</li>
-                <li>The provider selects “Validate Member and Charge for Service”.</li>
+                    Service.”</li>
+                <li>The provider selects “Validate Member and Charge for Service.”</li>
                 <li>“Member Valid” appears on the terminal.</li>
-                <li>The Software Product triggers the <a href="#bill">Bill ChocAn</a> use case.</li>
+                <li>The Software Product triggers the <a href="#bill">Bill ChocAn for Service</a> use case.</li>
             </ol>
             <br>
             <h3>Extensions</h3>
@@ -403,14 +403,15 @@
             <h3>Main Success Scenario</h3>
             <ol>
                 <li>The terminal prompts the provider to enter the date the service was provided (MM-DD-YYYY).</li>
-                <li>The provider keys in the date the service was provided.</li>
+                <li>The provider enters the date the service was provided.</li>
                 <li>The terminal prompts the provider to enter the service code (six digits).</li>
-                <li>The provider keys in the six-digit service code corresponding to the service that was provided.</li>
-                <li>The software product displays the name of the service corresponding to the entered service code (up
-                    to 20 characters) on the provider’s terminal.</li>
-                <ol type="i">
+                <li>The provider enters the six-digit service code corresponding to the service that was provided.</li>
+                <li>The software product displays the corresponding name of the service (up to 20 characters) on 
+                    the provider’s terminal.</li>
+                <ol type="5.1">
                     <li>The terminal prompts the provider to verify the displayed service name is correct.</li>
                 </ol>
+                <li>The provider verifies that the name is correct.</li>
                 <li>The terminal prompts the provider to enter any additional optional comments about the service
                     provided (up to 100 characters).</li>
                 <li>The provider enters optional comments between 0 and 100 characters.</li>
@@ -418,35 +419,35 @@
                     service was provided’, ‘Provider Number’, ‘Member Number’, ‘Service Code’ and optionally,
                     ‘Comments.’</li>
                 <li>The software product looks up the fee to be paid for the inputted service.</li>
-                <ol type="i">
+                <ol type="9.1">
                     <li>The software product displays the fee on the provider’s terminal.</li>
                 </ol>
             </ol>
             <br>
             <h3>Extensions</h3>
-            <p> &nbsp;&nbsp; 2a. An invalid date was entered
+            <p> &nbsp;&nbsp; 2a. An invalid date was entered.
                 <br>
                 &emsp;&nbsp; 2a.1. The terminal informs the provider.
                 <br>
-                &emsp;&nbsp; 2a.2. The use case continues at step 1
+                &emsp;&nbsp; 2a.2. The use case continues at step 1.
                 <br>
-                &nbsp;&nbsp; 4a. An invalid service code is entered
+                &nbsp;&nbsp; 4a. An invalid service code is entered.
                 <br>
                 &emsp;&nbsp; 4a.1. The terminal informs the provider.
                 <br>
-                &emsp;&nbsp; 4a.2. The use case continues at step 3
+                &emsp;&nbsp; 4a.2. The use case continues at step 3.
                 <br>
-                &nbsp;&nbsp; 5.1a. The provider indicates that the service name is not correct
+                &nbsp;&nbsp; 6a. The provider indicates that the service name is not correct.
                 <br>
-                &emsp;&nbsp; 5.1a.1. The terminal informs the provider.
+                &emsp;&nbsp; 6a.1. The terminal informs the provider.
                 <br>
-                &emsp;&nbsp; 5.1a.2. The use case continues at step 3
+                &emsp;&nbsp; 6a.2. The use case continues at step 3.
                 <br>
-                &nbsp;&nbsp; 7a. The provider enters additional comments over 100 characters.
+                &nbsp;&nbsp; 8a. The provider enters additional comments over 100 characters.
                 <br>
-                &emsp;&nbsp; 7a.1. The terminal informs the provider.
+                &emsp;&nbsp; 8a.1. The terminal informs the provider.
                 <br>
-                &emsp;&nbsp; 7a.2. The use case continues at step 6
+                &emsp;&nbsp; 8a.2. The use case continues at step 7.
                 <br>
             </p>
         </div>
