@@ -183,7 +183,7 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 50%;
+            width: 100%;
         }
     </style>
 </head>
@@ -350,7 +350,8 @@
             <h2>Verify Member Status</h2>
             <br>
             <h3>Context</h3>
-            <p>The <i>Verify Member Status</i> use case allows a provider to access the member status of a member via the
+            <p>The <i>Verify Member Status</i> use case allows a provider to access the member status of a member via
+                the
                 member’s unique ID.</p>
             <br>
 
@@ -395,7 +396,8 @@
             <h2>Bill ChocAn for Service</h2>
             <br>
             <h3>Context</h3>
-            <p>The <i>Bill ChocAn for Service</i> use case allows a provider to log information about a service provided to a
+            <p>The <i>Bill ChocAn for Service</i> use case allows a provider to log information about a service provided
+                to a
                 member. </p>
             <br>
             <h3>Actors</h3>
@@ -407,9 +409,10 @@
                 <li>The provider enters the date the service was provided.</li>
                 <li>The terminal prompts the provider to enter the service code (six digits).</li>
                 <li>The provider enters the six-digit service code corresponding to the service that was provided.</li>
-                <li>The software product displays the corresponding name of the service (up to 20 characters) on 
+                <li>The software product displays the corresponding name of the service (up to 20 characters) on
                     the provider’s terminal.</li>
-                &emsp;&nbsp;<li>5.1 The terminal prompts the provider to verify the displayed service name is correct.</li>
+                &emsp;&nbsp;<li>5.1 The terminal prompts the provider to verify the displayed service name is correct.
+                </li>
                 <li>The provider verifies that the name is correct.</li>
                 <li>The terminal prompts the provider to enter any additional optional comments about the service
                     provided (up to 100 characters).</li>
@@ -660,7 +663,8 @@
             <h2>Produce Provider Report</h2>
             <br>
             <h3>Context</h3>
-            <p>The <i>Produce Provider Report</i> use case produces a list of services that a provider administered in a given
+            <p>The <i>Produce Provider Report</i> use case produces a list of services that a provider administered in a
+                given
                 week.</p>
             <br>
             <h3>Actors</h3>
@@ -728,7 +732,8 @@
             <h2>Produce Member Report</h2>
             <br>
             <h3>Context</h3>
-            <p>The <i>Produce Member Report</i> use case produces a list of each service that a member received in a given
+            <p>The <i>Produce Member Report</i> use case produces a list of each service that a member received in a
+                given
                 week.</p>
             <br>
             <h3>Actors</h3>
@@ -890,6 +895,13 @@
                     <li>10a.1. The terminal exits after an amount of time of inactivity.</li>
                 </ul>
             </ul>
+        </div>
+
+        <!-- System Use Case Diagram -->
+        <br><br>
+        <div id="statistics">
+            <h2>BitBucket Statistics</h2>
+            <img src="BitBucketStatistics.png" alt="System Use Case Diagram" />
         </div>
 
     </main>
