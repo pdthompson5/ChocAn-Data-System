@@ -162,7 +162,7 @@
             line-height: 1.5rem;
             grid-area: list;
             padding-left: 10%;
-            padding-right: 10%;   
+            padding-right: 10%;
         }
 
         header li {
@@ -246,7 +246,6 @@
             max-height: 100vh;
             width: auto;
         }
-
     </style>
 </head>
 
@@ -264,8 +263,8 @@
                 <li><a href="#request-directory">Request Provider Directory</a></li>
                 <li><a href="#eft-data">Produce EFT Data</a></li>
                 <li><a href="#main-accounting">Run Main Accounting Procedure</a></li>
-                <li><a href="#add-provider"></a>Add Provider</li>
-                <li><a href="#delete-provider"></a>Delete Provider</li>
+                <li><a href="#add-provider">Add Provider</a></li>
+                <li><a href="#delete-provider">Delete Provider</a></li>
                 <li><a href="#update-provider">Update Provider</a></li>
                 <li><a href="#update-provider-records">Manage Provider Records</a></li>
                 <li><a href="#add-member">Add Member</a></li>
@@ -287,25 +286,24 @@
             <li><a href="#class-diagram">Stereotyped Class Diagram</a></li>
             <li>Activity Diagrams</li>
             <ul>
-                <li><a href="#verify-member-status-activity">Verify Member Status</a></li>
+                <li><a href="#main-activity">Main</a></li>
                 <li><a href="#bill-activity">Bill ChocAn for Service</a></li>
-                <li><a href="#add-member-activity">Add Member</a></li>
-                <li><a href="#delete-member-activity">Delete Member</a></li>
-                <li><a href="#add-provider-activity">Add Provider</a></li>
-                <li><a href="#delete-provider-activity">Delete Provider</a></li>
-                <li><a href="#manage-member-records-activity">Manage Member Records</a></li>
-                <li><a href="#manage-provider-records-activity">Manage Provider Records</a></li>
+                <li><a href="#verify-member-status-activity">Verify Member Status</a></li>
+                <li><a href="#request-provider-directory-activity">Request Provider Directory</a></li>
                 <li><a href="#manage-reports-activity">Manage Reports</a></li>
-                <li><a href="#prooduce-EFT-data-activity">Produce EFT Data</a></li>
                 <li><a href="#produce-member-report-activity">Produce Member Report</a></li>
                 <li><a href="#produce-provider-report-activity">Produce Provider Report</a></li>
                 <li><a href="#produce-summary-report-activity">Produce Summary Report</a></li>
-                <li><a href="#request-provider-directory-activity">Request Provider Directory</a></li>
-                <li><a href="#run-main-accounting-procedure-activity">Run Main Accounting Procedure</a></li>
+                <li><a href="#manage-member-records-activity">Manage Member Records</a></li>
+                <li><a href="#add-member-activity">Add Member</a></li>
+                <li><a href="#delete-member-activity">Delete Member</a></li>
                 <li><a href="#update-member-activity">Update Member</a></li>
+                <li><a href="#manage-provider-records-activity">Manage Provider Records</a></li>
+                <li><a href="#add-provider-activity">Add Provider</a></li>
+                <li><a href="#delete-provider-activity">Delete Provider</a></li>
                 <li><a href="#update-provider-activity">Update Provider</a></li>
-                
-
+                <li><a href="#run-main-accounting-procedure-activity">Run Main Accounting Procedure</a></li>
+                <li><a href="#produce-EFT-data-activity">Produce EFT Data</a></li>
             </ul>
             <li><a href="#statistics-phase2">Bitbucket Statistics</a></li>
         </ul>
@@ -356,7 +354,8 @@
 
         <!-- Hours Chart -->
         <br>
-        <iframe width="700" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzzAvAhmspBvIbOTQBMVbB494QD6NoRsO0B9GwpvX_7j7y7jkPvk8nutdhm3JNuLc_hol-U8EoO6M2/pubchart?oid=175733961&amp;format=interactive"></iframe>
+        <iframe width="700" height="371" seamless frameborder="0" scrolling="no"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzzAvAhmspBvIbOTQBMVbB494QD6NoRsO0B9GwpvX_7j7y7jkPvk8nutdhm3JNuLc_hol-U8EoO6M2/pubchart?oid=175733961&amp;format=interactive"></iframe>
 
         <br><br>
         <ul>
@@ -494,7 +493,8 @@
             <br>
             <h3>Main Success Scenario</h3>
             <ul>
-                <li>1. The software product initiates the <a href="#verify-member-status">Verify Member Status</a> use case.</li>
+                <li>1. The software product initiates the <a href="#verify-member-status">Verify Member Status</a> use
+                    case.</li>
                 <li>2. The terminal prompts the provider to enter the date the service was provided (MM-DD-YYYY).</li>
                 <li>3. The provider keys in the date the service was provided.</li>
                 <li>4. The terminal prompts the provider to enter the service code (six digits).</li>
@@ -582,7 +582,7 @@
                     </ul>
                     <li>2a.2. The use case continues at Step 1.</li>
                     <ul>
-                        <li>2a.1.1a. The provider selects not to attempt again and the use case terminates 
+                        <li>2a.1.1a. The provider selects not to attempt again and the use case terminates
                             with an error. </li>
                     </ul>
                 </ul>
@@ -603,7 +603,8 @@
             <br>
             <h3>Main Success Scenario</h3>
             <ul>
-                <li>1. The software product produces a file containing the following information for each transaction during the week:</li>
+                <li>1. The software product produces a file containing the following information for each transaction
+                    during the week:</li>
                 <ul>
                     <li>a. Provider Name</li>
                     <li>b. Provider Number</li>
@@ -645,8 +646,90 @@
         <br><br>
 
         <!-- Space For Add Provider -->
+        <div id="add-provider">
+            <h2>Add Provider <strong>extends</strong> Manage Provider Records</h2>
+            <br>
+            <h3>Actors</h3>
+            <p>Operator</p>
+            <br>
+            <h3>Context</h3>
+            <p>The <i>Add Provider</i> use case allows an operator to add a Provider to the ChocAn data system.</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ul>
+                <li>1. The system creates a new unique Provider number.</li>
+                <li>2. The terminal will prompt the operator to input new Provider information.</li>
+                <ul>
+                    <li>a. Provider name (25 characters)</li>
+                    <li>b. Provider street address (25 characters)</li>
+                    <li>c. Provider city (14 characters)</li>
+                    <li>d. Provider state (2 letter abbreviation)</li>
+                    <li>e. Provider ZIP code (5 digits)</li>
+                </ul>
+                <li>3. The system records the data.</li>
+                <li>4. The terminal displays “Provider Added.”</li>
+            </ul>
+            <br>
+            <h3>Extensions</h3>
+            <ul>
+                <li>2a. The operator enters invalid information</li>
+                <ul>
+                    <li>2a.1. The terminal informs the operator and prompts the operator to try again.</li>
+                    <ul>
+                        <li>2a.1.1. The operator selects to attempt again.</li>
+                    </ul>
+                    <li>2a.2. The use case continues at step 2.</li>
+                    <ul>
+                        <li>2a.1.1a. The operator selects not to attempt again and the use case terminates 
+                            with an error.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </div>
+        <br><br>
 
         <!-- Space For Delete Provider -->
+        <div id="delete-provider">
+            <h2>Delete Provider extends Manage Provider Records</h2>
+            <br>
+            <h3>Actors</h3>
+            <p>Operator</p>
+            <br>
+            <h3>Context</h3>
+            <p>The <i>Delete Provider</i> use case allows an operator to delete a provider from the ChocAn data system.</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ul>
+                <li>1. The system prompts the operator to enter a Provider number.</li>
+                <ul>
+                    <li>1.1 The operator enters a Provider number.</li>
+                </ul>
+                <li>2. The terminal displays that the Provider number is “valid” and displays provider information.</li>
+                <li>3. The system prompts the operator to confirm their choice to delete the provider</li>
+                <ul>
+                    <li>3.1 The operator confirms their choice</li>
+                </ul>
+                <li>4. The system deletes the Provider record.</li>
+                <li>5. The terminal displays “Provider Deleted”.</li>
+            </ul>
+            <h3>Extensions</h3>
+            <li>2a. The operator entered an invalid provider number.</li>
+            <ul>
+                <li>2a.1. The terminal informs the operator and prompts the operator to try again.</li>
+                <ul>
+                    <li>2a.1.1a. The operator selects to attempt again.</li>
+                </ul>
+                <li>2a.2. The use case continues at step 1.</li>
+                <ul>
+                    <li>2a.1.1a. The operator selects not to attempt again and the use case terminates 
+                        with an error.</li>
+                </ul>
+            </ul>
+            <li>3.1a. The operator selects to cancel the deletion</li>
+            <ul>
+                <li>3.1a.1. The use case is terminated with an error.</li>
+            </ul>
+        </div>
 
         <!-- Space For Update Provider -->
 
@@ -945,7 +1028,7 @@
         </div>
         <br><br>
 
-            <!-- Needs Update -->
+        <!-- Needs Update -->
         <!-- Produce Summary Report -->
         <div id="summary-report">
             <h2>Produce Summary Report</h2>
@@ -1008,78 +1091,89 @@
         </div>
 
         <!-- Phase 2!!! -->
-        <br><hr>
+        <br>
+        <hr>
         <div id="phase2-tasks">
             <h1>Project 2 Task Distribution</h1>
-        <br>
-        <table>
-            <title>Student Information</title>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>CWID</th>
-                    <th>Email Address</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Benjamin Peinhardt</td>
-                    <td>11469936</td>
-                    <td>bcpeinhardt@crimson.ua.edu</td>
-                </tr>
+            <br>
+            <table>
+                <title>Student Information</title>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>CWID</th>
+                        <th>Email Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Benjamin Peinhardt</td>
+                        <td>11469936</td>
+                        <td>bcpeinhardt@crimson.ua.edu</td>
+                    </tr>
 
-                <tr>
-                    <td>Christopher Fryzel</td>
-                    <td>11971451</td>
-                    <td>cmfryzel@crimson.ua.edu</td>
-                </tr>
+                    <tr>
+                        <td>Christopher Fryzel</td>
+                        <td>11971451</td>
+                        <td>cmfryzel@crimson.ua.edu</td>
+                    </tr>
 
-                <tr>
-                    <td>Philip Thompson</td>
-                    <td>11990280</td>
-                    <td>pdthompson5@crimson.ua.edu</td>
-                </tr>
-                <tr>
-                    <td>Griffin Mack</td>
-                    <td>11713813</td>
-                    <td>gmack@crimson.ua.edu</td>
-                <tr>
-                    <td>Hannah Perkins</td>
-                    <td>11472559</td>
-                    <td>hperkins1@crimson.ua.edu</td>
-                </tr>
-            </tbody>
-        </table>
+                    <tr>
+                        <td>Philip Thompson</td>
+                        <td>11990280</td>
+                        <td>pdthompson5@crimson.ua.edu</td>
+                    </tr>
+                    <tr>
+                        <td>Griffin Mack</td>
+                        <td>11713813</td>
+                        <td>gmack@crimson.ua.edu</td>
+                    <tr>
+                        <td>Hannah Perkins</td>
+                        <td>11472559</td>
+                        <td>hperkins1@crimson.ua.edu</td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <!-- Hours Chart -->
-        <br>
-        <iframe width="700" height="371" seamless frameborder="0" scrolling="no"
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzzAvAhmspBvIbOTQBMVbB494QD6NoRsO0B9GwpvX_7j7y7jkPvk8nutdhm3JNuLc_hol-U8EoO6M2/pubchart?oid=842031039&amp;format=interactive"></iframe>
+            <!-- Hours Chart -->
+            <br>
+            <iframe width="700" height="371" seamless frameborder="0" scrolling="no"
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzzAvAhmspBvIbOTQBMVbB494QD6NoRsO0B9GwpvX_7j7y7jkPvk8nutdhm3JNuLc_hol-U8EoO6M2/pubchart?oid=842031039&amp;format=interactive"></iframe>
 
-        <br><br>
-        <ul>
-            <li><strong>Benjamin Peinhardt</strong> - Glossary, Use Case Description Review and Editing, Produce Summary
-                Report Use Case, Verify Member Status Use Case, report.html <strong>(20%)</strong></li>
-            <li><strong>Christopher Fryzel</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and
-                Editing, Update Member Records Use Case, Produce Provider Report Use Case, Document Management
-                <strong>(20%)</strong></li>
-            <li><strong>Philip Thompson</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and
-                Editing, Produce Member Report Use Case, Update Provider Records Use Case, Document Management
-                <strong>(20%)</strong></li>
-            <li><strong>Griffin Mack</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and Editing,
-                Bill ChocAn Use Case, Request Provider Directory Use Case, report.html, Prototype
-                <strong>(20%)</strong><strong> (submitter) </strong></li>
-            <li><strong>Hannah Perkins</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and
-                Editing, Produce EFT Report Use Case, Run Main Accounting Procedure Use Case, report.html
-                <strong>(20%)</strong></li>
-        </ul>
-        <br><br>
+            <br><br>
+            <ul>
+                <li><strong>Benjamin Peinhardt</strong> - Glossary, Use Case Description Review and Editing, Produce
+                    Summary
+                    Report Use Case, Verify Member Status Use Case, report.html <strong>(20%)</strong></li>
+                <li><strong>Christopher Fryzel</strong> - Glossary, UML Use Case Diagram, Use Case Description Review
+                    and
+                    Editing, Update Member Records Use Case, Produce Provider Report Use Case, Document Management
+                    <strong>(20%)</strong></li>
+                <li><strong>Philip Thompson</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and
+                    Editing, Produce Member Report Use Case, Update Provider Records Use Case, Document Management
+                    <strong>(20%)</strong></li>
+                <li><strong>Griffin Mack</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and
+                    Editing,
+                    Bill ChocAn Use Case, Request Provider Directory Use Case, report.html, Prototype
+                    <strong>(20%)</strong><strong> (submitter) </strong></li>
+                <li><strong>Hannah Perkins</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and
+                    Editing, Produce EFT Report Use Case, Run Main Accounting Procedure Use Case, report.html
+                    <strong>(20%)</strong></li>
+            </ul>
+            <br><br>
         </div>
 
         <hr><br>
         <div id="analysis">
             <h2>Product Description</h2>
-            <p>The Main Accounting Procedure, Member Status Verification, Service Billing, Production of Reports, and Updating of Member Records will all be computerized as control processes. The software system will store data on ChocAn data servers. The database will include lists of member objects, provider objects, service codes, and individual services. The ChocAn Software System will allow the communications software to read and write to the system. The System will also allow ACME to read the electronic transaction list and update member statuses. Providers, Managers, and Operators will utilize their respective terminals to input data to the system, which will interface with the ChocAn System through the communications software. </p>
+            <p>The Main Accounting Procedure, Member Status Verification, Service Billing, Production of Reports, and
+                Updating of Member Records will all be computerized as control processes. The software system will store
+                data on ChocAn data servers. The database will include lists of member objects, provider objects,
+                service codes, and individual services. The ChocAn Software System will allow the communications
+                software to read and write to the system. The System will also allow ACME to read the electronic
+                transaction list and update member statuses. Providers, Managers, and Operators will utilize their
+                respective terminals to input data to the system, which will interface with the ChocAn System through
+                the communications software. </p>
         </div>
 
         <!-- Stereotyped Class Diagram -->
@@ -1090,63 +1184,35 @@
         </div>
 
         <!-- Activity Diagrams -->
-        <div id="verify-member-status-activity">
+        <div id="main-activity">
             <br><br>
-            <h2>Verify Member Status Activity Diagram</h2>
-            <img src="assets/verify-member-activity.png" alt="Verify Member Status Activity Diagram">
+            <h2>Main Diagram</h2>
+            <img src="assets/ActivityDiagramsPNG/main.png" alt="Main Activity Diagram">
         </div>
 
         <div id="bill-activity">
             <br><br>
             <h2>Bill ChocAn For Service Activity Diagram</h2>
-            <img src="assets/BillChocAn-activity.png" alt="Bill ChocAn For Service Activity Diagram">
+            <img src="assets/ActivityDiagramsPNG/BillChocAn.png" alt="Bill ChocAn For Service Activity Diagram">
         </div>
 
-        <div id="add-member-activity">
+        <div id="verify-member-status-activity">
             <br><br>
-            <h2>Add Member Activity Diagram</h2>
-            <img src="assets/ActivityDiagramsPNG/AddMember.png" alt="Add Member Activity Diagram">
+            <h2>Verify Member Status Activity Diagram</h2>
+            <img src="assets/ActivityDiagramsPNG/VerifyMemberStatus.png" alt="Verify Member Status Activity Diagram">
         </div>
 
-        <div id="delete-member-activity">
+        <div id="request-provider-directory-activity">
             <br><br>
-            <h2>Delete Member Activity Diagram</h2>
-            <img src="assets/ActivityDiagramsPNG/DeleteMember.png" alt="Delete Member Activity Diagram">
-        </div>
-
-        <div id="add-provider-activity">
-            <br><br>
-            <h2>Add Provider Activity Diagram</h2>
-            <img src="assets/ActivityDiagramsPNG/AddProvider.png" alt="Add Provider Activity Diagram">
-        </div>
-
-        <div id="delete-provider-activity">
-            <br><br>
-            <h2>Delete Provider Activity Diagram</h2>
-            <img src="assets/ActivityDiagramsPNG/DeleteProvider.png" alt="Delete Provider Actvity Diagram">
-        </div>
-
-        <div id="manage-member-records-activity">
-            <br><br>
-            <h2>Manage Member Records Activity Diagram</h2>
-            <img src="assets/ActivityDiagramsPNG/ManageMemberRecords.png" alt="Manage Member Records">
-        </div>
-
-        <div id="manage-provider-records-activity">
-            <br><br><h2>Manage Provider Records Activity Diagram</h2>
-            <img src="assets/ActivityDiagramsPNG/ManageProviderRecords.png" alt="Manage Provider Records">
+            <h2>Request Provider Directory Activity Diagram</h2>
+            <img src="assets/ActivityDiagramsPNG/RequestProviderDirectory.png"
+                alt="Request Provider Directory Activity Diagram">
         </div>
 
         <div id="manage-reports-activity">
             <br><br>
             <h2>Manage Reports Activity Diagram</h2>
             <img src="assets/ActivityDiagramsPNG/ManageReports.png" alt="Manage Reports">
-        </div>
-
-        <div id="prooduce-EFT-data-activity">
-            <br><br>
-            <h2>Produce EFT Data Activity Diagram</h2>
-            <img src="assets/ActivityDiagramsPNG/ProduceEFTData.png" alt="Produce EFT Data">
         </div>
 
         <div id="produce-member-report-activity">
@@ -1164,19 +1230,26 @@
         <div id="produce-summary-report-activity">
             <br><br>
             <h2>Produce Summary Report Activity Diagram</h2>
-            <img src="assets/ActivityDiagramsPNG/ProduceSummaryReport.png" alt="Produce Summary Report Activity Diagram">
+            <img src="assets/ActivityDiagramsPNG/ProduceSummaryReport.png"
+                alt="Produce Summary Report Activity Diagram">
         </div>
 
-        <div id="request-provider-directory-activity">
+        <div id="manage-member-records-activity">
             <br><br>
-            <h2>Request Provider Directory Activity Diagram</h2>
-            <img src="assets/ActivityDiagramsPNG/RequestProviderDirectory.png" alt="Request Provider Directory Activity Diagram">
+            <h2>Manage Member Records Activity Diagram</h2>
+            <img src="assets/ActivityDiagramsPNG/ManageMemberRecords.png" alt="Manage Member Records">
         </div>
 
-        <div id="run-main-accounting-procedure-activity">
+        <div id="add-member-activity">
             <br><br>
-            <h2>Run Main Accounting Procedure Activity Diagram</h2>
-            <img src="assets/ActivityDiagramsPNG/RunMainAccountingProcedure.png" alt="Run Main Accounting Procedure Activity Diagram">
+            <h2>Add Member Activity Diagram</h2>
+            <img src="assets/ActivityDiagramsPNG/AddMember.png" alt="Add Member Activity Diagram">
+        </div>
+
+        <div id="delete-member-activity">
+            <br><br>
+            <h2>Delete Member Activity Diagram</h2>
+            <img src="assets/ActivityDiagramsPNG/DeleteMember.png" alt="Delete Member Activity Diagram">
         </div>
 
         <div id="update-member-activity">
@@ -1185,17 +1258,48 @@
             <img src="assets/ActivityDiagramsPNG/UpdateMember.png" alt="Update Member Activity Diagram">
         </div>
 
+        <div id="manage-provider-records-activity">
+            <br><br>
+            <h2>Manage Provider Records Activity Diagram</h2>
+            <img src="assets/ActivityDiagramsPNG/ManageProviderRecords.png" alt="Manage Provider Records">
+        </div>
+
+        <div id="add-provider-activity">
+            <br><br>
+            <h2>Add Provider Activity Diagram</h2>
+            <img src="assets/ActivityDiagramsPNG/AddProvider.png" alt="Add Provider Activity Diagram">
+        </div>
+
+        <div id="delete-provider-activity">
+            <br><br>
+            <h2>Delete Provider Activity Diagram</h2>
+            <img src="assets/ActivityDiagramsPNG/DeleteProvider.png" alt="Delete Provider Actvity Diagram">
+        </div>
+
         <div id="update-provider-activity">
             <br><br>
             <h2>Update Provider Activity Diagram</h2>
             <img src="assets/ActivityDiagramsPNG/UpdateProvider.png" alt="Update Provider Activity Diagram">
         </div>
 
+        <div id="run-main-accounting-procedure-activity">
+            <br><br>
+            <h2>Run Main Accounting Procedure Activity Diagram</h2>
+            <img src="assets/ActivityDiagramsPNG/RunMainAccountingProcedure.png"
+                alt="Run Main Accounting Procedure Activity Diagram">
+        </div>
+
+        <div id="produce-EFT-data-activity">
+            <br><br>
+            <h2>Produce EFT Data Activity Diagram</h2>
+            <img src="assets/ActivityDiagramsPNG/ProduceEFTData.png" alt="Produce EFT Data">
+        </div>
 
 
 
 
-        
+
+
 
     </main>
 
