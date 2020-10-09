@@ -707,7 +707,7 @@
             <ul>
                 <li>2a.1. The terminal informs the operator and prompts the operator to try again.</li>
                 <ul>
-                    <li>2a.1.1a. The operator selects to attempt again.</li>
+                    <li>2a.1.1. The operator selects to attempt again.</li>
                 </ul>
                 <li>2a.2. The use case continues at step 1.</li>
                 <ul>
@@ -720,83 +720,113 @@
                 <li>3.1a.1. The use case is terminated with an error.</li>
             </ul>
         </div>
+        <br><br>
 
         <!-- Space For Update Provider -->
-
+        <div id="update-provider">
+            <h2>Update Provider extends Manage Provider Records</h2>
+            <br>
+            <h3>Actors</h3>
+            <p>Operator</p>
+            <br>
+            <h3>Context</h3>
+            <p>The <i>Update Provider</i> use case allows an operator to update provider information in the ChocAn data system.</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ul>
+                <li>1. The system prompts the operator to enter a Provider number.</li>
+                <ul>
+                    <li>1.1 The operator enters a Provider number.</li>
+                </ul>
+                <li>2. The terminal displays that the Provider number is “valid”</li>
+                <li>3. The terminal displays the provider’s current information including the following data fields:</li>
+                <ul>
+                    <li>a. Provider name (25 characters)</li>
+                    <li>b. Provider street address (25 characters)</li>
+                    <li>c. Provider city (14 characters)</li>
+                    <li>d. Provider state (2 letter abbreviation)</li>
+                    <li>e. Provider ZIP code (5 digits)</li>
+                </ul>
+                <li>4. The operator changes some of the data fields.</li>
+                <li>5. The system prompts the operator to confirm their changes.</li>
+                <ul>
+                    <li>5.1. The operator confirms the changes.</li>
+                </ul>
+                <li>6. The system records the updates.</li>
+                <li>7. The terminal displays “Provider Updated”.</li>
+            </ul>
+            <h3>Extensions</h3>
+            <li>2a. The operator entered an invalid provider number.</li>
+            <ul>
+                <li>2a.1. The terminal informs the operator and prompts the operator to try again.</li>
+                <ul>
+                    <li>2a.1.1. The operator selects to attempt again.</li>
+                </ul>
+                <li>2a.2. The use case continues at step 1.</li>
+                <ul>
+                    <li>2a.1.1a. The operator selects not to attempt again and the use case terminates 
+                        with an error.</li>
+                </ul>
+            </ul>
+            <li>5.1a. The operator selects to cancel the update</li>
+            <ul>
+                <li>5.1a.1. The use case is terminated with an error.</li>
+            </ul>
+            <li>6a. The operator enters invalid information</li>
+            <ul>
+                <li>6a.1. The system informs the operator</li>
+                <li>6a.2. The use case continues at step 3.</li>
+            </ul>
+        </div>
+        <br><br>
 
 
         <!-- Manage Provider Records-->
         <!-- Update this to be like Manage Provider Records -->
         <div id="update-provider-records">
-            <h2>Update Provider Records</h2>
-            <br>
-            <h3>Context</h3>
-            <p>The <i>Update Provider Records</i> use case adds new providers, deletes providers who have resigned, and
-                updates current provider records.</p>
+            <h2>Manage Provider Records</h2>
             <br>
             <h3>Actors</h3>
             <p>Operator</p>
             <br>
+            <h3>Context</h3>
+            <p>The <i>Manage Provider Records</i> use case adds new providers, deletes providers who have resigned, and
+                updates provider records.</p>
+            <br>
             <h3>Main Success Scenario</h3>
-            <ol>
-                <li>The operator accesses the terminal.</li>
-                <li>The terminal prompts the operator to “Add Provider,” “Delete Provider,” or “Update Provider
-                    Information”.</li>
-                <li>The operator selects “Add Provider.”</li>
-                <li>The terminal prompts the operator to enter a provider number.</li>
-                <ol type="i">
-                    <li>The operator enters a provider number.</li>
-                </ol>
-                <li>The terminal displays that the provider number is “valid.”</li>
-                <li>The terminal will prompt the operator to input new provider information.</li>
-                <ol type="a">
-                    <li>Provider name (25 characters)</li>
-                    <li>Provider street address (25 characters)</li>
-                    <li>Provider city (14 characters)</li>
-                    <li>Provider state (2 letter abbreviation)</li>
-                    <li>Provider ZIP code (5 digits)</li>
-                </ol>
-                <li>The software product records the data.</li>
-                <li>The terminal displays “Provider Added.”</li>
-
-            </ol>
+            <ul>
+                <li>1. The operator accesses the terminal.</li>
+                <li>2. The terminal prompts the operator to “Add Provider,” “Delete Provider,” or “Update Provider Information”.</li>
+                <li>3. The operator selects “Add Provider.”</li>
+                <ul>
+                    <li>3.1 The system initiates the <a href="#add-provider">Add Provider</a> use case.</li>
+                </ul>
+                <li>4. The terminal displays “Provider Record Change Successful”.</li>
+            </ul>
             <br>
             <h3>Extensions</h3>
-            <p> &nbsp;&nbsp;1a. The Software Product is not in interactive mode
-                <br>
-                &emsp;&nbsp;1a.1. The Software Product informs the operator that the Software Product is not
-                in Interactive mode.
-                <br>
-                &emsp;&nbsp;1a.2. The use case terminates.
-                <br>
-                &nbsp;&nbsp;3a. The operator selects “Delete Provider.”
-                <br>
-                &emsp;&nbsp;3a.1. The use case continues at step 4.
-                <br>
-                &nbsp;&nbsp;3b. The operator selects “Update Provider.”
-                <br>
-                &emsp;&nbsp;3b.1. The use case continues at step 4.
-                <br>
-                &nbsp;&nbsp;5a. The operator entered an invalid provider number
-                <br>
-                &emsp;&nbsp;5a.1. “Invalid number” will be displayed on the terminal.
-                <br>
-                &emsp;&nbsp;5a.2. The use case returns to Step 4.
-                <br>
-                &nbsp;&nbsp;6a. The operator had selected “Delete Provider.”
-                <br>
-                &emsp;&nbsp;6a.1. The software product deletes the provider records.
-                <br>
-                &emsp;&nbsp;6a.2. The terminal then displays “Provider Deleted.”
-                <br>
-                &emsp;&nbsp;6a.3. The use case terminates.
-                <br>
-                &nbsp;&nbsp;8a. The operator had selected “Update Provider.”
-                <br>
-                &emsp;&nbsp;8a.1. The terminal displays “Provider Updated”.
-                <br>
-
-            </p>
+            <ul>
+                <li>1a. The Software Product is not in interactive mode</li>
+                <ul>
+                    <li>1a.1. The Software Product informs the operator that the Software Product is not
+                        in Interactive mode.
+                 </li>
+                 <li>1a.2. The use case terminates.</li>
+                </ul>
+                <li>3a. The operator selects “Delete Provider."</li>
+                <ul>
+                    <li>3a.1. The system initiates the <a href="#delete-provider">Delete Provider</a> use case.</li>
+                </ul>
+                <li>3b. The operator selects “Update Provider.”</li>
+                <ul>
+                    <li>3b.1. The system initiates the <a href="#update-provider">Update Provider</a> use case.</li>
+                </ul>
+                <li>4a. The Provider Record update fails.</li>
+                <ul>
+                    <li>4a.1. The terminal displays “Provider Record Update Unsuccessful”.</li>
+                    <li>4a.2. The use case terminates with an error.</li>
+                </ul>
+            </ul>
         </div>
         <br><br>
 
