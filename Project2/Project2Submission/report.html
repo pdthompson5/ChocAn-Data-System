@@ -264,8 +264,8 @@
                 <li><a href="#request-directory">Request Provider Directory</a></li>
                 <li><a href="#eft-data">Produce EFT Data</a></li>
                 <li><a href="#main-accounting">Run Main Accounting Procedure</a></li>
-                <li><a href="#add-provider"></a>Add Provider</li>
-                <li><a href="#delete-provider"></a>Delete Provider</li>
+                <li><a href="#add-provider">Add Provider</a></li>
+                <li><a href="#delete-provider">Delete Provider</a></li>
                 <li><a href="#update-provider">Update Provider</a></li>
                 <li><a href="#update-provider-records">Manage Provider Records</a></li>
                 <li><a href="#add-member">Add Member</a></li>
@@ -666,8 +666,90 @@
         <br><br>
 
         <!-- Space For Add Provider -->
+        <div id="add-provider">
+            <h2>Add Provider <strong>extends</strong> Manage Provider Records</h2>
+            <br>
+            <h3>Actors</h3>
+            <p>Operator</p>
+            <br>
+            <h3>Context</h3>
+            <p>The <i>Add Provider</i> use case allows an operator to add a Provider to the ChocAn data system.</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ul>
+                <li>1. The system creates a new unique Provider number.</li>
+                <li>2. The terminal will prompt the operator to input new Provider information.</li>
+                <ul>
+                    <li>a. Provider name (25 characters)</li>
+                    <li>b. Provider street address (25 characters)</li>
+                    <li>c. Provider city (14 characters)</li>
+                    <li>d. Provider state (2 letter abbreviation)</li>
+                    <li>e. Provider ZIP code (5 digits)</li>
+                </ul>
+                <li>3. The system records the data.</li>
+                <li>4. The terminal displays “Provider Added.”</li>
+            </ul>
+            <br>
+            <h3>Extensions</h3>
+            <ul>
+                <li>2a. The operator enters invalid information</li>
+                <ul>
+                    <li>2a.1. The terminal informs the operator and prompts the operator to try again.</li>
+                    <ul>
+                        <li>2a.1.1. The operator selects to attempt again.</li>
+                    </ul>
+                    <li>2a.2. The use case continues at step 2.</li>
+                    <ul>
+                        <li>2a.1.1a. The operator selects not to attempt again and the use case terminates 
+                            with an error.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </div>
+        <br><br>
 
         <!-- Space For Delete Provider -->
+        <div id="delete-provider">
+            <h2>Delete Provider extends Manage Provider Records</h2>
+            <br>
+            <h3>Actors</h3>
+            <p>Operator</p>
+            <br>
+            <h3>Context</h3>
+            <p>The <i>Delete Provider</i> use case allows an operator to delete a provider from the ChocAn data system.</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ul>
+                <li>1. The system prompts the operator to enter a Provider number.</li>
+                <ul>
+                    <li>1.1 The operator enters a Provider number.</li>
+                </ul>
+                <li>2. The terminal displays that the Provider number is “valid” and displays provider information.</li>
+                <li>3. The system prompts the operator to confirm their choice to delete the provider</li>
+                <ul>
+                    <li>3.1 The operator confirms their choice</li>
+                </ul>
+                <li>4. The system deletes the Provider record.</li>
+                <li>5. The terminal displays “Provider Deleted”.</li>
+            </ul>
+            <h3>Extensions</h3>
+            <li>2a. The operator entered an invalid provider number.</li>
+            <ul>
+                <li>2a.1. The terminal informs the operator and prompts the operator to try again.</li>
+                <ul>
+                    <li>2a.1.1a. The operator selects to attempt again.</li>
+                </ul>
+                <li>2a.2. The use case continues at step 1.</li>
+                <ul>
+                    <li>2a.1.1a. The operator selects not to attempt again and the use case terminates 
+                        with an error.</li>
+                </ul>
+            </ul>
+            <li>3.1a. The operator selects to cancel the deletion</li>
+            <ul>
+                <li>3.1a.1. The use case is terminated with an error.</li>
+            </ul>
+        </div>
 
         <!-- Space For Update Provider -->
 
