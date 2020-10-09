@@ -258,12 +258,19 @@
                 <li><a href="#verify-member-status">Verify Member Status</a></li>
                 <li><a href="#bill">Bill ChocAn for Service</a></li>
                 <li><a href="#request-directory">Request Provider Directory</a></li>
-                <li><a href="#update-provider-records">Update Provider Records</a></li>
-                <li><a href="#update-member-records">Update Member Records</a></li>
-                <li><a href="#main-accounting">Main Accounting Procedure</a></li>
+                <li><a href="#eft-data">Produce EFT Data</a></li>
+                <li><a href="#main-accounting">Run Main Accounting Procedure</a></li>
+                <li><a href="#add-provider"></a>Add Provider</li>
+                <li><a href="#delete-provider"></a>Delete Provider</li>
+                <li><a href="#update-provider">Update Provider</a></li>
+                <li><a href="#update-provider-records">Manage Provider Records</a></li>
+                <li><a href="#add-member">Add Member</a></li>
+                <li><a href="#delete-member">Delete Member</a></li>
+                <li><a href="#update-member">Update Member</a></li>
+                <li><a href="#update-member-records">Manage Member Records</a></li>
+                <li><a href="#manage-reports">Manage Reports</a></li>
                 <li><a href="#provider-report">Produce Provider Report</a></li>
                 <li><a href="#member-report">Produce Member Report</a></li>
-                <li><a href="#eft-report">Produce EFT Report</a></li>
                 <li><a href="#summary-report">Produce Summary Report</a></li>
 
             </ul>
@@ -600,7 +607,70 @@
         </div>
         <br><br>
 
-        <!-- Update Provider Records-->
+        <!-- Produce EFT Data -->
+        <div id="eft-data">
+            <h2>Produce EFT Data</h2>
+            <br>
+            <h3>Context</h3>
+            <p>The <i>Produce EFT Data</i> use case creates a list of electronic transactions and details about those
+                transactions.</p>
+            <br>
+            <h3>Actors</h3>
+            <p>Timer</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ul>
+                <li>1. The software product produces a file containing the following information for each transaction during the week:</li>
+                <ul>
+                    <li>a. Provider Name</li>
+                    <li>b. Provider Number</li>
+                    <li>c. Amounts to be Transferred</li>
+                </ul>
+                <li>2. The system writes the report to disk</li>
+            </ul>
+            <br>
+            <h3>Extensions</h3>
+            <ul>
+                <li>N/A</li>
+            </ul>
+        </div>
+
+        <!-- Main Accounting Procedure -->
+        <div id="main-accounting">
+            <h2>Run Main Accounting Procedure</h2>
+            <br>
+            <h3>Context</h3>
+            <p>The <i>Run Main Accounting Procedure</i> use case creates reports at the end of the week
+                and writes them to a disk.</p>
+            <br>
+            <h3>Actors</h3>
+            <p>End-of-Week</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ol>
+                <li>The Software Product triggers the use case <a href="#provider-report">Produce Provider Report</a>
+                    for every provider.</li>
+                <li>The Software Product triggers the use case <a href="#summary-report">Produce Summary Report</a>.
+                </li>
+                <li>The Software Product triggers the use case <a href="#member-report">Produce Member Report</a> for
+                    every member.</li>
+                <li>The Software Product triggers the use case <a href="#eft-report">Produce EFT Report</a>.</li>
+                <br>
+
+                </p>
+        </div>
+        <br><br>
+
+        <!-- Space For Add Provider -->
+
+        <!-- Space For Delete Provider -->
+
+        <!-- Space For Update Provider -->
+
+
+
+        <!-- Manage Provider Records-->
+        <!-- Update this to be like Manage Provider Records -->
         <div id="update-provider-records">
             <h2>Update Provider Records</h2>
             <br>
@@ -673,7 +743,15 @@
             </p>
         </div>
         <br><br>
-        <!-- Update Member Records-->
+
+        <!-- Space For Add Member -->
+
+        <!-- Space For Delete Member -->
+
+        <!-- Space for Update Member -->
+
+        <!-- Edit this so it is Manage Member Records -->
+        <!-- Manage Member Records-->
         <div id="update-member-records">
             <h2>Update Member Records</h2>
             <br>
@@ -747,32 +825,10 @@
         </div>
         <br><br>
 
-        <!-- Main Accounting Procedure -->
-        <div id="main-accounting">
-            <h2>Run Main Accounting Procedure</h2>
-            <br>
-            <h3>Context</h3>
-            <p>The <i>Run Main Accounting Procedure</i> use case creates reports at the end of the week
-                and writes them to a disk.</p>
-            <br>
-            <h3>Actors</h3>
-            <p>End-of-Week</p>
-            <br>
-            <h3>Main Success Scenario</h3>
-            <ol>
-                <li>The Software Product triggers the use case <a href="#provider-report">Produce Provider Report</a>
-                    for every provider.</li>
-                <li>The Software Product triggers the use case <a href="#summary-report">Produce Summary Report</a>.
-                </li>
-                <li>The Software Product triggers the use case <a href="#member-report">Produce Member Report</a> for
-                    every member.</li>
-                <li>The Software Product triggers the use case <a href="#eft-report">Produce EFT Report</a>.</li>
-                <br>
+        <!-- Space for Manage Reports -->
 
-                </p>
-        </div>
-        <br><br>
 
+        <!-- Needs Update -->
         <!-- Produce Provider Report -->
         <div id="provider-report">
             <h2>Produce Provider Report</h2>
@@ -842,6 +898,7 @@
 
         <br><br>
 
+        <!-- Needs Update -->
         <!-- Produce Member Report -->
         <div id="member-report">
             <h2>Produce Member Report</h2>
@@ -905,59 +962,7 @@
         </div>
         <br><br>
 
-        <!-- Produce EFT Report -->
-        <div id="eft-report">
-            <h2>Produce EFT Report</h2>
-            <br>
-            <h3>Context</h3>
-            <p>The <i>Produce EFT Report</i> use case creates a list of electronic transactions and details about those
-                transactions.</p>
-            <br>
-            <h3>Actors</h3>
-            <p>Manager, End-of-Week</p>
-            <br>
-            <h3>Main Success Scenario</h3>
-            <ul>
-                <li>1. The manager accesses the manager’s terminal.</li>
-                <li>2. The terminal displays a menu of options.</li>
-                <li>3. The manager selects Produce EFT Report.</li>
-                <li>4. The software product produces a file containing the following information:</li>
-                <ul>
-                    <li>a. Provider Name</li>
-                    <li>b. Provider Number</li>
-                    <li>c. Amounts to be Transferred</li>
-                </ul>
-                <li>5. The report is displayed on the terminal.</li>
-                <li>6. The terminal displays the option to print.</li>
-                <li>7. The manager selects to print the report.</li>
-                <li>8. The EFT Report is printed at the terminal.</li>
-                <li>9. The terminal returns to the menu of options.</li>
-                <li>10. The manager exits the terminal.</li>
-            </ul>
-            <br>
-            <h3>Extensions</h3>
-            <ul>
-                <li>1a. The <a href="#main-accounting">Main Accounting Procedure</a> is running.</li>
-                <ul>
-                    <li>1a.1 Skip to Step 4.</li>
-                </ul>
-                <li>5a. The <a href="#main-accounting">Main Accounting Procedure</a> is running</li>
-                <ul>
-                    <li>5a.1. The software product writes the EFT Report to a disk.</li>
-                    <li>5a.2. The use case terminates.</li>
-                </ul>
-                <li>7a. The manager selects not to print the report.</li>
-                <ul>
-                    <li>7a.1 Skip to Step 9.</li>
-                </ul>
-                <li>10a. The manager makes no selection.</li>
-                <ul>
-                    <li>10a.1 The terminal exits after an amount of time of inactivity.</li>
-                </ul>
-            </ul>
-        </div>
-        <br><br>
-
+            <!-- Needs Update -->
         <!-- Produce Summary Report -->
         <div id="summary-report">
             <h2>Produce Summary Report</h2>
