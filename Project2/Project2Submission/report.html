@@ -583,13 +583,20 @@
             </ol>
             <br>
             <h3>Extensions</h3>
-            <p> &nbsp;&nbsp; 2a. An invalid email address is entered.
-                <br>
-                &emsp;&nbsp; 2a.1. The terminal informs the provider.
-                <br>
-                &emsp;&nbsp; 2a.2. The use case continues at step 1.
-                <br>
-            </p>
+            <ul>
+                <li>2a. An invalid email address is entered</li>
+                <ul>
+                    <li>2a.1. The terminal informs the provider and prompts the provider to try again.</li>
+                    <ul>
+                        <li>2a.1.1. The provider selects to attempt again</li>
+                    </ul>
+                    <li>2a.2. The use case continues at Step 1.</li>
+                    <ul>
+                        <li>2a.1.1a. The provider selects not to attempt again and the use case terminates 
+                            with an error. </li>
+                    </ul>
+                </ul>
+            </ul>
         </div>
         <br><br>
 
@@ -1085,6 +1092,13 @@
         <div id="analysis">
             <h2>Product Description</h2>
             <p>The Main Accounting Procedure, Member Status Verification, Service Billing, Production of Reports, and Updating of Member Records will all be computerized as control processes. The software system will store data on ChocAn data servers. The database will include lists of member objects, provider objects, service codes, and individual services. The ChocAn Software System will allow the communications software to read and write to the system. The System will also allow ACME to read the electronic transaction list and update member statuses. Providers, Managers, and Operators will utilize their respective terminals to input data to the system, which will interface with the ChocAn System through the communications software. </p>
+        </div>
+
+        <!-- Stereotyped Class Diagram -->
+        <div id="stereortyped-class-diagram">
+            <br><br>
+            <h2>Stereotyped Class Diagram</h2>
+            <img src="assets/stereotyped-class-diagram.png" alt="Stereotyped Class Diagram">
         </div>
 
         <!-- Activity Diagrams -->
