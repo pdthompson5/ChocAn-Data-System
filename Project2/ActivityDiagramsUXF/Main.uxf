@@ -33,7 +33,7 @@ style=wordwrap</panel_attributes><additional_attributes></additional_attributes>
 style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>750</x><y>310</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>UMLState</id><coordinates><x>580</x><y>360</y><w>100</w><h>50</h></coordinates><panel_attributes>*Manage*
 *Member*
 *Records*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>710</x><y>360</y><w>100</w><h>50</h></coordinates><panel_attributes>*Manage*
-*Member*
+*Provider*
 *Records*</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>646</x><y>400</y><w>90</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
 *[Success]*</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>776</x><y>400</y><w>90</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
 *[Success]*</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>586</x><y>400</y><w>70</w><h>100</h></coordinates><panel_attributes>lt=&lt;-
