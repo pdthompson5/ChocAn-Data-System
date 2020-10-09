@@ -32,9 +32,13 @@
         /* Navigation */
         nav {
             grid-area: nav;
-            padding: 10px 50px;
+            padding: 20px 50px;
             position: sticky;
             top: 0;
+            bottom: 0;
+            max-height: calc(100vh);
+            overflow-y: scroll;
+            min-width: 300px;
         }
 
         #sticky {
