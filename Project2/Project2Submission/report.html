@@ -498,80 +498,54 @@
                 <li>2. The terminal prompts the provider to enter the date the service was provided (MM-DD-YYYY).</li>
                 <li>3. The provider keys in the date the service was provided.</li>
                 <li>4. The terminal prompts the provider to enter the service code (six digits).</li>
-                <li>5. The provider keys in the six-digit service code corresponding to the service that was provided.
-                </li>
-                <li>6. The software product displays the name of the service corresponding to the entered service code
+                <li>5. The provider keys in the six-digit service code corresponding to the service that was provided.</li>
+                <li>6. The software product displays the name of the service corresponding to the entered service code 
                     (up to 20 characters) on the provider’s terminal.</li>
                 <ul>
                     <li>6.1. The terminal prompts the provider to verify the displayed service name is correct.</li>
                 </ul>
-                <li>7. The terminal prompts the provider to enter any additional optional comments about the service
-                    provided (up to 100 characters).</li>
+                <li>7. The provider verifies the service name is correct.</li>
                 <ul>
-                    <li>7.1. The software product writes a record to the disk containing the ‘Current date and time’,
-                        ‘Date service was provided’, ‘Provider Number’, ‘Member Number’, ‘Service Code’ and optionally,
-                        ‘Comments.’</li>
+                    <li>7.1. The terminal prompts the provider if they would like to enter any additional comments about the service provided.</li>
                 </ul>
-                <li>8. The software product looks up the fee to be paid for the inputted service.</li>
+                <li>8. The provider selects "yes."</li>
                 <ul>
-                    <li>8.1. The software product displays the fee on the provider’s terminal.</li>
+                    <li>8.1. The terminal prompts the provider to enter the additional comments (up to 100 characters).</li>
+                </ul>
+                <li>9. The provider enters up to 100 characters of additional comments.</li>
+                <li>10. The software product writes a record to the disk containing the ‘Current date and time’, ‘Date service was provided’, ‘Provider Number’, 
+                    ‘Member Number’, ‘Service Code’ and optionally, ‘Comments.’</li>
+                <li>11. The software product looks up the fee to be paid for the inputted service.</li>
+                <ul>
+                    <li>11.1. The software product displays the fee on the provider’s terminal.</li>
                 </ul>
             </ul>
             <br>
             <h3>Extensions</h3>
             <ul>
-                <li>1a. The member status is invalid</li>
+                <li>3a. An invalid date was entered.</li>
                 <ul>
-                    <li>1a.1. The terminal informs the provider and prompts the provider to try again.</li>
-                    <ul>
-                        <li>1a.1.1. The provider selects to attempt again.</li>
-                    </ul>
-                    <li>1a.2. The use case continues at step 1.</li>
-                    <ul>
-                        <li>1a.1.1a. The provider selects not to attempt again and the use case terminates
-                            with an error.</li>
-                    </ul>
+                    <li>3a.1. The terminal informs the provider.</li>
+                    <li>3a.2. The use case continues at Step 2.</li>
                 </ul>
-                <li>3a. An invalid date was entered</li>
-                <ul>
-                    <li>3a.1. The terminal informs the provider and prompts the provider to try again.</li>
-                    <ul>
-                        <li>3a.1.1. The provider selects to attempt again.</li>
-                    </ul>
-                    <li>3a.2. The use case continues at step 2</li>
-                    <ul>
-                        <li>3a.1.1a. The provider selects not to attempt again and the use case terminates
-                            with an error. </li>
-                    </ul>
-                </ul>
-                <li>5a. An invalid service code is entered</li>
+                <li>5a. An invalid service code is entered.</li>
                 <ul>
                     <li>5a.1. The terminal informs the provider.</li>
-                    <li>5a.2. The use case continues at step 3</li>
+                    <li>5a.2. The use case continues at Step 4.</li>
                 </ul>
-                <li>6.1a The provider indicates that the service name is not correct</li>
+                <li>7a. The provider indicates that the service name is not correct.</li>
                 <ul>
-                    <li>6.1a.1. The terminal informs the provider and prompts the provider to try again.</li>
-                    <ul>
-                        <li>6a.1.1. The provider selects to attempt again.</li>
-                    </ul>
-                    <li>6.1a.2. The use case continues at step 4.</li>
-                    <ul>
-                        <li>6a.1.1a. The provider selects not to attempt again and the use case terminates
-                            with an error.</li>
-                    </ul>
+                    <li>7a.1. The terminal informs the provider.</li>
+                    <li>7a.2. The use case continues at Step 4.</li>
                 </ul>
-                <li>7a. The provider enters additional comments over 100 characters.</li>
+                <li>8a. The provider selects "no."</li>
                 <ul>
-                    <li>7a.1. The terminal informs the provider and prompts the provider to try again.</li>
-                    <ul>
-                        <li>7a.1.1. The provider selects to attempt again.</li>
-                    </ul>
-                    <li>7a.2. The use case continues at step 6</li>
-                    <ul>
-                        <li>7a.1.1a. The provider selects not to attempt again and the use case terminates
-                            with an error.</li>
-                    </ul>
+                    <li>8a.1. The use case continues at Step 10.</li>
+                </ul>
+                <li>9a. The provider enters additional comments over 100 characters.</li>
+                <ul>
+                    <li>9a.1. The terminal informs the provider.</li>
+                    <li>9a.2. The use case continues at Step 8.1.</li>
                 </ul>
             </ul>
         </div>
@@ -600,17 +574,10 @@
             <br>
             <h3>Extensions</h3>
             <ul>
-                <li>2a. An invalid email address is entered</li>
+                <li>2a. An invalid email address is entered.</li>
                 <ul>
                     <li>2a.1. The terminal informs the provider and prompts the provider to try again.</li>
-                    <ul>
-                        <li>2a.1.1. The provider selects to attempt again</li>
-                    </ul>
                     <li>2a.2. The use case continues at Step 1.</li>
-                    <ul>
-                        <li>2a.1.1a. The provider selects not to attempt again and the use case terminates
-                            with an error. </li>
-                    </ul>
                 </ul>
             </ul>
         </div>
@@ -636,7 +603,7 @@
                     <li>b. Provider Number</li>
                     <li>c. Amounts to be Transferred</li>
                 </ul>
-                <li>2. The system writes the report to disk</li>
+                <li>2. The system writes the report to the disk.</li>
             </ul>
             <br>
             <h3>Extensions</h3>
@@ -654,7 +621,7 @@
                 and writes them to a disk.</p>
             <br>
             <h3>Actors</h3>
-            <p>End-of-Week</p>
+            <p>Timer</p>
             <br>
             <h3>Main Success Scenario</h3>
             <ol>
@@ -665,9 +632,12 @@
                 <li>The Software Product triggers the use case <a href="#member-report">Produce Member Report</a> for
                     every member.</li>
                 <li>The Software Product triggers the use case <a href="#eft-report">Produce EFT Report</a>.</li>
-                <br>
-
-                </p>
+            </ol>
+            <br>
+            <h3>Extensions</h3>
+            <ul>
+                <li>N/A</li>
+            </ul>
         </div>
         <br><br>
 
