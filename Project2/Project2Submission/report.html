@@ -355,7 +355,7 @@
         <!-- Hours Chart -->
         <br>
         <iframe width="700" height="371" seamless frameborder="0" scrolling="no"
-                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzzAvAhmspBvIbOTQBMVbB494QD6NoRsO0B9GwpvX_7j7y7jkPvk8nutdhm3JNuLc_hol-U8EoO6M2/pubchart?oid=842031039&amp;format=interactive"></iframe>
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzzAvAhmspBvIbOTQBMVbB494QD6NoRsO0B9GwpvX_7j7y7jkPvk8nutdhm3JNuLc_hol-U8EoO6M2/pubchart?oid=842031039&amp;format=interactive"></iframe>
 
         <br><br>
         <ul>
@@ -501,22 +501,26 @@
                 <li>2. The terminal prompts the provider to enter the date the service was provided (MM-DD-YYYY).</li>
                 <li>3. The provider keys in the date the service was provided.</li>
                 <li>4. The terminal prompts the provider to enter the service code (six digits).</li>
-                <li>5. The provider keys in the six-digit service code corresponding to the service that was provided.</li>
-                <li>6. The software product displays the name of the service corresponding to the entered service code 
+                <li>5. The provider keys in the six-digit service code corresponding to the service that was provided.
+                </li>
+                <li>6. The software product displays the name of the service corresponding to the entered service code
                     (up to 20 characters) on the provider’s terminal.</li>
                 <ul>
                     <li>6.1. The terminal prompts the provider to verify the displayed service name is correct.</li>
                 </ul>
                 <li>7. The provider verifies the service name is correct.</li>
                 <ul>
-                    <li>7.1. The terminal prompts the provider if they would like to enter any additional comments about the service provided.</li>
+                    <li>7.1. The terminal prompts the provider if they would like to enter any additional comments about
+                        the service provided.</li>
                 </ul>
                 <li>8. The provider selects "yes."</li>
                 <ul>
-                    <li>8.1. The terminal prompts the provider to enter the additional comments (up to 100 characters).</li>
+                    <li>8.1. The terminal prompts the provider to enter the additional comments (up to 100 characters).
+                    </li>
                 </ul>
                 <li>9. The provider enters up to 100 characters of additional comments.</li>
-                <li>10. The software product writes a record to the disk containing the ‘Current date and time’, ‘Date service was provided’, ‘Provider Number’, 
+                <li>10. The software product writes a record to the disk containing the ‘Current date and time’, ‘Date
+                    service was provided’, ‘Provider Number’,
                     ‘Member Number’, ‘Service Code’ and optionally, ‘Comments.’</li>
                 <li>11. The software product looks up the fee to be paid for the inputted service.</li>
                 <ul>
@@ -689,7 +693,8 @@
             <p>Operator</p>
             <br>
             <h3>Context</h3>
-            <p>The <i>Delete Provider</i> use case allows an operator to delete a provider from the ChocAn data system.</p>
+            <p>The <i>Delete Provider</i> use case allows an operator to delete a provider from the ChocAn data system.
+            </p>
             <br>
             <h3>Main Success Scenario</h3>
             <ul>
@@ -708,16 +713,16 @@
             <br>
             <h3>Extensions</h3>
             <ul>
-            <li>2a. The operator entered an invalid provider number.</li>
-            <ul>
-                <li>2a.1. The terminal informs the operator.</li>
-                <li>2a.2. The use case continues at Step 1.</li>
+                <li>2a. The operator entered an invalid provider number.</li>
+                <ul>
+                    <li>2a.1. The terminal informs the operator.</li>
+                    <li>2a.2. The use case continues at Step 1.</li>
+                </ul>
+                <li>3.1a. The operator selects to cancel the deletion.</li>
+                <ul>
+                    <li>3.1a.1. The use case is terminated with an error.</li>
+                </ul>
             </ul>
-            <li>3.1a. The operator selects to cancel the deletion.</li>
-            <ul>
-                <li>3.1a.1. The use case is terminated with an error.</li>
-            </ul>
-        </ul>
         </div>
         <br><br>
 
@@ -729,7 +734,8 @@
             <p>Operator</p>
             <br>
             <h3>Context</h3>
-            <p>The <i>Update Provider</i> use case allows an operator to update provider information in the ChocAn data system.</p>
+            <p>The <i>Update Provider</i> use case allows an operator to update provider information in the ChocAn data
+                system.</p>
             <br>
             <h3>Main Success Scenario</h3>
             <ul>
@@ -738,7 +744,8 @@
                     <li>1.1 The operator enters a valid Provider number.</li>
                 </ul>
                 <li>2. The terminal displays that the Provider number is “valid.”</li>
-                <li>3. The terminal displays the provider’s current information including the following data fields:</li>
+                <li>3. The terminal displays the provider’s current information including the following data fields:
+                </li>
                 <ul>
                     <li>a. Provider name (25 characters)</li>
                     <li>b. Provider street address (25 characters)</li>
@@ -757,21 +764,21 @@
             <br>
             <h3>Extensions</h3>
             <ul>
-            <li>2a. The operator enters an invalid provider number.</li>
-            <ul>
-                <li>2a.1. The terminal informs the operator.</li>
-                <li>2a.2. The use case continues at Step 1.</li>
+                <li>2a. The operator enters an invalid provider number.</li>
+                <ul>
+                    <li>2a.1. The terminal informs the operator.</li>
+                    <li>2a.2. The use case continues at Step 1.</li>
+                </ul>
+                <li>4a. The operator enters invalid information.</li>
+                <ul>
+                    <li>4a.1. The system informs the operator.</li>
+                    <li>4a.2. The use case continues at Step 1.</li>
+                </ul>
+                <li>5.1a. The operator selects to cancel the update.</li>
+                <ul>
+                    <li>5.1a.1. The use case is terminated with an error.</li>
+                </ul>
             </ul>
-            <li>4a. The operator enters invalid information.</li>
-            <ul>
-                <li>4a.1. The system informs the operator.</li>
-                <li>4a.2. The use case continues at Step 1.</li>
-            </ul>
-            <li>5.1a. The operator selects to cancel the update.</li>
-            <ul>
-                <li>5.1a.1. The use case is terminated with an error.</li>
-            </ul>
-        </ul>
         </div>
         <br><br>
 
@@ -790,7 +797,8 @@
             <h3>Main Success Scenario</h3>
             <ul>
                 <li>1. The operator accesses the terminal.</li>
-                <li>2. The terminal prompts the operator to “Add Provider,” “Delete Provider,” or “Update Provider Information.”</li>
+                <li>2. The terminal prompts the operator to “Add Provider,” “Delete Provider,” or “Update Provider
+                    Information.”</li>
                 <li>3. The operator selects “Add Provider.”</li>
                 <ul>
                     <li>3.1 The system initiates the <a href="#add-provider">Add Provider</a> use case.</li>
@@ -886,16 +894,16 @@
             </ul>
             <h3>Extensions</h3>
             <ul>
-            <li>1.1a. The operator enters an invalid member number.</li>
-            <ul>
-                <li>1.1a.1. The terminal informs the operator.</li>
-                <li>1.1a.2. The use case continues at Step 1.</li>
+                <li>1.1a. The operator enters an invalid member number.</li>
+                <ul>
+                    <li>1.1a.1. The terminal informs the operator.</li>
+                    <li>1.1a.2. The use case continues at Step 1.</li>
+                </ul>
+                <li>3.1a. The operator selects to cancel the deletion.</li>
+                <ul>
+                    <li>3.1a.1. The use case is terminated with an error.</li>
+                </ul>
             </ul>
-            <li>3.1a. The operator selects to cancel the deletion.</li>
-            <ul>
-                <li>3.1a.1. The use case is terminated with an error.</li>
-            </ul>
-        </ul>
         </div>
         <br><br>
 
@@ -907,7 +915,8 @@
             <p>Operator</p>
             <br>
             <h3>Context</h3>
-            <p>The <i>Update Member</i> use case allows an operator to update member information in the ChocAn data system.</p>
+            <p>The <i>Update Member</i> use case allows an operator to update member information in the ChocAn data
+                system.</p>
             <br>
             <h3>Main Success Scenario</h3>
             <ul>
@@ -916,7 +925,8 @@
                     <li>1.1 The operator enters a valid Member number.</li>
                 </ul>
                 <li>2. The terminal displays that the Member number is “valid.”</li>
-                <li>3. The terminal displays the provider’s current information including the following data fields:</li>
+                <li>3. The terminal displays the provider’s current information including the following data fields:
+                </li>
                 <ul>
                     <li>a. Member name (25 characters)</li>
                     <li>b. Member street address (25 characters)</li>
@@ -935,21 +945,21 @@
             <br>
             <h3>Extensions</h3>
             <ul>
-            <li>1.1a. The operator enters an invalid member number.</li>
-            <ul>
-                <li>1.1a.1. The terminal informs the operator.</li>
-                <li>1.1a.2. The use case continues at Step 1.</li>
+                <li>1.1a. The operator enters an invalid member number.</li>
+                <ul>
+                    <li>1.1a.1. The terminal informs the operator.</li>
+                    <li>1.1a.2. The use case continues at Step 1.</li>
+                </ul>
+                <li>4a. The operator enters invalid information.</li>
+                <ul>
+                    <li>4a.1. The system informs the operator.</li>
+                    <li>4a.2. The use case continues at Step 3.</li>
+                </ul>
+                <li>5.1a. The operator selects to cancel the update.</li>
+                <ul>
+                    <li>5.1a.1. The use case is terminated with an error.</li>
+                </ul>
             </ul>
-            <li>4a. The operator enters invalid information.</li>
-            <ul>
-                <li>4a.1. The system informs the operator.</li>
-                <li>4a.2. The use case continues at Step 3.</li>
-            </ul>
-            <li>5.1a. The operator selects to cancel the update.</li>
-            <ul>
-                <li>5.1a.1. The use case is terminated with an error.</li>
-            </ul>
-        </ul>
         </div>
         <br><br>
 
@@ -969,7 +979,8 @@
             <h3>Main Success Scenario</h3>
             <ul>
                 <li>1. The operator accesses the terminal.</li>
-                <li>2. The terminal prompts the operator to “Add Member,” “Delete Member,” or “Update Member Information.”</li>
+                <li>2. The terminal prompts the operator to “Add Member,” “Delete Member,” or “Update Member
+                    Information.”</li>
                 <li>3. The operator selects “Add Member.”</li>
                 <ul>
                     <li>3.1 The system initiates the <a href="#add-provider">Add Member</a> use case.</li>
@@ -983,8 +994,8 @@
                 <ul>
                     <li>1a.1. The Software Product informs the operator that the Software Product is not
                         in Interactive mode.
-                 </li>
-                 <li>1a.2. The use case terminates.</li>
+                    </li>
+                    <li>1a.2. The use case terminates.</li>
                 </ul>
                 <li>3a. The operator selects “Delete Member."</li>
                 <ul>
@@ -1096,7 +1107,7 @@
                     <li>g. Total number of consultations (3 digits)</li>
                     <li>h. Total fee for week (up to $99,999.99)</li>
                 </ul>
-               <li>3. The system saves the file.</li>
+                <li>3. The system saves the file.</li>
             </ul>
 
             <br>
@@ -1140,7 +1151,7 @@
                         <li>iii. Service name</li>
                     </ul>
                 </ul>
-               <li>3. The system saves the file.</li>
+                <li>3. The system saves the file.</li>
             </ul>
 
             <br>
@@ -1241,24 +1252,29 @@
 
             <!-- Hours Chart -->
             <br>
-                <iframe width="700" height="371" seamless frameborder="0" scrolling="no"
+            <iframe width="700" height="371" seamless frameborder="0" scrolling="no"
                 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzzAvAhmspBvIbOTQBMVbB494QD6NoRsO0B9GwpvX_7j7y7jkPvk8nutdhm3JNuLc_hol-U8EoO6M2/pubchart?oid=175733961&amp;format=interactive"></iframe>
 
             <br><br>
             <ul>
-                <li><strong>Benjamin Peinhardt</strong> - Product Description, Stereotyped Class Diagram, Activity Diagram Creation (Verify Member Status, Produce Member Report), Compile Report w/Updates <strong>(20%)</strong></li>
-                <li><strong>Christopher Fryzel</strong> - Product Description, Activity Diagram Creation, Activity Diagram Translation to UMLetino
+                <li><strong>Benjamin Peinhardt</strong> - Product Description, Stereotyped Class Diagram, Activity
+                    Diagram Creation (Verify Member Status, Produce Member Report), Compile Report w/Updates
                     <strong>(20%)</strong></li>
-                <li><strong>Philip Thompson</strong> - Product Description, Stereotyped Class Diagram, Project 1 Edits, Activity Diagram Review
+                <li><strong>Christopher Fryzel</strong> - Product Description, Activity Diagram Creation, Activity
+                    Diagram Translation to UMLetino
                     <strong>(20%)</strong></li>
-                <li><strong>Griffin Mack</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and Editing,
-                    Bill ChocAn Use Case, Request Provider Directory Use Case, report.html, Prototype
+                <li><strong>Philip Thompson</strong> - Product Description, Stereotyped Class Diagram, Project 1 Edits,
+                    Activity Diagram Review
+                    <strong>(20%)</strong></li>
+                <li><strong>Griffin Mack</strong> - Produce Description, Stereotyped Class Diagram, Activity Diagram
+                    Creation, Activity Diagram Review
                     <strong>(20%)</strong><strong> (submitter) </strong></li>
-                <li><strong>Hannah Perkins</strong> - Product Description, Activity Diagram Creation, Stereotyped Class Diagram, Report Proofreading 
+                <li><strong>Hannah Perkins</strong> - Product Description, Activity Diagram Creation, Stereotyped Class
+                    Diagram, Report Proofreading
                     <strong>(20%)</strong></li>
             </ul>
 
-           
+
             <br><br>
         </div>
 
