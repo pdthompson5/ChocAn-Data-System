@@ -688,12 +688,12 @@
             <ul>
                 <li>1. The system prompts the operator to enter a Provider number.</li>
                 <ul>
-                    <li>1.1 The operator enters a Provider number.</li>
+                    <li>1.1 The operator enters a valid Provider number.</li>
                 </ul>
                 <li>2. The terminal displays that the Provider number is “valid” and displays provider information.</li>
-                <li>3. The system prompts the operator to confirm their choice to delete the provider</li>
+                <li>3. The system prompts the operator to confirm their choice to delete the provider.</li>
                 <ul>
-                    <li>3.1 The operator confirms their choice</li>
+                    <li>3.1 The operator confirms their choice.</li>
                 </ul>
                 <li>4. The system deletes the Provider record.</li>
                 <li>5. The terminal displays “Provider Deleted.”</li>
@@ -704,7 +704,7 @@
             <li>2a. The operator entered an invalid provider number.</li>
             <ul>
                 <li>2a.1. The terminal informs the operator.</li>
-                <li>2a.2. The use case continues at step 1.</li>
+                <li>2a.2. The use case continues at Step 1.</li>
             </ul>
             <li>3.1a. The operator selects to cancel the deletion.</li>
             <ul>
@@ -716,7 +716,7 @@
 
         <!-- Space For Update Provider -->
         <div id="update-provider">
-            <h2>Update Provider extends Manage Provider Records</h2>
+            <h2>Update Provider <i>extends</i> Manage Provider Records</h2>
             <br>
             <h3>Actors</h3>
             <p>Operator</p>
@@ -728,9 +728,9 @@
             <ul>
                 <li>1. The system prompts the operator to enter a Provider number.</li>
                 <ul>
-                    <li>1.1 The operator enters a Provider number.</li>
+                    <li>1.1 The operator enters a valid Provider number.</li>
                 </ul>
-                <li>2. The terminal displays that the Provider number is “valid”</li>
+                <li>2. The terminal displays that the Provider number is “valid.”</li>
                 <li>3. The terminal displays the provider’s current information including the following data fields:</li>
                 <ul>
                     <li>a. Provider name (25 characters)</li>
@@ -739,37 +739,30 @@
                     <li>d. Provider state (2 letter abbreviation)</li>
                     <li>e. Provider ZIP code (5 digits)</li>
                 </ul>
-                <li>4. The operator changes some of the data fields.</li>
+                <li>4. The operator enters valid changes to the data fields.</li>
                 <li>5. The system prompts the operator to confirm their changes.</li>
                 <ul>
                     <li>5.1. The operator confirms the changes.</li>
                 </ul>
                 <li>6. The system records the updates.</li>
-                <li>7. The terminal displays “Provider Updated”.</li>
+                <li>7. The terminal displays “Provider Updated.”</li>
             </ul>
             <br>
             <h3>Extensions</h3>
             <ul>
-            <li>2a. The operator entered an invalid provider number.</li>
+            <li>2a. The operator enters an invalid provider number.</li>
             <ul>
-                <li>2a.1. The terminal informs the operator and prompts the operator to try again.</li>
-                <ul>
-                    <li>2a.1.1. The operator selects to attempt again.</li>
-                </ul>
-                <li>2a.2. The use case continues at step 1.</li>
-                <ul>
-                    <li>2a.1.1a. The operator selects not to attempt again and the use case terminates 
-                        with an error.</li>
-                </ul>
+                <li>2a.1. The terminal informs the operator.</li>
+                <li>2a.2. The use case continues at Step 1.</li>
             </ul>
-            <li>5.1a. The operator selects to cancel the update</li>
+            <li>4a. The operator enters invalid information.</li>
+            <ul>
+                <li>4a.1. The system informs the operator.</li>
+                <li>4a.2. The use case continues at Step 1.</li>
+            </ul>
+            <li>5.1a. The operator selects to cancel the update.</li>
             <ul>
                 <li>5.1a.1. The use case is terminated with an error.</li>
-            </ul>
-            <li>6a. The operator enters invalid information</li>
-            <ul>
-                <li>6a.1. The system informs the operator</li>
-                <li>6a.2. The use case continues at step 3.</li>
             </ul>
         </ul>
         </div>
