@@ -790,12 +790,12 @@
             <h3>Main Success Scenario</h3>
             <ul>
                 <li>1. The operator accesses the terminal.</li>
-                <li>2. The terminal prompts the operator to “Add Provider,” “Delete Provider,” or “Update Provider Information”.</li>
+                <li>2. The terminal prompts the operator to “Add Provider,” “Delete Provider,” or “Update Provider Information.”</li>
                 <li>3. The operator selects “Add Provider.”</li>
                 <ul>
                     <li>3.1 The system initiates the <a href="#add-provider">Add Provider</a> use case.</li>
                 </ul>
-                <li>4. The terminal displays “Provider Record Change Successful”.</li>
+                <li>4. The terminal displays “Provider Record Change Successful.”</li>
             </ul>
             <br>
             <h3>Extensions</h3>
@@ -803,9 +803,8 @@
                 <li>1a. The Software Product is not in interactive mode</li>
                 <ul>
                     <li>1a.1. The Software Product informs the operator that the Software Product is not
-                        in Interactive mode.
-                 </li>
-                 <li>1a.2. The use case terminates.</li>
+                        in Interactive mode.</li>
+                    <li>1a.2. The use case terminates with an error.</li>
                 </ul>
                 <li>3a. The operator selects “Delete Provider."</li>
                 <ul>
@@ -817,7 +816,7 @@
                 </ul>
                 <li>4a. The Provider Record update fails.</li>
                 <ul>
-                    <li>4a.1. The terminal displays “Provider Record Update Unsuccessful”.</li>
+                    <li>4a.1. The terminal displays “Provider Record Update Unsuccessful.”</li>
                     <li>4a.2. The use case terminates with an error.</li>
                 </ul>
             </ul>
@@ -826,7 +825,7 @@
 
         <!-- Space For Add Member -->
         <div id="add-member">
-            <h2>Add Member <strong>extends</strong> Manage Member Records</h2>
+            <h2>Add Member <i>extends</i> Manage Member Records</h2>
             <br>
             <h3>Actors</h3>
             <p>Operator</p>
@@ -837,7 +836,7 @@
             <h3>Main Success Scenario</h3>
             <ul>
                 <li>1. The system creates a new unique member number.</li>
-                <li>2. The terminal will prompt the operator to input new Member information.</li>
+                <li>2. The terminal prompts the operator to input new Member information.</li>
                 <ul>
                     <li>a. Provider name (25 characters)</li>
                     <li>b. Provider street address (25 characters)</li>
@@ -845,23 +844,17 @@
                     <li>d. Provider state (2 letter abbreviation)</li>
                     <li>e. Provider ZIP code (5 digits)</li>
                 </ul>
-                <li>3. The system records the data.</li>
-                <li>4. The terminal displays “Member Added.”</li>
+                <li>3. The operator enters valid information for all of the fields.</li>
+                <li>4. The system records the data.</li>
+                <li>5. The terminal displays “Member Added.”</li>
             </ul>
             <br>
             <h3>Extensions</h3>
             <ul>
-                <li>2a. The operator enters invalid information</li>
+                <li>3a. The operator enters invalid information.</li>
                 <ul>
-                    <li>2a.1. The terminal informs the operator and prompts the operator to try again.</li>
-                    <ul>
-                        <li>2a.1.1. The operator selects to attempt again.</li>
-                    </ul>
-                    <li>2a.2. The use case continues at step 2.</li>
-                    <ul>
-                        <li>2a.1.1a. The operator selects not to attempt again and the use case terminates 
-                            with an error.</li>
-                    </ul>
+                    <li>3a.1. The terminal informs the operator.</li>
+                    <li>3a.2. The use case continues at Step 2.</li>
                 </ul>
             </ul>
         </div>
@@ -869,7 +862,7 @@
 
         <!-- Space For Delete Member -->
         <div id="delete-member">
-            <h2>Delete Member extends Manage Member Records</h2>
+            <h2>Delete Member <i>extends</i> Manage Member Records</h2>
             <br>
             <h3>Actors</h3>
             <p>Operator</p>
@@ -881,30 +874,23 @@
             <ul>
                 <li>1. The system prompts the operator to enter a Member number.</li>
                 <ul>
-                    <li>1.1 The operator enters a Member number.</li>
+                    <li>1.1 The operator enters a valid Member number.</li>
                 </ul>
                 <li>2. The terminal displays that the Member number is “valid” and displays member information.</li>
-                <li>3. The system prompts the operator to confirm their choice to delete the member</li>
+                <li>3. The system prompts the operator to confirm their choice to delete the member.</li>
                 <ul>
-                    <li>3.1 The operator confirms their choice</li>
+                    <li>3.1 The operator confirms to delete the member.</li>
                 </ul>
                 <li>4. The system deletes the Member record.</li>
-                <li>5. The terminal displays “Member Deleted”.</li>
+                <li>5. The terminal displays “Member Deleted.”</li>
             </ul>
             <h3>Extensions</h3>
-            <li>2a. The operator entered an invalid member number.</li>
+            <li>1.1a. The operator enters an invalid member number.</li>
             <ul>
-                <li>2a.1. The terminal informs the operator and prompts the operator to try again.</li>
-                <ul>
-                    <li>2a.1.1. The operator selects to attempt again.</li>
-                </ul>
-                <li>2a.2. The use case continues at step 1.</li>
-                <ul>
-                    <li>2a.1.1a. The operator selects not to attempt again and the use case terminates 
-                        with an error.</li>
-                </ul>
+                <li>1.1a.1. The terminal informs the operator.</li>
+                <li>1.1a.2. The use case continues at Step 1.</li>
             </ul>
-            <li>3.1a. The operator selects to cancel the deletion</li>
+            <li>3.1a. The operator selects to cancel the deletion.</li>
             <ul>
                 <li>3.1a.1. The use case is terminated with an error.</li>
             </ul>
@@ -913,7 +899,7 @@
 
         <!-- Space for Update Member -->
         <div id="update-member">
-            <h2>Update Member extends Manage Member Records</h2>
+            <h2>Update Member <i>extends</i> Manage Member Records</h2>
             <br>
             <h3>Actors</h3>
             <p>Operator</p>
@@ -925,9 +911,9 @@
             <ul>
                 <li>1. The system prompts the operator to enter a Member number.</li>
                 <ul>
-                    <li>1.1 The operator enters a Member number.</li>
+                    <li>1.1 The operator enters a valid Member number.</li>
                 </ul>
-                <li>2. The terminal displays that the Member number is “valid”</li>
+                <li>2. The terminal displays that the Member number is “valid.”</li>
                 <li>3. The terminal displays the provider’s current information including the following data fields:</li>
                 <ul>
                     <li>a. Member name (25 characters)</li>
@@ -936,35 +922,29 @@
                     <li>d. Member state (2 letter abbreviation)</li>
                     <li>e. Member ZIP code (5 digits)</li>
                 </ul>
-                <li>4. The operator changes some of the data fields.</li>
+                <li>4. The operator enters valid information for all of the fields.</li>
                 <li>5. The system prompts the operator to confirm their changes.</li>
                 <ul>
                     <li>5.1. The operator confirms the changes.</li>
                 </ul>
                 <li>6. The system records the updates.</li>
-                <li>7. The terminal displays “Member Updated”.</li>
+                <li>7. The terminal displays “Member Updated.”</li>
             </ul>
+            <br>
             <h3>Extensions</h3>
-            <li>2a. The operator entered an invalid member number.</li>
+            <li>1.1a. The operator enters an invalid member number.</li>
             <ul>
-                <li>2a.1. The terminal informs the operator and prompts the operator to try again.</li>
-                <ul>
-                    <li>2a.1.1. The operator selects to attempt again.</li>
-                </ul>
-                <li>2a.2. The use case continues at step 1.</li>
-                <ul>
-                    <li>2a.1.1a. The operator selects not to attempt again and the use case terminates 
-                        with an error.</li>
-                </ul>
+                <li>1.1a.1. The terminal informs the operator.</li>
+                <li>1.1a.2. The use case continues at Step 1.</li>
             </ul>
-            <li>5.1a. The operator selects to cancel the update</li>
+            <li>4a. The operator enters invalid information.</li>
+            <ul>
+                <li>4a.1. The system informs the operator.</li>
+                <li>4a.2. The use case continues at Step 3.</li>
+            </ul>
+            <li>5.1a. The operator selects to cancel the update.</li>
             <ul>
                 <li>5.1a.1. The use case is terminated with an error.</li>
-            </ul>
-            <li>6a. The operator enters invalid information</li>
-            <ul>
-                <li>6a.1. The system informs the operator</li>
-                <li>6a.2. The use case continues at step 3.</li>
             </ul>
         </div>
         <br><br>
@@ -985,12 +965,12 @@
             <h3>Main Success Scenario</h3>
             <ul>
                 <li>1. The operator accesses the terminal.</li>
-                <li>2. The terminal prompts the operator to “Add Member,” “Delete Member,” or “Update Member Information”.</li>
+                <li>2. The terminal prompts the operator to “Add Member,” “Delete Member,” or “Update Member Information.”</li>
                 <li>3. The operator selects “Add Member.”</li>
                 <ul>
                     <li>3.1 The system initiates the <a href="#add-provider">Add Member</a> use case.</li>
                 </ul>
-                <li>4. The terminal displays “Member Record Change Successful”.</li>
+                <li>4. The terminal displays “Member Record Change Successful.”</li>
             </ul>
             <br>
             <h3>Extensions</h3>
@@ -1012,7 +992,7 @@
                 </ul>
                 <li>4a. The member record update fails.</li>
                 <ul>
-                    <li>4a.1. The terminal displays “Member Record Update Unsuccessful”.</li>
+                    <li>4a.1. The terminal displays “Member Record Update Unsuccessful.”git p</li>
                     <li>4a.2. The use case terminates with an error.</li>
                 </ul>
             </ul>
