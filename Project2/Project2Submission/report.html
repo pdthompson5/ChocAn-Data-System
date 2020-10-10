@@ -1020,12 +1020,66 @@
         <br><br>
 
         <!-- Space for Manage Reports -->
-
+        <div id="manage-reports">
+            <h2>Manage Reports</h2>
+            <br>
+            <h3>Actors</h3>
+            <p>Manager</p>
+            <br>
+            <h3>Context</h3>
+            <p>The <i>Manage Reports</i> use case allows managers to produce reports at any time during the week.</p>
+            <br>
+            <h3>Main Success Scenario</h3>
+            <ul>
+                <li>1. The manager accesses the manager’s terminal.</li>
+                <li>2. The terminal displays a menu of options.</li>
+                <li>3. The manager selects “Produce Member Report”.</li>
+                <li>4. The system prompts the manager to enter the member number.</li>
+                <ul>
+                    <li>4.1. The manager enters the member number.</li>
+                </ul>
+                <li>5. The <a href="#member-report">Produce Member Report</a> use case is initiated.</li>
+                <li>6. The report is displayed on the terminal.</li>
+                <li>7. The terminal displays the option to print.</li>
+                <ul>
+                    <li>7.1. The manager selects to print the report.</li>
+                </ul>
+                <li>8. The system prints the physical report.</li>
+                <li>9. The terminal returns to the menu of options.</li>
+                <li>10. The manager exits the terminal.</li>
+            </ul>
+            <br>
+            <h3>Extensions</h3>
+            <ul>
+                <li>3a. The manager selects “Produce Provider Report”</li>
+                <ul>
+                    <li>3a.1. The system prompts the manager to enter the provider number.</li>
+                    <li>3a.2. The manager enters the provider number.</li>
+                    <li>3a.2. The <a href="#provider-report">Produce Provider Report</a> use case is initiated.</li>
+                </ul>
+                <li>3b. The manager selects “Produce Summary Report”</li>
+                <ul>
+                    <li>3b.1. The <a href="#summary-report">Produce Summary Report</a> use case is initiated.</li>
+                </ul>
+                <li>6a. An error occurs during report production</li>
+                <ul>
+                    <li>6a.1. The use case is terminated with an error.</li>
+                </ul>
+                <li>7.1a. The manager selects not to print the report.</li>
+                <ul>
+                    <li>7.1a.1 Skip to Step 8.</li>
+                </ul>
+                <li>10a. The manager makes no selection.</li>
+                <ul>
+                    <li>10a.1 The terminal exits after an amount of time of inactivity.</li>
+                </ul>
+            </ul>
+        </div>
 
         <!-- Needs Update -->
         <!-- Produce Provider Report -->
         <div id="provider-report">
-            <h2>Produce Provider Report</h2>
+            <h2>Produce Provider Report extends Manage Reports</h2>
             <br>
             <h3>Context</h3>
             <p>The <i>Produce Provider Report</i> use case produces a list of services that a provider administered in a
@@ -1033,14 +1087,12 @@
                 week.</p>
             <br>
             <h3>Actors</h3>
-            <p>Manager, End-of-Week</p>
+            <p>Manager, Timer</p>
             <br>
             <h3>Main Success Scenario</h3>
             <ul>
-                <li>1. The manager accesses the manager’s terminal.</li>
-                <li>2. The terminal displays a menu of options.</li>
-                <li>3. The manager selects “Produce Provider Report”.</li>
-                <li>4. The software product produces a file containing the following information:</li>
+                <li>1. The system uses the provider number to find the provider’s records.</li>
+                <li>2. The software product produces a file containing the following information:</li>
                 <ul>
                     <li>a. Provider Name</li>
                     <li>b. Provider Number</li>
@@ -1059,62 +1111,41 @@
                     <li>g. Total number of consultations (3 digits)</li>
                     <li>h. Total fee for week (up to $99,999.99)</li>
                 </ul>
-                <li>5. The report is displayed on the terminal.</li>
-                <li>6. The terminal displays the option to print.</li>
-                <li>7. The manager selects to print the report.</li>
-                <li>8. The Provider Report is printed at the terminal.</li>
-                <li>9. The terminal returns to the menu of options.</li>
-                <li>10. The manager exits the terminal.</li>
+               <li>3. The system saves the file.</li>
             </ul>
 
             <br>
             <h3>Extensions</h3>
             <ul>
-                <li>1a. The <a href="#main-accounting">Main Accounting Procedure</a> is running.</li>
+                <li>1a. The provider number is invalid.</li>
                 <ul>
-                    <li>1a.1 Skip to Step 4.</li>
-                </ul>
-                <li>5a. The <a href="#main-accounting">Main Accounting Procedure</a> is running.</li>
-                <ul>
-                    <li>5a.1. The software product writes the Provider Report to a disk.</li>
-                    <li>5a.2. The use case ends here.</li>
-                </ul>
-                <li>7a. The manager selects not to print the report.</li>
-                <ul>
-                    <li>7a.1 Skip to Step 9.</li>
-                </ul>
-                <li>10a. The manager makes no selection.</li>
-                <ul>
-                    <li>10a.1 The terminal exits after an amount of time of inactivity.</li>
+                    <li>1a.1. The use case is terminated with an error.</li>
                 </ul>
             </ul>
         </div>
 
         <br><br>
 
-        <!-- Needs Update -->
         <!-- Produce Member Report -->
         <div id="member-report">
-            <h2>Produce Member Report</h2>
+            <h2>Produce Member Report extends Manage Reports</h2>
             <br>
             <h3>Context</h3>
-            <p>The <i>Produce Member Report</i> use case produces a list of each service that a member received in a
+            <p>The <i>Produce Member Report</i> use case produces a list of services that a member received in a
                 given
                 week.</p>
             <br>
             <h3>Actors</h3>
-            <p>Manager, End-of-Week</p>
+            <p>Manager, Timer</p>
             <br>
             <h3>Main Success Scenario</h3>
             <ul>
-                <li>1. The manager accesses the manager’s terminal.</li>
-                <li>2. The terminal displays a menu of options.</li>
-                <li>3. The manager selects “Produce Member Report”.</li>
-                <li>4. The Software Product produces a file containing the following information:</li>
+                <li>1. The system uses the member number to find the member’s records.</li>
+                <li>2. The software product produces a file containing the following information:</li>
                 <ul>
                     <li>a. Member Name</li>
                     <li>b. Member Number</li>
-                    <li>c. Member City</li>
+                    <li>c. Member City </li>
                     <li>d. Member State</li>
                     <li>e. Member ZIP code</li>
                     <li>f. For every service</li>
@@ -1123,91 +1154,51 @@
                         <li>ii. Provider name</li>
                         <li>iii. Service name</li>
                     </ul>
-                    <li>5. The report is displayed on the terminal.</li>
-                    <li>6. The terminal displays the option to print.</li>
-                    <li>7. The manager selects to print the report.</li>
-                    <li>8. The Member Report is printed at the terminal.</li>
-                    <li>9. The terminal returns to the menu of options.</li>
-                    <li>10. The manager exits the terminal.</li>
                 </ul>
+               <li>3. The system saves the file.</li>
             </ul>
 
             <br>
             <h3>Extensions</h3>
             <ul>
-                <li>1a. The <a href="#main-accounting">Main Accounting Procedure</a> is running.</li>
+                <li>1a. The member number is invalid.</li>
                 <ul>
-                    <li>1a.1 Skip to Step 4.</li>
-                </ul>
-                <li>5a. <a href="#main-accounting">Main Accounting Procedure</a> is running.</li>
-                <ul>
-                    <li>5a.1. The software product writes the Member Report to a disk.</li>
-                    <li>5a.2. The use case ends here.</li>
-                </ul>
-                <li>7a. The manager selects not to print the report.</li>
-                <ul>
-                    <li>7a.1 Skip to Step 9.</li>
-                </ul>
-                <li>10a. The manager makes no selection.</li>
-                <ul>
-                    <li>10a.1 The terminal exits after an amount of time of inactivity.</li>
+                    <li>1a.1. The use case is terminated with an error.</li>
                 </ul>
             </ul>
         </div>
+
         <br><br>
 
         <!-- Needs Update -->
         <!-- Produce Summary Report -->
         <div id="summary-report">
-            <h2>Produce Summary Report</h2>
+            <h2>Produce Summary Report extends Manage Reports</h2>
             <br>
             <h3>Context</h3>
-            <p>The <i>Produce Summary Report</i> use case produces a summary of the week’s accounts payable.</p>
+            <p>The <i>Produce Summary Report</i> use case produces a summary of the week's account's payable</p>
             <br>
             <h3>Actors</h3>
-            <p>Manager, End-of-Week</p>
+            <p>Manager, Timer</p>
             <br>
             <h3>Main Success Scenario</h3>
             <ul>
-                <li>1. The manager accesses the terminal.</li>
-                <li>2. The terminal displays a menu of options.</li>
-                <li>3. The manager selects “Produce Summary Report”.</li>
-                <li>4. The software product produces a file containing the following information:</li>
+                <li>1. The software product produces a file containing the following information</li>
                 <ul>
                     <li>a. A list of every provider to be payed that week</li>
-                    <li>b. Number of consultations for each provider</li>
+                    <li>b. Number of consultations for each provider </li>
                     <li>c. Total fee for each provider</li>
                     <li>d. Number of providers who provided services that week</li>
                     <li>e. Total number of consultations from all providers that week</li>
                     <li>f. Overall fee</li>
                 </ul>
-                <li>5. The report is displayed on the terminal.</li>
-                <li>6. The terminal displays the option to print.</li>
-                <li>7. The manager selects to print the report.</li>
-                <li>8. The Summary Report is printed at the terminal.</li>
-                <li>9. The terminal returns to the menu of options.</li>
-                <li>10. The manager exits the terminal.</li>
+                <li>2. The system saves the file.</li>
             </ul>
+
             <br>
             <h3>Extensions</h3>
             <ul>
-                <li>1a. The <a href="#main-accounting">Main Accounting Procedure</a> is running</li>
-                <ul>
-                    <li>1a.1. Skip to Step 4.</li>
-                </ul>
-                <li>5a. The <a href="#main-accounting">Main Accounting Procedure</a> is running</li>
-                <ul>
-                    <li>5a.1. The software product writes the Summary Report to a disk.</li>
-                    <li>5a.2. The use case ends here.</li>
-                </ul>
-                <li>7a. The manager selects not to print the report.</li>
-                <ul>
-                    <li>7a.1. Skip to Step 9.</li>
-                </ul>
-                <li>10a. The manager makes no selection.</li>
-                <ul>
-                    <li>10a.1. The terminal exits after an amount of time of inactivity.</li>
-                </ul>
+                <li>N/A</li>
             </ul>
         </div>
 
