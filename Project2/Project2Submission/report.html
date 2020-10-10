@@ -971,76 +971,51 @@
 
         <!-- Edit this so it is Manage Member Records -->
         <!-- Manage Member Records-->
+        <!-- Manage Provider Records-->
         <div id="update-member-records">
-            <h2>Update Member Records</h2>
-            <br>
-            <h3>Context</h3>
-            <p>The <i>Update Member Records</i> use case adds new member, deletes members who have resigned, and
-                updates current member records.</p>
+            <h2>Manage Member Records</h2>
             <br>
             <h3>Actors</h3>
             <p>Operator</p>
             <br>
+            <h3>Context</h3>
+            <p>The <i>Manage Member Records</i> use case adds new members, deletes Members who have resigned, and
+                updates Member records.</p>
+            <br>
             <h3>Main Success Scenario</h3>
-            <ol>
-                <li>The operator accesses the terminal.</li>
-                <li>The terminal prompts the operator to “Add member,” “Delete member,” or “Update member
-                    Information”.</li>
-                <li>The operator selects “Add member.”</li>
-                <li>The terminal prompts the operator to enter a member number.</li>
-                <ol type="i">
-                    <li>The operator enters a member number.</li>
-                </ol>
-                <li>The terminal displays that the member number is “valid.”</li>
-                <li>The terminal will prompt the operator to input new member information.</li>
-                <ol type="a">
-                    <li>member name (25 characters)</li>
-                    <li>member street address (25 characters)</li>
-                    <li>member city (14 characters)</li>
-                    <li>member state (2 letter abbreviation)</li>
-                    <li>member ZIP code (5 digits)</li>
-                </ol>
-                <li>The software product records the data.</li>
-                <li>The terminal displays “member Added.”</li>
-
-            </ol>
+            <ul>
+                <li>1. The operator accesses the terminal.</li>
+                <li>2. The terminal prompts the operator to “Add Member,” “Delete Member,” or “Update Member Information”.</li>
+                <li>3. The operator selects “Add Member.”</li>
+                <ul>
+                    <li>3.1 The system initiates the <a href="#add-provider">Add Member</a> use case.</li>
+                </ul>
+                <li>4. The terminal displays “Member Record Change Successful”.</li>
+            </ul>
             <br>
             <h3>Extensions</h3>
-            <p> &nbsp;&nbsp;1a. The Software Product is not in interactive mode
-                <br>
-                &emsp;&nbsp;1a.1. The Software Product informs the operator that the Software Product is not
-                in Interactive mode.
-                <br>
-                &emsp;&nbsp;1a.2. The use case terminates.
-                <br>
-                &nbsp;&nbsp;3a. The operator selects “Delete member.”
-                <br>
-                &emsp;&nbsp;3a.1. The use case continues at step 4.
-                <br>
-                &nbsp;&nbsp;3b. The operator selects “Update member.”
-                <br>
-                &emsp;&nbsp;3b.1. The use case continues at step 4.
-                <br>
-                &nbsp;&nbsp;5a. The operator entered an invalid member number
-                <br>
-                &emsp;&nbsp;5a.1. “Invalid number” will be displayed on the terminal.
-                <br>
-                &emsp;&nbsp;5a.2. The use case returns to Step 4.
-                <br>
-                &nbsp;&nbsp;6a. The operator had selected “Delete member.”
-                <br>
-                &emsp;&nbsp;6a.1. The software product deletes the member records.
-                <br>
-                &emsp;&nbsp;6a.2. The terminal then displays “member Deleted.”
-                <br>
-                &emsp;&nbsp;6a.3. The use case terminates.
-                <br>
-                &nbsp;&nbsp;8a. The operator had selected “Update member.”
-                <br>
-                &emsp;&nbsp;8a.1. The terminal displays “member Updated”.
-                <br>
-
-            </p>
+            <ul>
+                <li>1a. The Software Product is not in interactive mode</li>
+                <ul>
+                    <li>1a.1. The Software Product informs the operator that the Software Product is not
+                        in Interactive mode.
+                 </li>
+                 <li>1a.2. The use case terminates.</li>
+                </ul>
+                <li>3a. The operator selects “Delete Member."</li>
+                <ul>
+                    <li>3a.1. The system initiates the <a href="#delete-member">Delete Member</a> use case.</li>
+                </ul>
+                <li>3b. The operator selects “Update Provider.”</li>
+                <ul>
+                    <li>3b.1. The system initiates the <a href="#update-member">Update Member</a> use case.</li>
+                </ul>
+                <li>4a. The member record update fails.</li>
+                <ul>
+                    <li>4a.1. The terminal displays “Member Record Update Unsuccessful”.</li>
+                    <li>4a.2. The use case terminates with an error.</li>
+                </ul>
+            </ul>
         </div>
         <br><br>
 
