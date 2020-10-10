@@ -605,7 +605,7 @@
             <h3>Extensions</h3>
             <ul>
                 <li>N/A</li>
-            </ul>
+            </ul><br>
         </div>
 
         <!-- Main Accounting Procedure -->
@@ -639,7 +639,7 @@
 
         <!-- Space For Add Provider -->
         <div id="add-provider">
-            <h2>Add Provider <strong>extends</strong> Manage Provider Records</h2>
+            <h2>Add Provider <i>extends</i> Manage Provider Records</h2>
             <br>
             <h3>Actors</h3>
             <p>Operator</p>
@@ -658,23 +658,17 @@
                     <li>d. Provider state (2 letter abbreviation)</li>
                     <li>e. Provider ZIP code (5 digits)</li>
                 </ul>
-                <li>3. The system records the data.</li>
-                <li>4. The terminal displays “Provider Added.”</li>
+                <li>3. The operator enters valid information for all the fields.</li>
+                <li>4. The system records the data.</li>
+                <li>5. The terminal displays “Provider Added.”</li>
             </ul>
             <br>
             <h3>Extensions</h3>
             <ul>
-                <li>2a. The operator enters invalid information</li>
+                <li>3a. The operator enters invalid information.</li>
                 <ul>
-                    <li>2a.1. The terminal informs the operator and prompts the operator to try again.</li>
-                    <ul>
-                        <li>2a.1.1. The operator selects to attempt again.</li>
-                    </ul>
-                    <li>2a.2. The use case continues at step 2.</li>
-                    <ul>
-                        <li>2a.1.1a. The operator selects not to attempt again and the use case terminates 
-                            with an error.</li>
-                    </ul>
+                    <li>3a.1. The terminal informs the operator.</li>
+                    <li>3a.2. The use case continues at Step 2.</li>
                 </ul>
             </ul>
         </div>
@@ -682,7 +676,7 @@
 
         <!-- Space For Delete Provider -->
         <div id="delete-provider">
-            <h2>Delete Provider extends Manage Provider Records</h2>
+            <h2>Delete Provider <i>extends</i> Manage Provider Records</h2>
             <br>
             <h3>Actors</h3>
             <p>Operator</p>
@@ -702,22 +696,16 @@
                     <li>3.1 The operator confirms their choice</li>
                 </ul>
                 <li>4. The system deletes the Provider record.</li>
-                <li>5. The terminal displays “Provider Deleted”.</li>
+                <li>5. The terminal displays “Provider Deleted.”</li>
             </ul>
+            <br>
             <h3>Extensions</h3>
             <li>2a. The operator entered an invalid provider number.</li>
             <ul>
-                <li>2a.1. The terminal informs the operator and prompts the operator to try again.</li>
-                <ul>
-                    <li>2a.1.1. The operator selects to attempt again.</li>
-                </ul>
+                <li>2a.1. The terminal informs the operator.</li>
                 <li>2a.2. The use case continues at step 1.</li>
-                <ul>
-                    <li>2a.1.1a. The operator selects not to attempt again and the use case terminates 
-                        with an error.</li>
-                </ul>
             </ul>
-            <li>3.1a. The operator selects to cancel the deletion</li>
+            <li>3.1a. The operator selects to cancel the deletion.</li>
             <ul>
                 <li>3.1a.1. The use case is terminated with an error.</li>
             </ul>
@@ -757,6 +745,7 @@
                 <li>6. The system records the updates.</li>
                 <li>7. The terminal displays “Provider Updated”.</li>
             </ul>
+            <br>
             <h3>Extensions</h3>
             <li>2a. The operator entered an invalid provider number.</li>
             <ul>
