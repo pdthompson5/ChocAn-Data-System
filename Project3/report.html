@@ -1509,6 +1509,12 @@
             </ul>
         </div>
 
+        <hr><br>
+        <div id="discussion">
+            <h2>Design Discussion</h2>
+            <p>Our report controller demonstrates an instance of very strong abstraction.  Our operator controller and interface and our provider controller and interface utilize control coupling, but the rest of our modules utilize data or stamp coupling.  They only pass data when absolutely necessary, and have homogeneous and simple parameters where possible. An instance of a trade-off is the control coupling between OperatorInterface.promptForOperation() and the OperatorController. This allows us to reuse the method for both manageProviderRecords() and manageMemberRecords(). We also used stamp coupling for updateMember and updateProvider by passing a whole member and provider class even if the method only updates one attribute. We had to use procedural cohesion in the MainAccountingProcedure and a few others, as they were mandated to be a sequence of steps.  Informational cohesion was utilized in the MemberList and ProviderList classes, as there are multiple entry points, with independent code for each action, and each operation is performed on the abstract data structure of the Lists. </p>
+        </div>
+
         <div id="class-diagram">
             <br><br>
             <h2>Class Diagram</h2>
