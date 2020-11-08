@@ -37,7 +37,7 @@ public class SystemUser {
 		return zip;
 	}
 	
-	//Setters
+	// Setters
 	public void setName(String name) {
 		this.name = name;
 	}
