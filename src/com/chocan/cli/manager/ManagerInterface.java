@@ -4,4 +4,9 @@ package com.chocan.cli.manager;
 
 public class ManagerInterface {
 
+	public void managerMainMenu() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

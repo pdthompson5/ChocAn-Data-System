@@ -4,4 +4,9 @@ import com.chocan.user.operator.OperatorController;
 
 public class OperatorInterface {
 
+	public void operatorMainMenu() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
