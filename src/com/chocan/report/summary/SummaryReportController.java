@@ -1,5 +1,7 @@
 package com.chocan.report.summary;
 
+import com.chocan.service.provided.ServiceProvided;
+
 public class SummaryReportController {
 
 	private ServiceProvided[] servicesForWeek;
