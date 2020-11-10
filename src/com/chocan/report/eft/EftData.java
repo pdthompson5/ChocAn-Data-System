@@ -21,6 +21,7 @@ public class EftData {
 	}
 	private void writeProviderName() {
 		//write provider name to the file
+		
 	}
 	private void writeProviderNumber(){
 		//write provider number to the file
