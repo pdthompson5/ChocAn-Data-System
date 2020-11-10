@@ -1,10 +1,10 @@
 package com.chocan.cli.provider;
 
-import com.chocan.user.provider.ProviderDataController;
+import com.chocan.user.provider.ProviderController;
 import java.util.Scanner; 
 
 public class ProviderInterface {
-	private static ProviderDataController providerController = new ProviderDataController();
+	private static ProviderController providerController = new ProviderController();
 	private String providerNumber;
 
 	public void providerMainMenu() {

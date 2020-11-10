@@ -4,28 +4,8 @@ import com.chocan.user.provider.Provider;
 
 public class ProviderDataController {
 
-	public boolean verifyMemberStatus(String memberNumber) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	public String getProviderDirectory() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public boolean verifyMemberExists(String memberNumber) {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	public String lookupServiceByCode(String serviceCode) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void billChocan(String providerNumber, String memberNumber, String serviceDate, String serviceCode,
-			String serviceComments) {
+	public void addNewMember(int providerNumber, String providerName, String providerStreetAddress, String providerCity,
+			String providerState, String providerZip) {
 		// TODO Auto-generated method stub
 		
 	}
