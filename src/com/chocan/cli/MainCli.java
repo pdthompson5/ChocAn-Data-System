@@ -27,7 +27,7 @@ public class MainCli {
 			System.out.print("Please choose from the above options (1-5): ");
 	        int userChoice = Integer.parseInt(myObj.nextLine()); // Read user input
 			
-			if(userChoice >= 1  && userChoice <= 4) {
+			if(userChoice >= 1  && userChoice <= 5) {
 				switch(userChoice) {
 					case(1):
 						provider.providerMainMenu();
@@ -43,6 +43,7 @@ public class MainCli {
 						break;
 					case(5):
 						// TODO: Make this terminate the process
+						return;
 				}
 			}
 			else {
