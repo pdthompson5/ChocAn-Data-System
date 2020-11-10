@@ -33,14 +33,18 @@ public class ReportController {
 	}
 	public String[] produceAllMemberReports() {
 		String allMemberReports[];
-		for(int i = 0; i< /* number of members**/; ++i) {
-			//allMemberReports[i] = produceMemberReport(serviceProvidedList[]);
+		for(int i = 0; i< serviceProvidedList.length; ++i) {
+			//look at each serviceProvided in the list, and place it into a provider's report
+			
+			//this isn't helpful allMemberReports[i] = produceMemberReport(serviceProvidedList[]);
 		}
 	}
 	public String[] produceAllProviderReports() {
 		String allProviderReports[];
-		for(int i = 0; i< /* number of providers**/; ++i) {
-			//allProviderReports[i] = produceProviderReport(serviceProvidedList[]);
+		for(int i = 0; i< serviceProvidedList.length; ++i) {
+			//look at each serviceProvided in the list, and place it into a provider's report
+			
+			//this isn't helpful allProviderReports[i] = produceProviderReport(serviceProvidedList[]);
 		}
 	}
 }
