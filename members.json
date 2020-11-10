@@ -1,3 +1,6 @@
 {"name":"John","streetAddress":"Doe","city":"Tuscaloosa","state":"AL","zip":"35406","memberNumber":0,"memberStatus":true}
 {"name":"griffin","streetAddress":"mack","city":"clemmons","state":"nc","zip":"27012","memberNumber":0,"memberStatus":true}"\n"
 {"name":"Griffin Mack","streetAddress":"1098 noneya","city":"tuscaloosa","state":"al","zip":"35473","memberNumber":0,"memberStatus":true}
+{"name":"Ben","streetAddress":"512 North Lake Cove ","city":"Birmingham, AL","state":"AL","zip":"35242","memberNumber":0,"memberStatus":true}
+{"name":"TestName TestName","streetAddress":"wherever the wind takes me","city":"Whoville","state":"Depressed","zip":"90210","memberNumber":0,"memberStatus":true}
+{"name":"Ben","streetAddress":"Bruh","city":"do","state":"not","zip":"do","memberNumber":0,"memberStatus":true}

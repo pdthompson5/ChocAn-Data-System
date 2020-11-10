@@ -22,8 +22,9 @@ public class MainCli {
 			System.out.println("2. Manager Terminal");
 			System.out.println("3. Operator Terminal");
 			System.out.println("4. Main Accounting Procedure (Testing only)");
+			System.out.println("5. Exit");
 			System.out.println("------------------------------------");
-			System.out.print("Please choose from the above options (1-4): ");
+			System.out.print("Please choose from the above options (1-5): ");
 	        int userChoice = Integer.parseInt(myObj.nextLine()); // Read user input
 			
 			if(userChoice >= 1  && userChoice <= 4) {
@@ -40,6 +41,8 @@ public class MainCli {
 					case(4):
 						mainAccounting.runMainAccountingProcedure();
 						break;
+					case(5):
+						// TODO: Make this terminate the process
 				}
 			}
 			else {

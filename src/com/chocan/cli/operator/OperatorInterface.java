@@ -9,17 +9,18 @@ public class OperatorInterface {
 	private String operatorNumber;
 
 	public void operatorMainMenu() {
-        Scanner myObj = new Scanner(System.in); // Create a Scanner object
-        while(true) {
+		Scanner myObj = new Scanner(System.in); // Create a Scanner object
+		boolean exit = false;
+        while(exit == false) {
 	        System.out.print("Please enter your operator number: ");
 	        operatorNumber = myObj.nextLine(); // Read user input
 	        
 	        // TODO Error check the provider number
-	        operatorSelectionMenu();
+	        exit = operatorSelectionMenu();
         }
 	}
 
-	private void operatorSelectionMenu() {
+	private boolean operatorSelectionMenu() {
         boolean exitMenu = false;
         Scanner myObj = new Scanner(System.in); // Create a Scanner object
         while(!exitMenu) {
@@ -56,7 +57,8 @@ public class OperatorInterface {
 			else {
 				System.out.println("Invalid selection, please choose option between 1-5" + userChoice);
 			}
-        }
+		}
+		return exitMenu;
 	}
 
 	private void manageExistingProviderRecords() {
