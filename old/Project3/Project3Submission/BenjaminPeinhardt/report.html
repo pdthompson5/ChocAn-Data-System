@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 13 Project Submission</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            position: relative;
+
+            /* Layout */
+            display: grid;
+            grid-template-areas:
+                "nav header header header"
+                "nav main main main"
+                "nav main main main"
+                "nav main main main";
+
+            width: 100vw;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            grid-area: nav;
+            padding: 20px 50px;
+            position: sticky;
+            top: 0;
+            bottom: 0;
+            max-height: calc(100vh);
+            overflow-y: scroll;
+            min-width: 300px;
+        }
+
+        #sticky {
+            position: sticky;
+            top: 5px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.1rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            line-height: 2rem;
+        }
+
+        nav li {
+            color: black;
+            font-size: 1.1rem;
+        }
+
+        nav ul ul {
+            padding-left: 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            text-decoration-color: crimson;
+        }
+
+        /* Header */
+        #phase2-tasks, #phase3-tasks {
+            width: 100%;
+            grid-area: header;
+            padding: 5px;
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "table graph"
+                "list list";
+            gap: 20px;
+        }
+
+        header {
+            grid-area: header;
+            padding: 5px;
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "table graph"
+                "list list";
+            gap: 20px;
+        }
+
+        header h1 {
+            text-align: center;
+            margin-top: 5px;
+            grid-area: header;
+            margin-bottom: 30px;
+        }
+
+        #phase2-tasks h1, #phase3-tasks h1 {
+            text-align: center;
+            margin-top: 5px;
+            grid-area: header;
+            margin-bottom: 30px;
+        }
+
+        header table {
+            margin: 0 auto;
+            font-size: 1.2rem;
+            grid-area: table;
+            margin-top: 10%;
+            padding-left: 20%;
+        }
+
+        #phase2-tasks table, #phase3-tasks table {
+            margin: 0 auto;
+            font-size: 1.2rem;
+            grid-area: table;
+            margin-top: 10%;
+            padding-left: 20%;
+        }
+
+        header table td {
+            text-align: center;
+            padding: 2px;
+        }
+
+        #phase2-tasks table td, #phase3-tasks table td {
+            text-align: center;
+            padding: 2px;
+        }
+
+        header iframe {
+            padding-right: 50px;
+            grid-area: graph;
+            overflow: scroll;
+            margin: 0 auto;
+        }
+
+        #phase2-tasks iframe, #phase3-tasks iframe {
+            padding-right: 50px;
+            grid-area: graph;
+            overflow: scroll;
+            margin: 0 auto;
+        }
+
+        header ul {
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            grid-area: list;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        #phase2-tasks ul, #phase3-tasks ul {
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            grid-area: list;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        header li {
+            list-style-type: none;
+        }
+
+        #phase2-tasks li, #phase3-tasks li {
+            list-style-type: none;
+        }
+
+        /* Main  */
+        main {
+            grid-area: main;
+            padding: 20px;
+        }
+
+        main h2 {
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: crimson;
+            margin: 5px;
+        }
+
+        main>div {
+            width: 70%;
+            margin: 0 auto;
+            line-height: 2rem;
+        }
+
+        main>div ul {
+            list-style-type: none;
+        }
+
+        main>div ol {
+            padding-left: 30px;
+        }
+
+        main>div p {
+            font-size: 1.2rem;
+        }
+
+        main>div li {
+            font-size: 1.2rem;
+        }
+
+        main a {
+            color: black;
+            text-decoration: underline;
+        }
+
+        main a:hover {
+            text-decoration-color: crimson;
+        }
+
+        main ul {
+            padding-left: 15px;
+        }
+
+        /* Footer/general */
+        footer {
+            grid-area: footer;
+
+        }
+
+        header,
+        nav,
+        main,
+        footer {
+            border: 1px solid crimson;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        /* Phase 2 extra Styles */
+        main img {
+            max-height: 100vh;
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul id="sticky">
+            <li><strong>Phase 1</strong></li>
+            <li><a href="#">Task Distribution</a></li>
+            <li><a href="#glossary">Glossary</a></li>
+            <li><a href="#system-diagram">System Diagram</a></li>
+            <li>Use Cases</li>
+            <ul>
+                <li><a href="#verify-member-status">Verify Member Status</a></li>
+                <li><a href="#bill">Bill ChocAn for Service</a></li>
+                <li><a href="#request-directory">Request Provider Directory</a></li>
+                <li><a href="#eft-data">Produce EFT Data</a></li>
+                <li><a href="#main-accounting">Run Main Accounting Procedure</a></li>
+                <li><a href="#add-provider">Add Provider</a></li>
+                <li><a href="#delete-provider">Delete Provider</a></li>
+                <li><a href="#update-provider">Update Provider</a></li>
+                <li><a href="#update-provider-records">Manage Provider Records</a></li>
+                <li><a href="#add-member">Add Member</a></li>
+                <li><a href="#delete-member">Delete Member</a></li>
+                <li><a href="#update-member">Update Member</a></li>
+                <li><a href="#update-member-records">Manage Member Records</a></li>
+                <li><a href="#manage-reports">Manage Reports</a></li>
+                <li><a href="#provider-report">Produce Provider Report</a></li>
+                <li><a href="#member-report">Produce Member Report</a></li>
+                <li><a href="#summary-report">Produce Summary Report</a></li>
+
+            </ul>
+            <li><a href="#statistics">Bitbucket Statistics</a></li>
+
+            <!-- Phase 2 !! -->
+            <li><strong>Phase 2</strong></li>
+            <li><a href="#phase2-tasks">Task Distribution</a></li>
+            <li><a href="#analysis">Analysis Description</a></li>
+            <li><a href="#stereotyped-class-diagram">Stereotyped Class Diagram</a></li>
+            <li>Activity Diagrams</li>
+            <ul>
+                <li><a href="#main-activity">Main</a></li>
+                <li><a href="#bill-activity">Bill ChocAn for Service</a></li>
+                <li><a href="#verify-member-status-activity">Verify Member Status</a></li>
+                <li><a href="#request-provider-directory-activity">Request Provider Directory</a></li>
+                <li><a href="#manage-reports-activity">Manage Reports</a></li>
+                <li><a href="#produce-member-report-activity">Produce Member Report</a></li>
+                <li><a href="#produce-provider-report-activity">Produce Provider Report</a></li>
+                <li><a href="#produce-summary-report-activity">Produce Summary Report</a></li>
+                <li><a href="#manage-member-records-activity">Manage Member Records</a></li>
+                <li><a href="#add-member-activity">Add Member</a></li>
+                <li><a href="#delete-member-activity">Delete Member</a></li>
+                <li><a href="#update-member-activity">Update Member</a></li>
+                <li><a href="#manage-provider-records-activity">Manage Provider Records</a></li>
+                <li><a href="#add-provider-activity">Add Provider</a></li>
+                <li><a href="#delete-provider-activity">Delete Provider</a></li>
+                <li><a href="#update-provider-activity">Update Provider</a></li>
+                <li><a href="#run-main-accounting-procedure-activity">Run Main Accounting Procedure</a></li>
+                <li><a href="#produce-EFT-data-activity">Produce EFT Data</a></li>
+            </ul>
+            <li><a href="#statistics-phase2">Bitbucket Statistics</a></li>
+
+            <!-- Phase 3 !! -->
+            <li><strong>Phase 3</strong></li>
+            <li><a href="#phase3-tasks">Task Distribution</a></li>
+            <li><a href="#discussion">Discussion of Design</a></li>
+            <li><a href="#class-diagram">Class Diagram</a></li>
+            <li>Sequence Diagrams</li>
+            <ul>
+                <li><a href="#bill-sequence">Bill ChocAn for Service</a></li>
+                <li><a href="#verify-member-status-sequence">Verify Member Status</a></li>
+                <li><a href="#request-provider-directory-sequence">Request Provider Directory</a></li>
+                <li><a href="#manage-reports-sequence">Manage Reports</a></li>
+                <li><a href="#produce-member-report-sequence">Produce Member Report</a></li>
+                <li><a href="#produce-provider-report-sequence">Produce Provider Report</a></li>
+                <li><a href="#produce-summary-report-sequence">Produce Summary Report</a></li>
+                <li><a href="#manage-member-records-sequence">Manage Member Records</a></li>
+                <li><a href="#add-member-sequence">Add Member</a></li>
+                <li><a href="#delete-member-sequence">Delete Member</a></li>
+                <li><a href="#update-member-sequence">Update Member</a></li>
+                <li><a href="#manage-provider-records-sequence">Manage Provider Records</a></li>
+                <li><a href="#add-provider-sequence">Add Provider</a></li>
+                <li><a href="#delete-provider-sequence">Delete Provider</a></li>
+                <li><a href="#update-provider-sequence">Update Provider</a></li>
+                <li><a href="#run-main-accounting-procedure-sequence">Run Main Accounting Procedure</a></li>
+                <li><a href="#produce-EFT-data-sequence">Produce EFT Data</a></li>
+            </ul>
+            <li><a href="#statistics-phase3">Bitbucket Statistics</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Team 13 | CS 200 Project Submission</h1>
+
+        <br>
+        <table>
+            <title>Student Information</title>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>CWID</th>
+                    <th>Email Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Benjamin Peinhardt</td>
+                    <td>11469936</td>
+                    <td>bcpeinhardt@crimson.ua.edu</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Hours Chart -->
+        <br>
+        <iframe width="700" height="371" seamless frameborder="0" scrolling="no"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzzAvAhmspBvIbOTQBMVbB494QD6NoRsO0B9GwpvX_7j7y7jkPvk8nutdhm3JNuLc_hol-U8EoO6M2/pubchart?oid=842031039&amp;format=interactive"></iframe>
+
+        <br><br>
+        <ul>
+            <li><strong>Benjamin Peinhardt</strong> - Glossary, Use Case Description Review and Editing, Produce
+                Summary
+                Report Use Case, Verify Member Status Use Case, report.html <strong>(20%)</strong></li>
+            <li><strong>Christopher Fryzel</strong> - Glossary, UML Use Case Diagram, Use Case Description Review
+                and
+                Editing, Update Member Records Use Case, Produce Provider Report Use Case, Document Management
+                <strong>(20%)</strong></li>
+            <li><strong>Philip Thompson</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and
+                Editing, Produce Member Report Use Case, Update Provider Records Use Case, Document Management
+                <strong>(20%)</strong></li>
+            <li><strong>Griffin Mack</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and
+                Editing,
+                Bill ChocAn Use Case, Request Provider Directory Use Case, report.html, Prototype
+                <strong>(20%)</strong><strong> (submitter) </strong></li>
+            <li><strong>Hannah Perkins</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and
+                Editing, Produce EFT Report Use Case, Run Main Accounting Procedure Use Case, report.html
+                <strong>(20%)</strong></li>
+        </ul>
+        <br><br>
+    </header>
+    <br>
+
+    <main>
+        
+
+        
+
+        <!-- Phase 2!!! -->
+        <br>
+        <div id="phase2-tasks">
+            <h1>Project 2 Task Distribution</h1>
+            <br>
+            <table>
+                <title>Student Information</title>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>CWID</th>
+                        <th>Email Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Benjamin Peinhardt</td>
+                        <td>11469936</td>
+                        <td>bcpeinhardt@crimson.ua.edu</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Hours Chart -->
+            <br>
+            <iframe width="700" height="371" seamless frameborder="0" scrolling="no"
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzzAvAhmspBvIbOTQBMVbB494QD6NoRsO0B9GwpvX_7j7y7jkPvk8nutdhm3JNuLc_hol-U8EoO6M2/pubchart?oid=175733961&amp;format=interactive"></iframe>
+
+            <br><br>
+            <ul>
+                <li><strong>Benjamin Peinhardt</strong> - Product Description, Stereotyped Class Diagram, Activity
+                    Diagram Creation (Verify Member Status, Produce Member Report), Compile Report w/Updates
+                    <strong>(20%)</strong></li>
+                <li><strong>Christopher Fryzel</strong> - Product Description, Activity Diagram Creation, Activity
+                    Diagram Translation to UMLetino
+                    <strong>(20%)</strong></li>
+                <li><strong>Philip Thompson</strong> - Product Description, Stereotyped Class Diagram, Project 1 Edits,
+                    Activity Diagram Review
+                    <strong>(20%)</strong></li>
+                <li><strong>Griffin Mack</strong> - Product Description, Stereotyped Class Diagram, Activity Diagram
+                    Creation, Activity Diagram Review
+                    <strong>(20%)</strong><strong> (submitter) </strong></li>
+                <li><strong>Hannah Perkins</strong> - Product Description, Activity Diagram Creation, Stereotyped Class
+                    Diagram, Report Proofreading
+                    <strong>(20%)</strong></li>
+            </ul>
+
+
+            <br><br>
+        </div>
+
+        
+        <!-- Phase 3!! -->
+        <br>
+        <hr>
+        <div id="phase3-tasks">
+            <h1>Project 3 Task Distribution</h1>
+            <br>
+            <table>
+                <title>Student Information</title>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>CWID</th>
+                        <th>Email Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Benjamin Peinhardt</td>
+                        <td>11469936</td>
+                        <td>bcpeinhardt@crimson.ua.edu</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Hours Chart -->
+            <br>
+            <iframe width="700" height="371" seamless frameborder="0" scrolling="no"
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzzAvAhmspBvIbOTQBMVbB494QD6NoRsO0B9GwpvX_7j7y7jkPvk8nutdhm3JNuLc_hol-U8EoO6M2/pubchart?oid=1461619225&amp;format=interactive"></iframe>
+
+            <br><br>
+            <ul>
+                <li><strong>Benjamin Peinhardt</strong> - Class Diagram, Sequence Diagrams (Verify Member Status, Request Provider Directory), Phase 2 Edits, Report Updates/Creation, General Review and Discussion
+                    <strong>(20%)</strong></li>
+                <li><strong>Christopher Fryzel</strong> - Class Diagram, Phase 2 Edits, Conversion of Class and Sequence Diagrams to UMLetino, Design Description, General Review and Discussion, Editing Sequence Diagrams
+                    <strong>(20%)</strong></li>
+                <li><strong>Philip Thompson</strong> - Class Diagram, Phase 2 Edits, Manage Member/Provider Records Sequence, Delete Member/Provider Sequence, BillChocAn Sequence, General Review/Discussion, UML Diagram Review
+                    <strong>(20%)</strong></li>
+                <li><strong>Griffin Mack</strong> - Class Diagram, Report Sequence Diagrams, Main Accounting Procedure Sequence Diagram, General Review and Discussion
+                    <strong>(20%)</strong><strong> (submitter) </strong></li>
+                <li><strong>Hannah Perkins</strong> - Class Diagram, Add Member/Provider Sequence, Update Member/Provider Sequence, Run Main Accounting Procedure Sequence, General Review/Discussion, UML Diagram Review
+                    <strong>(20%)</strong></li>
+            </ul>
+        </div>
+
+        
+
+
+
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>
