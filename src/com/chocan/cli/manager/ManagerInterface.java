@@ -4,9 +4,20 @@ package com.chocan.cli.manager;
 
 public class ManagerInterface {
 
-	public void managerMainMenu() {
-		// TODO Auto-generated method stub
-		
+	public void produceMemberReport(String memberNumber) {
+
+	}
+
+	public void produceProviderReport(String providerNumber) {
+
+	}
+
+	public void produceSummaryReport() {
+
+	} 
+
+	private void saveReportToFile(String str) {
+
 	}
 
 }

@@ -5,7 +5,6 @@ import com.chocan.accounting.MainAccountingProcedureController;
 public class MainAccountingProcedureInterface {
 
 	public void runMainAccountingProcedure() {
-		// TODO Auto-generated method stub
 		
 	}
 
