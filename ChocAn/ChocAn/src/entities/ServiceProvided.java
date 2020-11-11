@@ -12,27 +12,27 @@ public class ServiceProvided extends ServiceOffered {
     private String comments; 
     
     public String getTimeProvided() {
-
+    	return timeProvided;
     } 
 
     public String getDate() {
-
+    	return date;
     }
 
     public String getProviderNumber() {
-
+    	return provider.getProviderNumber();
     }
 
-    public String getMemberNumber() {
-
+    public String getMemberNumber() {	
+    	return member.getMemberNumber();
     } 
 
     public ServiceOffered getService() {
-
+    	return service;
     }
 
     public String getComments() {
-
+    	return comments;
     }
 
     public void ServiceProvided(ServiceOffered service, String providerNumber, String memberNumber, String comments) {

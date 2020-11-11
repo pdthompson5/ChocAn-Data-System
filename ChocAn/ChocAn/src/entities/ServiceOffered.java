@@ -7,15 +7,15 @@ public class ServiceOffered {
     protected double serviceFee;
 
     public String getServiceName() {
-
+    	return serviceName;
     }
 
     public String getServiceCode() {
-
+    	return serviceCode;
     }
 
     public double getServiceFee() {
-
+    	return serviceFee;
     }
 
     public void setServiceName(String serviceName) {
