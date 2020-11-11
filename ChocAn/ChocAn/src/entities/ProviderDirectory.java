@@ -1,18 +1,20 @@
 package entities;
 
+import java.util.ArrayList;
+
 public class ProviderDirectory {
     
-    private ServiceOffered[] providerDirectory;
+    private ArrayList<ServiceOffered> providerDirectory;
 
-    public ServiceOffered[] getProviderDirectory() {
+    public ArrayList<ServiceOffered> getProviderDirectory() {
 
     }
 
-    public ServiceOffered[] getServiceByName(String serviceName) {
+    public ServiceOffered getServiceByName(String serviceName) {
 
     }
 
     public ServiceOffered getServiceByCode(String serviceCode) {
-        
+
     }
 }

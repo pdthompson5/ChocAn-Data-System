@@ -1,8 +1,10 @@
 package entities;
 
+import java.util.ArrayList;
+
 public class ProviderList {
 
-    private Provider[] providerList;
+    private ArrayList<Provider> providerList;
 
     public Provider getProvider(String providerNumber) {
 
@@ -16,7 +18,7 @@ public class ProviderList {
 
     }
 
-    public Provider[] getProviderList() {
-
+    public ArrayList<Provider> getProviderList() {
+        
     }
 }

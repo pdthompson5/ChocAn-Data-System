@@ -1,8 +1,10 @@
 package entities;
 
+import java.util.ArrayList;
+
 public class ServiceProvidedList {
 
-    private ServiceProvided[] serviceProvidedList;
+    private ArrayList<ServiceProvided> serviceProvidedList;
     
     public void addServiceProvided(ServiceOffered service, Provider provider, Member member, String comments) {
 
@@ -12,15 +14,15 @@ public class ServiceProvidedList {
 
     }
 
-    public ServiceProvided[] getServiceProvidedList() {
+    public ArrayList<ServiceProvided> getServiceProvidedList() {
 
     }
 
-    public ServiceProvided[] getServiceByProvider(String providerNumber) {
+    public ArrayList<ServiceProvided> getServiceByProvider(String providerNumber) {
 
     }
 
-    public ServiceProvided[] getServiceByMember(String memberNumber) {
+    public ArrayList<ServiceProvided> getServiceByMember(String memberNumber) {
 
     }
 

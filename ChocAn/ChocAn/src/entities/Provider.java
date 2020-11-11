@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.ArrayList;
+
 /**
  * Encompasses extra functionality of Provider (providerNumber, listOfServices, numberOfConsultations, totalFee)
  */
@@ -7,7 +9,7 @@ public class Provider extends SystemUser {
     
     // Private attributes
     private String providerNumber;
-    private ServiceOffered[] listOfServices;
+    private ArrayList<ServiceOffered> listOfServices;
     private int numberOfConsultations;
     private double totalFee;
     
@@ -21,9 +23,9 @@ public class Provider extends SystemUser {
 
     /**
      * Gets list of services
-     * @return ServiceOffered[] listOfServices
+     * @return ArrayList<ServiceOffered> listOfServices
      */
-    public ServiceOffered[] getListOfServices() {
+    public ArrayList<ServiceOffered> getListOfServices() {
         return this.listOfServices;
     }
 
@@ -55,7 +57,7 @@ public class Provider extends SystemUser {
      * Sets list of services offered
      * @param listOfServicesOffered
      */
-    public void setListOfServices(ServiceOffered[] listOfServicesOffered) {
+    public void setListOfServices(ArrayList<ServiceOffered> listOfServicesOffered) {
         this.listOfServices = listOfServicesOffered;
     }
 

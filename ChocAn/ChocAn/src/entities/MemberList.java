@@ -1,8 +1,12 @@
 package entities;
 
+import java.util.ArrayList;
+/**
+ * Entity to control editing list of members and also accessing members
+ */
 public class MemberList {
 
-    private Member[] memberList;
+    private ArrayList<Member> memberList;
     
 
     public Member getMember(String memberNumber) {
@@ -21,7 +25,7 @@ public class MemberList {
 
     }
 
-    public Member[] getMemberList() {
+    public ArrayList<Member> getMemberList() {
 
     }
 }
