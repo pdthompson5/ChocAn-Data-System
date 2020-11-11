@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Encompasses extra functionality of Provider (providerNumber, listOfServices, numberOfConsultations, totalFee)
+ * @author Ben Peinhardt
  */
 public class Provider extends SystemUser {
     
