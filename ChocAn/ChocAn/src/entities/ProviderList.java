@@ -7,7 +7,7 @@ public class ProviderList {
     private ArrayList<Provider> providerList;
 
     public Provider getProvider(String providerNumber) {
-
+    	return providerList.get(0);
     }
 
     public void createProvider(String name, String streetAddress, String city, String state, String ZIP) {
@@ -19,6 +19,6 @@ public class ProviderList {
     }
 
     public ArrayList<Provider> getProviderList() {
-        
+        return providerList;
     }
 }
