@@ -36,7 +36,7 @@ public class ProviderInterface {
 			System.out.print("Please choose from the above options: ");
 	        int userChoice = Integer.parseInt(myObj.nextLine()); // Read user input
 			
-			if(userChoice >= 1  && userChoice <= 3) {
+			if(userChoice >= 1  && userChoice <= 4) {
 				switch(userChoice) {
 					case(1):
 						verifyMember(promptForMemberNumber());
@@ -47,11 +47,10 @@ public class ProviderInterface {
 					case(3):
 						printProviderDirectory();
 						break;
+					case(4):
+						System.out.println("Exiting provider menu");
+						exitMenu = true;
 				}
-			}
-			else if(userChoice == 4) {
-				System.out.println("Exiting provider menu");
-				exitMenu = true;
 			}
 			else {
 				System.out.println("Invalid selection, please choose option between 1-4" + userChoice);
