@@ -1,10 +1,16 @@
 package controllers;
 
+import java.io.IOException;
+
+import entities.MemberList;
+
 public class OperatorController {
 
 	public void addNewMember(String memberName, String memberStreetAddress, String memberCity, String memberState,
 			String memberZip) {
-		// TODO Auto-generated method stub
+		
+		MemberList memberList = new MemberList();
+		memberList.createMember(memberName, memberStreetAddress, memberCity, memberState, memberZip);
 		
 	}
 

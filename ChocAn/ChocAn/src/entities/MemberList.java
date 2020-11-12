@@ -1,6 +1,15 @@
 package entities;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
+
+
 /**
  * Entity to control editing list of members and also accessing members
  * @author Ben Peinhardt
@@ -9,6 +18,39 @@ public class MemberList {
 
     // Private attributes
     private ArrayList<Member> memberList = new ArrayList<Member>();
+    private String path = "members.csv";
+
+    /**
+     * Constructor for member list, fills the list from members.csv
+     */
+    public MemberList() {
+       try {
+        BufferedReader br = new BufferedReader(new FileReader(path));
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] values = line.split(",");
+            
+            Member newMember = new Member();
+            newMember.setName(values[0]);
+            newMember.setStreetAddress(values[1]);
+            newMember.setCity(values[2]);
+            newMember.setState(values[3]);
+            newMember.setZIP(values[4]);
+            newMember.setMemberNumber(values[5]);
+            
+            if (values[6] == "true") {
+                newMember.setMemberStatus(true);
+            } else {
+                newMember.setMemberStatus(false);
+            }
+
+            this.memberList.add(newMember);
+        }
+
+       } catch (Exception e) {
+           System.out.println("Unable to read members from member file");
+       }
+    }
     
     /**
      * Searches the member list and returns the entire member using member number
@@ -61,6 +103,9 @@ public class MemberList {
         newMember.setState(state);
         newMember.setZIP(ZIP);
         this.memberList.add(newMember);
+
+        // Update JSON
+        persist();
     }
 
     /**
@@ -73,6 +118,9 @@ public class MemberList {
                 this.memberList.remove(i);
             }
         }
+
+        // Updates JSON
+        persist();
     }
 
     /**
@@ -81,5 +129,28 @@ public class MemberList {
      */
     public ArrayList<Member> getMemberList() {
         return this.memberList;
+    }
+
+    /**
+     * Persists the entire member list to the members.json. Called whenever member is added, deleted, or updated
+     */
+    private void persist() {
+        try {
+            File file = new File(this.path);
+        FileWriter fw = new FileWriter(file);
+        PrintWriter pw = new PrintWriter(fw);
+
+        for (int i = 0; i < this.memberList.size(); i++) {
+            pw.print(this.memberList.get(i).writeMemberToCSV());
+            if (i != this.memberList.size() - 1) {
+                pw.println(" ");
+            }
+        }
+        pw.println(" ");
+
+        pw.close();
+        } catch(Exception e) {
+            System.out.println("Unable to persist member information");
+        }
     }
 }
