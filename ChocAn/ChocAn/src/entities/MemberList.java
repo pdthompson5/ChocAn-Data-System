@@ -47,6 +47,8 @@ public class MemberList {
             this.memberList.add(newMember);
         }
 
+        br.close();
+
        } catch (Exception e) {
            System.out.println("Unable to read members from member file");
        }

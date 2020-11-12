@@ -47,7 +47,7 @@ public class Member extends SystemUser {
      * @return String memberAsCSV
      */
     public String writeMemberToCSV() {
-        String memberAsCSV = String.format("%s, %s, %s, %s, %s, %s, %s", this.getName(), this.getStreetAddress(), this.getCity(), this.getState(), this.getZIP(), this.getMemberNumber(), this.getMemberStatus()); 
+        String memberAsCSV = String.format("%s,%s,%s,%s,%s,%s,%s", this.getName(), this.getStreetAddress(), this.getCity(), this.getState(), this.getZIP(), this.getMemberNumber(), this.getMemberStatus()); 
         
         return memberAsCSV;
     }
