@@ -23,9 +23,12 @@ public class ServiceProvided extends ServiceOffered {
      * @param memberNumber
      * @param comments
      */
-    public void ServiceProvided(ServiceOffered service, Provider provider, Member member, String comments) {
+    public ServiceProvided(ServiceOffered service, Provider provider, Member member, String comments) {
         this.service = service;
-        this.serviceProvidedID = service.getServiceCode();
+
+        // TODO: Dynamically generate serviceProvidedID
+        this.serviceProvidedID = "00000";
+
         this.comments = comments;
         this.member = member;
         this.provider = provider;
