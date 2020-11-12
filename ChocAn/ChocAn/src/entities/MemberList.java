@@ -139,18 +139,19 @@ public class MemberList {
     private void persist() {
         try {
             File file = new File(this.path);
-        FileWriter fw = new FileWriter(file);
-        PrintWriter pw = new PrintWriter(fw);
+            FileWriter fw = new FileWriter(file);
+            PrintWriter pw = new PrintWriter(fw);
 
-        for (int i = 0; i < this.memberList.size(); i++) {
-            pw.print(this.memberList.get(i).writeMemberToCSV());
-            if (i != this.memberList.size() - 1) {
-                pw.println(" ");
+            for (int i = 0; i < this.memberList.size(); i++) {
+                pw.print(this.memberList.get(i).writeMemberToCSV());
+                if (i != this.memberList.size() - 1) {
+                    pw.println(" ");
+                }
             }
-        }
-        pw.println(" ");
+            pw.println(" ");
 
-        pw.close();
+            pw.close();
+            
         } catch(Exception e) {
             System.out.println("Unable to persist member information");
         }
