@@ -1,11 +1,11 @@
-package controllers;
+package operator;
 
 import java.io.IOException;
 
-import entities.MemberList;
-import entities.ProviderList;
-import entities.Member;
-import entities.Provider;
+import systemUser.Member;
+import systemUser.MemberList;
+import systemUser.Provider;
+import systemUser.ProviderList;
 
 /**
  * Controller for operators to manage member and provider data

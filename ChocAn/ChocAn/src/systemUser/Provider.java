@@ -1,6 +1,8 @@
-package entities;
+package systemUser;
 
 import java.util.ArrayList;
+
+import service.serviceOffered.serviceOffered.ServiceOffered;
 
 /**
  * Encompasses extra functionality of Provider (providerNumber, listOfServices, numberOfConsultations, totalFee)

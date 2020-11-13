@@ -1,10 +1,10 @@
-package interfaces;
+package operator;
 
 import java.io.IOException;
 import java.util.Scanner;
 
-import controllers.OperatorController;
 import entities.*;
+import systemUser.SystemUser;
 
 /**
  * Operator Interface - Interface for Operators to manage member and provider data
