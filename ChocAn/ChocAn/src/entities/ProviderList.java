@@ -118,7 +118,7 @@ public class ProviderList {
 	                pw.println(" ");
 	            }
 	        }
-	        pw.println(" ");
+	        // pw.println(" ");7
 	
 	        pw.close();
         } catch(Exception e) {
