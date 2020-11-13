@@ -11,4 +11,24 @@ public class MemberReportController {
 	public String produceMemberReport(ArrayList<ServiceProvided> servicesForWeek) {
 		return "";
 	}
+	
+    private void writeMemberNameAndNumber() {
+
+    }
+
+    private void writeMemberAddressInfo() {
+
+    }
+
+    private void writeServiceDate() {
+
+    }
+
+    private void writeProviderName() {
+
+    }
+
+    private void writeServiceName() {
+
+    }
 }
