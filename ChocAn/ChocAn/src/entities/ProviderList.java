@@ -118,8 +118,6 @@ public class ProviderList {
 	                pw.println(" ");
 	            }
 	        }
-	        // pw.println(" ");7
-	
 	        pw.close();
         } catch(Exception e) {
             System.out.println("Unable to persist provider information!");

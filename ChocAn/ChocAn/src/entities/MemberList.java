@@ -139,8 +139,6 @@ public class MemberList {
 	                pw.println(" ");
 	            }
 	        }
-	        pw.println(" ");
-	
 	        pw.close();
         } catch(Exception e) {
             System.out.println("Unable to persist member information");
