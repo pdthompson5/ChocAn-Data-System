@@ -4,11 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Scanner;
-
 
 /**
  * Entity to control editing list of members and also accessing members
@@ -29,22 +26,7 @@ public class MemberList {
 			String line;
 			while ((line = br.readLine()) != null) {
 			    String[] values = line.split(",");
-			    
-			    Member newMember = new Member();
-			    newMember.setName(values[0]);
-			    newMember.setStreetAddress(values[1]);
-			    newMember.setCity(values[2]);
-			    newMember.setState(values[3]);
-			    newMember.setZIP(values[4]);
-			    newMember.setMemberNumber(values[5]);
-			    
-			    if (values[6] == "true") {
-			        newMember.setMemberStatus(true);
-			    } else {
-			        newMember.setMemberStatus(false);
-			    }
-			
-			    this.memberList.add(newMember);
+			    createMember(values[0],values[1],values[2],values[3],values[4],values[5], Boolean.parseBoolean(values[6]));			
 			}
         br.close();
 
@@ -94,7 +76,7 @@ public class MemberList {
      * @param state
      * @param ZIP
      */
-    public void createMember(String name, String streetAddress, String city, String state, String ZIP) {
+    public void createMember(String name, String streetAddress, String city, String state, String ZIP, String memberNumber, boolean memberStatus) {
         // Duplicate checking and memberNumber creation happens in controller
 
         Member newMember = new Member();
@@ -103,6 +85,8 @@ public class MemberList {
         newMember.setCity(city);
         newMember.setState(state);
         newMember.setZIP(ZIP);
+	    newMember.setMemberNumber(memberNumber);
+	    newMember.setMemberStatus(memberStatus);
         this.memberList.add(newMember);
 
         // Update JSON

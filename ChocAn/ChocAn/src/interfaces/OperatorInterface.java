@@ -86,6 +86,11 @@ public class OperatorInterface {
 		
 	}
 
+	private void updateMember() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	private void addNewProvider() {
 		String providerName = promptForName();
 		String providerStreetAddress = promptForStreetAddress();
@@ -100,6 +105,11 @@ public class OperatorInterface {
 	}
 
 	private void deleteProvider() {
+	}
+
+	private void updateProvider() {
+		// TODO Auto-generated method stub
+		
 	}
 
     public boolean verifyDeletion(SystemUser user) {
