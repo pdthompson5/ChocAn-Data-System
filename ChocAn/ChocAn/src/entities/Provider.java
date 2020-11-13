@@ -85,7 +85,7 @@ public class Provider extends SystemUser {
      * @return String providerAsCSV
      */
     public String writeProviderToCSV() {
-        String providerAsCSV = String.format("%s,%s,%s,%s,%s,%s,%s", this.getName(), this.getStreetAddress(), this.getCity(), this.getState(), this.getZIP(), this.getProviderNumber()); 
+        String providerAsCSV = String.format("%s,%s,%s,%s,%s,%s", this.getName(), this.getStreetAddress(), this.getCity(), this.getState(), this.getZIP(), this.getProviderNumber()); 
         
         return providerAsCSV;
     }

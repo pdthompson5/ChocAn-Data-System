@@ -59,7 +59,7 @@ public class OperatorController {
 			return "1";
 		} else {
 			String number = this.memberList.getMemberList().get(this.memberList.getMemberList().size() - 1).getMemberNumber();
-			Integer num = Integer.parseInt(number);
+			Integer num = Integer.parseInt(number.strip());
 			num++;
 			return Integer.toString(num);
 		}
@@ -74,7 +74,7 @@ public class OperatorController {
 			return "1";
 		} else {
 			String number = this.providerList.getProviderList().get(this.providerList.getProviderList().size()-1).getProviderNumber();
-			Integer num = Integer.parseInt(number);
+			Integer num = Integer.parseInt(number.strip());
 			num++;
 			return Integer.toString(num);
 		}
