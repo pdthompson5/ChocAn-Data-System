@@ -120,7 +120,7 @@ public class ServiceProvided extends ServiceOffered {
      * @param time
      * @param ID
      */
-    protected void setDateTimeID(String date_provided, String time, String ID) {
+    public void setDateTimeID(String date_provided, String time, String ID) {
         this.serviceProvidedID = ID;
         this.date = date_provided;
         this.timeProvided = time;

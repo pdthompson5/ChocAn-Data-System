@@ -3,7 +3,7 @@ package operator;
 import java.io.IOException;
 import java.util.Scanner;
 
-import entities.*;
+
 import systemUser.SystemUser;
 
 /**

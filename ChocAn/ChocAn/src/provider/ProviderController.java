@@ -1,6 +1,6 @@
 package provider;
 
-import entities.*;
+
 import service.serviceOffered.providerDirectory.ProviderDirectory;
 import service.serviceOffered.serviceOffered.ServiceOffered;
 import service.serviceProvidedPackage.serviceProvidedList.ServiceProvidedList;
