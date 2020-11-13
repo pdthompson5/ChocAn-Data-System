@@ -187,8 +187,6 @@ public class ServiceProvidedList {
 	                pw.println(" ");
 	            }
 	        }
-	        pw.println(" ");
-	
 	        pw.close();
         } catch(Exception e) {
             System.out.println("Unable to persist service provided information");
