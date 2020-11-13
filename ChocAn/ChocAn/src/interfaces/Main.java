@@ -29,7 +29,6 @@ public class Main {
 	            ManagerInterface mi = new ManagerInterface();
 	        } else if (userChoice == 3) {
 	            OperatorInterface oi = new OperatorInterface();
-	            oi.operatorMainMenu();
 	        } else if (userChoice == 4) {
 	            MainAccountingProcedure mac = new MainAccountingProcedure();
 	        } else if (userChoice == 5) {
@@ -39,6 +38,8 @@ public class Main {
 				System.out.println("Invalid selection, please choose option between 1-5" + userChoice);
 			}
 		}
+
+		myObj.close();
 
     }
 

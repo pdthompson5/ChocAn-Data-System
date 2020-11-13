@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 public class ServiceProvidedList {
 
     // Private Attributes
-    private ArrayList<ServiceProvided> serviceProvidedList;
+    private ArrayList<ServiceProvided> serviceProvidedList = new ArrayList<ServiceProvided>();
     private String path = "service_provided_list.csv";
 
     /**
@@ -23,17 +23,17 @@ public class ServiceProvidedList {
      */
     public ServiceProvidedList() {
         try {
-			BufferedReader br = new BufferedReader(new FileReader(path));
+			BufferedReader br = new BufferedReader(new FileReader(this.path));
 			String line;
 			while ((line = br.readLine()) != null) {
 			    String[] values = line.split(",");
                 ServiceProvided tempService = buildServiceProvidedFromCSV(values);
                 this.serviceProvidedList.add(tempService);	
 			}
-        br.close();
+            br.close();
 
     	} catch (Exception e) {
-           System.out.println("Unable to read services provided from member file");
+           System.out.println("Unable to read services provided from service provided file");
     	}
     }
 
@@ -98,18 +98,6 @@ public class ServiceProvidedList {
     }
 
     /**
-     * Deletes a provider from the list
-     * @param providerNumber
-     */
-    public void deleteProvider(String providerNumber) {
-        for (int i = 0; i < this.serviceProvidedList.size(); i++) {
-            if (this.serviceProvidedList.get(i).getProviderNumber() == providerNumber) {
-                this.serviceProvidedList.remove(i);
-            }
-        }
-    }
-
-    /**
      * Gets the entire service provided list
      * @return ArrayList<ServiceProvided> serviceProvidedList
      */
@@ -126,7 +114,7 @@ public class ServiceProvidedList {
 
         ArrayList<ServiceProvided> servicesByProvider = new ArrayList<ServiceProvided>();
     	for (int i = 0; i < this.serviceProvidedList.size(); i++) {
-            if (this.serviceProvidedList.get(i).getProviderNumber() == providerNumber) {
+            if (this.serviceProvidedList.get(i).getProviderNumber().equals(providerNumber)) {
                 servicesByProvider.add(this.serviceProvidedList.get(i));
             }
         }
@@ -143,7 +131,7 @@ public class ServiceProvidedList {
 
         ArrayList<ServiceProvided> servicesProvidedToMember = new ArrayList<ServiceProvided>();
         for (int i = 0; i < this.serviceProvidedList.size(); i++) {
-            if (this.serviceProvidedList.get(i).getMemberNumber() == memberNumber) {
+            if (this.serviceProvidedList.get(i).getMemberNumber().equals(memberNumber)) {
                 servicesProvidedToMember.add(this.serviceProvidedList.get(i));
             }
         }

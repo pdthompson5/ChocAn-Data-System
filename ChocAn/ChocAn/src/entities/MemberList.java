@@ -26,7 +26,15 @@ public class MemberList {
 			String line;
 			while ((line = br.readLine()) != null) {
 			    String[] values = line.split(",");
-			    createMember(values[0],values[1],values[2],values[3],values[4],values[5], Boolean.parseBoolean(values[6]));			
+			    Member newMember = new Member();
+                newMember.setName(values[0]);
+                newMember.setStreetAddress(values[1]);
+                newMember.setCity(values[2]);
+                newMember.setState(values[3]);
+                newMember.setZIP(values[4]);
+	            newMember.setMemberNumber(values[5]);
+	            newMember.setMemberStatus(Boolean.parseBoolean(values[6]));
+                this.memberList.add(newMember);		
 			}
         br.close();
 
@@ -42,7 +50,7 @@ public class MemberList {
      */
     public Member getMember(String memberNumber) {
         for (int i = 0; i < this.memberList.size(); i++) {
-        	if (this.memberList.get(i).getMemberNumber() == memberNumber) {
+        	if (this.memberList.get(i).getMemberNumber().equals(memberNumber)) {
                 return this.memberList.get(i);
             }
         }
@@ -99,7 +107,7 @@ public class MemberList {
      */
     public void deleteMember(String memberNumber) {
         for (int i = 0; i < this.memberList.size(); i++) {
-            if (this.memberList.get(i).getMemberNumber() == memberNumber) {
+            if (this.memberList.get(i).getMemberNumber().equals(memberNumber)) {
                 this.memberList.remove(i);
             }
         }

@@ -22,13 +22,20 @@ public class ProviderList {
      */
     public ProviderList() {
     	try {
-			BufferedReader br = new BufferedReader(new FileReader(path));
+			BufferedReader br = new BufferedReader(new FileReader(this.path));
 			String line;
 			while ((line = br.readLine()) != null) {
 			    String[] values = line.split(",");
-			    createProvider(values[0],values[1],values[2],values[3],values[4],values[5]);			
+			    Provider newProvider = new Provider();
+                newProvider.setName(values[0]);
+                newProvider.setStreetAddress(values[1]);
+                newProvider.setCity(values[2]);
+                newProvider.setState(values[3]);
+                newProvider.setZIP(values[4]);
+	            newProvider.setProviderNumber(values[5]);
+                this.providerList.add(newProvider);			
 			}
-        br.close();
+            br.close();
 
     	} catch (Exception e) {
            System.out.println("Unable to read provider from provider file");
@@ -48,7 +55,7 @@ public class ProviderList {
      */
     public Provider getProvider(String providerNumber) {
     	for (int i = 0; i < this.providerList.size(); i++) {
-            if (this.providerList.get(i).getProviderNumber() == providerNumber) {
+            if (this.providerList.get(i).getProviderNumber().equals(providerNumber)) {
                 return this.providerList.get(i);
             }
         }
@@ -86,7 +93,7 @@ public class ProviderList {
      */
     public void deleteProvider(String providerNumber) {
         for (int i = 0; i < this.providerList.size(); i++) {
-            if (this.providerList.get(i).getProviderNumber() == providerNumber) {
+            if (this.providerList.get(i).getProviderNumber().equals(providerNumber)) {
                 this.providerList.remove(i);
             }
         }
@@ -96,7 +103,7 @@ public class ProviderList {
     }
 
     /**
-     * Persists the entire provider list to the providers.json. Called whenever provider is added, deleted, or updated
+     * Persists the entire provider list to the providers.csv. Called whenever provider is added, deleted, or updated
      */
     private void persist() {
         try {
@@ -114,7 +121,7 @@ public class ProviderList {
 	
 	        pw.close();
         } catch(Exception e) {
-            System.out.println("Unable to persist provider information");
+            System.out.println("Unable to persist provider information!");
         }
     }
 }

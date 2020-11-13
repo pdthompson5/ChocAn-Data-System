@@ -9,9 +9,10 @@ import entities.*;
 /**
  * Operator Interface - Interface for Operators to manage member and provider data
  * @author Griffin Mack
+ * @author Ben Peinhardt
  */
 public class OperatorInterface {
-	private static OperatorController operatorController = new OperatorController();
+	private OperatorController operatorController = new OperatorController();
     boolean exitMenu = false;
 
     /**
@@ -58,7 +59,7 @@ public class OperatorInterface {
 						updateProvider();
 						break;
 					case(7):
-						System.out.println("Exiting provider menu");
+						System.out.println("Exiting operator menu");
 						exitMenu = true;
 				}
 			}
@@ -67,7 +68,6 @@ public class OperatorInterface {
 			}
 		}
 		
-		myObj.close();
     }
 
 	private void addNewMember() {
@@ -85,7 +85,7 @@ public class OperatorInterface {
 
 	private void deleteMember() {
 		String memberNumber = promptForMemberNumber();
-		
+		operatorController.deleteMember(memberNumber);
 		
 	}
 
@@ -103,11 +103,13 @@ public class OperatorInterface {
 		
 		
 		if(promptToConfirmUser(providerName, providerStreetAddress, providerCity, providerState, providerZip)) {
-			operatorController.addNewProvider(providerName, providerStreetAddress, providerCity, providerState, providerZip);
+			this.operatorController.addNewProvider(providerName, providerStreetAddress, providerCity, providerState, providerZip);
 		}	
 	}
 
 	private void deleteProvider() {
+		String providerNumber = promptForProviderNumber();
+		operatorController.deleteProvider(providerNumber);
 	}
 
 	private void updateProvider() {
@@ -207,6 +209,7 @@ public class OperatorInterface {
 	        else {
 	        	System.out.println("Invalid input, please enter 'Yes' or 'No'");
 	        }
-        }
+		}
+		
 	}
 }

@@ -12,7 +12,7 @@ import java.io.FileReader;
 public class ProviderDirectory {
     
     // Private attributes
-    private ArrayList<ServiceOffered> providerDirectory;
+    private ArrayList<ServiceOffered> providerDirectory = new ArrayList<ServiceOffered>();
     private String path = "providerDirectory.csv";
 
     /**
@@ -20,7 +20,7 @@ public class ProviderDirectory {
      */
     public ProviderDirectory() {
         try {
-			BufferedReader br = new BufferedReader(new FileReader(path));
+			BufferedReader br = new BufferedReader(new FileReader(this.path));
 			String line;
 			while ((line = br.readLine()) != null) {
 			    String[] values = line.split(",");
@@ -30,7 +30,7 @@ public class ProviderDirectory {
         br.close();
 
     	} catch (Exception e) {
-           System.out.println("Unable to read services provided from member file");
+           System.out.println("Unable to read services provided from services provided file");
     	}
     }
 
@@ -78,7 +78,7 @@ public class ProviderDirectory {
      * @return
      */
     public ServiceOffered getServiceByCode(String serviceCode) {
-    	for (int i = 0; i < this.providerDirectory.size(); i++) {
+        for (int i = 0; i < this.providerDirectory.size(); i++) {
             if (this.providerDirectory.get(i).getServiceCode() == serviceCode) {
                 return this.providerDirectory.get(i);
             }

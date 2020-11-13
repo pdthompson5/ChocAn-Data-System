@@ -103,7 +103,7 @@ public class ProviderInterface {
 		
 		String serviceComments = promptForServiceComments();
 		
-		providerController.billChocan(providerNumber, memberNumber, serviceDate, serviceCode, serviceComments);
+		providerController.billChocan(this.providerNumber, memberNumber, serviceDate, serviceCode, serviceComments);
     }
 
     /**
