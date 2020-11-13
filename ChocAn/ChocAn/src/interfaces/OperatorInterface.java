@@ -4,14 +4,17 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import controllers.OperatorController;
-import entities.SystemUser;
 
+/**
+ * Operator Interface - Interface for Operators to manage member and provider data
+ * @author Griffin Mack
+ */
 public class OperatorInterface {
 	private static OperatorController operatorController = new OperatorController();
     boolean exitMenu = false;
 
     /**
-     * Constructor, prompts for a provider number then launches the main menu
+     * Constructor, launches the operator main menu
      */
 	public OperatorInterface() {
 		operatorMainMenu();
@@ -39,15 +42,19 @@ public class OperatorInterface {
 						addNewMember();
 						break;
 					case(2):
+						deleteMember();
 						break;
 					case(3):
+						updateMember();
 						break;
 					case(4):
 						addNewProvider();
 						break;
 					case(5):
+						deleteProvider();
 						break;
 					case(6):
+						updateProvider();
 						break;
 					case(7):
 						System.out.println("Exiting provider menu");
@@ -70,7 +77,12 @@ public class OperatorInterface {
 		
 		if(promptToConfirmUser(memberName, memberStreetAddress, memberCity, memberState, memberZip)) {
 			operatorController.addNewMember(memberName, memberStreetAddress, memberCity, memberState, memberZip);
-		}
+		}	
+	}
+
+	private void deleteMember() {
+		String memberNumber = promptForMemberNumber();
+		
 		
 	}
 
@@ -84,8 +96,10 @@ public class OperatorInterface {
 		
 		if(promptToConfirmUser(providerName, providerStreetAddress, providerCity, providerState, providerZip)) {
 			operatorController.addNewProvider(providerName, providerStreetAddress, providerCity, providerState, providerZip);
-		}
-		
+		}	
+	}
+
+	private void deleteProvider() {
 	}
 
     public boolean verifyDeletion(SystemUser user) {
@@ -130,6 +144,34 @@ public class OperatorInterface {
         String userZipCode = myObj.nextLine(); // Read user input
         
         return userZipCode;
+	}
+
+    /**
+     * Prompts user for a member number (Functionality shared with ProviderInterface)
+     * @return String memberNumber
+     */
+	private String promptForMemberNumber() {
+        Scanner myObj = new Scanner(System.in); // Create a Scanner object
+        System.out.print("Please enter the member number: ");
+        String memberNumber = myObj.nextLine(); // Read user input
+        
+        // TODO Error check the entered member number (formatting)
+
+        return memberNumber;
+	}
+
+    /**
+     * Prompts user for a provider number (Functionality shared with ProviderInterface)
+     * @return String providerNumber
+     */
+	private String promptForProviderNumber() {
+        Scanner myObj = new Scanner(System.in); // Create a Scanner object
+        System.out.print("Please enter the Provider Number: ");
+        String providerNumber = myObj.nextLine(); // Read user input
+        
+        // TODO Error check the entered provider number (formatting)
+
+        return providerNumber;
 	}
 
 	private boolean promptToConfirmUser(String userName, String userStreetAddress, String userCity,
