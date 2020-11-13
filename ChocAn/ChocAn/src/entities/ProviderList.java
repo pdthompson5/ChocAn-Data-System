@@ -22,7 +22,7 @@ public class ProviderList {
      */
     public ProviderList() {
     	try {
-			BufferedReader br = new BufferedReader(new FileReader(this.path));
+			BufferedReader br = new BufferedReader(new FileReader(path));
 			String line;
 			while ((line = br.readLine()) != null) {
 			    String[] values = line.split(",");
@@ -74,6 +74,7 @@ public class ProviderList {
      * @param ZIP
      */
     public void createProvider(String name, String streetAddress, String city, String state, String ZIP, String providerNumber) {
+       
         Provider newProvider = new Provider();
         newProvider.setName(name);
         newProvider.setStreetAddress(streetAddress);

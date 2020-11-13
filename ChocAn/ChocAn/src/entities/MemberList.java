@@ -67,7 +67,7 @@ public class MemberList {
      */
     public boolean getMemberStatus(String memberNumber) {
         for (int i = 0; i < this.memberList.size(); i++) {
-        	if (this.memberList.get(i).getMemberNumber() == memberNumber) {
+        	if (this.memberList.get(i).getMemberNumber().equals(memberNumber)) {
                 return this.memberList.get(i).getMemberStatus();
             }
         }

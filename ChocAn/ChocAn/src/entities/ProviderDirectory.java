@@ -62,7 +62,7 @@ public class ProviderDirectory {
      */
     public ServiceOffered getServiceByName(String serviceName) {
     	for (int i = 0; i < this.providerDirectory.size(); i++) {
-            if (this.providerDirectory.get(i).getServiceName() == serviceName) {
+            if (this.providerDirectory.get(i).getServiceName().equals(serviceName)) {
                 return this.providerDirectory.get(i);
             }
         }
@@ -79,7 +79,7 @@ public class ProviderDirectory {
      */
     public ServiceOffered getServiceByCode(String serviceCode) {
         for (int i = 0; i < this.providerDirectory.size(); i++) {
-            if (this.providerDirectory.get(i).getServiceCode() == serviceCode) {
+            if (this.providerDirectory.get(i).getServiceCode().equals(serviceCode)) {
                 return this.providerDirectory.get(i);
             }
         }

@@ -52,21 +52,21 @@ public class ServiceProvidedList {
 
         // Get the member
         for (int i = 0; i < myMemberList.getMemberList().size(); i++) {
-            if (myMemberList.getMemberList().get(i).getMemberNumber() == values[4]) {
+            if (myMemberList.getMemberList().get(i).getMemberNumber().equals(values[4])) {
                 myMember = myMemberList.getMemberList().get(i);
             }
         }
 
         // Get the provider
         for (int i = 0; i < myProviderList.getProviderList().size(); i++) {
-            if (myProviderList.getProviderList().get(i).getProviderNumber() == values[3]) {
+            if (myProviderList.getProviderList().get(i).getProviderNumber().equals(values[3])) {
                 myProvider = myProviderList.getProviderList().get(i);
             }
         }
 
         // Get the service
         for (int i = 0; i < myProviderDirectory.getProviderDirectory().size(); i++) {
-            if (myProviderDirectory.getProviderDirectory().get(i).getServiceCode() == values[5]) {
+            if (myProviderDirectory.getProviderDirectory().get(i).getServiceCode().equals(values[5])) {
                 myServiceOffered = myProviderDirectory.getProviderDirectory().get(i);
             }
         }

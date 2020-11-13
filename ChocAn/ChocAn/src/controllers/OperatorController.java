@@ -22,12 +22,12 @@ public class OperatorController {
 			String memberZip) {
 		String memberNumber = createUniqueMemberNumber();  
 		boolean memberStatus = true; // Members are valid when added to the system
-		memberList.createMember(memberName, memberStreetAddress, memberCity, memberState, memberZip, memberNumber, memberStatus);
+		this.memberList.createMember(memberName, memberStreetAddress, memberCity, memberState, memberZip, memberNumber, memberStatus);
 	}
 
 	public void addNewProvider(String providerName, String providerStreetAddress, String providerCity, String providerState, String providerZip) {
 		String providerNumber = createUniqueProviderNumber();  
-		providerList.createProvider(providerName, providerStreetAddress, providerCity, providerState, providerZip, providerNumber);
+		this.providerList.createProvider(providerName, providerStreetAddress, providerCity, providerState, providerZip, providerNumber);
 	}
 
 	/**
