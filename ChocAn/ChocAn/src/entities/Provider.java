@@ -10,6 +10,8 @@ public class Provider extends SystemUser {
     
     // Private attributes
     private String providerNumber;
+    
+    // TODO None of these variables seem useful
     private ArrayList<ServiceOffered> listOfServices;
     private int numberOfConsultations;
     private double totalFee;
@@ -76,5 +78,15 @@ public class Provider extends SystemUser {
      */
     public void setTotalFee(double totalFee) {
         this.totalFee = totalFee;
+    }
+    
+    /**
+     * Returns the appropriate string to be written to the CSV file for persiting data
+     * @return String providerAsCSV
+     */
+    public String writeProviderToCSV() {
+        String providerAsCSV = String.format("%s,%s,%s,%s,%s,%s,%s", this.getName(), this.getStreetAddress(), this.getCity(), this.getState(), this.getZIP(), this.getProviderNumber()); 
+        
+        return providerAsCSV;
     }
 }
