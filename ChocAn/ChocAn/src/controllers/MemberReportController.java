@@ -1,9 +1,9 @@
-package reportController.memberReportController;
+package controllers;
 
 import java.util.ArrayList;
 
-import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
-import systemUser.Member;
+import entities.ServiceProvided;
+import entities.Member;
 
 public class MemberReportController {
     

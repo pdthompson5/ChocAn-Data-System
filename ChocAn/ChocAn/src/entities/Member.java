@@ -1,4 +1,4 @@
-package systemUser;
+package entities;
 
 /**
  * Encompasses extra information relevent to Member (memberNumber, memberStatus)

@@ -1,9 +1,6 @@
-package service.serviceOffered.providerDirectory;
+package entities;
 
 import java.util.ArrayList;
-
-import service.serviceOffered.serviceOffered.ServiceOffered;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 

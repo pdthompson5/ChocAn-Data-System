@@ -1,8 +1,8 @@
-package reportController.summaryReportController;
+package controllers;
 
 import java.util.ArrayList;
 
-import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
+import entities.ServiceProvided;
 
 
 public class SummaryReportController {

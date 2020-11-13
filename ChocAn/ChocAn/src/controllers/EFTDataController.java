@@ -1,4 +1,4 @@
-package reportController.eftReportController;
+package controllers;
 
 public class EFTDataController {
 

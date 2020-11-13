@@ -1,12 +1,7 @@
-package main;
+package interfaces;
 
 import java.io.IOException;
 import java.util.Scanner;
-
-import mainAccounting.MainAccountingProcedure;
-import manager.ManagerInterface;
-import operator.OperatorInterface;
-import provider.ProviderInterface;
 
 /**
  * Main Class - Serves as menu to choose which interface to test from. 

@@ -1,4 +1,4 @@
-package service.serviceOffered.serviceOffered;
+package entities;
 
 /**
  * Encompasses the attributes of a service offered

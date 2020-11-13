@@ -1,10 +1,6 @@
-package service.serviceProvidedPackage.serviceProvided;
+package entities;
 
 import java.util.Date;
-
-import service.serviceOffered.serviceOffered.ServiceOffered;
-import systemUser.Member;
-import systemUser.Provider;
 
 /**
  * Encompasses a service provided to a customer 

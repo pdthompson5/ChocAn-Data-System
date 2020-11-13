@@ -1,13 +1,6 @@
-package provider;
+package controllers;
 
 import entities.*;
-import service.serviceOffered.providerDirectory.ProviderDirectory;
-import service.serviceOffered.serviceOffered.ServiceOffered;
-import service.serviceProvidedPackage.serviceProvidedList.ServiceProvidedList;
-import systemUser.Member;
-import systemUser.MemberList;
-import systemUser.Provider;
-import systemUser.ProviderList;
 
 public class ProviderController {
 

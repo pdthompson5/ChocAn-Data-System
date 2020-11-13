@@ -1,6 +1,6 @@
-package manager;
+package interfaces;
 
-import reportController.ReportController;
+import controllers.ReportController;
 
 public class ManagerInterface {
     public void produceMemberReport(String memberNumber) {

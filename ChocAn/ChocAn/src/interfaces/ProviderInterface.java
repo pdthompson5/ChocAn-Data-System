@@ -1,6 +1,8 @@
-package provider;
+package interfaces;
 
 import java.util.Scanner;
+
+import controllers.ProviderController;
 
 /**
  * Provider Interface - Interface for Providers to choose from several options

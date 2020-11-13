@@ -1,4 +1,4 @@
-package systemUser;
+package entities;
 
 /**
  * Base class for a system user (provider or member)
