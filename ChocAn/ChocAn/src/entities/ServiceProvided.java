@@ -85,6 +85,22 @@ public class ServiceProvided extends ServiceOffered {
     }
 
     /**
+     * Gets the member the service was provided to
+     * @return Member member
+     */
+    public Member getMember() {
+        return this.member;
+    }
+
+    /**
+     * Gets the provider who provided the service
+     * @return Provider provider
+     */
+    public Provider getProvider() {
+        return this.provider;
+    }
+
+    /**
      * Helper function for persistance, writes ServiceProvided information to line of comma separated strings
      * @return String serviceProvidedAsCSV
      */
