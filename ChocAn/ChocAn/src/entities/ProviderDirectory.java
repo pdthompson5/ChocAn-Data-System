@@ -1,6 +1,9 @@
 package entities;
 
 import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.FileReader;
+
 
 /**
  * Encompasses Provider Directory, which is actually a list of Services Offered
@@ -10,6 +13,39 @@ public class ProviderDirectory {
     
     // Private attributes
     private ArrayList<ServiceOffered> providerDirectory;
+    private String path = "providerDirectory.csv";
+
+    /**
+     * Constructor, builds Provider Directory from CSV of services
+     */
+    public ProviderDirectory() {
+        try {
+			BufferedReader br = new BufferedReader(new FileReader(path));
+			String line;
+			while ((line = br.readLine()) != null) {
+			    String[] values = line.split(",");
+                ServiceOffered tempService = buildServiceOfferedFromCSV(values);
+                this.providerDirectory.add(tempService);	
+			}
+        br.close();
+
+    	} catch (Exception e) {
+           System.out.println("Unable to read services provided from member file");
+    	}
+    }
+
+    /**
+     * Helper for constructor, makes ServiceOffered object from array of values
+     * @param values
+     * @return ServiceOffered myServiceOffered
+     */
+    private ServiceOffered buildServiceOfferedFromCSV(String[] values) {
+        ServiceOffered myServiceOffered = new ServiceOffered();
+        myServiceOffered.setServiceName(values[0]);
+        myServiceOffered.setServiceCode(values[1]);
+        myServiceOffered.setServiceFee(Double.parseDouble(values[2]));
+        return myServiceOffered;
+    }
 
     /**
      * Gets the entire provider directory

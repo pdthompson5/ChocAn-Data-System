@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import controllers.OperatorController;
+import entities.*;
 
 /**
  * Operator Interface - Interface for Operators to manage member and provider data
@@ -64,7 +65,9 @@ public class OperatorInterface {
 			else {
 				System.out.println("Invalid selection, please choose option between 1-4" + userChoice);
 			}
-        }
+		}
+		
+		myObj.close();
     }
 
 	private void addNewMember() {
