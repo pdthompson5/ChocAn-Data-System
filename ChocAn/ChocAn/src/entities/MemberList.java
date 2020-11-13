@@ -24,34 +24,33 @@ public class MemberList {
      * Constructor for member list, fills the list from members.csv
      */
     public MemberList() {
-       try {
-        BufferedReader br = new BufferedReader(new FileReader(path));
-        String line;
-        while ((line = br.readLine()) != null) {
-            String[] values = line.split(",");
-            
-            Member newMember = new Member();
-            newMember.setName(values[0]);
-            newMember.setStreetAddress(values[1]);
-            newMember.setCity(values[2]);
-            newMember.setState(values[3]);
-            newMember.setZIP(values[4]);
-            newMember.setMemberNumber(values[5]);
-            
-            if (values[6] == "true") {
-                newMember.setMemberStatus(true);
-            } else {
-                newMember.setMemberStatus(false);
-            }
-
-            this.memberList.add(newMember);
-        }
-
+    	try {
+			BufferedReader br = new BufferedReader(new FileReader(path));
+			String line;
+			while ((line = br.readLine()) != null) {
+			    String[] values = line.split(",");
+			    
+			    Member newMember = new Member();
+			    newMember.setName(values[0]);
+			    newMember.setStreetAddress(values[1]);
+			    newMember.setCity(values[2]);
+			    newMember.setState(values[3]);
+			    newMember.setZIP(values[4]);
+			    newMember.setMemberNumber(values[5]);
+			    
+			    if (values[6] == "true") {
+			        newMember.setMemberStatus(true);
+			    } else {
+			        newMember.setMemberStatus(false);
+			    }
+			
+			    this.memberList.add(newMember);
+			}
         br.close();
 
-       } catch (Exception e) {
+    	} catch (Exception e) {
            System.out.println("Unable to read members from member file");
-       }
+    	}
     }
     
     /**
@@ -61,7 +60,7 @@ public class MemberList {
      */
     public Member getMember(String memberNumber) {
         for (int i = 0; i < this.memberList.size(); i++) {
-            if (this.memberList.get(i).getMemberNumber() == memberNumber) {
+        	if (this.memberList.get(i).getMemberNumber() == memberNumber) {
                 return this.memberList.get(i);
             }
         }
@@ -78,7 +77,7 @@ public class MemberList {
      */
     public boolean getMemberStatus(String memberNumber) {
         for (int i = 0; i < this.memberList.size(); i++) {
-            if (this.memberList.get(i).getMemberNumber() == memberNumber) {
+        	if (this.memberList.get(i).getMemberNumber() == memberNumber) {
                 return this.memberList.get(i).getMemberStatus();
             }
         }
@@ -139,18 +138,18 @@ public class MemberList {
     private void persist() {
         try {
             File file = new File(this.path);
-        FileWriter fw = new FileWriter(file);
-        PrintWriter pw = new PrintWriter(fw);
+	        FileWriter fw = new FileWriter(file);
+	        PrintWriter pw = new PrintWriter(fw);
 
-        for (int i = 0; i < this.memberList.size(); i++) {
-            pw.print(this.memberList.get(i).writeMemberToCSV());
-            if (i != this.memberList.size() - 1) {
-                pw.println(" ");
-            }
-        }
-        pw.println(" ");
-
-        pw.close();
+	        for (int i = 0; i < this.memberList.size(); i++) {
+	            pw.print(this.memberList.get(i).writeMemberToCSV());
+	            if (i != this.memberList.size() - 1) {
+	                pw.println(" ");
+	            }
+	        }
+	        pw.println(" ");
+	
+	        pw.close();
         } catch(Exception e) {
             System.out.println("Unable to persist member information");
         }
