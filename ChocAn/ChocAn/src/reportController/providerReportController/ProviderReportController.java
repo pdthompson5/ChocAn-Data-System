@@ -1,9 +1,9 @@
-package controllers;
+package reportController.providerReportController;
 
 import java.util.ArrayList;
 
-import entities.ServiceProvided;
-import entities.Provider;
+import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
+import systemUser.Provider;
 
 public class ProviderReportController {
     

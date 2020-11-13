@@ -1,6 +1,10 @@
-package controllers;
+package reportController;
 
-import entities.ServiceProvidedList;
+import reportController.eftReportController.EFTDataController;
+import reportController.memberReportController.MemberReportController;
+import reportController.providerReportController.ProviderReportController;
+import reportController.summaryReportController.SummaryReportController;
+import service.serviceProvidedPackage.serviceProvidedList.ServiceProvidedList;
 
 public class ReportController {
 	
