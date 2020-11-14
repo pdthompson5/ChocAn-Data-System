@@ -9,6 +9,7 @@ import service.serviceOffered.serviceOffered.ServiceOffered;
  * Provider Interface - Interface for Providers to choose from several options
  * @author Griffin Mack
  * @author Topher Fryzel
+ * @author Ben Peinhardt
  */
 public class ProviderInterface {
 	private String providerNumber;
@@ -194,11 +195,11 @@ public class ProviderInterface {
         String serviceDate = myObj.nextLine(); // Read user input
 
         // Error check the entered service date (formatting)
-        if(serviceDate.length()>9) {
+        if(serviceDate.length()>10) {
         	System.out.println("Service date too long!");
         	return " ";
         }
-        if(serviceDate.length()<9) {
+        if(serviceDate.length()<10) {
         	System.out.println("Service date too short!");
         	return " ";
         }
