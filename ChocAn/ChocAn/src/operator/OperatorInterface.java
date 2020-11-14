@@ -215,7 +215,7 @@ public class OperatorInterface {
         System.out.print("Please enter the user's street address: ");
 		String userStreetAddress = myObj.nextLine(); // Read user input
 		
-		if (userStreetAddress.contains(",") {
+		if (userStreetAddress.contains(",")) {
 			System.out.println("Street address cannot contain a comma");
 			return promptForStreetAddress();
 		}
