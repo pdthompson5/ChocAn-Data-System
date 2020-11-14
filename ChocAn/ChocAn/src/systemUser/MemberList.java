@@ -57,6 +57,7 @@ public class MemberList {
 
         // Member not found
         Member nullMember = new Member();
+        nullMember.setName("notMember");
         return nullMember;
     }
 

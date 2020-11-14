@@ -11,14 +11,37 @@ import systemUser.ProviderList;
 
 public class ProviderController {
 
+	private MemberList memberList = new MemberList();
+	
+	/**
+	 * @param memberNumber
+	 * sees if member is in the file
+	 * @return boolean verifyMemberExists
+	 */
 	public boolean verifyMemberExists(String memberNumber) {
-		// TODO Auto-generated method stub
-		return true;
+		Member member = this.memberList.getMember(memberNumber);
+		if(!(member.getName().equals("notMember"))){
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
+	
+	/**
+	 * @param memberNumber
+	 * sees if member is valid
+	 * @return boolean verifyMemberStatus
+	 */
 	public boolean verifyMemberStatus(String memberNumber) {
-		// TODO Auto-generated method stub
-		return true;
+		Member member = this.memberList.getMember(memberNumber);
+		if(member.getMemberStatus() == (true)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	public String lookupServiceByCode(String serviceCode) {

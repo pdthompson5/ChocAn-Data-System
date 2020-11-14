@@ -1,10 +1,12 @@
 package provider;
 
 import java.util.Scanner;
+import service.serviceOffered.providerDirectory.ProviderDirectory;
 
 /**
  * Provider Interface - Interface for Providers to choose from several options
  * @author Griffin Mack
+ * @author Topher Fryzel
  */
 public class ProviderInterface {
 	private String providerNumber;
@@ -64,7 +66,7 @@ public class ProviderInterface {
     public boolean verifyMember(String memberNumber) {
 		boolean memberExists = providerController.verifyMemberExists(memberNumber);
 		if(!memberExists) {
-			System.out.println("Invalid member number! returning to menu");
+			System.out.println("Invalid member number! Member does not exist. Returning to menu");
 			return false;
 		}
 		
@@ -73,7 +75,7 @@ public class ProviderInterface {
 			System.out.println("VALIDATED");
 		}
 		else {
-			System.out.println("Member suspended! returning to menu");
+			System.out.println("Member suspended! Returning to menu");
 			return false;
 		}
 		return true;
@@ -84,6 +86,9 @@ public class ProviderInterface {
      */
     public void printProviderDirectory() {
     	// TODO grab and print the provider directory
+    	
+    	//providerDirectory.size();
+    	
     }
 
     /**
@@ -169,7 +174,10 @@ public class ProviderInterface {
         System.out.println("Please enter any additional service comments: ");
         String serviceComments = myObj.nextLine(); // Read user input
         
-        // TODO cut the comments off at 100 characters
+        // Cuts the comments off at 100 characters
+        if(serviceComments.length()>100) {
+        	serviceComments.equals(serviceComments.substring(0,99));
+        }
         return serviceComments;
 	}
 
