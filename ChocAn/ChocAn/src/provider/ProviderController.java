@@ -12,6 +12,9 @@ import systemUser.ProviderList;
 public class ProviderController {
 
 	private MemberList memberList = new MemberList();
+	private ProviderList providerList = new ProviderList();
+	private ServiceProvidedList serviceProvidedList = new ServiceProvidedList();
+	private ProviderDirectory providerDirectory = new ProviderDirectory();
 	
 	/**
 	 * @param memberNumber
@@ -20,11 +23,11 @@ public class ProviderController {
 	 */
 	public boolean verifyMemberExists(String memberNumber) {
 		Member member = this.memberList.getMember(memberNumber);
-		if(!(member.getName().equals("notMember"))){
-			return true;
+		if(member.getMemberNumber().equals("0")){
+			return false;
 		}
 		else {
-			return false;
+			return true;
 		}
 	}
 
@@ -44,9 +47,14 @@ public class ProviderController {
 		}
 	}
 
+	/**
+	 * Looks up a service in provider directory by code and returns its name
+	 * @param serviceCode
+	 * @return String serviceName
+	 */
 	public String lookupServiceByCode(String serviceCode) {
-		// TODO Auto-generated method stub
-		return "test_service";
+		String serviceName = providerDirectory.getServiceByCode(serviceCode).getServiceName();
+		return serviceName;
 	}
 
 	/**
@@ -58,28 +66,35 @@ public class ProviderController {
 	 * @param serviceComments
 	 */
 	public void billChocan(String providerNumber, String memberNumber, String serviceDate, String serviceCode,
-			String serviceComments) {
+			String serviceComments, String serviceTime) {
 
 		ServiceOffered myService = new ServiceOffered();
 		Member myMember = new Member();
 		Provider myProvider = new Provider();
 		
 		// Find Service
-		ProviderDirectory myDirectory = new ProviderDirectory();
-		myService = myDirectory.getServiceByCode(serviceCode);
+		myService = providerDirectory.getServiceByCode(serviceCode);
 
 		// Find Member
-		MemberList myMemberList = new MemberList();
-		myMember = myMemberList.getMember(memberNumber);
+		myMember = memberList.getMember(memberNumber);
 
 		// Find Provider
-		ProviderList myProviderList = new ProviderList();
-		myProvider = myProviderList.getProvider(providerNumber);
+		myProvider = providerList.getProvider(providerNumber);
 
 		// Add Service Provided
-		ServiceProvidedList myServiceProvidedList = new ServiceProvidedList();
-		myServiceProvidedList.addServiceProvided(myService, myProvider, myMember, serviceComments);
+		serviceProvidedList.addServiceProvided(myService, myProvider, myMember, serviceComments, serviceDate, serviceTime, generateUniqueServiceProvidedID());
 		
 	}
+
+	private String generateUniqueServiceProvidedID() {
+		if (this.serviceProvidedList.getServiceProvidedList().size() == 0) {
+			return "100000";
+		} else {
+			String number = this.serviceProvidedList.getServiceProvidedList().get(this.serviceProvidedList.getServiceProvidedList().size() -1).getServiceProvidedID();
+			Integer num = Integer.parseInt(number);
+			num++;
+			return Integer.toString(num);
+		}
+    }
     
 }

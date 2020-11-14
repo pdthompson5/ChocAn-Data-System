@@ -56,7 +56,7 @@ public class OperatorController {
 	 */
 	public String createUniqueMemberNumber() {
 		if (this.memberList.getMemberList().size() == 0) {
-			return "1";
+			return "100000000";
 		} else {
 			String number = this.memberList.getMemberList().get(this.memberList.getMemberList().size() - 1).getMemberNumber();
 			Integer num = Integer.parseInt(number);
@@ -71,7 +71,7 @@ public class OperatorController {
 	 */
 	public String createUniqueProviderNumber() {
 		if (this.providerList.getProviderList().size() == 0) {
-			return "1";
+			return "100000000";
 		} else {
 			String number = this.providerList.getProviderList().get(this.providerList.getProviderList().size()-1).getProviderNumber();
 			Integer num = Integer.parseInt(number);

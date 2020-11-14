@@ -83,10 +83,7 @@ public class ServiceProvidedList {
         }
 
         // Make the service
-        ServiceProvided myServiceProvided = new ServiceProvided(myServiceOffered, myProvider, myMember, values[6]);
-
-        // Reset auto generated Date/Time/ID Values
-        myServiceProvided.setDateTimeID(values[2], values[1], values[0]);
+        ServiceProvided myServiceProvided = new ServiceProvided(myServiceOffered, myProvider, myMember, values[6], values[2], values[1], values[0]);
 
         // Return the serviceProvided
         return myServiceProvided;
@@ -99,9 +96,10 @@ public class ServiceProvidedList {
      * @param member
      * @param comments
      */
-    public void addServiceProvided(ServiceOffered service, Provider provider, Member member, String comments) {
+    public void addServiceProvided(ServiceOffered service, Provider provider, Member member, String comments, String serviceDate, String serviceTime, String serviceProvidedID) {
 
-        ServiceProvided newService = new ServiceProvided(service, provider, member, comments);
+        ServiceProvided newService = new ServiceProvided(service, provider, member, comments, serviceDate, serviceTime, serviceProvidedID);
+
         this.serviceProvidedList.add(newService);
 
         // Persist service provided

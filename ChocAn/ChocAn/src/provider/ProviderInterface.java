@@ -100,13 +100,15 @@ public class ProviderInterface {
 			return;
 		}
 		String serviceDate = promptForServiceDate();
+
+		String serviceTime = promptForServiceTime();
 		
 		String serviceCode = promptForServiceCode();
 		if(!verifyServiceCode(serviceCode)) return;
 		
 		String serviceComments = promptForServiceComments();
 		
-		providerController.billChocan(this.providerNumber, memberNumber, serviceDate, serviceCode, serviceComments);
+		providerController.billChocan(this.providerNumber, memberNumber, serviceDate, serviceCode, serviceComments, serviceTime);
     }
 
     /**
@@ -179,6 +181,17 @@ public class ProviderInterface {
         	serviceComments.equals(serviceComments.substring(0,99));
         }
         return serviceComments;
+	}
+
+	/**
+	 * Prompts for a time service was served
+	 * @return String serviceTime
+	 */
+	private String promptForServiceTime() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Please enter service time: ");
+		String serviceTime = scanner.next();
+		return serviceTime;
 	}
 
     /**
