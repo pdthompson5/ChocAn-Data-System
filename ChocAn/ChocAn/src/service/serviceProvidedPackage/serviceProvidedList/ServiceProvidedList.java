@@ -22,6 +22,7 @@ import java.io.PrintWriter;
 /**
  * Encompasses the operations on the list of Services Provided
  * @author Ben Peinhardt
+ * @author Topher Fryzel
  */
 public class ServiceProvidedList {
 

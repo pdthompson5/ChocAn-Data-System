@@ -3,6 +3,7 @@ package systemUser;
 /**
  * Encompasses extra information relevent to Member (memberNumber, memberStatus)
  * @author Ben Peinhardt
+ * @author Topher Fryzel
  */
 public class Member extends SystemUser {
     

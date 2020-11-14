@@ -11,6 +11,7 @@ import java.io.FileReader;
 /**
  * Encompasses Provider Directory, which is actually a list of Services Offered
  * @author Ben Peinhardt
+ * @author Topher Fryzel
  */
 public class ProviderDirectory {
     

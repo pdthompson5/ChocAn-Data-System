@@ -1,7 +1,9 @@
 package provider;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import service.serviceOffered.providerDirectory.ProviderDirectory;
+import service.serviceOffered.serviceOffered.ServiceOffered;
 
 /**
  * Provider Interface - Interface for Providers to choose from several options
@@ -10,6 +12,8 @@ import service.serviceOffered.providerDirectory.ProviderDirectory;
  */
 public class ProviderInterface {
 	private String providerNumber;
+	private ProviderDirectory providerDirectory = new ProviderDirectory();
+	
 	private static ProviderController providerController = new ProviderController();
     boolean exitMenu = false;
 
@@ -83,12 +87,26 @@ public class ProviderInterface {
 
     /**
      * Prints the provider directory
+     *
      */
     public void printProviderDirectory() {
-    	// TODO grab and print the provider directory
     	
-    	//providerDirectory.size();
+    	//print provider directory to the terminal
+    	//iterate through providerdirectory and print it out to the terminal.
     	
+    	ArrayList<ServiceOffered> myProviderDirectory = new ArrayList<ServiceOffered>();
+    	myProviderDirectory = providerDirectory.getProviderDirectory();
+    	
+    	for(int i = 0; i<myProviderDirectory.size(); ++i) {
+    		System.out.print("Service Code: ");
+    		System.out.print((myProviderDirectory.get(i)).getServiceCode());
+    		System.out.print("	Service Name: ");
+    		System.out.print((myProviderDirectory.get(i)).getServiceName());
+    		System.out.print("	Service Fee: ");
+    		System.out.print((myProviderDirectory.get(i)).getServiceFee());
+    		System.out.println("");
+    		
+    	}
     }
 
     /**

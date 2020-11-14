@@ -1,5 +1,8 @@
 package provider;
-
+/**
+ * @author someone else
+ * @author Topher Fryzel
+ */
 
 import service.serviceOffered.providerDirectory.ProviderDirectory;
 import service.serviceOffered.serviceOffered.ServiceOffered;

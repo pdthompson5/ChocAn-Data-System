@@ -10,6 +10,7 @@ import java.util.ArrayList;
 /**
  * Entity to control editing list of members and also accessing members
  * @author Ben Peinhardt
+ * @author Topher Fryzel
  */
 public class MemberList {
 
