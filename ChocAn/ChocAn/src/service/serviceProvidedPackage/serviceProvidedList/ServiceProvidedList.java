@@ -97,9 +97,9 @@ public class ServiceProvidedList {
      * @param member
      * @param comments
      */
-    public void addServiceProvided(ServiceOffered service, Provider provider, Member member, String comments, String serviceDate, String serviceTime, String serviceProvidedID) {
+    public void addServiceProvided(ServiceOffered service, Provider provider, Member member, String comments, String serviceDate, String currTime, String serviceProvidedID) {
 
-        ServiceProvided newService = new ServiceProvided(service, provider, member, comments, serviceDate, serviceTime, serviceProvidedID);
+        ServiceProvided newService = new ServiceProvided(service, provider, member, comments, serviceDate, currTime, serviceProvidedID);
 
         this.serviceProvidedList.add(newService);
 

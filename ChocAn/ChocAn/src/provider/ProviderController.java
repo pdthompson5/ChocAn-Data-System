@@ -61,6 +61,17 @@ public class ProviderController {
 	}
 
 	/**
+	 * Looks up a service fee by the service code
+	 * @param serviceCode
+	 * @return double fee
+	 */
+	public double lookupServicePriceByCode(String serviceCode) {
+		double servicePrice = providerDirectory.getServiceByCode(serviceCode).getServiceFee();
+
+		return servicePrice;
+	}
+
+	/**
 	 * Creates a service provided object and adds it to the ServiceProvidedList
 	 * @param providerNumber
 	 * @param memberNumber
@@ -69,7 +80,7 @@ public class ProviderController {
 	 * @param serviceComments
 	 */
 	public void billChocan(String providerNumber, String memberNumber, String serviceDate, String serviceCode,
-			String serviceComments, String serviceTime) {
+			String serviceComments, String currTime) {
 
 		ServiceOffered myService = new ServiceOffered();
 		Member myMember = new Member();
@@ -85,7 +96,7 @@ public class ProviderController {
 		myProvider = providerList.getProvider(providerNumber);
 
 		// Add Service Provided
-		serviceProvidedList.addServiceProvided(myService, myProvider, myMember, serviceComments, serviceDate, serviceTime, generateUniqueServiceProvidedID());
+		serviceProvidedList.addServiceProvided(myService, myProvider, myMember, serviceComments, serviceDate, currTime, generateUniqueServiceProvidedID());
 		
 	}
 

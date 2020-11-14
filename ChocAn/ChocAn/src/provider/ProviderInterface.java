@@ -1,7 +1,10 @@
 package provider;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Date;
+
 import service.serviceOffered.providerDirectory.ProviderDirectory;
 import service.serviceOffered.serviceOffered.ServiceOffered;
 
@@ -120,14 +123,17 @@ public class ProviderInterface {
 		}
 		String serviceDate = promptForServiceDate();
 
-		String serviceTime = promptForServiceTime();
+		String currTime = generateDateTime();
 		
 		String serviceCode = promptForServiceCode();
 		if(!verifyServiceCode(serviceCode)) return;
 		
 		String serviceComments = promptForServiceComments();
 		
-		providerController.billChocan(this.providerNumber, memberNumber, serviceDate, serviceCode, serviceComments, serviceTime);
+		providerController.billChocan(this.providerNumber, memberNumber, serviceDate, serviceCode, serviceComments, currTime);
+
+		System.out.print("Your service fee is: $");
+		System.out.println(getServicePrice(serviceCode));
     }
 
     /**
@@ -282,14 +288,13 @@ public class ProviderInterface {
 	}
 
 	/**
-	 * Prompts for a time service was served
+	 * Uses the Date object to generate a string with the current date and time
 	 * @return String serviceTime
 	 */
-	private String promptForServiceTime() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Please enter service time: ");
-		String serviceTime = scanner.next();
-		return serviceTime;
+	private String generateDateTime() {
+		Date todaysDate = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
+		return formatter.format(todaysDate);
 	}
 
     /**
@@ -318,5 +323,10 @@ public class ProviderInterface {
 			System.out.println("Invalid service code");
 			return false;
 		}
+	}
+
+	private double getServicePrice(String serviceCode) {
+		double price = providerController.lookupServicePriceByCode(serviceCode);
+		return price;
 	}
 }

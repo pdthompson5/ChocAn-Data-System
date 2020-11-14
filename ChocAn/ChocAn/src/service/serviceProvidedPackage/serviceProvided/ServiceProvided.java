@@ -29,13 +29,13 @@ public class ServiceProvided extends ServiceOffered {
      * @param memberNumber
      * @param comments
      */
-    public ServiceProvided(ServiceOffered service, Provider provider, Member member, String comments, String serviceDate, String serviceTime, String serviceProvidedID) {
+    public ServiceProvided(ServiceOffered service, Provider provider, Member member, String comments, String serviceDate, String currTime, String serviceProvidedID) {
         this.service = service;
         this.comments = comments;
         this.member = member;
         this.provider = provider;
         this.date = serviceDate;
-        this.timeProvided = serviceTime;
+        this.timeProvided = currTime;
         this.serviceProvidedID = serviceProvidedID;
     }
 
