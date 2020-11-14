@@ -278,7 +278,13 @@ public class ProviderInterface {
 	private String promptForServiceComments() {
         Scanner myObj = new Scanner(System.in); // Create a Scanner object
         System.out.println("Please enter any additional service comments: ");
-        String serviceComments = myObj.nextLine(); // Read user input
+		String serviceComments = myObj.nextLine(); // Read user input
+		
+		//No commas
+		if (serviceComments.contains(",")) {
+			System.out.println("Comments cannot contain a comma");
+			return promptForServiceComments();
+		}
         
         // Cuts the comments off at 100 characters
         if(serviceComments.length()>100) {
