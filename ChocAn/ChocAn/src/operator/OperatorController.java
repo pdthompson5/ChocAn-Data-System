@@ -111,6 +111,16 @@ public class OperatorController {
 	}
 
 	/**
+	 * Updates a members status using member number
+	 * @param memberNumber
+	 * @param status
+	 */
+	public void updateMemberStatus(String memberNumber, boolean status) {
+		Member memberToUpdate = this.memberList.getMember(memberNumber);
+		memberToUpdate.setMemberStatus(status);
+	}
+
+	/**
 	 * Updates a provider in provider list by providerNumber
 	 */
 	public void updateProvider(String providerNumber, String providerName, String providerStreetAddress, String providerCity, String providerState, String providerZip) {

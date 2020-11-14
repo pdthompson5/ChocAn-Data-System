@@ -33,17 +33,18 @@ public class OperatorInterface {
 	        System.out.println("---------------------");
 	        System.out.println("1: Add Member");
 	        System.out.println("2: Delete Member");
-	        System.out.println("3: Update Member");
+			System.out.println("3: Update Member");
+			System.out.println("4: Update Member Status");
 	        System.out.println("<<<<<<<<<<>>>>>>>>>>>>");
-	        System.out.println("4: Add Provider");
-	        System.out.println("5: Delete Provider");
-	        System.out.println("6: Update Provider");
-	        System.out.println("7: Exit");
+	        System.out.println("5: Add Provider");
+	        System.out.println("6: Delete Provider");
+	        System.out.println("7: Update Provider");
+	        System.out.println("8: Exit");
 	        System.out.println("---------------------");
 			System.out.print("Please choose from the above options: ");
 	        int userChoice = Integer.parseInt(myObj.nextLine()); // Read user input
 
-			if(userChoice >= 1  && userChoice <= 7) {
+			if(userChoice >= 1  && userChoice <= 8) {
 				switch(userChoice) {
 					case(1):
 						addNewMember();
@@ -54,16 +55,19 @@ public class OperatorInterface {
 					case(3):
 						updateMember();
 						break;
-					case(4):
+					case(5):
 						addNewProvider();
 						break;
-					case(5):
+					case(6):
 						deleteProvider();
 						break;
-					case(6):
+					case(7):
 						updateProvider();
 						break;
-					case(7):
+					case(4):
+						updateMemberStatus();
+						break;
+					case(8):
 						System.out.println("Exiting operator menu");
 						exitMenu = true;
 				}
@@ -167,7 +171,34 @@ public class OperatorInterface {
 			System.out.println("Invalid entry: Please enter 1 or 2");
 			return false;
 		}
-    }
+	}
+	
+	/**
+	 * Uses controller to update a members status by member number
+	 */
+	private void updateMemberStatus() {
+		String memberNumber = promptForMemberNumber();
+		boolean memberStatus = promptForMemberStatus();
+		this.operatorController.updateMemberStatus(memberNumber, memberStatus);
+	}
+
+	/**
+	 * Helper to updateMemberStatus, prompts for the new status and returns as boolean
+	 * @return Boolean status
+	 */
+	private boolean promptForMemberStatus() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Set member's status to (1: true, 2: false): ");
+		String status = scanner.next();
+		if (status.equals("1")) {
+			return true;
+		} else if (status.equals("2")) {
+			return false;
+		} else {
+			System.out.println("Invalid entry");
+			return promptForMemberStatus();
+		}
+	}
 
 	private String promptForName() {
         Scanner myObj = new Scanner(System.in); // Create a Scanner object
