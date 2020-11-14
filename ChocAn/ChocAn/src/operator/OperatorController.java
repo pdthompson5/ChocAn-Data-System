@@ -110,15 +110,15 @@ public class OperatorController {
 		this.memberList.persist();
 	}
 
-	/**
-	 * Updates a members status using member number
-	 * @param memberNumber
-	 * @param status
-	 */
-	public void updateMemberStatus(String memberNumber, boolean status) {
-		Member memberToUpdate = this.memberList.getMember(memberNumber);
-		memberToUpdate.setMemberStatus(status);
-	}
+	// /**
+	//  * Updates a members status using member number
+	//  * @param memberNumber
+	//  * @param status
+	//  */
+	// public void updateMemberStatus(String memberNumber, boolean status) {
+	// 	Member memberToUpdate = this.memberList.getMember(memberNumber);
+	// 	memberToUpdate.setMemberStatus(status);
+	// }
 
 	/**
 	 * Updates a provider in provider list by providerNumber
