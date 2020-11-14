@@ -7,7 +7,9 @@ import systemUser.Member;
 import systemUser.Provider;
 
 /**
- * Encompasses a service provided to a customer 
+ * Encompasses a service provided to a customer
+ * @author Ben Peinhardt
+ * @author Topher Fryzel
  */
 public class ServiceProvided extends ServiceOffered {
 

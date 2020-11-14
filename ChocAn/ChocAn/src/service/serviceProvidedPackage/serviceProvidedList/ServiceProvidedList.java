@@ -28,7 +28,7 @@ public class ServiceProvidedList {
 
     // Private Attributes
     private ArrayList<ServiceProvided> serviceProvidedList = new ArrayList<ServiceProvided>();
-    private String path = "service_provided_list.csv";
+    private String path = "userData/service_provided_list.csv";
 
     /**
      * Constructor, builds ServiceProvidedList from csv file

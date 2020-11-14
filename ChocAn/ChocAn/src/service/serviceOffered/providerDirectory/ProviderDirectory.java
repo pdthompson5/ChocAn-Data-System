@@ -17,7 +17,7 @@ public class ProviderDirectory {
     
     // Private attributes
     private ArrayList<ServiceOffered> providerDirectory = new ArrayList<ServiceOffered>();
-    private String path = "providerDirectory.csv";
+    private String path = "userData/providerDirectory.csv";
 
     /**
      * Constructor, builds Provider Directory from CSV of services

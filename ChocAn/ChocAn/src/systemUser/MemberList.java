@@ -16,7 +16,7 @@ public class MemberList {
 
     // Private attributes
     private ArrayList<Member> memberList = new ArrayList<Member>();
-    private String path = "members.csv";
+    private String path = "userData/members.csv";
 
     /**
      * Constructor for member list, fills the list from members.csv

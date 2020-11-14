@@ -15,7 +15,7 @@ public class ProviderList {
 
     // Private attributes
     private ArrayList<Provider> providerList = new ArrayList<Provider>();
-    private String path = "providers.csv";
+    private String path = "userData/providers.csv";
 
     /**
      * Constructor for provider list, fills the list from providers.csv
