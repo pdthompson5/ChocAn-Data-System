@@ -138,7 +138,7 @@ public class ProviderInterface {
         System.out.print("Please scan the member card or enter the member number: ");
         String memberNumber = myObj.nextLine(); // Read user input
         
-        // TODO Error check the entered member number (formatting)
+        //  Error check the entered member number (formatting)
         // what should be returned when this fails?
         if(memberNumber.length()>9) {
         	System.out.println("Member number too long!");
@@ -166,9 +166,21 @@ public class ProviderInterface {
         System.out.print("Please enter your Provider Number: ");
         String providerNumber = myObj.nextLine(); // Read user input
         
-        // TODO Error check the entered provider number (formatting)
-
-        
+        //  Error check the entered provider number (formatting)
+        if(providerNumber.length()>9) {
+        	System.out.println("Provider number too long!");
+        	return " ";
+        }
+        if(providerNumber.length()<9) {
+        	System.out.println("Provider number too short!");
+        	return " ";
+        }
+        for(int i = 0; i<providerNumber.length(); ++i) {
+        	if(!(Character.isDigit(providerNumber.charAt(i)))) {
+        		System.out.println("Used non-digit characters!");
+        		return " ";
+        	}
+        }
         return providerNumber;
 	}
 
@@ -181,8 +193,47 @@ public class ProviderInterface {
         System.out.print("Please enter the service date (format: MM-DD-YYYY): ");
         String serviceDate = myObj.nextLine(); // Read user input
 
-        //TODO Error check the entered service date (formatting)
-
+        // Error check the entered service date (formatting)
+        if(serviceDate.length()>9) {
+        	System.out.println("Service date too long!");
+        	return " ";
+        }
+        if(serviceDate.length()<9) {
+        	System.out.println("Service date too short!");
+        	return " ";
+        }
+        
+        if(!(Character.isDigit(serviceDate.charAt(0)))) {
+    		System.out.println("Used non-digit characters!");
+    		return " ";
+    	}
+    	if(!(Character.isDigit(serviceDate.charAt(1)))) {
+    		System.out.println("Used non-digit characters!");
+    		return " ";
+    	}
+    	if(serviceDate.charAt(2)!='-') {
+    		System.out.println("Please use dashes.");
+    		return " ";
+    	}
+    	if(!(Character.isDigit(serviceDate.charAt(3)))) {
+    		System.out.println("Used non-digit characters!");
+    		return " ";
+    	}
+    	if(!(Character.isDigit(serviceDate.charAt(4)))) {
+    		System.out.println("Used non-digit characters!");
+    		return " ";
+    	}
+    	if(serviceDate.charAt(5)!='-') {
+    		System.out.println("Please use dashes.");
+    		return " ";
+    	}
+        for(int i = 6; i<10; ++i) {
+        	if(!(Character.isDigit(serviceDate.charAt(i)))) {
+        		System.out.println("Used non-digit characters!");
+        		return " ";
+        	}
+        }
+        
         return serviceDate;
 	}
 
@@ -195,8 +246,21 @@ public class ProviderInterface {
         System.out.print("Please enter the six-digit service code: ");
         String serviceCode = myObj.nextLine(); // Read user input
         
-        //TODO Error check the entered service code (formatting)
-
+        // Error check the entered service code (formatting)
+        if(serviceCode.length()>6) {
+        	System.out.println("Service code too long!");
+        	return " ";
+        }
+        if(serviceCode.length()<6) {
+        	System.out.println("Service code too short!");
+        	return " ";
+        }
+        for(int i = 0; i<serviceCode.length(); ++i) {
+        	if(!(Character.isDigit(serviceCode.charAt(i)))) {
+        		System.out.println("Used non-digit characters!");
+        		return " ";
+        	}
+        }
         return serviceCode;
 	}
 
