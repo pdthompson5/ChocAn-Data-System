@@ -245,8 +245,22 @@ public class OperatorInterface {
         Scanner myObj = new Scanner(System.in); // Create a Scanner object
         System.out.print("Please enter the member number: ");
         String memberNumber = myObj.nextLine(); // Read user input
-        
-        // TODO Error check the entered member number (formatting)
+		
+		// Format handling
+        if (memberNumber.length() > 9) {
+			System.out.println("Member number is too long!");
+			return promptForMemberNumber();
+		} else if (memberNumber.length() < 9) {
+			System.out.println("Member number is too short!");
+			return promptForMemberNumber();
+		} else {
+			for (int i = 0; i < 9; i++) {
+				if (!(Character.isDigit(memberNumber.charAt(i)))) {
+					System.out.println("Member number contains non digit characters!");
+					return promptForMemberNumber();
+				}
+			}
+		}
 
         return memberNumber;
 	}
@@ -259,8 +273,22 @@ public class OperatorInterface {
         Scanner myObj = new Scanner(System.in); // Create a Scanner object
         System.out.print("Please enter the Provider Number: ");
         String providerNumber = myObj.nextLine(); // Read user input
-        
-        // TODO Error check the entered provider number (formatting)
+		
+		// Format handling
+        if (providerNumber.length() > 9) {
+			System.out.println("Provider Number is too long!");
+			promptForProviderNumber();
+		} else if (providerNumber.length() < 9) {
+			System.out.println("Provider Number is too short!");
+			promptForProviderNumber();
+		} else {
+			for (int i = 0; i < 9; i++) {
+				if(!(Character.isDigit(providerNumber.charAt(i)))) {
+					System.out.println("Provider Number contains non digit characters!");
+					promptForProviderNumber();
+				}
+			}
+		}
 
         return providerNumber;
 	}
