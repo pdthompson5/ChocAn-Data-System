@@ -15,8 +15,8 @@ import systemUser.ProviderList;
 public class OperatorController {
 
     // Private attributes
-	MemberList memberList = new MemberList();
-	ProviderList providerList = new ProviderList();
+	protected MemberList memberList = new MemberList();
+	private ProviderList providerList = new ProviderList();
 
 	public void addNewMember(String memberName, String memberStreetAddress, String memberCity, String memberState,
 			String memberZip) {
@@ -98,15 +98,31 @@ public class OperatorController {
 	/**
 	 * Updates a member in member list by member number
 	 */
-	public void updateMember() {
+	public void updateMember(String memberNumber, String memberName, String memberStreetAddress, String memberCity, String memberState, String memberZip) {
+		Member memberToUpdate = this.memberList.getMember(memberNumber);
 
+		memberToUpdate.setName(memberName);
+		memberToUpdate.setStreetAddress(memberStreetAddress);
+		memberToUpdate.setCity(memberCity);
+		memberToUpdate.setState(memberState);
+		memberToUpdate.setZIP(memberZip);
+
+		this.memberList.persist();
 	}
 
 	/**
 	 * Updates a provider in provider list by providerNumber
 	 */
-	public void updateProvider() {
+	public void updateProvider(String providerNumber, String providerName, String providerStreetAddress, String providerCity, String providerState, String providerZip) {
+		Provider providerToUpdate = this.providerList.getProvider(providerNumber);
 
+		providerToUpdate.setName(providerName);
+		providerToUpdate.setStreetAddress(providerStreetAddress);
+		providerToUpdate.setCity(providerCity);
+		providerToUpdate.setState(providerState);
+		providerToUpdate.setZIP(providerZip);
+
+		this.providerList.persist();
 	}
     
 }

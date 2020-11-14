@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 
 import systemUser.SystemUser;
+import systemUser.Member;
+import systemUser.Provider;
 
 /**
  * Operator Interface - Interface for Operators to manage member and provider data
@@ -22,6 +24,9 @@ public class OperatorInterface {
 		operatorMainMenu();
 	}
 
+	/**
+	 * Displays options for operator
+	 */
     public void operatorMainMenu() {
         Scanner myObj = new Scanner(System.in); // Create a Scanner object
         while(!exitMenu) {
@@ -70,6 +75,7 @@ public class OperatorInterface {
 		
     }
 
+	// Prompts for information and creates a new member
 	private void addNewMember() {
 		String memberName = promptForName();
 		String memberStreetAddress = promptForStreetAddress();
@@ -83,17 +89,29 @@ public class OperatorInterface {
 		}	
 	}
 
+	// Finds and deletes a member by member number
 	private void deleteMember() {
 		String memberNumber = promptForMemberNumber();
-		operatorController.deleteMember(memberNumber);
 		
+		if (verifyDeletion(this.operatorController.getMember(memberNumber))) {
+			this.operatorController.deleteMember(memberNumber);
+		}
 	}
 
+	// Prompts for information and overwrites for a particular member
 	private void updateMember() {
-		// TODO Auto-generated method stub
 		
+		String memberNumber = promptForMemberNumber();
+		String memberName = promptForName();
+		String memberStreetAddress = promptForStreetAddress();
+		String memberCity = promptForCity();
+		String memberState = promptForState();
+		String memberZip = promptForZip();
+
+		this.operatorController.updateMember(memberNumber, memberName, memberStreetAddress, memberCity, memberState, memberZip);
 	}
 
+	// Prompts for information and creates a new provider
 	private void addNewProvider() {
 		String providerName = promptForName();
 		String providerStreetAddress = promptForStreetAddress();
@@ -107,18 +125,48 @@ public class OperatorInterface {
 		}	
 	}
 
+	// Deletes a provider by their provider number
 	private void deleteProvider() {
 		String providerNumber = promptForProviderNumber();
-		operatorController.deleteProvider(providerNumber);
+		if (verifyDeletion(this.operatorController.getProvider(providerNumber))) {
+			operatorController.deleteProvider(providerNumber);
+		}
 	}
 
+	// Prompts for information and overwrites for a paticular provider
 	private void updateProvider() {
-		// TODO Auto-generated method stub
+		String providerNumber = promptForProviderNumber();
+
+		String providerName = promptForName();
+		String providerStreetAddress = promptForStreetAddress();
+		String providerCity = promptForCity();
+		String providerState = promptForState();
+		String providerZip = promptForZip();
+
+		this.operatorController.updateProvider(providerNumber, providerName, providerStreetAddress, providerCity, providerState, providerZip);
 		
 	}
 
+	/**
+	 * Prompts a user to make sure they want to delete 
+	 * @param user
+	 * @return boolean delete_val
+	 */
     public boolean verifyDeletion(SystemUser user) {
-        return false;
+		System.out.print("Are you sure you want to delete ");
+		System.out.print(user.getName());
+		System.out.println("? 1: Yes, 2: No");
+
+		Scanner scanner = new Scanner(System.in);
+		Integer result = Integer.parseInt(scanner.next());
+		if (result.equals(1)) {
+			return true;
+		} else if (result.equals(2)) {
+			return false;
+		} else {
+			System.out.println("Invalid entry: Please enter 1 or 2");
+			return false;
+		}
     }
 
 	private String promptForName() {

@@ -127,7 +127,7 @@ public class MemberList {
     /**
      * Persists the entire member list to the members.json. Called whenever member is added, deleted, or updated
      */
-    private void persist() {
+    public void persist() {
         try {
             File file = new File(this.path);
 	        FileWriter fw = new FileWriter(file);

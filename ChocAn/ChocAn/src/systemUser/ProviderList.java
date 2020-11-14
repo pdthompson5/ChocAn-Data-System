@@ -106,7 +106,7 @@ public class ProviderList {
     /**
      * Persists the entire provider list to the providers.csv. Called whenever provider is added, deleted, or updated
      */
-    private void persist() {
+    public void persist() {
         try {
             File file = new File(this.path);
 	        FileWriter fw = new FileWriter(file);
