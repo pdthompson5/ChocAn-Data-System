@@ -200,7 +200,12 @@ public class OperatorInterface {
 	private String promptForName() {
         Scanner myObj = new Scanner(System.in); // Create a Scanner object
         System.out.print("Please enter the user's name: ");
-        String userName = myObj.nextLine(); // Read user input
+		String userName = myObj.nextLine(); // Read user input
+		
+		if (userName.contains(",")) {
+			System.out.println("Name cannot contain a comma");
+			return promptForName();
+		}
         
         return userName;
 	}
@@ -208,7 +213,12 @@ public class OperatorInterface {
 	private String promptForStreetAddress() {
         Scanner myObj = new Scanner(System.in); // Create a Scanner object
         System.out.print("Please enter the user's street address: ");
-        String userStreetAddress = myObj.nextLine(); // Read user input
+		String userStreetAddress = myObj.nextLine(); // Read user input
+		
+		if (userStreetAddress.contains(",") {
+			System.out.println("Street address cannot contain a comma");
+			return promptForStreetAddress();
+		}
         
         return userStreetAddress;
 	}
@@ -216,7 +226,15 @@ public class OperatorInterface {
 	private String promptForCity() {
         Scanner myObj = new Scanner(System.in); // Create a Scanner object
         System.out.print("Please enter the user's city: ");
-        String userCity = myObj.nextLine(); // Read user input
+		String userCity = myObj.nextLine(); // Read user input
+		
+		// Format handling
+		for (int i = 0; i < userCity.length(); i++) {
+			if (!Character.isAlphabetic(userCity.charAt(i))) {
+				System.out.println("City name must contain only letters");
+				return promptForCity();
+			}
+		}
 
         return userCity;
 	}
@@ -224,7 +242,20 @@ public class OperatorInterface {
 	private String promptForState() {
         Scanner myObj = new Scanner(System.in); // Create a Scanner object
         System.out.print("Please enter the user's state: ");
-        String userState = myObj.nextLine(); // Read user input
+		String userState = myObj.nextLine(); // Read user input
+		
+		// Format handling
+		if (userState.length() != 2) {
+			System.out.println("State must be two captital letters");
+			return promptForState();
+		} else {
+			for (int i = 0; i < 2; i++) {
+				if (!(Character.isUpperCase(userState.charAt(i)))) {
+					System.out.println("State must be two captital letters");
+					return promptForState();
+				}
+			}
+		}
         
         return userState;
 	}
@@ -232,7 +263,23 @@ public class OperatorInterface {
 	private String promptForZip() {
         Scanner myObj = new Scanner(System.in); // Create a Scanner object
         System.out.print("Please enter the user's zip code: ");
-        String userZipCode = myObj.nextLine(); // Read user input
+		String userZipCode = myObj.nextLine(); // Read user input
+		
+		// Format handling
+		if (userZipCode.length() > 5) {
+			System.out.println("Zip code is too long!");
+			promptForZip();
+		} else if (userZipCode.length() < 5) {
+			System.out.println("Zip code is too short!");
+			promptForZip();
+		} else {
+			for (int i = 0; i < 5; i++) {
+				if (!(Character.isDigit(userZipCode.charAt(i)))) {
+					System.out.println("Zip code contains non numeric characters!");
+					promptForZip();
+				}
+			}
+		}
         
         return userZipCode;
 	}
@@ -256,7 +303,7 @@ public class OperatorInterface {
 		} else {
 			for (int i = 0; i < 9; i++) {
 				if (!(Character.isDigit(memberNumber.charAt(i)))) {
-					System.out.println("Member number contains non digit characters!");
+					System.out.println("Member number contains non numeric characters!");
 					return promptForMemberNumber();
 				}
 			}
@@ -284,7 +331,7 @@ public class OperatorInterface {
 		} else {
 			for (int i = 0; i < 9; i++) {
 				if(!(Character.isDigit(providerNumber.charAt(i)))) {
-					System.out.println("Provider Number contains non digit characters!");
+					System.out.println("Provider Number contains non numeric characters!");
 					promptForProviderNumber();
 				}
 			}
