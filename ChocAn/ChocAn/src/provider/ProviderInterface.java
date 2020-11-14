@@ -139,7 +139,21 @@ public class ProviderInterface {
         String memberNumber = myObj.nextLine(); // Read user input
         
         // TODO Error check the entered member number (formatting)
-
+        // what should be returned when this fails?
+        if(memberNumber.length()>9) {
+        	System.out.println("Member number too long!");
+        	return " ";
+        }
+        if(memberNumber.length()<9) {
+        	System.out.println("Member number too short!");
+        	return " ";
+        }
+        for(int i = 0; i<memberNumber.length(); ++i) {
+        	if(!(Character.isDigit(memberNumber.charAt(i)))) {
+        		System.out.println("Used non-digit characters!");
+        		return " ";
+        	}
+        }
         return memberNumber;
 	}
 
@@ -154,6 +168,7 @@ public class ProviderInterface {
         
         // TODO Error check the entered provider number (formatting)
 
+        
         return providerNumber;
 	}
 
