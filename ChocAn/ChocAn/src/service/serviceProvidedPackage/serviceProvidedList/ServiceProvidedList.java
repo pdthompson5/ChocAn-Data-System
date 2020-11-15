@@ -194,7 +194,7 @@ public class ServiceProvidedList {
 	        for (int i = 0; i < this.serviceProvidedList.size(); i++) {
 	            pw.print(this.serviceProvidedList.get(i).writeServiceProvidedToCSV());
 	            if (i != this.serviceProvidedList.size() - 1) {
-	                pw.println(" ");
+	                pw.println("");
 	            }
 	        }
 	        pw.close();

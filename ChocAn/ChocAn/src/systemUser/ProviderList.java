@@ -115,7 +115,7 @@ public class ProviderList {
 	        for (int i = 0; i < this.providerList.size(); i++) {
 	            pw.print(this.providerList.get(i).writeProviderToCSV());
 	            if (i != this.providerList.size() - 1) {
-	                pw.println(" ");
+	                pw.println("");
 	            }
 	        }
 	        pw.close();

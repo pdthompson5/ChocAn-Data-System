@@ -230,7 +230,7 @@ public class OperatorInterface {
 		
 		// Format handling
 		for (int i = 0; i < userCity.length(); i++) {
-			if (!Character.isAlphabetic(userCity.charAt(i))) {
+			if (!Character.isAlphabetic(userCity.charAt(i)) && (userCity.charAt(i) != ' ')) {
 				System.out.println("City name must contain only letters");
 				return promptForCity();
 			}

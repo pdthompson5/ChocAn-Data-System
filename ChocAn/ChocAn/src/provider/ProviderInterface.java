@@ -149,16 +149,16 @@ public class ProviderInterface {
         // what should be returned when this fails?
         if(memberNumber.length()>9) {
         	System.out.println("Member number too long!");
-        	promptForMemberNumber();
+        	return promptForMemberNumber();
         }
         if(memberNumber.length()<9) {
         	System.out.println("Member number too short!");
-        	promptForMemberNumber();
+        	return promptForMemberNumber();
         }
         for(int i = 0; i<memberNumber.length(); ++i) {
         	if(!(Character.isDigit(memberNumber.charAt(i)))) {
         		System.out.println("Used non-digit characters!");
-        		promptForMemberNumber();
+        		return promptForMemberNumber();
         	}
         }
         return memberNumber;
@@ -331,6 +331,11 @@ public class ProviderInterface {
 		}
 	}
 
+	/**
+	 * Gets the service price for a particular service for printing
+	 * @param serviceCode
+	 * @return double fee
+	 */
 	private double getServicePrice(String serviceCode) {
 		double price = providerController.lookupServicePriceByCode(serviceCode);
 		return price;

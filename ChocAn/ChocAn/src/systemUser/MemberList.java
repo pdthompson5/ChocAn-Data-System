@@ -138,7 +138,7 @@ public class MemberList {
 	        for (int i = 0; i < this.memberList.size(); i++) {
 	            pw.print(this.memberList.get(i).writeMemberToCSV());
 	            if (i != this.memberList.size() - 1) {
-	                pw.println(" ");
+	                pw.println("");
 	            }
 	        }
 	        pw.close();
