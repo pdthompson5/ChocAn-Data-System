@@ -48,7 +48,7 @@ public class MemberReport {
 	 * Compiles all of the necessary information into a .txt file named "fileName"
 	 * @param fileName
 	 */
-	public void compile(String fileName) {
+	public void writeToTxtFile(String fileName) {
 		//TODO: write this method
 	}
 	
