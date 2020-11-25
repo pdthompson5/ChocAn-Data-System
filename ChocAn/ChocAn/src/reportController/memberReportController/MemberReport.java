@@ -3,6 +3,7 @@ package reportController.memberReportController;
 import java.util.ArrayList;
 
 import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
+import service.serviceProvidedPackage.serviceProvidedList.ServiceProvidedList;
 import systemUser.Member;
 
 import java.io.File;
@@ -14,14 +15,12 @@ import java.io.PrintWriter;
 /**
  * Produces and complies the data required for a member report
  * @author Philip Thompson
+ * @author Ben Peinhardt
  */
 public class MemberReport {
 	
 	private Member member;
-	//parallel arrays for each service
-	private String[] serviceDate;
-	private String[] providerName;
-	private String[] serviceName;
+	private ArrayList<ServiceProvided> servicesProvidedToMember;
     
 	/**
 	 * Constructor: sets attributes of the class
@@ -35,24 +34,12 @@ public class MemberReport {
 		}
 
 		this.member = servicesForWeek.get(0).getMember();
-		
-		int size = servicesForWeek.size();
-		serviceDate = new String[size];
-		providerName = new String[size];
-		serviceName = new String[size];
-		
-		ServiceProvided current;
-		for(int i = 0; i < size; i++) {
-			current = servicesForWeek.get(i);
-			serviceDate[i] = current.getDate();
-			providerName[i] = current.getProvider().getName();
-			serviceName[i] = current.getServiceName();
-		}	
+		this.servicesProvidedToMember = servicesForWeek;
 	}
 	
 	/**
 	 * Compiles all of the necessary information into a .txt file named "fileName"
-	 * @param fileName
+	 * @param path
 	 */
 	public void writeToTxtFile(String path) {
 		try {
@@ -70,11 +57,11 @@ public class MemberReport {
 			pw.println(this.member.getState());
 
 			// print the services to a file
-			for (int i = 0; i < this.providerName.length; i++) {
+			for (int i = 0; i < this.servicesProvidedToMember.size(); i++) {
 				pw.println(); // Separates services from member info and each other
-				pw.println(this.serviceDate[i]);
-				pw.println(this.providerName[i]);
-				pw.println(this.serviceName[i]);
+				pw.println(this.servicesProvidedToMember.get(i).getDate());
+				pw.println(this.servicesProvidedToMember.get(i).getProvider().getName());
+				pw.println(this.servicesProvidedToMember.get(i).getServiceName());
 			}
 
 			pw.close();

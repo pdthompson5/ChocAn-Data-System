@@ -37,6 +37,8 @@ public class ManagerInterface {
         Scanner scanner = new Scanner(System.in);
         String choice = scanner.next().trim();
         if (choice.equals("1")) {
+
+            // This ridiculous looking thing appends the memberNumber to the path as the filename then resets it
             String temp = this.path;
             this.path += memberNumber;
             this.path += ".txt";
@@ -46,6 +48,9 @@ public class ManagerInterface {
         
     }
 
+    /*
+    * Helper func used by produceMemberReport
+    */
     private String promptForMemberNumber() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter member number: ");
