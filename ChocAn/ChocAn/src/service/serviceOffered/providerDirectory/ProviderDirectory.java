@@ -6,7 +6,7 @@ import service.serviceOffered.serviceOffered.ServiceOffered;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-
+//TODO: Add a text file component for the ProviderDirectory 
 
 /**
  * Encompasses Provider Directory, which is actually a list of Services Offered
