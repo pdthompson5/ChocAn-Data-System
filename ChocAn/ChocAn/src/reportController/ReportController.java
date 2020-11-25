@@ -1,9 +1,14 @@
 package reportController;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import reportController.eftReportController.EFTData;
 import reportController.memberReportController.MemberReport;
 import reportController.providerReportController.ProviderReport;
 import reportController.summaryReportController.SummaryReport;
+import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
 import service.serviceProvidedPackage.serviceProvidedList.ServiceProvidedList;
 
 public class ReportController {
@@ -21,7 +26,6 @@ public class ReportController {
     }
     
     public MemberReport produceMemberReport(String memberNumber) {
-    	
     	return new MemberReport(listOfServices.getServiceByMember(memberNumber));
     }
     
@@ -30,6 +34,8 @@ public class ReportController {
     }
     
     public SummaryReport produceSummaryReport() {
+    	ArrayList<ServiceProvided> list = listOfServices.getServiceProvidedList();
+    	list.sort(ServiceProvided.memberNumberComparator);
     	return new SummaryReport(listOfServices.getServiceProvidedList());
     }
     
