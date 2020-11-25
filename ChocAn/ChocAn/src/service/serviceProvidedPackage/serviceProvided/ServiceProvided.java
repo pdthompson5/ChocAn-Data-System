@@ -120,7 +120,7 @@ public class ServiceProvided extends ServiceOffered{
      * @return String serviceProvidedAsCSV
      */
     public String writeServiceProvidedToCSV() {
-        String serviceProvidedAsCSV = String.format("%s,%s,%s,%s,%s,%s,%s", this.serviceProvidedID, this.timeProvided, this.date, this.provider.getProviderNumber(), this.member.getMemberNumber(), this.service.getServiceCode(), this.comments); 
+        String serviceProvidedAsCSV = String.format("%s,%s,%s,%s,%s,%s,%s", this.serviceProvidedID, this.timeProvided, this.date, this.getProvider().getProviderNumber(), this.member.getMemberNumber(), this.service.getServiceCode(), this.comments); 
         
         return serviceProvidedAsCSV;
     }

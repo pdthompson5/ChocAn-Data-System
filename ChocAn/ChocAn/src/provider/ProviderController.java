@@ -82,9 +82,9 @@ public class ProviderController {
 	public void billChocan(String providerNumber, String memberNumber, String serviceDate, String serviceCode,
 			String serviceComments, String currTime) {
 
-		ServiceOffered myService = new ServiceOffered();
-		Member myMember = new Member();
-		Provider myProvider = new Provider();
+		ServiceOffered myService;
+		Member myMember;
+		Provider myProvider;
 		
 		// Find Service
 		myService = this.providerDirectory.getServiceByCode(serviceCode);

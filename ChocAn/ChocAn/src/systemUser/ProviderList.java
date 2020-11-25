@@ -32,7 +32,9 @@ public class ProviderList {
                 newProvider.setCity(values[2]);
                 newProvider.setState(values[3]);
                 newProvider.setZIP(values[4]);
-	            newProvider.setProviderNumber(values[5]);
+	            newProvider.setProviderNumber(values[5].trim());
+	            //this trim is very essential! please don't delete or this will break
+	            
                 this.providerList.add(newProvider);			
 			}
             br.close();
