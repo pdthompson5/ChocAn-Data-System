@@ -33,7 +33,11 @@ public class ManagerInterface {
     public void produceMemberReport() {
         String memberNumber = promptForMemberNumber();
         MemberReport memberReport = this.reportController.produceMemberReport(memberNumber);
-        System.out.println("Member report produced. Do you want to save the report as a file? 1:Yes 2:No");
+        if (memberReport.containsServices == true) {
+            System.out.println("Member report produced. Do you want to save the report as a file? 1:Yes 2:No");
+        } else {
+            System.out.println("No services provided to this member. Do you want to save the report anyway? 1:Yes 2:No");
+        }
         Scanner scanner = new Scanner(System.in);
         String choice = scanner.next().trim();
         if (choice.equals("1")) {

@@ -87,13 +87,13 @@ public class ProviderController {
 		Provider myProvider = new Provider();
 		
 		// Find Service
-		myService = providerDirectory.getServiceByCode(serviceCode);
+		myService = this.providerDirectory.getServiceByCode(serviceCode);
 
 		// Find Member
-		myMember = memberList.getMember(memberNumber);
+		myMember = this.memberList.getMember(memberNumber);
 
 		// Find Provider
-		myProvider = providerList.getProvider(providerNumber);
+		myProvider = this.providerList.getProvider(providerNumber);
 
 		// Add Service Provided
 		serviceProvidedList.addServiceProvided(myService, myProvider, myMember, serviceComments, serviceDate, currTime, generateUniqueServiceProvidedID());

@@ -32,6 +32,9 @@ public class ServiceProvided extends ServiceOffered{
      */
     public ServiceProvided(ServiceOffered service, Provider provider, Member member, String comments, String serviceDate, String currTime, String serviceProvidedID) {
         this.service = service;
+        this.setServiceName(service.getServiceName());
+        this.setServiceCode(service.getServiceCode());
+        this.setServiceFee(service.getServiceFee());
         this.comments = comments;
         this.member = member;
         this.provider = provider;

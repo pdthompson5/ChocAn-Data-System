@@ -25,7 +25,7 @@ public class ProviderInterface {
      * Constructor, prompts for a provider number then launches the main menu
      */
 	public ProviderInterface() {
-		providerNumber = promptForProviderNumber();
+		this.providerNumber = promptForProviderNumber();
 		providerMainMenu();
 	}
 

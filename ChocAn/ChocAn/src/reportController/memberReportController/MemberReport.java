@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
 import service.serviceProvidedPackage.serviceProvidedList.ServiceProvidedList;
 import systemUser.Member;
+import systemUser.Provider;
 
 import java.io.File;
 import java.io.FileReader;
@@ -31,25 +32,27 @@ public class MemberReport {
 	private ArrayList<String> datesOfService = new ArrayList<String>();
 	private ArrayList<String> providerNames = new ArrayList<String>();
 	private ArrayList<String> serviceNames = new ArrayList<String>();
+	public boolean containsServices = false; //default, set to true by constructor 
     
 	/**
 	 * Constructor: sets attributes of the class
 	 * @param servicesForWeek for member 
 	 */
-	public MemberReport(ArrayList<ServiceProvided> servicesForWeek) {
-
-		if (servicesForWeek.size() == 0) {
-			System.out.println("No services provided to this member.");
-			return;
-		}
+	public MemberReport(ArrayList<ServiceProvided> servicesForWeek, Member member) {
 
 		// Set member attributes
-		this.memberName = servicesForWeek.get(0).getMember().getName();
-		this.memberNumber = servicesForWeek.get(0).getMemberNumber();
-		this.memberStreetAddress = servicesForWeek.get(0).getMember().getStreetAddress();
-		this.memberCity = servicesForWeek.get(0).getMember().getCity();
-		this.memberState = servicesForWeek.get(0).getMember().getState();
-		this.memberZip = servicesForWeek.get(0).getMember().getZIP();
+		this.memberName = member.getName();
+		this.memberNumber = member.getMemberNumber();
+		this.memberStreetAddress = member.getStreetAddress();
+		this.memberCity = member.getCity();
+		this.memberState = member.getState();
+		this.memberZip = member.getZIP();
+
+		if (servicesForWeek.size() == 0) {
+			return;
+		} else {
+			this.containsServices = true;
+		}
 
 		// Set service provided attributes
 		for (int i = 0; i < servicesForWeek.size(); i++) {
