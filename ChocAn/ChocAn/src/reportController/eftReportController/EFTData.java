@@ -1,6 +1,6 @@
 package reportController.eftReportController;
 
-public class EFTDataController {
+public class EFTData {
 
 	
 	public String produceEFTData() {

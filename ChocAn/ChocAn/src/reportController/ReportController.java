@@ -1,26 +1,26 @@
 package reportController;
 
-import reportController.eftReportController.EFTDataController;
-import reportController.memberReportController.MemberReportController;
-import reportController.providerReportController.ProviderReportController;
-import reportController.summaryReportController.SummaryReportController;
+import reportController.eftReportController.EFTData;
+import reportController.memberReportController.MemberReport;
+import reportController.providerReportController.ProviderReport;
+import reportController.summaryReportController.SummaryReport;
 import service.serviceProvidedPackage.serviceProvidedList.ServiceProvidedList;
 
 public class ReportController {
 	
-	private ProviderReportController providerReportController;
-	private MemberReportController memberReportController;
-	private SummaryReportController summaryReportController;
-	private EFTDataController eftDataController;
+	private ProviderReport providerReportController;
+	private MemberReport memberReportController;
+	private SummaryReport summaryReportController;
+	private EFTData eftDataController;
 	private ServiceProvidedList listOfServices;
 	
 	
 	
 	public ReportController(ServiceProvidedList listOfServices) {
-		providerReportController = new ProviderReportController();
-		memberReportController = new MemberReportController();
-		summaryReportController = new SummaryReportController();
-		eftDataController = new EFTDataController();
+		providerReportController = new ProviderReport();
+		memberReportController = new MemberReport();
+		summaryReportController = new SummaryReport();
+		eftDataController = new EFTData();
 		this.listOfServices = listOfServices;
 	}
 	

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
 
 
-public class SummaryReportController {
+public class SummaryReport {
     
 	
 	public String produceSummaryReport(ArrayList<ServiceProvided> servicesForWeek) {
