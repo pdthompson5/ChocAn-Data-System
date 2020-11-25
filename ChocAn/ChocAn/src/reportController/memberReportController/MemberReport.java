@@ -19,8 +19,18 @@ import java.io.PrintWriter;
  */
 public class MemberReport {
 	
-	private Member member;
-	private ArrayList<ServiceProvided> servicesProvidedToMember;
+	// Member attributes
+	private String memberName;
+	private String memberNumber;
+	private String memberStreetAddress;
+	private String memberCity;
+	private String memberState;
+	private String memberZip;
+
+	// Services provided attributes as parallel arrays
+	private ArrayList<String> datesOfService = new ArrayList<String>();
+	private ArrayList<String> providerNames = new ArrayList<String>();
+	private ArrayList<String> serviceNames = new ArrayList<String>();
     
 	/**
 	 * Constructor: sets attributes of the class
@@ -33,8 +43,20 @@ public class MemberReport {
 			return;
 		}
 
-		this.member = servicesForWeek.get(0).getMember();
-		this.servicesProvidedToMember = servicesForWeek;
+		// Set member attributes
+		this.memberName = servicesForWeek.get(0).getMember().getName();
+		this.memberNumber = servicesForWeek.get(0).getMemberNumber();
+		this.memberStreetAddress = servicesForWeek.get(0).getMember().getStreetAddress();
+		this.memberCity = servicesForWeek.get(0).getMember().getCity();
+		this.memberState = servicesForWeek.get(0).getMember().getState();
+		this.memberZip = servicesForWeek.get(0).getMember().getZIP();
+
+		// Set service provided attributes
+		for (int i = 0; i < servicesForWeek.size(); i++) {
+			datesOfService.add(servicesForWeek.get(i).getDate());
+			providerNames.add(servicesForWeek.get(i).getProvider().getName());
+			serviceNames.add(servicesForWeek.get(i).getServiceName());
+		}
 	}
 	
 	/**
@@ -49,19 +71,19 @@ public class MemberReport {
 			PrintWriter pw = new PrintWriter(fw);
 			
 			// Print attributes of the member to the file
-			pw.println(this.member.getName());
-			pw.println(this.member.getMemberNumber());
-			pw.println(this.member.getStreetAddress());
-			pw.println(this.member.getCity());
-			pw.println(this.member.getState());
-			pw.println(this.member.getState());
+			pw.println(this.memberName);
+			pw.println(this.memberNumber);
+			pw.println(this.memberStreetAddress);
+			pw.println(this.memberCity);
+			pw.println(this.memberState);
+			pw.println(this.memberZip);
 
 			// print the services to a file
-			for (int i = 0; i < this.servicesProvidedToMember.size(); i++) {
+			for (int i = 0; i < this.datesOfService.size(); i++) {
 				pw.println(); // Separates services from member info and each other
-				pw.println(this.servicesProvidedToMember.get(i).getDate());
-				pw.println(this.servicesProvidedToMember.get(i).getProvider().getName());
-				pw.println(this.servicesProvidedToMember.get(i).getServiceName());
+				pw.println(this.datesOfService.get(i));
+				pw.println(this.providerNames.get(i));
+				pw.println(this.serviceNames.get(i));
 			}
 
 			pw.close();
