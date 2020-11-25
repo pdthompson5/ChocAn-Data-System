@@ -1,10 +1,13 @@
 package reportController.eftReportController;
 
 public class EFTData {
+	private String providerName;
+	private String providerNumber;
+	private double fee;
 
 	
-	public String produceEFTData() {
-		return "";
+	public EFTData() {
+		
 	}
 	
 	private void writeProviderName() {

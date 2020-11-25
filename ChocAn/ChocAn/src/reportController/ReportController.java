@@ -8,37 +8,29 @@ import service.serviceProvidedPackage.serviceProvidedList.ServiceProvidedList;
 
 public class ReportController {
 	
-	private ProviderReport providerReportController;
-	private MemberReport memberReportController;
-	private SummaryReport summaryReportController;
-	private EFTData eftDataController;
 	private ServiceProvidedList listOfServices;
 	
 	
 	
 	public ReportController(ServiceProvidedList listOfServices) {
-		providerReportController = new ProviderReport();
-		memberReportController = new MemberReport();
-		summaryReportController = new SummaryReport();
-		eftDataController = new EFTData();
 		this.listOfServices = listOfServices;
 	}
 	
-    public String produceEFTData() {
-    	return eftDataController.produceEFTData();
+    public EFTData produceEFTData() {
+    	return new EFTData();
     }
     
-    public String produceMemberReport(String memberNumber) {
+    public MemberReport produceMemberReport(String memberNumber) {
     	
-    	return memberReportController.produceMemberReport(listOfServices.getServiceByMember(memberNumber));
+    	return new MemberReport(listOfServices.getServiceByMember(memberNumber));
     }
     
-    public String produceProviderReport(String providerNumber) {
-    	return providerReportController.produceProviderReport(listOfServices.getServiceByProvider(providerNumber));
+    public ProviderReport produceProviderReport(String providerNumber) {
+    	return new ProviderReport(listOfServices.getServiceByProvider(providerNumber));
     }
     
-    public String produceSummaryReport() {
-    	return summaryReportController.produceSummaryReport(listOfServices.getServiceProvidedList());
+    public SummaryReport produceSummaryReport() {
+    	return new SummaryReport(listOfServices.getServiceProvidedList());
     }
     
     

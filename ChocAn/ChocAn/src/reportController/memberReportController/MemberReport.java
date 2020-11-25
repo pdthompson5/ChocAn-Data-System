@@ -6,10 +6,18 @@ import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
 import systemUser.Member;
 
 public class MemberReport {
+	
+	private String memberName;
+	private String memberNumber;
+	private String memberAddress;
+	//parallel arrays for each service
+	private String[] serviceDate;
+	private String[] providerName;
+	private String[] serviceName;
     
 	
-	public String produceMemberReport(ArrayList<ServiceProvided> servicesForWeek) {
-		return "";
+	public MemberReport(ArrayList<ServiceProvided> servicesForWeek) {
+		
 	}
 	
     private void writeMemberNameAndNumber() {

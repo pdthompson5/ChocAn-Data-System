@@ -6,10 +6,29 @@ import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
 import systemUser.Provider;
 
 public class ProviderReport {
+	
+	private String name;
+	private String providerNumber;
+	private String address;
+	private String city;
+	private String state;
+	private String ZIPCode;
+	//parallel arrays for each service provided
+	private String[] dateOfService;
+	private String[] dateAndTimeRecieved;
+	private String[] memberName;
+	private String[] memberNumber;
+	private String[] serviceCode;
+	private double[] fee;
+	//totals
+	private int totalConsultations;
+	private double feeForWeek;
+	
+	
     
 	
-	public String produceProviderReport(ArrayList<ServiceProvided> servicesForWeek) {
-		return "";
+	public ProviderReport(ArrayList<ServiceProvided> servicesForWeek) {
+		
 	}
 	
 	private void writeMemberNameAndNumber() {
