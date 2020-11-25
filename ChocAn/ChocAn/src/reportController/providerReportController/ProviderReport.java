@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
 import systemUser.Provider;
 
+
+/**
+ * Produces and complies the data required for a member report
+ * @author Philip Thompson
+ */
 public class ProviderReport {
 	
 	private String name;
@@ -26,7 +31,10 @@ public class ProviderReport {
 	
 	
     
-	//Fills out all of the attributes 
+	/**
+	 * Constructor: sets attributes of the class
+	 * @param servicesForWeek for a provider 
+	 */
 	public ProviderReport(ArrayList<ServiceProvided> servicesForWeek) {
 		Provider temp = servicesForWeek.get(0).getProvider();
 		name = temp.getName();

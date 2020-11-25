@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
 import systemUser.Member;
 
+
+/**
+ * Produces and complies the data required for a member report
+ * @author Philip Thompson
+ */
 public class MemberReport {
 	
 	private String memberName;
@@ -15,7 +20,10 @@ public class MemberReport {
 	private String[] providerName;
 	private String[] serviceName;
     
-	//Fills out all of the attributes 
+	/**
+	 * Constructor: sets attributes of the class
+	 * @param servicesForWeek for member 
+	 */
 	public MemberReport(ArrayList<ServiceProvided> servicesForWeek) {
 		Member temp = servicesForWeek.get(0).getMember();
 		memberName = temp.getName();
@@ -35,6 +43,16 @@ public class MemberReport {
 			serviceName[i] = current.getServiceName();
 		}	
 	}
+	
+	/**
+	 * Compiles all of the necessary information into a .txt file named "fileName"
+	 * @param fileName
+	 */
+	public void compile(String fileName) {
+		//TODO: write this method
+	}
+	
+	
 	
 	
 	
