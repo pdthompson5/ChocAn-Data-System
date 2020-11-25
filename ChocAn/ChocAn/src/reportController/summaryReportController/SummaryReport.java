@@ -26,6 +26,8 @@ public class SummaryReport {
 		providerNums = new ArrayList<>();
 		feesToBePaid = new ArrayList<>();
 		numberOfConsultations = new ArrayList<>();
+		
+		//TODO Finish
 	
 	}
 	private void writeProviderName() {
