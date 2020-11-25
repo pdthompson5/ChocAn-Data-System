@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
 import systemUser.Member;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 
 /**
  * Produces and complies the data required for a member report
@@ -12,9 +17,7 @@ import systemUser.Member;
  */
 public class MemberReport {
 	
-	private String memberName;
-	private String memberNumber;
-	private String memberAddress;
+	private Member member;
 	//parallel arrays for each service
 	private String[] serviceDate;
 	private String[] providerName;
@@ -25,10 +28,13 @@ public class MemberReport {
 	 * @param servicesForWeek for member 
 	 */
 	public MemberReport(ArrayList<ServiceProvided> servicesForWeek) {
-		Member temp = servicesForWeek.get(0).getMember();
-		memberName = temp.getName();
-		memberNumber = temp.getMemberNumber();
-		memberAddress = temp.getStreetAddress();
+
+		if (servicesForWeek.size() == 0) {
+			System.out.println("No services provided to this member.");
+			return;
+		}
+
+		this.member = servicesForWeek.get(0).getMember();
 		
 		int size = servicesForWeek.size();
 		serviceDate = new String[size];
@@ -48,31 +54,34 @@ public class MemberReport {
 	 * Compiles all of the necessary information into a .txt file named "fileName"
 	 * @param fileName
 	 */
-	public void writeToTxtFile(String fileName) {
-		//TODO: write this method
+	public void writeToTxtFile(String path) {
+		try {
+			// Make a file pointer, why is this three statements Java?
+			File file = new File(path);
+	    	FileWriter fw = new FileWriter(file);
+			PrintWriter pw = new PrintWriter(fw);
+			
+			// Print attributes of the member to the file
+			pw.println(this.member.getName());
+			pw.println(this.member.getMemberNumber());
+			pw.println(this.member.getStreetAddress());
+			pw.println(this.member.getCity());
+			pw.println(this.member.getState());
+			pw.println(this.member.getState());
+
+			// print the services to a file
+			for (int i = 0; i < this.providerName.length; i++) {
+				pw.println(); // Separates services from member info and each other
+				pw.println(this.serviceDate[i]);
+				pw.println(this.providerName[i]);
+				pw.println(this.serviceName[i]);
+			}
+
+			pw.close();
+
+		} catch (Exception e) {
+			System.out.println("Unable to write member report to file.");
+		}
 	}
-	
-	
-	
-	
-	
-    private void writeMemberNameAndNumber() {
 
-    }
-
-    private void writeMemberAddressInfo() {
-
-    }
-
-    private void writeServiceDate() {
-
-    }
-
-    private void writeProviderName() {
-
-    }
-
-    private void writeServiceName() {
-
-    }
 }

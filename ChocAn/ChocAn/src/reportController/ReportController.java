@@ -13,12 +13,12 @@ import service.serviceProvidedPackage.serviceProvidedList.ServiceProvidedList;
 
 public class ReportController {
 	
-	private ServiceProvidedList listOfServices;
+	private ServiceProvidedList listOfServices = new ServiceProvidedList();
 	
 	
 	
-	public ReportController(ServiceProvidedList listOfServices) {
-		this.listOfServices = listOfServices;
+	public ReportController() {
+		
 	}
 	
     public EFTData produceEFTData() {
