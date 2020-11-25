@@ -26,8 +26,39 @@ public class ProviderReport {
 	
 	
     
-	
+	//Fills out all of the attributes 
 	public ProviderReport(ArrayList<ServiceProvided> servicesForWeek) {
+		Provider temp = servicesForWeek.get(0).getProvider();
+		name = temp.getName();
+		providerNumber = temp.getProviderNumber();
+		address = temp.getStreetAddress();
+		city = temp.getCity();
+		state = temp.getState();
+		ZIPCode = temp.getZIP();
+		
+		
+		
+		totalConsultations = servicesForWeek.size();
+		dateOfService = new String[totalConsultations];
+		dateAndTimeRecieved = new String[totalConsultations];
+		memberName = new String[totalConsultations];
+		memberNumber = new String[totalConsultations];
+		serviceCode = new String[totalConsultations];
+		fee = new double[totalConsultations];
+		
+		feeForWeek = 0;
+		ServiceProvided current;
+		for(int i = 0; i < totalConsultations; i++) {
+			current = servicesForWeek.get(0);
+			dateOfService[i] = current.getDate();
+			//FIXME: There is currently no dateAndTimeRecieved attribute in ServiceProvided
+			dateAndTimeRecieved[i] = "";
+			memberName[i] = current.getMember().getName();
+			memberNumber[i] = current.getMemberNumber();
+			serviceCode[i] = current.getServiceCode();
+			fee[i] = current.getServiceFee();
+			feeForWeek += fee[i];
+		}
 		
 	}
 	
