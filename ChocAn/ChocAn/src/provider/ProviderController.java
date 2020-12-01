@@ -4,6 +4,8 @@ package provider;
  * @author Topher Fryzel
  * @author Ben Peinhardt
  */
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import service.serviceOffered.providerDirectory.ProviderDirectory;
 import service.serviceOffered.serviceOffered.ServiceOffered;
@@ -92,11 +94,15 @@ public class ProviderController {
 	 * @param serviceComments
 	 */
 	public void billChocan(String providerNumber, String memberNumber, String serviceDate, String serviceCode,
-			String serviceComments, String currTime) {
+			String serviceComments) {
 
 		ServiceOffered myService;
 		Member myMember;
 		Provider myProvider;
+<<<<<<< HEAD
+=======
+		String currTime = generateDateTime();
+>>>>>>> d82bcf25445c600edcda13b1cd90d1249cf2f0f7
 
 		// Find Service
 		myService = this.providerDirectory.getServiceByCode(serviceCode);
@@ -125,4 +131,17 @@ public class ProviderController {
 		}
 	}
 
+<<<<<<< HEAD
+=======
+	/**
+	 * Uses the Date object to generate a string with the current date and time
+	 * 
+	 * @return String serviceTime
+	 */
+	private String generateDateTime() {
+		Date todaysDate = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
+		return formatter.format(todaysDate);
+	}
+>>>>>>> d82bcf25445c600edcda13b1cd90d1249cf2f0f7
 }
