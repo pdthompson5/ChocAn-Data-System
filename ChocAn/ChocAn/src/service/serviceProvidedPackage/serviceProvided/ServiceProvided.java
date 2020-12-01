@@ -9,11 +9,10 @@ import systemUser.Provider;
 
 /**
  * Encompasses a service provided to a customer
- * 
  * @author Ben Peinhardt
  * @author Topher Fryzel
  */
-public class ServiceProvided extends ServiceOffered {
+public class ServiceProvided extends ServiceOffered{
 
     // Private attributes
     private String serviceProvidedID;
@@ -22,18 +21,16 @@ public class ServiceProvided extends ServiceOffered {
     private Provider provider;
     private Member member;
     private ServiceOffered service;
-    private String comments;
+    private String comments; 
 
     /**
      * Constructor: sets attributes of the class
-     * 
      * @param service
      * @param providerNumber
      * @param memberNumber
      * @param comments
      */
-    public ServiceProvided(ServiceOffered service, Provider provider, Member member, String comments,
-            String serviceDate, String currTime, String serviceProvidedID) {
+    public ServiceProvided(ServiceOffered service, Provider provider, Member member, String comments, String serviceDate, String currTime, String serviceProvidedID) {
         this.service = service;
         this.setServiceName(service.getServiceName());
         this.setServiceCode(service.getServiceCode());
@@ -48,70 +45,62 @@ public class ServiceProvided extends ServiceOffered {
 
     /**
      * Gets the service provided ID
-     * 
      * @return String ID
      */
     public String getServiceProvidedID() {
         return this.serviceProvidedID;
     }
-
+    
     /**
      * Gets the time a service was provided
-     * 
      * @return String timeProvided
      */
     public String getTimeProvided() {
-        return this.timeProvided;
-    }
+    	return timeProvided;
+    } 
 
     /**
      * Gets the date a service was provided
-     * 
      * @return String date
      */
     public String getDate() {
-        return this.date;
+    	return date;
     }
 
     /**
      * Gets the provider number of the provider who provided the service
-     * 
      * @return String providerNumber
      */
     public String getProviderNumber() {
-        return this.provider.getProviderNumber();
+    	return provider.getProviderNumber();
     }
 
     /**
      * Gets the member number of the member who recieved the service
-     * 
      * @return String memberNumber
      */
-    public String getMemberNumber() {
-        return this.member.getMemberNumber();
-    }
+    public String getMemberNumber() {	
+    	return member.getMemberNumber();
+    } 
 
     /**
      * Gets the entire service object for the type of service provided
-     * 
      * @return String service
      */
     public ServiceOffered getService() {
-        return this.service;
+    	return service;
     }
 
     /**
      * Gets the comments from the service provided
-     * 
      * @return String comments
      */
     public String getComments() {
-        return this.comments;
+    	return comments;
     }
 
     /**
      * Gets the member the service was provided to
-     * 
      * @return Member member
      */
     public Member getMember() {
@@ -120,7 +109,6 @@ public class ServiceProvided extends ServiceOffered {
 
     /**
      * Gets the provider who provided the service
-     * 
      * @return Provider provider
      */
     public Provider getProvider() {
@@ -128,26 +116,23 @@ public class ServiceProvided extends ServiceOffered {
     }
 
     /**
-     * Helper function for persistance, writes ServiceProvided information to line
-     * of comma separated strings
-     * 
+     * Helper function for persistance, writes ServiceProvided information to line of comma separated strings
      * @return String serviceProvidedAsCSV
      */
     public String writeServiceProvidedToCSV() {
-        String serviceProvidedAsCSV = String.format("%s,%s,%s,%s,%s,%s,%s", this.serviceProvidedID, this.timeProvided,
-                this.date, this.getProvider().getProviderNumber(), this.member.getMemberNumber(),
-                this.service.getServiceCode(), this.comments);
-
+        String serviceProvidedAsCSV = String.format("%s,%s,%s,%s,%s,%s,%s", this.serviceProvidedID, this.timeProvided, this.date, this.getProvider().getProviderNumber(), this.member.getMemberNumber(), this.service.getServiceCode(), this.comments); 
+        
         return serviceProvidedAsCSV;
     }
-
-    /**
-     * Comparator to help for sorting Compares by provider number
+    
+    /** 
+     * Comparator to help for sorting 
+     * Compares by provider number 
      */
     public static Comparator<ServiceProvided> memberNumberComparator = new Comparator<ServiceProvided>() {
-
-        public int compare(ServiceProvided s1, ServiceProvided s2) {
-            return s1.getProviderNumber().compareTo(s2.getProviderNumber());
-        }
+    	
+    	public int compare(ServiceProvided s1, ServiceProvided s2) {
+    		return s1.getProviderNumber().compareTo(s2.getProviderNumber());
+    	}
     };
 }

@@ -2,7 +2,6 @@ package service.serviceOffered.serviceOffered;
 
 /**
  * Encompasses the attributes of a service offered
- * 
  * @author Ben Peinhardt
  */
 public class ServiceOffered {
@@ -13,35 +12,31 @@ public class ServiceOffered {
     protected double serviceFee;
 
     /**
-     * Gets the Service Name
-     * 
+     * Gets the Service Name 
      * @return String serviceName
      */
     public String getServiceName() {
-        return serviceName;
+    	return serviceName;
     }
 
     /**
      * Gets the service code
-     * 
      * @return String serviceCode
      */
     public String getServiceCode() {
-        return serviceCode;
+    	return serviceCode;
     }
 
     /**
      * gets the service fee
-     * 
      * @return double serviceFee
      */
     public double getServiceFee() {
-        return serviceFee;
+    	return serviceFee;
     }
 
     /**
      * Sets service name
-     * 
      * @param serviceName
      */
     public void setServiceName(String serviceName) {
@@ -50,7 +45,6 @@ public class ServiceOffered {
 
     /**
      * Set service code
-     * 
      * @param serviceCode
      */
     public void setServiceCode(String serviceCode) {
@@ -59,11 +53,10 @@ public class ServiceOffered {
 
     /**
      * Sets the service fee
-     * 
      * @param serviceFee
      */
     public void setServiceFee(double serviceFee) {
         this.serviceFee = serviceFee;
     }
-
+    
 }
