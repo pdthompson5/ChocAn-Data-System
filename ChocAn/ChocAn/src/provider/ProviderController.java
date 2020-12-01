@@ -34,6 +34,19 @@ public class ProviderController {
 	}
 
 	/**
+	 * @param providerNumber sees if provider is in the file
+	 * @return boolean verifyProviderExists
+	 */
+	public boolean verifyProviderExists(String providerNumber) {
+		Provider provider = this.providerList.getProvider(providerNumber);
+		if (provider.getProviderNumber().equals("0")) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	/**
 	 * @param memberNumber sees if member is valid
 	 * @return boolean verifyMemberStatus
 	 */

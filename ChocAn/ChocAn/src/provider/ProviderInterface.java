@@ -27,6 +27,9 @@ public class ProviderInterface {
 	 */
 	public ProviderInterface() {
 		this.providerNumber = promptForProviderNumber();
+		if (!verifyProvider(this.providerNumber)) {
+			return;
+		}
 		providerMainMenu();
 	}
 
@@ -287,7 +290,7 @@ public class ProviderInterface {
 	 */
 	private String promptForServiceComments() {
 		Scanner myObj = new Scanner(System.in); // Create a Scanner object
-		System.out.println("Please enter any additional service comments: ");
+		System.out.print("Please enter any additional service comments: ");
 		String serviceComments = myObj.nextLine(); // Read user input
 
 		// No commas
@@ -338,6 +341,21 @@ public class ProviderInterface {
 			System.out.println("Invalid service code");
 			return false;
 		}
+	}
+
+	/**
+	 * Verifies a provider number exists
+	 * 
+	 * @param String providerNumber
+	 * @return boolean
+	 */
+	public boolean verifyProvider(String providerNumber) {
+		boolean providerExists = providerController.verifyProviderExists(providerNumber);
+		if (!providerExists) {
+			System.out.println("Invalid provider number! Provider does not exist. Returning to menu");
+			return false;
+		}
+		return true;
 	}
 
 	/**

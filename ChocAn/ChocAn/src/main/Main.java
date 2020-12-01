@@ -38,7 +38,7 @@ public class Main {
 			} else if (userChoice == 5) {
 				exitMainMenu = true;
 			} else {
-				System.out.println("Invalid selection, please choose option between 1-5" + userChoice);
+				System.out.println("Invalid selection, please choose option between 1-5");
 			}
 		}
 
