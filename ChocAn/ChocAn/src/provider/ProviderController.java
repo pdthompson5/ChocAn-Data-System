@@ -99,10 +99,7 @@ public class ProviderController {
 		ServiceOffered myService;
 		Member myMember;
 		Provider myProvider;
-<<<<<<< HEAD
-=======
 		String currTime = generateDateTime();
->>>>>>> d82bcf25445c600edcda13b1cd90d1249cf2f0f7
 
 		// Find Service
 		myService = this.providerDirectory.getServiceByCode(serviceCode);
@@ -131,8 +128,6 @@ public class ProviderController {
 		}
 	}
 
-<<<<<<< HEAD
-=======
 	/**
 	 * Uses the Date object to generate a string with the current date and time
 	 * 
@@ -143,5 +138,4 @@ public class ProviderController {
 		SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
 		return formatter.format(todaysDate);
 	}
->>>>>>> d82bcf25445c600edcda13b1cd90d1249cf2f0f7
 }
