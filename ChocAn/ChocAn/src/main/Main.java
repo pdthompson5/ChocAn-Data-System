@@ -22,6 +22,7 @@ public class Main {
 			System.out.println("2: Manager");
 			System.out.println("3: Operator");
 			System.out.println("4: Main Accounting Procedure");
+			System.out.println("<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>");
 			System.out.println("5. Exit");
 			System.out.println("------------------------------------");
 			System.out.print("Please choose from the above options (1-5): ");

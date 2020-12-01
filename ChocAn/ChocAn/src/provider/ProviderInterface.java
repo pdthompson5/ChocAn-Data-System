@@ -39,12 +39,13 @@ public class ProviderInterface {
 	private void providerMainMenu() {
 		Scanner myObj = new Scanner(System.in); // Create a Scanner object
 		while (!exitMenu) {
-			System.out.println("------------------------------------");
+			System.out.println("-------------------------------------");
 			System.out.println("1. Verify Member Status");
 			System.out.println("2. Bill for a ChocAn Service");
 			System.out.println("3. Request the Provider Directory");
+			System.out.println("<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>");
 			System.out.println("4. Exit");
-			System.out.println("------------------------------------");
+			System.out.println("-------------------------------------");
 			System.out.print("Please choose from the above options: ");
 			int userChoice = Integer.parseInt(myObj.nextLine()); // Read user input
 

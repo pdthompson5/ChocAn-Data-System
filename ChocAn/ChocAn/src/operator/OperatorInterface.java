@@ -99,6 +99,8 @@ public class OperatorInterface {
 	private void updateMember() {
 
 		String memberNumber = promptForMemberNumber();
+		if (!verifyMember(memberNumber))
+			return;
 		String memberName = promptForName();
 		String memberStreetAddress = promptForStreetAddress();
 		String memberCity = promptForCity();
@@ -134,7 +136,8 @@ public class OperatorInterface {
 	// Prompts for information and overwrites for a paticular provider
 	private void updateProvider() {
 		String providerNumber = promptForProviderNumber();
-
+		if (!verifyProvider(providerNumber))
+			return;
 		String providerName = promptForName();
 		String providerStreetAddress = promptForStreetAddress();
 		String providerCity = promptForCity();
@@ -153,9 +156,7 @@ public class OperatorInterface {
 	 * @return boolean delete_val
 	 */
 	public boolean verifyDeletion(SystemUser user) {
-		System.out.print("Are you sure you want to delete ");
-		System.out.print(user.getName());
-		System.out.println("? 1: Yes, 2: No");
+		System.out.print("Are you sure you want to delete " + user.getName() + "? 1: Yes, 2: No");
 
 		Scanner scanner = new Scanner(System.in);
 		Integer result = Integer.parseInt(scanner.next());
@@ -363,6 +364,35 @@ public class OperatorInterface {
 				System.out.println("Invalid input, please enter 'Yes' or 'No'");
 			}
 		}
+	}
 
+	/**
+	 * Verifies a member number exists
+	 * 
+	 * @param String memberNumber
+	 * @return boolean
+	 */
+	public boolean verifyMember(String memberNumber) {
+		boolean memberExists = operatorController.verifyMemberExists(memberNumber);
+		if (!memberExists) {
+			System.out.println("Invalid member number! Member does not exist. Returning to menu");
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Verifies a provider number exists
+	 * 
+	 * @param String providerNumber
+	 * @return boolean
+	 */
+	public boolean verifyProvider(String providerNumber) {
+		boolean providerExists = operatorController.verifyProviderExists(providerNumber);
+		if (!providerExists) {
+			System.out.println("Invalid provider number! Provider does not exist. Returning to menu");
+			return false;
+		}
+		return true;
 	}
 }

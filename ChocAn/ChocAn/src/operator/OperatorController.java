@@ -146,4 +146,30 @@ public class OperatorController {
 		this.providerList.persist();
 	}
 
+	/**
+	 * @param memberNumber sees if member is in the file
+	 * @return boolean verifyMemberExists
+	 */
+	public boolean verifyMemberExists(String memberNumber) {
+		Member member = this.memberList.getMember(memberNumber);
+		if (member.getMemberNumber().equals("0")) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	/**
+	 * @param providerNumber sees if provider is in the file
+	 * @return boolean verifyProviderExists
+	 */
+	public boolean verifyProviderExists(String providerNumber) {
+		Provider provider = this.providerList.getProvider(providerNumber);
+		if (provider.getProviderNumber().equals("0")) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 }
