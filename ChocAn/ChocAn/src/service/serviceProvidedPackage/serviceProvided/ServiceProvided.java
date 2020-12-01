@@ -61,7 +61,7 @@ public class ServiceProvided extends ServiceOffered {
      * @return String timeProvided
      */
     public String getTimeProvided() {
-        return timeProvided;
+        return this.timeProvided;
     }
 
     /**
@@ -70,7 +70,7 @@ public class ServiceProvided extends ServiceOffered {
      * @return String date
      */
     public String getDate() {
-        return date;
+        return this.date;
     }
 
     /**
@@ -79,7 +79,7 @@ public class ServiceProvided extends ServiceOffered {
      * @return String providerNumber
      */
     public String getProviderNumber() {
-        return provider.getProviderNumber();
+        return this.provider.getProviderNumber();
     }
 
     /**
@@ -88,7 +88,7 @@ public class ServiceProvided extends ServiceOffered {
      * @return String memberNumber
      */
     public String getMemberNumber() {
-        return member.getMemberNumber();
+        return this.member.getMemberNumber();
     }
 
     /**
@@ -97,7 +97,7 @@ public class ServiceProvided extends ServiceOffered {
      * @return String service
      */
     public ServiceOffered getService() {
-        return service;
+        return this.service;
     }
 
     /**
@@ -106,7 +106,7 @@ public class ServiceProvided extends ServiceOffered {
      * @return String comments
      */
     public String getComments() {
-        return comments;
+        return this.comments;
     }
 
     /**

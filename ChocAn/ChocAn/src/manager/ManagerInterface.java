@@ -87,7 +87,7 @@ public class ManagerInterface {
      */
     private String promptForMemberNumber() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter member number: ");
+        System.out.print("Please enter member number: ");
         String response = scanner.next().trim();
         return response;
     }
@@ -125,7 +125,7 @@ public class ManagerInterface {
      */
     private String promptForProviderNumber() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter provider number: ");
+        System.out.print("Please enter provider number: ");
         String response = scanner.next().trim();
         return response;
     }
