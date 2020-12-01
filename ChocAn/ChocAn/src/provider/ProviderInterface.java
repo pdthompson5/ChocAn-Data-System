@@ -128,16 +128,23 @@ public class ProviderInterface {
 		}
 		String serviceDate = promptForServiceDate();
 
+<<<<<<< HEAD
 		String currTime = generateDateTime();
 
+=======
+>>>>>>> d82bcf25445c600edcda13b1cd90d1249cf2f0f7
 		String serviceCode = promptForServiceCode();
 		if (!verifyServiceCode(serviceCode))
 			return;
 
 		String serviceComments = promptForServiceComments();
 
+<<<<<<< HEAD
 		providerController.billChocan(this.providerNumber, memberNumber, serviceDate, serviceCode, serviceComments,
 				currTime);
+=======
+		providerController.billChocan(this.providerNumber, memberNumber, serviceDate, serviceCode, serviceComments);
+>>>>>>> d82bcf25445c600edcda13b1cd90d1249cf2f0f7
 
 		System.out.print("Your service fee is: $");
 		System.out.println(getServicePrice(serviceCode));
@@ -308,6 +315,7 @@ public class ProviderInterface {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Uses the Date object to generate a string with the current date and time
 	 * 
 	 * @return String serviceTime
@@ -323,6 +331,12 @@ public class ProviderInterface {
 	 * 
 	 * @return boolean
 	 */
+=======
+	 * Verifies a service code
+	 * 
+	 * @return boolean
+	 */
+>>>>>>> d82bcf25445c600edcda13b1cd90d1249cf2f0f7
 	private boolean verifyServiceCode(String serviceCode) {
 		String serviceName = providerController.lookupServiceByCode(serviceCode);
 		if (serviceName != null) {
