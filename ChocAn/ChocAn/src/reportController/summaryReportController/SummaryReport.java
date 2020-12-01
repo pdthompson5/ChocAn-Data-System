@@ -1,5 +1,8 @@
 package reportController.summaryReportController;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import systemUser.Provider;
@@ -56,22 +59,34 @@ public class SummaryReport {
 		
 	
 	}
-	private void writeProviderName() {
-		
+	
+	
+	
+	public void writeToTxtFile(String path) {
+		try {
+			File file = new File(path);
+			FileWriter fw = new FileWriter(file);
+			PrintWriter pw = new PrintWriter(fw);
+			
+			for (int i = 0; i < this.providersToBePaid.size(); i++) {
+				pw.println(this.providersToBePaid.get(i));
+				pw.println(this.providerNums.get(i));
+				pw.println("$" + this.feesToBePaid.get(i));
+				pw.println(this.numberOfConsultations.get(i));
+				pw.println("");
+			}
+			pw.println(this.numProviders);
+			pw.println(this.totalConsultations);
+			pw.println("$" + this.totalFee);
+
+			pw.close();
+
+		} catch (Exception e) {
+			System.out.println("Unable to print summary report to file.");
+		}
 	}
-	private void writeProviderConsultations() {
-		
-	}
-	private void writeProviderTotalFee() {
-		
-	}
-	private void writeTotalNumberOfProviders() {
-		
-	}
-	private void writeTotalConsultations() {
-		
-	}
-	private void writeTotalFee() {
-		
-	}
+	
+	
+	
+	
 }
