@@ -6,7 +6,7 @@ public class EFTData {
 	private double fee;
 
 	public EFTData() {
-
+		
 	}
 
 	private void writeProviderName() {

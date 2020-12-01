@@ -8,7 +8,12 @@ import java.util.ArrayList;
 import systemUser.Provider;
 
 import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
-
+/**
+ * Produces and compiles the data required for a summary report given a sorted list of the week's 
+ * 
+ * @author Philip Thompson
+ *
+ */
 
 public class SummaryReport {
 	//parallel arrays for each provider who provided a service
@@ -60,7 +65,10 @@ public class SummaryReport {
 	
 	}
 	
-	
+	/**
+	 * Writes the report to a text file
+	 * @param path
+	 */
 	
 	public void writeToTxtFile(String path) {
 		try {
