@@ -12,11 +12,13 @@ import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
 import service.serviceProvidedPackage.serviceProvidedList.ServiceProvidedList;
 
 import systemUser.MemberList;
+import systemUser.ProviderList;
 
 public class ReportController {
 
 	private ServiceProvidedList listOfServices = new ServiceProvidedList();
 	private MemberList memberList = new MemberList();
+	private ProviderList providerList = new ProviderList();
 
 	public ReportController() {
 
@@ -27,12 +29,11 @@ public class ReportController {
 	}
 
 	public MemberReport produceMemberReport(String memberNumber) {
-		return new MemberReport(listOfServices.getServiceByMember(memberNumber),
-				this.memberList.getMember(memberNumber));
+		return new MemberReport(listOfServices.getServiceByMember(memberNumber), this.memberList.getMember(memberNumber));
 	}
 
 	public ProviderReport produceProviderReport(String providerNumber) {
-		return new ProviderReport(listOfServices.getServiceByProvider(providerNumber));
+		return new ProviderReport(listOfServices.getServiceByProvider(providerNumber), this.providerList.getProvider(providerNumber));
 	}
 
 	public SummaryReport produceSummaryReport() {
