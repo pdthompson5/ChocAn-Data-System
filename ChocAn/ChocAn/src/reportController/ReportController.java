@@ -26,8 +26,8 @@ public class ReportController {
 
 	}
 
-	public EFTData produceEFTData() {
-		return new EFTData();
+	public EFTData produceEFTData(String providerNumber) {
+		return new EFTData(listOfServices.getServiceByProvider(providerNumber));
 	}
 
 	public MemberReport produceMemberReport(String memberNumber) {
