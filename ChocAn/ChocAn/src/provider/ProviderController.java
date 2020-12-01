@@ -1,7 +1,8 @@
 package provider;
+
 /**
- * @author someone else
  * @author Topher Fryzel
+ * @author Ben Peinhardt
  */
 
 import service.serviceOffered.providerDirectory.ProviderDirectory;
@@ -18,40 +19,49 @@ public class ProviderController {
 	private ProviderList providerList = new ProviderList();
 	private ServiceProvidedList serviceProvidedList = new ServiceProvidedList();
 	private ProviderDirectory providerDirectory = new ProviderDirectory();
-	
+
 	/**
-	 * @param memberNumber
-	 * sees if member is in the file
+	 * @param memberNumber sees if member is in the file
 	 * @return boolean verifyMemberExists
 	 */
 	public boolean verifyMemberExists(String memberNumber) {
 		Member member = this.memberList.getMember(memberNumber);
-		if(member.getMemberNumber().equals("0")){
+		if (member.getMemberNumber().equals("0")) {
 			return false;
-		}
-		else {
+		} else {
 			return true;
 		}
 	}
 
-	
 	/**
-	 * @param memberNumber
-	 * sees if member is valid
+	 * @param providerNumber sees if provider is in the file
+	 * @return boolean verifyProviderExists
+	 */
+	public boolean verifyProviderExists(String providerNumber) {
+		Provider provider = this.providerList.getProvider(providerNumber);
+		if (provider.getProviderNumber().equals("0")) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	/**
+	 * @param memberNumber sees if member is valid
 	 * @return boolean verifyMemberStatus
 	 */
 	public boolean verifyMemberStatus(String memberNumber) {
 		Member member = this.memberList.getMember(memberNumber);
-		if(member.getMemberStatus() == (true)) {
+		if (member.getMemberStatus() == (true)) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
 
 	/**
 	 * Looks up a service in provider directory by code and returns its name
+	 * 
 	 * @param serviceCode
 	 * @return String serviceName
 	 */
@@ -62,6 +72,7 @@ public class ProviderController {
 
 	/**
 	 * Looks up a service fee by the service code
+	 * 
 	 * @param serviceCode
 	 * @return double fee
 	 */
@@ -73,6 +84,7 @@ public class ProviderController {
 
 	/**
 	 * Creates a service provided object and adds it to the ServiceProvidedList
+	 * 
 	 * @param providerNumber
 	 * @param memberNumber
 	 * @param serviceDate
@@ -85,7 +97,7 @@ public class ProviderController {
 		ServiceOffered myService;
 		Member myMember;
 		Provider myProvider;
-		
+
 		// Find Service
 		myService = this.providerDirectory.getServiceByCode(serviceCode);
 
@@ -96,19 +108,21 @@ public class ProviderController {
 		myProvider = this.providerList.getProvider(providerNumber);
 
 		// Add Service Provided
-		serviceProvidedList.addServiceProvided(myService, myProvider, myMember, serviceComments, serviceDate, currTime, generateUniqueServiceProvidedID());
-		
+		serviceProvidedList.addServiceProvided(myService, myProvider, myMember, serviceComments, serviceDate, currTime,
+				generateUniqueServiceProvidedID());
+
 	}
 
 	private String generateUniqueServiceProvidedID() {
 		if (this.serviceProvidedList.getServiceProvidedList().size() == 0) {
 			return "100000";
 		} else {
-			String number = this.serviceProvidedList.getServiceProvidedList().get(this.serviceProvidedList.getServiceProvidedList().size() -1).getServiceProvidedID();
+			String number = this.serviceProvidedList.getServiceProvidedList()
+					.get(this.serviceProvidedList.getServiceProvidedList().size() - 1).getServiceProvidedID();
 			Integer num = Integer.parseInt(number);
 			num++;
 			return Integer.toString(num);
 		}
-    }
-    
+	}
+
 }

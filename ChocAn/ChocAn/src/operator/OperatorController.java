@@ -1,7 +1,5 @@
 package operator;
 
-import java.io.IOException;
-
 import systemUser.Member;
 import systemUser.MemberList;
 import systemUser.Provider;
@@ -9,29 +7,34 @@ import systemUser.ProviderList;
 
 /**
  * Controller for operators to manage member and provider data
+ * 
  * @author Griffin Mack
  * @author Ben Peinhardt
  */
 public class OperatorController {
 
-    // Private attributes
+	// Private attributes
 	protected MemberList memberList = new MemberList();
 	private ProviderList providerList = new ProviderList();
 
 	public void addNewMember(String memberName, String memberStreetAddress, String memberCity, String memberState,
 			String memberZip) {
-		String memberNumber = createUniqueMemberNumber();  
+		String memberNumber = createUniqueMemberNumber();
 		boolean memberStatus = true; // Members are valid when added to the system
-		this.memberList.createMember(memberName, memberStreetAddress, memberCity, memberState, memberZip, memberNumber, memberStatus);
+		this.memberList.createMember(memberName, memberStreetAddress, memberCity, memberState, memberZip, memberNumber,
+				memberStatus);
 	}
 
-	public void addNewProvider(String providerName, String providerStreetAddress, String providerCity, String providerState, String providerZip) {
-		String providerNumber = createUniqueProviderNumber();  
-		this.providerList.createProvider(providerName, providerStreetAddress, providerCity, providerState, providerZip, providerNumber);
+	public void addNewProvider(String providerName, String providerStreetAddress, String providerCity,
+			String providerState, String providerZip) {
+		String providerNumber = createUniqueProviderNumber();
+		this.providerList.createProvider(providerName, providerStreetAddress, providerCity, providerState, providerZip,
+				providerNumber);
 	}
 
 	/**
 	 * Returns a Member object from the member list by ID
+	 * 
 	 * @param memberNumber
 	 * @return Member member
 	 */
@@ -42,6 +45,7 @@ public class OperatorController {
 
 	/**
 	 * Returns a provider object from the provider list by ID
+	 * 
 	 * @param providerNumber
 	 * @return
 	 */
@@ -52,13 +56,15 @@ public class OperatorController {
 
 	/**
 	 * Creates a unique member ID by adding one to the previous member ID
+	 * 
 	 * @return String memberID
 	 */
 	public String createUniqueMemberNumber() {
 		if (this.memberList.getMemberList().size() == 0) {
 			return "100000000";
 		} else {
-			String number = this.memberList.getMemberList().get(this.memberList.getMemberList().size() - 1).getMemberNumber();
+			String number = this.memberList.getMemberList().get(this.memberList.getMemberList().size() - 1)
+					.getMemberNumber();
 			Integer num = Integer.parseInt(number);
 			num++;
 			return Integer.toString(num);
@@ -67,13 +73,15 @@ public class OperatorController {
 
 	/**
 	 * Creates unique provider ID by adding one to the previous provider ID
+	 * 
 	 * @return String providerID
 	 */
 	public String createUniqueProviderNumber() {
 		if (this.providerList.getProviderList().size() == 0) {
 			return "100000000";
 		} else {
-			String number = this.providerList.getProviderList().get(this.providerList.getProviderList().size()-1).getProviderNumber();
+			String number = this.providerList.getProviderList().get(this.providerList.getProviderList().size() - 1)
+					.getProviderNumber();
 			Integer num = Integer.parseInt(number);
 			num++;
 			return Integer.toString(num);
@@ -89,6 +97,7 @@ public class OperatorController {
 
 	/**
 	 * Removes a provider from providerList by providerNumber
+	 * 
 	 * @param providerNumber
 	 */
 	public void deleteProvider(String providerNumber) {
@@ -98,7 +107,8 @@ public class OperatorController {
 	/**
 	 * Updates a member in member list by member number
 	 */
-	public void updateMember(String memberNumber, String memberName, String memberStreetAddress, String memberCity, String memberState, String memberZip) {
+	public void updateMember(String memberNumber, String memberName, String memberStreetAddress, String memberCity,
+			String memberState, String memberZip) {
 		Member memberToUpdate = this.memberList.getMember(memberNumber);
 
 		memberToUpdate.setName(memberName);
@@ -111,19 +121,20 @@ public class OperatorController {
 	}
 
 	// /**
-	//  * Updates a members status using member number
-	//  * @param memberNumber
-	//  * @param status
-	//  */
+	// * Updates a members status using member number
+	// * @param memberNumber
+	// * @param status
+	// */
 	// public void updateMemberStatus(String memberNumber, boolean status) {
-	// 	Member memberToUpdate = this.memberList.getMember(memberNumber);
-	// 	memberToUpdate.setMemberStatus(status);
+	// Member memberToUpdate = this.memberList.getMember(memberNumber);
+	// memberToUpdate.setMemberStatus(status);
 	// }
 
 	/**
 	 * Updates a provider in provider list by providerNumber
 	 */
-	public void updateProvider(String providerNumber, String providerName, String providerStreetAddress, String providerCity, String providerState, String providerZip) {
+	public void updateProvider(String providerNumber, String providerName, String providerStreetAddress,
+			String providerCity, String providerState, String providerZip) {
 		Provider providerToUpdate = this.providerList.getProvider(providerNumber);
 
 		providerToUpdate.setName(providerName);
@@ -134,5 +145,31 @@ public class OperatorController {
 
 		this.providerList.persist();
 	}
-    
+
+	/**
+	 * @param memberNumber sees if member is in the file
+	 * @return boolean verifyMemberExists
+	 */
+	public boolean verifyMemberExists(String memberNumber) {
+		Member member = this.memberList.getMember(memberNumber);
+		if (member.getMemberNumber().equals("0")) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	/**
+	 * @param providerNumber sees if provider is in the file
+	 * @return boolean verifyProviderExists
+	 */
+	public boolean verifyProviderExists(String providerNumber) {
+		Provider provider = this.providerList.getProvider(providerNumber);
+		if (provider.getProviderNumber().equals("0")) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 }
