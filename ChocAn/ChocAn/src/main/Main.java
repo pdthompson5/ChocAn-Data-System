@@ -2,7 +2,7 @@ package main;
 
 import java.util.Scanner;
 
-import mainAccounting.MainAccountingProcedure;
+import mainAccounting.MainAccountingProcedureInterface;
 import manager.ManagerInterface;
 import operator.OperatorInterface;
 import provider.ProviderInterface;
@@ -35,7 +35,7 @@ public class Main {
 			} else if (userChoice == 3) {
 				new OperatorInterface();
 			} else if (userChoice == 4) {
-				new MainAccountingProcedure();
+				new MainAccountingProcedureInterface();
 			} else if (userChoice == 5) {
 				exitMainMenu = true;
 			} else {

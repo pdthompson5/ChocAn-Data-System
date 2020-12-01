@@ -1,6 +1,6 @@
 package mainAccounting;
 
-public class MainAccountingProcedure {
+public class MainAccountingProcedureInterface {
     public void runMainAccountingProcedure() {
 
     }
