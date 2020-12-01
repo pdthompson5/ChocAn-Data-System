@@ -17,7 +17,7 @@ public class Main {
 		boolean exitMainMenu = false;
 
 		while (!exitMainMenu) {
-			System.out.println("----------------------------------");
+			System.out.println("------------------------------------");
 			System.out.println("1: Provider");
 			System.out.println("2: Manager");
 			System.out.println("3: Operator");

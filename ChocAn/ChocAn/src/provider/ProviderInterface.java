@@ -20,7 +20,7 @@ public class ProviderInterface {
 	private ProviderDirectory providerDirectory = new ProviderDirectory();
 
 	private static ProviderController providerController = new ProviderController();
-	boolean exitMenu = false;
+	private boolean exitMenu = false;
 
 	/**
 	 * Constructor, prompts for a provider number then launches the main menu

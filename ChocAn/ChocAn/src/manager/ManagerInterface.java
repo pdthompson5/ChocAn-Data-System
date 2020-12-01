@@ -9,6 +9,7 @@ import reportController.providerReportController.ProviderReport;
 
 /**
  * @author Ben Peinhardt
+ * @author Griffin Mack
  */
 public class ManagerInterface {
 
@@ -16,38 +17,50 @@ public class ManagerInterface {
     private ReportController reportController = new ReportController();
     // path for reports
     private String path = "reports/";
+    private boolean exitMenu = false;
 
     /**
-     * Launches the command line interface for the manager terminal. Will be replaced by gui 
+     * Launches the command line interface for the manager terminal. Will be
+     * replaced by gui
      */
     public ManagerInterface() {
-        CLI();
+        managerMainMenu();
     }
 
     /**
      * Command Line Interface with managers options
      */
-    public void CLI() {
+    public void managerMainMenu() {
         Scanner scanner = new Scanner(System.in);
+        while (!exitMenu) {
+            System.out.println("---------------------------------");
+            System.out.println("1: Produce member report");
+            System.out.println("2: Produce provider report");
+            System.out.println("<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>");
+            System.out.println("3. Exit");
+            System.out.println("---------------------------------");
+            System.out.print("Please choose from the above options: ");
 
-        System.out.println("-----------------------------------");
-        System.out.println("1: Produce member report");
-        System.out.println("2: Produce provider report");
-        System.out.println("-----------------------------------");
-
-        String choice = scanner.next();
-        if (choice.trim().equals("1")) {
-            produceMemberReport();
-        } else if (choice.trim().equals("2")) {
-            produceProviderReport();
+            String choice = scanner.next();
+            if (choice.trim().equals("1")) {
+                produceMemberReport();
+            } else if (choice.trim().equals("2")) {
+                produceProviderReport();
+            } else if (choice.trim().equals("3")) {
+                System.out.println("Exiting manager menu");
+                exitMenu = true;
+            }
         }
     }
 
     /**
-     * Produces a member report given a member number and gives the option to save the report
+     * Produces a member report given a member number and gives the option to save
+     * the report
      */
     public void produceMemberReport() {
         String memberNumber = promptForMemberNumber();
+        if (!verifyMember(memberNumber))
+            return;
         MemberReport memberReport = this.reportController.produceMemberReport(memberNumber);
         if (memberReport.containsServices == true) {
             System.out.println("Member report produced. Do you want to save the report as a file? 1:Yes 2:No");
@@ -81,11 +94,14 @@ public class ManagerInterface {
 
     public void produceProviderReport() {
         String providerNumber = promptForProviderNumber();
+        if (!verifyMember(providerNumber))
+            return;
         ProviderReport providerReport = this.reportController.produceProviderReport(providerNumber);
         if (providerReport.containsServices) {
             System.out.println("Provider report produced. Do you want to save the report as a file? 1:Yes 2:No");
         } else {
-            System.out.println("No services were billed by this provider. Do you want to save the report anyway? 1:Yes 2:No");
+            System.out.println(
+                    "No services were billed by this provider. Do you want to save the report anyway? 1:Yes 2:No");
         }
 
         Scanner scanner = new Scanner(System.in);
@@ -105,8 +121,8 @@ public class ManagerInterface {
     }
 
     /*
-    * Helper function used by produceProviderReport
-    */
+     * Helper function used by produceProviderReport
+     */
     private String promptForProviderNumber() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter provider number: ");
@@ -122,4 +138,33 @@ public class ManagerInterface {
 
     }
 
+    /**
+     * Verifies a member number exists
+     * 
+     * @param String memberNumber
+     * @return boolean
+     */
+    public boolean verifyMember(String memberNumber) {
+        boolean memberExists = reportController.verifyMemberExists(memberNumber);
+        if (!memberExists) {
+            System.out.println("Invalid member number! Member does not exist. Returning to menu");
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * Verifies a provider number exists
+     * 
+     * @param String providerNumber
+     * @return boolean
+     */
+    public boolean verifyProvider(String providerNumber) {
+        boolean providerExists = operatorController.verifyProviderExists(providerNumber);
+        if (!providerExists) {
+            System.out.println("Invalid provider number! Provider does not exist. Returning to menu");
+            return false;
+        }
+        return true;
+    }
 }

@@ -13,7 +13,7 @@ import systemUser.SystemUser;
  */
 public class OperatorInterface {
 	private OperatorController operatorController = new OperatorController();
-	boolean exitMenu = false;
+	private boolean exitMenu = false;
 
 	/**
 	 * Constructor, launches the operator main menu
