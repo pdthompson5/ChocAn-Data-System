@@ -128,16 +128,13 @@ public class ProviderInterface {
 		}
 		String serviceDate = promptForServiceDate();
 
-		String currTime = generateDateTime();
-
 		String serviceCode = promptForServiceCode();
 		if (!verifyServiceCode(serviceCode))
 			return;
 
 		String serviceComments = promptForServiceComments();
 
-		providerController.billChocan(this.providerNumber, memberNumber, serviceDate, serviceCode, serviceComments,
-				currTime);
+		providerController.billChocan(this.providerNumber, memberNumber, serviceDate, serviceCode, serviceComments);
 
 		System.out.print("Your service fee is: $");
 		System.out.println(getServicePrice(serviceCode));
@@ -305,17 +302,6 @@ public class ProviderInterface {
 			serviceComments.equals(serviceComments.substring(0, 99));
 		}
 		return serviceComments;
-	}
-
-	/**
-	 * Uses the Date object to generate a string with the current date and time
-	 * 
-	 * @return String serviceTime
-	 */
-	private String generateDateTime() {
-		Date todaysDate = new Date();
-		SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
-		return formatter.format(todaysDate);
 	}
 
 	/**
