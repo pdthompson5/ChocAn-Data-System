@@ -1,6 +1,7 @@
 package reportController.memberReportController;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
 import service.serviceProvidedPackage.serviceProvidedList.ServiceProvidedList;
@@ -10,6 +11,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 
 /**
  * Produces and complies the data required for a member report
@@ -37,7 +39,7 @@ public class MemberReport {
 	 * Constructor: sets attributes of the class
 	 * 
 	 * @param servicesForWeek for member
-	 * @param member to whom services were provided
+	 * @param member          to whom services were provided
 	 */
 	public MemberReport(ArrayList<ServiceProvided> servicesForWeek, Member member) {
 
@@ -70,8 +72,10 @@ public class MemberReport {
 	 */
 	public void writeToTxtFile(String path) {
 		try {
+			String finalPath = path + memberName + " " + generateDate() + ".txt";
+
 			// Make a file pointer, why is this three statements Java?
-			File file = new File(path);
+			File file = new File(finalPath);
 			FileWriter fw = new FileWriter(file);
 			PrintWriter pw = new PrintWriter(fw);
 
@@ -96,6 +100,17 @@ public class MemberReport {
 		} catch (Exception e) {
 			System.out.println("Unable to write member report to file.");
 		}
+	}
+
+	/**
+	 * Uses the Date object to generate a string with the current date
+	 * 
+	 * @return String serviceDate
+	 */
+	private String generateDate() {
+		Date todaysDate = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
+		return formatter.format(todaysDate);
 	}
 
 }

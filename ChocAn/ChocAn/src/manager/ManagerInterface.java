@@ -16,7 +16,7 @@ public class ManagerInterface {
     // Private instance of report controller
     private ReportController reportController = new ReportController();
     // path for reports
-    private String path = "reports/";
+    private String path = "reports/manager/";
     private boolean exitMenu = false;
 
     /**
@@ -49,6 +49,8 @@ public class ManagerInterface {
             } else if (choice.trim().equals("3")) {
                 System.out.println("Exiting manager menu");
                 exitMenu = true;
+            } else {
+                System.out.println("Invalid selection, please choose option between 1-3");
             }
         }
     }
@@ -63,22 +65,14 @@ public class ManagerInterface {
             return;
         MemberReport memberReport = this.reportController.produceMemberReport(memberNumber);
         if (memberReport.containsServices == true) {
-            System.out.println("Member report produced. Do you want to save the report as a file? 1:Yes 2:No");
+            System.out.print("Member report produced. Do you want to save the report as a file? 1:Yes 2:No");
         } else {
-            System.out
-                    .println("No services provided to this member. Do you want to save the report anyway? 1:Yes 2:No");
+            System.out.print("No services provided to this member. Do you want to save the report anyway? 1:Yes 2:No");
         }
         Scanner scanner = new Scanner(System.in);
         String choice = scanner.next().trim();
         if (choice.equals("1")) {
-
-            // This ridiculous looking thing appends the memberNumber to the path as the
-            // filename, writes the text file, then resets the path
-            String temp = this.path;
-            this.path += memberNumber;
-            this.path += ".txt";
             memberReport.writeToTxtFile(this.path);
-            this.path = temp;
         }
     }
 
@@ -98,24 +92,16 @@ public class ManagerInterface {
             return;
         ProviderReport providerReport = this.reportController.produceProviderReport(providerNumber);
         if (providerReport.containsServices) {
-            System.out.println("Provider report produced. Do you want to save the report as a file? 1:Yes 2:No");
+            System.out.print("Provider report produced. Do you want to save the report as a file? 1:Yes 2:No");
         } else {
-            System.out.println(
+            System.out.print(
                     "No services were billed by this provider. Do you want to save the report anyway? 1:Yes 2:No");
         }
 
         Scanner scanner = new Scanner(System.in);
         String choice = scanner.next().trim();
         if (choice.equals("1")) {
-
-            // This ridiculous looking thing appends the memberNumber to the path as the
-            // filename, writes the text file, then resets the path
-            String temp = this.path;
-            this.path += "/providerReports/";
-            this.path += providerNumber;
-            this.path += ".txt";
             providerReport.writeToTxtFile(this.path);
-            this.path = temp;
         }
 
     }

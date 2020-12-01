@@ -1,9 +1,7 @@
 package provider;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Date;
 
 import service.serviceOffered.providerDirectory.ProviderDirectory;
 import service.serviceOffered.serviceOffered.ServiceOffered;
@@ -65,7 +63,7 @@ public class ProviderInterface {
 						exitMenu = true;
 				}
 			} else {
-				System.out.println("Invalid selection, please choose option between 1-4" + userChoice);
+				System.out.println("Invalid selection, please choose option between 1-4");
 			}
 		}
 	}

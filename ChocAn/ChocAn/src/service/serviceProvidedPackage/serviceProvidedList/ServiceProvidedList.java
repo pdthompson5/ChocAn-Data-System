@@ -167,13 +167,20 @@ public class ServiceProvidedList {
      */
     public ArrayList<Member> getWeeklyMembers() {
         ArrayList<Member> list = new ArrayList<Member>();
+        boolean memberFound = false;
 
-        // TODO: Use the Date object to compare today with the date of service
-        // Also: What does "this week" mean? Last 7 days? Monday - Friday?
         for (int i = 0; i < this.serviceProvidedList.size(); i++) {
+            ServiceProvided memberSevice = this.serviceProvidedList.get(i);
+            Member member = memberSevice.getMember();
+            for (int j = 0; j < list.size() && memberFound == false; j++) {
+                if (list.get(j).getMemberNumber().equals(member.getMemberNumber()))
+                    memberFound = true;
 
+            }
+            if (memberFound == false)
+                list.add(member);
+            memberFound = false;
         }
-
         return list;
     }
 
@@ -184,13 +191,20 @@ public class ServiceProvidedList {
      */
     public ArrayList<Provider> getWeeklyProviders() {
         ArrayList<Provider> list = new ArrayList<Provider>();
+        boolean providerFound = false;
 
-        // TODO: Use the Date object to compare today with the date of service
-        // Also: What does "this week" mean? Last 7 days? Monday - Friday?
         for (int i = 0; i < this.serviceProvidedList.size(); i++) {
+            ServiceProvided providerSevice = this.serviceProvidedList.get(i);
+            Provider provider = providerSevice.getProvider();
+            for (int j = 0; j < list.size() && providerFound == false; j++) {
+                if (list.get(j).getProviderNumber().equals(provider.getProviderNumber()))
+                    providerFound = true;
 
+            }
+            if (providerFound == false)
+                list.add(provider);
+            providerFound = false;
         }
-
         return list;
     }
 

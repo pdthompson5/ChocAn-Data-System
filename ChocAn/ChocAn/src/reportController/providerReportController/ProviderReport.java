@@ -1,14 +1,15 @@
 package reportController.providerReportController;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 
 import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
 import systemUser.Provider;
-
 
 /**
  * Produces and complies the data required for a member report
@@ -18,7 +19,7 @@ import systemUser.Provider;
  */
 public class ProviderReport {
 
-	private String name;
+	private String providerName;
 	private String providerNumber;
 	private String address;
 	private String city;
@@ -35,7 +36,8 @@ public class ProviderReport {
 	private int totalConsultations;
 	private double feeForWeek;
 
-	// Used by interface for saving options (Are you sure you want to save an empty report etc.)
+	// Used by interface for saving options (Are you sure you want to save an empty
+	// report etc.)
 	public boolean containsServices = false;
 
 	/**
@@ -45,7 +47,7 @@ public class ProviderReport {
 	 */
 	public ProviderReport(ArrayList<ServiceProvided> servicesForWeek, Provider provider) {
 		// Set provider information
-		this.name = provider.getName();
+		this.providerName = provider.getName();
 		this.providerNumber = provider.getProviderNumber();
 		this.address = provider.getStreetAddress();
 		this.city = provider.getCity();
@@ -72,7 +74,10 @@ public class ProviderReport {
 		for (int i = 0; i < totalConsultations; i++) {
 			current = servicesForWeek.get(0);
 			this.dateOfService[i] = current.getDate();
-			this.dateAndTimeRecieved[i] = current.getTimeProvided(); // This is a misleading name but we need to change it everywhere at once. Its the dynamically generated time and date when the service record goes into the computer system.
+			this.dateAndTimeRecieved[i] = current.getTimeProvided(); // This is a misleading name but we need to change
+																		// it everywhere at once. Its the dynamically
+																		// generated time and date when the service
+																		// record goes into the computer system.
 			this.memberName[i] = current.getMember().getName();
 			this.memberNumber[i] = current.getMemberNumber();
 			this.serviceCode[i] = current.getServiceCode();
@@ -84,15 +89,19 @@ public class ProviderReport {
 
 	/**
 	 * It.. writes the report to a txt file... no seriosuly
+	 * 
 	 * @param path
 	 */
 	public void writeToTxtFile(String path) {
 		try {
-			File file = new File(path);
+			String finalPath = path + providerName + " " + generateDate() + ".txt";
+
+			// Make a file pointer, why is this three statements Java?
+			File file = new File(finalPath);
 			FileWriter fw = new FileWriter(file);
 			PrintWriter pw = new PrintWriter(fw);
 
-			pw.println(this.name);
+			pw.println(this.providerName);
 			pw.println(this.providerNumber);
 			pw.println(this.address);
 			pw.println(this.city);
@@ -118,6 +127,17 @@ public class ProviderReport {
 		} catch (Exception e) {
 			System.out.println("Unable to print provider report to file.");
 		}
+	}
+
+	/**
+	 * Uses the Date object to generate a string with the current date
+	 * 
+	 * @return String serviceDate
+	 */
+	private String generateDate() {
+		Date todaysDate = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("MM-dd-yyyy");
+		return formatter.format(todaysDate);
 	}
 
 }

@@ -35,9 +35,38 @@ public class ReportController {
 				this.memberList.getMember(memberNumber));
 	}
 
+	/**
+	 * Produces a member report for each unique member serviced during the week
+	 * 
+	 * @return ArrayList<MemberReport> memberReportList
+	 */
+	public ArrayList<MemberReport> produceAllMemberReports() {
+		ArrayList<MemberReport> memberReportList = new ArrayList<MemberReport>();
+		ArrayList<Member> memberList = listOfServices.getWeeklyMembers();
+		for (int i = 0; i < memberList.size(); i++) {
+			memberReportList.add(produceMemberReport(memberList.get(i).getMemberNumber()));
+		}
+		return memberReportList;
+	}
+
 	public ProviderReport produceProviderReport(String providerNumber) {
 		return new ProviderReport(listOfServices.getServiceByProvider(providerNumber),
 				this.providerList.getProvider(providerNumber));
+	}
+
+	/**
+	 * Produces a provider report for each unique provider who provided a service
+	 * during the week
+	 * 
+	 * @return ArrayList<ProviderReport> providerReportList
+	 */
+	public ArrayList<ProviderReport> produceAllProviderReports() {
+		ArrayList<ProviderReport> providerReportList = new ArrayList<ProviderReport>();
+		ArrayList<Provider> providerList = listOfServices.getWeeklyProviders();
+		for (int i = 0; i < providerList.size(); i++) {
+			providerReportList.add(produceProviderReport(providerList.get(i).getProviderNumber()));
+		}
+		return providerReportList;
 	}
 
 	public SummaryReport produceSummaryReport() {
