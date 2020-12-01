@@ -16,7 +16,8 @@ public class ManagerInterface {
     // Private instance of report controller
     private ReportController reportController = new ReportController();
     // path for reports
-    private String path = "reports/manager/";
+    private String memberPath = "reports/manager/members/";
+    private String providerPath = "reports/manager/providers/";
     private boolean exitMenu = false;
 
     /**
@@ -72,7 +73,7 @@ public class ManagerInterface {
         Scanner scanner = new Scanner(System.in);
         String choice = scanner.next().trim();
         if (choice.equals("1")) {
-            memberReport.writeToTxtFile(this.path);
+            memberReport.writeToTxtFile(this.memberPath);
         }
     }
 
@@ -101,7 +102,7 @@ public class ManagerInterface {
         Scanner scanner = new Scanner(System.in);
         String choice = scanner.next().trim();
         if (choice.equals("1")) {
-            providerReport.writeToTxtFile(this.path);
+            providerReport.writeToTxtFile(this.providerPath);
         }
 
     }
