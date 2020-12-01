@@ -37,6 +37,7 @@ public class MemberReport {
 	 * Constructor: sets attributes of the class
 	 * 
 	 * @param servicesForWeek for member
+	 * @param member to whom services were provided
 	 */
 	public MemberReport(ArrayList<ServiceProvided> servicesForWeek, Member member) {
 

@@ -5,6 +5,9 @@ import java.util.Scanner;
 import reportController.ReportController;
 import reportController.memberReportController.MemberReport;
 
+/**
+ * @author Ben Peinhardt
+ */
 public class ManagerInterface {
 
     // Private instance of report controller
@@ -12,10 +15,16 @@ public class ManagerInterface {
     // path for reports
     private String path = "reports/";
 
+    /**
+     * Launches the command line interface for the manager terminal. Will be replaced by gui 
+     */
     public ManagerInterface() {
         CLI();
     }
 
+    /**
+     * Command Line Interface with managers options
+     */
     public void CLI() {
         Scanner scanner = new Scanner(System.in);
 
@@ -29,6 +38,9 @@ public class ManagerInterface {
         }
     }
 
+    /**
+     * Produces a member report given a member number and gives the option to save the report
+     */
     public void produceMemberReport() {
         String memberNumber = promptForMemberNumber();
         MemberReport memberReport = this.reportController.produceMemberReport(memberNumber);
@@ -43,7 +55,7 @@ public class ManagerInterface {
         if (choice.equals("1")) {
 
             // This ridiculous looking thing appends the memberNumber to the path as the
-            // filename then resets it
+            // filename, writes the text file, then resets the path
             String temp = this.path;
             this.path += memberNumber;
             this.path += ".txt";

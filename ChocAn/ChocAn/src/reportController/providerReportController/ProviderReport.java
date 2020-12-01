@@ -56,8 +56,7 @@ public class ProviderReport {
 		for (int i = 0; i < totalConsultations; i++) {
 			current = servicesForWeek.get(0);
 			this.dateOfService[i] = current.getDate();
-			// FIXME: There is currently no dateAndTimeRecieved attribute in ServiceProvided
-			this.dateAndTimeRecieved[i] = "";
+			this.dateAndTimeRecieved[i] = current.getTimeProvided(); // This is a misleading name but we need to change it everywhere at once. Its the dynamically generate time and date when the service record goes into the computer system.
 			this.memberName[i] = current.getMember().getName();
 			this.memberNumber[i] = current.getMemberNumber();
 			this.serviceCode[i] = current.getServiceCode();
