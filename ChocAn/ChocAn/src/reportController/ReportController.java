@@ -14,33 +14,31 @@ import service.serviceProvidedPackage.serviceProvidedList.ServiceProvidedList;
 import systemUser.MemberList;
 
 public class ReportController {
-	
+
 	private ServiceProvidedList listOfServices = new ServiceProvidedList();
 	private MemberList memberList = new MemberList();
-	
-	
-	
+
 	public ReportController() {
-		
+
 	}
-	
-    public EFTData produceEFTData() {
-    	return new EFTData();
-    }
-    
-    public MemberReport produceMemberReport(String memberNumber) {
-    	return new MemberReport(listOfServices.getServiceByMember(memberNumber), this.memberList.getMember(memberNumber));
-    }
-    
-    public ProviderReport produceProviderReport(String providerNumber) {
-    	return new ProviderReport(listOfServices.getServiceByProvider(providerNumber));
-    }
-    
-    public SummaryReport produceSummaryReport() {
-    	ArrayList<ServiceProvided> list = listOfServices.getServiceProvidedList();
-    	list.sort(ServiceProvided.memberNumberComparator);
-    	return new SummaryReport(listOfServices.getServiceProvidedList());
-    }
-    
-    
+
+	public EFTData produceEFTData() {
+		return new EFTData();
+	}
+
+	public MemberReport produceMemberReport(String memberNumber) {
+		return new MemberReport(listOfServices.getServiceByMember(memberNumber),
+				this.memberList.getMember(memberNumber));
+	}
+
+	public ProviderReport produceProviderReport(String providerNumber) {
+		return new ProviderReport(listOfServices.getServiceByProvider(providerNumber));
+	}
+
+	public SummaryReport produceSummaryReport() {
+		ArrayList<ServiceProvided> list = listOfServices.getServiceProvidedList();
+		list.sort(ServiceProvided.memberNumberComparator);
+		return new SummaryReport(listOfServices.getServiceProvidedList());
+	}
+
 }

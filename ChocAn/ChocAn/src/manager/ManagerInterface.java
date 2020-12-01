@@ -12,7 +12,6 @@ public class ManagerInterface {
     // path for reports
     private String path = "reports/";
 
-
     public ManagerInterface() {
         CLI();
     }
@@ -36,29 +35,31 @@ public class ManagerInterface {
         if (memberReport.containsServices == true) {
             System.out.println("Member report produced. Do you want to save the report as a file? 1:Yes 2:No");
         } else {
-            System.out.println("No services provided to this member. Do you want to save the report anyway? 1:Yes 2:No");
+            System.out
+                    .println("No services provided to this member. Do you want to save the report anyway? 1:Yes 2:No");
         }
         Scanner scanner = new Scanner(System.in);
         String choice = scanner.next().trim();
         if (choice.equals("1")) {
 
-            // This ridiculous looking thing appends the memberNumber to the path as the filename then resets it
+            // This ridiculous looking thing appends the memberNumber to the path as the
+            // filename then resets it
             String temp = this.path;
             this.path += memberNumber;
             this.path += ".txt";
             memberReport.writeToTxtFile(this.path);
             this.path = temp;
         }
-        
     }
 
     /*
-    * Helper func used by produceMemberReport
-    */
+     * Helper func used by produceMemberReport
+     */
     private String promptForMemberNumber() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter member number: ");
-        return scanner.next().trim();
+        String response = scanner.next().trim();
+        return response;
     }
 
     public void produceProviderReport() {
@@ -67,7 +68,7 @@ public class ManagerInterface {
 
     public void produceSummaryReport() {
 
-    } 
+    }
 
     private void saveReportToFile(String report) {
 

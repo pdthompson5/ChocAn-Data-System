@@ -6,20 +6,19 @@ import service.serviceProvidedPackage.serviceProvided.ServiceProvided;
 import service.serviceProvidedPackage.serviceProvidedList.ServiceProvidedList;
 import systemUser.*;
 
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
-
 /**
  * Produces and complies the data required for a member report
+ * 
  * @author Philip Thompson
  * @author Ben Peinhardt
  */
 public class MemberReport {
-	
+
 	// Member attributes
 	private String memberName;
 	private String memberNumber;
@@ -32,11 +31,12 @@ public class MemberReport {
 	private ArrayList<String> datesOfService = new ArrayList<String>();
 	private ArrayList<String> providerNames = new ArrayList<String>();
 	private ArrayList<String> serviceNames = new ArrayList<String>();
-	public boolean containsServices = false; //default, set to true by constructor 
-    
+	public boolean containsServices = false; // default, set to true by constructor
+
 	/**
 	 * Constructor: sets attributes of the class
-	 * @param servicesForWeek for member 
+	 * 
+	 * @param servicesForWeek for member
 	 */
 	public MemberReport(ArrayList<ServiceProvided> servicesForWeek, Member member) {
 
@@ -61,18 +61,19 @@ public class MemberReport {
 			serviceNames.add(servicesForWeek.get(i).getServiceName());
 		}
 	}
-	
+
 	/**
 	 * Compiles all of the necessary information into a .txt file named "fileName"
+	 * 
 	 * @param path
 	 */
 	public void writeToTxtFile(String path) {
 		try {
 			// Make a file pointer, why is this three statements Java?
 			File file = new File(path);
-	    	FileWriter fw = new FileWriter(file);
+			FileWriter fw = new FileWriter(file);
 			PrintWriter pw = new PrintWriter(fw);
-			
+
 			// Print attributes of the member to the file
 			pw.println(this.memberName);
 			pw.println(this.memberNumber);
