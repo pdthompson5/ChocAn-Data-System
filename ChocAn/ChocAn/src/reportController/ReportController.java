@@ -42,7 +42,7 @@ public class ReportController {
 
 	public SummaryReport produceSummaryReport() {
 		ArrayList<ServiceProvided> list = listOfServices.getServiceProvidedList();
-		list.sort(ServiceProvided.memberNumberComparator);
+		list.sort(ServiceProvided.providerNumberComparator);
 		return new SummaryReport(listOfServices.getServiceProvidedList());
 	}
 

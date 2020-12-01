@@ -144,7 +144,7 @@ public class ServiceProvided extends ServiceOffered {
     /**
      * Comparator to help for sorting Compares by provider number
      */
-    public static Comparator<ServiceProvided> memberNumberComparator = new Comparator<ServiceProvided>() {
+    public static Comparator<ServiceProvided> providerNumberComparator = new Comparator<ServiceProvided>() {
 
         public int compare(ServiceProvided s1, ServiceProvided s2) {
             return s1.getProviderNumber().compareTo(s2.getProviderNumber());
