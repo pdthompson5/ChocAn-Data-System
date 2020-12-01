@@ -207,46 +207,48 @@ public class ProviderInterface {
 		String serviceDate = myObj.nextLine(); // Read user input
 
 		// Error check the entered service date (formatting)
-		if (serviceDate.length() > 10) {
+		boolean isValid = true;
+		if (serviceDate.length() > 10 && isValid) {
 			System.out.println("Service date too long!");
-			promptForServiceDate();
+			isValid = false;
 		}
-		if (serviceDate.length() < 10) {
+		if (serviceDate.length() < 10 && isValid) {
 			System.out.println("Service date too short!");
-			promptForServiceDate();
+			isValid = false;
 		}
-
-		if (!(Character.isDigit(serviceDate.charAt(0)))) {
+		if (!(Character.isDigit(serviceDate.charAt(0))) && isValid) {
 			System.out.println("Used non-digit characters!");
-			promptForServiceDate();
+			isValid = false;
 		}
-		if (!(Character.isDigit(serviceDate.charAt(1)))) {
+		if (!(Character.isDigit(serviceDate.charAt(1))) && isValid) {
 			System.out.println("Used non-digit characters!");
-			promptForServiceDate();
+			isValid = false;
 		}
-		if (serviceDate.charAt(2) != '-') {
+		if (serviceDate.charAt(2) != '-' && isValid) {
 			System.out.println("Please use a dash.");
-			promptForServiceDate();
+			isValid = false;
 		}
-		if (!(Character.isDigit(serviceDate.charAt(3)))) {
+		if (!(Character.isDigit(serviceDate.charAt(3))) && isValid) {
 			System.out.println("Used non-digit characters!");
-			promptForServiceDate();
+			isValid = false;
 		}
-		if (!(Character.isDigit(serviceDate.charAt(4)))) {
+		if (!(Character.isDigit(serviceDate.charAt(4))) && isValid) {
 			System.out.println("Used non-digit characters!");
-			promptForServiceDate();
+			isValid = false;
 		}
-		if (serviceDate.charAt(5) != '-') {
+		if (serviceDate.charAt(5) != '-' && isValid) {
 			System.out.println("Please use a dash.");
-			promptForServiceDate();
+			isValid = false;
 		}
-		for (int i = 6; i < 10; ++i) {
-			if (!(Character.isDigit(serviceDate.charAt(i)))) {
+		for (int i = 6; i < 10 && isValid; ++i) {
+			if (!(Character.isDigit(serviceDate.charAt(i))) && isValid) {
 				System.out.println("Used non-digit characters!");
-				promptForServiceDate();
+				isValid = false;
 			}
 		}
-
+		if (!isValid) {
+			promptForServiceDate();
+		}
 		return serviceDate;
 	}
 
@@ -322,7 +324,7 @@ public class ProviderInterface {
 		if (serviceName != null) {
 			Scanner myObj = new Scanner(System.in);
 			while (true) {
-				System.out.println(serviceName + " - Is this service correct? (Yes or No): ");
+				System.out.print(serviceName + " - Is this service correct? (Yes or No): ");
 				String userChoice = myObj.nextLine();
 				if (userChoice.equals("Yes")) {
 					return true;
