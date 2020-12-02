@@ -101,26 +101,27 @@ public class ProviderReport {
 			FileWriter fw = new FileWriter(file);
 			PrintWriter pw = new PrintWriter(fw);
 
-			pw.println(this.providerName);
-			pw.println(this.providerNumber);
-			pw.println(this.address);
-			pw.println(this.city);
-			pw.println(this.state);
-			pw.println(this.ZIPCode);
+			pw.println("Provider Name: " + this.providerName);
+			pw.println("Provider Number: " + this.providerNumber);
+			pw.println("Provider Street Address: " + this.address);
+			pw.println("Provider City: " + this.city);
+			pw.println("Provider State: " + this.state);
+			pw.println("Provider ZIP: " + this.ZIPCode);
 			pw.println("");
 
 			for (int i = 0; i < this.totalConsultations; i++) {
-				pw.println(this.dateOfService[i]);
-				pw.println(this.dateAndTimeRecieved[i]);
-				pw.println(this.memberName[i]);
-				pw.println(this.memberNumber[i]);
-				pw.println(this.serviceCode[i]);
-				pw.println(this.fee[i]);
+				pw.println("Service " + (i+1));
+				pw.println("     Date of Service: " + this.dateOfService[i]);
+				pw.println("     Date and Time Recived: " + this.dateAndTimeRecieved[i]);
+				pw.println("     Member Name: " + this.memberName[i]);
+				pw.println("     Member Number: " + this.memberNumber[i]);
+				pw.println("     Service Code: " + this.serviceCode[i]);
+				pw.println("     Service Fee: " + this.fee[i]);
 				pw.println("");
 			}
 
-			pw.println(this.totalConsultations);
-			pw.println(this.feeForWeek);
+			pw.println("Total Consultations: " + this.totalConsultations);
+			pw.println("Fee for Week: " + this.feeForWeek);
 
 			pw.close();
 
