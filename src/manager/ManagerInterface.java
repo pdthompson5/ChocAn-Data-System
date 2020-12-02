@@ -17,9 +17,9 @@ public class ManagerInterface {
     // Private instance of report controller
     private ReportController reportController = new ReportController();
     // path for reports
-    private String memberPath = "reports/manager/members/";
-    private String providerPath = "reports/manager/providers/";
-    private String summaryPath = "reports/manager/";
+    private String memberPath = "src/reports/manager/members/";
+    private String providerPath = "src/reports/manager/providers/";
+    private String summaryPath = "src/reports/manager/";
     private boolean exitMenu = false;
 
     /**
