@@ -17,7 +17,7 @@ public class ProviderInterface {
 	private String providerNumber;
 	private ProviderDirectory providerDirectory = new ProviderDirectory();
 
-	private static ProviderController providerController = new ProviderController();
+	private ProviderController providerController = new ProviderController();
 	private boolean exitMenu = false;
 
 	/**
