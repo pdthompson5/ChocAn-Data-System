@@ -33,7 +33,7 @@ public class AddProviderTest {
 			}
 		}
 
-		assertFalse(foundVal);
+		assertTrue(foundVal);
 	}
 
 	
