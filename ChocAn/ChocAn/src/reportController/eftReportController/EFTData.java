@@ -56,7 +56,7 @@ public class EFTData {
 
 	public void writeToTxtFile(String path) {
 		try {
-			String finalPath = path + "EFT Data" + " " + generateDate() + ".txt";
+			String finalPath = path + "EFT_Data" + "_" + generateDate() + ".txt";
 			File file = new File(finalPath);
 			FileWriter fw = new FileWriter(file);
 			PrintWriter pw = new PrintWriter(fw);
