@@ -30,6 +30,7 @@ public class ServiceProvidedList {
     // Private Attributes
     private ArrayList<ServiceProvided> serviceProvidedList = new ArrayList<ServiceProvided>();
     private String path = "src/userData/service_provided_list.csv";
+    private String testPath = "src/userData/userTestData/service_provided_list.csv";
 
     /**
      * Constructor, builds ServiceProvidedList from csv file
@@ -37,6 +38,26 @@ public class ServiceProvidedList {
     public ServiceProvidedList() {
         try {
             BufferedReader br = new BufferedReader(new FileReader(this.path));
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split(",");
+                ServiceProvided tempService = buildServiceProvidedFromCSV(values);
+                this.serviceProvidedList.add(tempService);
+            }
+            br.close();
+
+        } catch (Exception e) {
+            System.out.println("Unable to read services provided from service provided file");
+        }
+    }
+    
+    /**
+     * 
+     * Constuctor used for testing 
+     */
+    public ServiceProvidedList(int i) {
+    	try {
+            BufferedReader br = new BufferedReader(new FileReader(this.testPath));
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
