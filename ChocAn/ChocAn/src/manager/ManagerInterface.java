@@ -6,6 +6,7 @@ import java.util.Scanner;
 import reportController.ReportController;
 import reportController.memberReportController.MemberReport;
 import reportController.providerReportController.ProviderReport;
+import reportController.summaryReportController.SummaryReport;
 
 /**
  * @author Ben Peinhardt
@@ -18,6 +19,7 @@ public class ManagerInterface {
     // path for reports
     private String memberPath = "reports/manager/members/";
     private String providerPath = "reports/manager/providers/";
+    private String summaryPath = "reports/manager/";
     private boolean exitMenu = false;
 
     /**
@@ -37,8 +39,9 @@ public class ManagerInterface {
             System.out.println("---------------------------------");
             System.out.println("1: Produce member report");
             System.out.println("2: Produce provider report");
-            System.out.println("<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>");
-            System.out.println("3. Exit");
+            System.out.println("3: Produce summary report");
+            System.out.println("<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>");
+            System.out.println("4. Exit");
             System.out.println("---------------------------------");
             System.out.print("Please choose from the above options: ");
 
@@ -47,11 +50,13 @@ public class ManagerInterface {
                 produceMemberReport();
             } else if (choice.trim().equals("2")) {
                 produceProviderReport();
-            } else if (choice.trim().equals("3")) {
+            } else if(choice.trim().equals("3")) {
+            	produceSummaryReport();
+        	}else if (choice.trim().equals("4")) {
                 System.out.println("Exiting manager menu");
                 exitMenu = true;
             } else {
-                System.out.println("Invalid selection, please choose option between 1-3");
+                System.out.println("Invalid selection, please choose option between 1-4");
             }
         }
     }
@@ -86,7 +91,10 @@ public class ManagerInterface {
         String response = scanner.next().trim();
         return response;
     }
-
+     /**
+     * Produces a provider report given a provider number and gives the option to save
+     * the report
+     */
     public void produceProviderReport() {
         String providerNumber = promptForProviderNumber();
         if (!verifyMember(providerNumber))
@@ -116,13 +124,18 @@ public class ManagerInterface {
         String response = scanner.next().trim();
         return response;
     }
-
+    
+     /**
+     * Produces a summary report and gives the option to save the report
+     */
     public void produceSummaryReport() {
-
-    }
-
-    private void saveReportToFile(String report) {
-
+    	SummaryReport summaryReport = this.reportController.produceSummaryReport();
+    	System.out.print("Summary report produced. Do you want to save the report as a file? 1:Yes 2:No");
+    	Scanner scanner = new Scanner(System.in);
+        String choice = scanner.next().trim();
+        if (choice.equals("1")) {
+            summaryReport.writeToTxtFile(this.summaryPath);
+        }
     }
 
     /**
@@ -147,7 +160,7 @@ public class ManagerInterface {
      * @return boolean
      */
     public boolean verifyProvider(String providerNumber) {
-        boolean providerExists = operatorController.verifyProviderExists(providerNumber);
+        boolean providerExists = reportController.verifyProviderExists(providerNumber);
         if (!providerExists) {
             System.out.println("Invalid provider number! Provider does not exist. Returning to menu");
             return false;

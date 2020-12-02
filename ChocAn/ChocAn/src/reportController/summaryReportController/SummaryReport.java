@@ -38,7 +38,7 @@ public class SummaryReport {
 	public SummaryReport(ArrayList<ServiceProvided> servicesForWeek) {
 		ServiceProvided currentService;
 		String currentProviderNum = "";
-
+			
 		totalFee = 0;
 
 		// j = iterator for each provider
