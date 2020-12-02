@@ -1,0 +1,16 @@
+Member Name: Topher
+Member Number: 100000000
+Member Street Address: 312344 Street
+Member City: Western
+Member State: IL
+Member ZIP: 60558
+Service 1
+
+     Date of Service: 12-02-2020
+     Provider Name: Ben
+     Name of Service: Chocolate Therapy
+Service 2
+
+     Date of Service: 12-02-2020
+     Provider Name: Ben
+     Name of Service: Chocolate Therapy

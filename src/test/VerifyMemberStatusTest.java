@@ -7,10 +7,10 @@ import org.junit.Test;
 
 import provider.ProviderController;
 import systemUser.Member;
-//@author Topher Fryzel
+
 public class VerifyMemberStatusTest {
-	
-	private static ProviderController providerController = new ProviderController();
+
+	private ProviderController providerController = new ProviderController();
 	
 	@Before
 	public void setUp() throws Exception {
@@ -22,9 +22,11 @@ public class VerifyMemberStatusTest {
 	@Test
 	public void testVerifyMemberStatus() {
 		
+		boolean expected = false;
+		boolean verify = providerController.verifyMemberExists("100000001");
 		
-		providerController.verifyMemberExists("100000001");
-		//should return false
+		assertEquals(expected, verify);
 	}
+	
 
 }
