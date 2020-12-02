@@ -80,19 +80,20 @@ public class MemberReport {
 			PrintWriter pw = new PrintWriter(fw);
 
 			// Print attributes of the member to the file
-			pw.println(this.memberName);
-			pw.println(this.memberNumber);
-			pw.println(this.memberStreetAddress);
-			pw.println(this.memberCity);
-			pw.println(this.memberState);
-			pw.println(this.memberZip);
+			pw.println("Member Name: " + this.memberName);
+			pw.println("Member Number: " + this.memberNumber);
+			pw.println("Member Street Address: " + this.memberStreetAddress);
+			pw.println("Member City: " + this.memberCity);
+			pw.println("Member State: " + this.memberState);
+			pw.println("Member ZIP: " + this.memberZip);
 
 			// print the services to a file
 			for (int i = 0; i < this.datesOfService.size(); i++) {
+				pw.println("Service " + i + 1);
 				pw.println(); // Separates services from member info and each other
-				pw.println(this.datesOfService.get(i));
-				pw.println(this.providerNames.get(i));
-				pw.println(this.serviceNames.get(i));
+				pw.println("     Date of Service: " + this.datesOfService.get(i));
+				pw.println("     Provider Name: " + this.providerNames.get(i));
+				pw.println("     Name of Service: " + this.serviceNames.get(i));
 			}
 
 			pw.close();

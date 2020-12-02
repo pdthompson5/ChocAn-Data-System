@@ -84,15 +84,15 @@ public class SummaryReport {
 			PrintWriter pw = new PrintWriter(fw);
 
 			for (int i = 0; i < this.providersToBePaid.size(); i++) {
-				pw.println(this.providersToBePaid.get(i));
-				pw.println(this.providerNums.get(i));
-				pw.println("$" + this.feesToBePaid.get(i));
-				pw.println(this.numberOfConsultations.get(i));
+				pw.println("Provider Name: " + this.providersToBePaid.get(i));
+				pw.println("Provider Number: " + this.providerNums.get(i));
+				pw.println("Fee to be paid: $" + this.feesToBePaid.get(i));
+				pw.println("Provider Consultations: " + this.numberOfConsultations.get(i));
 				pw.println("");
 			}
-			pw.println(this.numProviders);
-			pw.println(this.totalConsultations);
-			pw.println("$" + this.totalFee);
+			pw.println("Number of Active Providers This Week:" + this.numProviders);
+			pw.println("Number of Consultations This Week: " + this.totalConsultations);
+			pw.println("Total fee to be paid: $" + this.totalFee);
 
 			pw.close();
 
