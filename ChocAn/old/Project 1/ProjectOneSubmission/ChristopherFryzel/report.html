@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 13 Project Submission</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            position: relative;
+
+            /* Layout */
+            display: grid;
+            grid-template-areas:
+                "nav header header header"
+                "nav main main main"
+                "nav main main main"
+                "nav main main main";
+
+            width: 100vw;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            grid-area: nav;
+            padding: 10px 50px;
+            position: sticky;
+            top: 0;
+        }
+
+        #sticky {
+            position: sticky;
+            top: 5px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.1rem;
+        }
+
+        nav ul {
+            list-style-type: none;
+            line-height: 2rem;
+        }
+
+        nav li {
+            color: black;
+            font-size: 1.1rem;
+        }
+
+        nav ul ul {
+            padding-left: 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+            text-decoration-color: crimson;
+        }
+
+        /* Header */
+        header {
+            grid-area: header;
+            padding: 5px;
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "table graph"
+                "list list";
+            gap: 20px;
+        }
+
+        header h1 {
+            text-align: center;
+            margin-top: 5px;
+            grid-area: header;
+            margin-bottom: 30px;
+        }
+
+        header table {
+            margin: 0 auto;
+            font-size: 1.2rem;
+            grid-area: table;
+            margin-top: 10%;
+            padding-left: 20%;
+        }
+
+        header table td {
+            text-align: center;
+            padding: 2px;
+        }
+
+        header iframe {
+            padding-right: 50px;
+            grid-area: graph;
+            overflow: scroll;
+            margin: 0 auto;
+        }
+
+        header ul {
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            grid-area: list;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        header li {
+            list-style-type: none;
+        }
+
+        /* Main  */
+        main {
+            grid-area: main;
+            padding: 20px;
+        }
+
+        main h2 {
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: crimson;
+            margin: 5px;
+        }
+
+        main>div {
+            width: 70%;
+            margin: 0 auto;
+            line-height: 2rem;
+        }
+
+        main>div ul {
+            list-style-type: none;
+        }
+
+        main>div ol {
+            padding-left: 30px;
+        }
+
+        main>div p {
+            font-size: 1.2rem;
+        }
+
+        main>div li {
+            font-size: 1.2rem;
+        }
+
+        main a {
+            color: black;
+            text-decoration: none;
+        }
+
+        main a:hover {
+            text-decoration: underline;
+            text-decoration-color: crimson;
+        }
+
+        main ul {
+            padding-left: 15px;
+        }
+
+        /* Footer */
+        footer {
+            grid-area: footer;
+
+        }
+
+        header,
+        nav,
+        main,
+        footer {
+            border: 1px solid crimson;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+    <header>
+        <h1>Team 13 | CS 200 Project Submission</h1>
+
+        <br>
+        <table>
+            <title>Student Information</title>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>CWID</th>
+                    <th>Email Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+
+                <tr>
+                    <td>Christopher Fryzel</td>
+                    <td>11971451</td>
+                    <td>cmfryzel@crimson.ua.edu</td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+        <!-- Hours Chart -->
+        <br>
+        <iframe width="700" height="371" seamless frameborder="0" scrolling="no"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQzzAvAhmspBvIbOTQBMVbB494QD6NoRsO0B9GwpvX_7j7y7jkPvk8nutdhm3JNuLc_hol-U8EoO6M2/pubchart?oid=842031039&amp;format=interactive"></iframe>
+
+        <br><br>
+        <ul>
+            <li><strong>Benjamin Peinhardt</strong> - Glossary, Use Case Description Review and Editing, Produce Summary
+                Report Use Case, Verify Member Status Use Case, report.html <strong>(20%)</strong></li>
+            <li><strong>Christopher Fryzel</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and
+                Editing, Update Member Records Use Case, Produce Provider Report Use Case, Document Management
+                <strong>(20%)</strong></li>
+            <li><strong>Philip Thompson</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and
+                Editing, Produce Member Report Use Case, Update Provider Records Use Case, Document Management
+                <strong>(20%)</strong></li>
+            <li><strong>Griffin Mack</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and Editing,
+                Bill ChocAn Use Case, Request Provider Directory Use Case, report.html, Prototype
+                <strong>(20%)</strong><strong> (submitter) </strong></li>
+            <li><strong>Hannah Perkins</strong> - Glossary, UML Use Case Diagram, Use Case Description Review and
+                Editing, Produce EFT Report Use Case, Run Main Accounting Procedure Use Case, report.html
+                <strong>(20%)</strong></li>
+        </ul>
+        <br><br>
+    </header>
+    <br>
+
+    
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>
