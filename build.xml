@@ -4,7 +4,7 @@
     <!--ANT 1.7 is required                                        -->
     <!--define folder properties-->
     <property name="dir.buildfile" value="."/>
-    <property name="dir.workspace" value="/Users/griffinmack/eclipse-workspace3"/>
+    <property name="dir.workspace" value="."/>
     <property name="dir.jarfile" value="${dir.buildfile}/release"/>
     <target name="create_run_jar">
         <jar destfile="${dir.jarfile}/chocan.jar" filesetmanifest="mergewithoutmain">

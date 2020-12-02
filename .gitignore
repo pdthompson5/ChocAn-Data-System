@@ -53,3 +53,5 @@ Thumbs.db
 *.classpath
 /bin/
 /bin1/
+.vscode/
+.settings/
