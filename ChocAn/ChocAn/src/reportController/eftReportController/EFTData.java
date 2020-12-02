@@ -62,9 +62,9 @@ public class EFTData {
 			PrintWriter pw = new PrintWriter(fw);
 
 			for (int i = 0; i < numProviders; i++) {
-				pw.println(providerNames[i]);
-				pw.println(providerNums[i]);
-				pw.println(fees[i]);
+				pw.println("Provider Name: " + providerNames[i]);
+				pw.println("Provider Number: " + providerNums[i]);
+				pw.println("Fee to be paid: " + fees[i]);
 				pw.println();
 			}
 

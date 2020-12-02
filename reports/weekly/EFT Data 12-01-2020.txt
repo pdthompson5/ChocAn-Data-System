@@ -1,4 +1,4 @@
-Christopher Fryzel
-100000001
-3400.0
+Provider Name: Christopher Fryzel
+Provider Number:100000001
+Fee to be paid: 3400.0
 
