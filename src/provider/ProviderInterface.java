@@ -179,16 +179,16 @@ public class ProviderInterface {
 
 		// Error check the entered provider number (formatting)
 		boolean isValid = true;
-		if (providerNumber.length() > 9) {
+		if (providerNumber.length() > 9 && isValid) {
 			System.out.println("Provider number too long!");
 			isValid = false;
 		}
-		if (providerNumber.length() < 9) {
+		if (providerNumber.length() < 9 && isValid) {
 			System.out.println("Provider number too short!");
 			isValid = false;
 		}
-		for (int i = 0; i < providerNumber.length(); ++i) {
-			if (!(Character.isDigit(providerNumber.charAt(i)))) {
+		for (int i = 0; i < providerNumber.length() && isValid; ++i) {
+			if (!(Character.isDigit(providerNumber.charAt(i))) && isValid) {
 				System.out.println("Used non-digit characters!");
 				isValid = false;
 			}
