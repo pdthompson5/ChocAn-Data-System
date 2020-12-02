@@ -1,11 +1,11 @@
 package test;
-
+//@author Topher Fryzel
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
-public class MemberTest {
+public class ProviderTest {
 
 	@Before
 	public void setUp() throws Exception {
