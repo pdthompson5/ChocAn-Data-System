@@ -40,6 +40,7 @@ public class ManagerInterface {
             System.out.println("1: Produce member report");
             System.out.println("2: Produce provider report");
             System.out.println("3: Produce summary report");
+            System.out.println("<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>");
             System.out.println("4. Exit");
             System.out.println("---------------------------------");
             System.out.print("Please choose from the above options: ");
@@ -55,7 +56,7 @@ public class ManagerInterface {
                 System.out.println("Exiting manager menu");
                 exitMenu = true;
             } else {
-                System.out.println("Invalid selection, please choose option between 1-3");
+                System.out.println("Invalid selection, please choose option between 1-4");
             }
         }
     }
@@ -129,7 +130,7 @@ public class ManagerInterface {
      */
     public void produceSummaryReport() {
     	SummaryReport summaryReport = this.reportController.produceSummaryReport();
-    	System.out.print("Provider report produced. Do you want to save the report as a file? 1:Yes 2:No");
+    	System.out.print("Summary report produced. Do you want to save the report as a file? 1:Yes 2:No");
     	Scanner scanner = new Scanner(System.in);
         String choice = scanner.next().trim();
         if (choice.equals("1")) {
