@@ -2,31 +2,40 @@ package test;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
 
+import operator.OperatorController;
 import systemUser.Provider;
-//@author Topher Fryzel
+import systemUser.ProviderList;
+
+/**
+ * @author Ben Peinhardt
+ */
 public class AddProviderTest {
 
-	@Before
-	public void setUp() throws Exception {
+	@Test
+	public void createProvider() {
+
+		// Simulate creating the provider the way that the interface does
+		OperatorController testOperatorController = new OperatorController();
+		testOperatorController.addNewProvider("providerName", "providerStreetAddress", "providerCity", "providerState", "providerZip");
+
+		// Get the provider
+		ProviderList testProviderList = new ProviderList();
+		ArrayList<Provider> providers = testProviderList.getProviderList();
+		boolean foundVal = false;
+		for (int i = 0; i < providers.size(); i++) {
+			if (providers.get(i).getName().equals("providerName")) {
+				foundVal = true;
+			}
+		}
+
+		assertTrue(foundVal);
 	}
 
-	@Test
-	public void testAddProviderForNameLength() {
-		Provider provider = new Provider();
-		provider.setName("CowCowCowPigPigSheepJavaCodeWowowwowowowowowoow");
-	}
 	
-	public void testAddProviderForStateLength() {
-		Provider provider = new Provider();
-		provider.setState("Illinoise");
-	}
-	
-	public void testAddProviderForAddressLength() {
-		Provider provider = new Provider();
-		provider.setStreetAddress("12344510459 Mulberry Lane Apt 2095 Building 9");
-	}
 
 }
