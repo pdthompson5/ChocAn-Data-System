@@ -51,25 +51,7 @@ public class ServiceProvidedList {
         }
     }
     
-    /**
-     * 
-     * Constuctor used for testing 
-     */
-    public ServiceProvidedList(int i) {
-    	try {
-            BufferedReader br = new BufferedReader(new FileReader(this.testPath));
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] values = line.split(",");
-                ServiceProvided tempService = buildServiceProvidedFromCSV(values);
-                this.serviceProvidedList.add(tempService);
-            }
-            br.close();
 
-        } catch (Exception e) {
-            System.out.println("Unable to read services provided from service provided file");
-        }
-    }
 
     /**
      * Helper for the Constructor, builds individual ServiceProvided object from
