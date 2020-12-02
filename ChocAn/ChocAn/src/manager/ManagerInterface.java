@@ -71,14 +71,21 @@ public class ManagerInterface {
             return;
         MemberReport memberReport = this.reportController.produceMemberReport(memberNumber);
         if (memberReport.containsServices == true) {
-            System.out.print("Member report produced. Do you want to save the report as a file? 1:Yes 2:No");
+            System.out.println("Member report produced. Do you want to save the report as a file? 1:Yes 2:No");
         } else {
-            System.out.print("No services provided to this member. Do you want to save the report anyway? 1:Yes 2:No");
+            System.out.println("No services provided to this member. Do you want to save the report anyway? 1:Yes 2:No");
         }
-        Scanner scanner = new Scanner(System.in);
-        String choice = scanner.next().trim();
-        if (choice.equals("1")) {
-            memberReport.writeToTxtFile(this.memberPath);
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            String choice = scanner.next().trim();
+            if (choice.equals("1")) {
+                memberReport.writeToTxtFile(this.memberPath);
+                break;
+            } else if (choice.equals("2")) {
+                break;
+            } else {
+                System.out.println("Invalid input: please enter a 1 or a 2: ");
+            }
         }
     }
 

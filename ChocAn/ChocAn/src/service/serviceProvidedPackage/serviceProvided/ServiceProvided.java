@@ -56,7 +56,7 @@ public class ServiceProvided extends ServiceOffered {
     }
 
     /**
-     * Gets the time a service was provided
+     * Gets the time/date a service was entered into the system
      * 
      * @return String timeProvided
      */

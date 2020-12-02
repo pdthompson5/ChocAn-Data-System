@@ -91,7 +91,7 @@ public class ProviderList {
         newProvider.setProviderNumber(providerNumber);
         this.providerList.add(newProvider);
 
-        // Update JSON
+        // Update CSV
         persist();
     }
 
@@ -107,7 +107,7 @@ public class ProviderList {
             }
         }
 
-        // Updates JSON
+        // Updates CSV
         persist();
     }
 
