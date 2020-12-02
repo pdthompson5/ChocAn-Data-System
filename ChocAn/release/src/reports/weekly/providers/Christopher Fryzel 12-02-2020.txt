@@ -1,0 +1,57 @@
+Provider Name: Christopher Fryzel
+Provider Number: 100000001
+Provider Street Address: 314 47th Street
+Provider City: Tuscaloosa
+Provider State: AL
+Provider ZIP: 35401
+
+Service 1
+     Date of Service: 11-22-2020
+     Date and Time Recieved: 11-25-2020 17:04:45
+     Member Name: Topher
+     Member Number: 100000001
+     Service Code: 234567
+     Service Fee: 700.0
+
+Service 2
+     Date of Service: 11-22-2020
+     Date and Time Recieved: 11-25-2020 17:04:45
+     Member Name: Topher
+     Member Number: 100000001
+     Service Code: 234567
+     Service Fee: 700.0
+
+Service 3
+     Date of Service: 11-22-2020
+     Date and Time Recieved: 11-25-2020 17:04:45
+     Member Name: Topher
+     Member Number: 100000001
+     Service Code: 234567
+     Service Fee: 700.0
+
+Service 4
+     Date of Service: 11-22-2020
+     Date and Time Recieved: 11-25-2020 17:04:45
+     Member Name: Topher
+     Member Number: 100000001
+     Service Code: 234567
+     Service Fee: 700.0
+
+Service 5
+     Date of Service: 11-22-2020
+     Date and Time Recieved: 11-25-2020 17:04:45
+     Member Name: Topher
+     Member Number: 100000001
+     Service Code: 234567
+     Service Fee: 700.0
+
+Service 6
+     Date of Service: 11-22-2020
+     Date and Time Recieved: 11-25-2020 17:04:45
+     Member Name: Topher
+     Member Number: 100000001
+     Service Code: 234567
+     Service Fee: 700.0
+
+Total Consultations: 6
+Fee for Week: 4200.0
