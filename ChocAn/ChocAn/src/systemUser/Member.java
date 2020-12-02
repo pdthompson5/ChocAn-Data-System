@@ -1,7 +1,7 @@
 package systemUser;
 
 /**
- * Encompasses extra information relevent to Member (memberNumber, memberStatus)
+ * Encompasses extra information relevant to Member (memberNumber, memberStatus)
  * @author Ben Peinhardt
  * @author Topher Fryzel
  */
