@@ -196,9 +196,8 @@ public class ProviderInterface {
 
 		if (!isValid) {
 			return promptForMemberNumber();
-		} else {
-			return providerNumber;
 		}
+		return providerNumber;
 	}
 
 	/**
