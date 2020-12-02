@@ -28,8 +28,8 @@ public class ServiceProvided extends ServiceOffered {
      * Constructor: sets attributes of the class
      * 
      * @param service
-     * @param providerNumber
-     * @param memberNumber
+     * @param provider
+     * @param member
      * @param comments
      */
     public ServiceProvided(ServiceOffered service, Provider provider, Member member, String comments,

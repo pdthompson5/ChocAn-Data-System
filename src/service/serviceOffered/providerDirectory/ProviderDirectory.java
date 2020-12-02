@@ -56,7 +56,7 @@ public class ProviderDirectory {
     /**
      * Gets the entire provider directory
      * 
-     * @return ArrayList<ServiceOffered> providerDirectory
+     * @return providerDirectory
      */
     public ArrayList<ServiceOffered> getProviderDirectory() {
         return this.providerDirectory;

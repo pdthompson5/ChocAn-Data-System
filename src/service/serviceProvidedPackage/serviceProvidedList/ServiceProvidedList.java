@@ -117,7 +117,7 @@ public class ServiceProvidedList {
     /**
      * Gets the entire service provided list
      * 
-     * @return ArrayList<ServiceProvided> serviceProvidedList
+     * @return serviceProvidedList
      */
     public ArrayList<ServiceProvided> getServiceProvidedList() {
         return this.serviceProvidedList;
@@ -127,7 +127,7 @@ public class ServiceProvidedList {
      * Returns an ArrayList of all services provided by a certain provider
      * 
      * @param providerNumber
-     * @return ArrayList<ServiceProvided> services provided by provider
+     * @return servicesByProvider services provided by provider
      */
     public ArrayList<ServiceProvided> getServiceByProvider(String providerNumber) {
 
@@ -145,7 +145,7 @@ public class ServiceProvidedList {
      * Returns an ArrayList of services provided to a certain member
      * 
      * @param memberNumber
-     * @return ArrayList<ServiceProvided> services provided to member
+     * @return servicesProvidedToMember services provided to member
      */
     public ArrayList<ServiceProvided> getServiceByMember(String memberNumber) {
 
@@ -161,9 +161,9 @@ public class ServiceProvidedList {
     }
 
     /**
-     * Returns an array list of members who have recieved a service this week
+     * Returns an array list of members who have received a service this week
      * 
-     * @return ArrayList<Member> membersWhoRecievedServices
+     * @return list
      */
     public ArrayList<Member> getWeeklyMembers() {
         ArrayList<Member> list = new ArrayList<Member>();
@@ -187,7 +187,7 @@ public class ServiceProvidedList {
     /**
      * Returns an array list of providers who provided a service this week
      * 
-     * @return ArrayList<Provider> providersWhoGaveServices
+     * @return list
      */
     public ArrayList<Provider> getWeeklyProviders() {
         ArrayList<Provider> list = new ArrayList<Provider>();

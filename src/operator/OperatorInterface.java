@@ -369,7 +369,7 @@ public class OperatorInterface {
 	/**
 	 * Verifies a member number exists
 	 * 
-	 * @param String memberNumber
+	 * @param memberNumber
 	 * @return boolean
 	 */
 	public boolean verifyMember(String memberNumber) {
@@ -384,7 +384,7 @@ public class OperatorInterface {
 	/**
 	 * Verifies a provider number exists
 	 * 
-	 * @param String providerNumber
+	 * @param providerNumber
 	 * @return boolean
 	 */
 	public boolean verifyProvider(String providerNumber) {

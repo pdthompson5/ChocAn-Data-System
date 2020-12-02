@@ -38,7 +38,7 @@ public class ReportController {
 	/**
 	 * Produces a member report for each unique member serviced during the week
 	 * 
-	 * @return ArrayList<MemberReport> memberReportList
+	 * @return memberReportList
 	 */
 	public ArrayList<MemberReport> produceAllMemberReports() {
 		ArrayList<MemberReport> memberReportList = new ArrayList<MemberReport>();
@@ -58,7 +58,7 @@ public class ReportController {
 	 * Produces a provider report for each unique provider who provided a service
 	 * during the week
 	 * 
-	 * @return ArrayList<ProviderReport> providerReportList
+	 * @return providerReportList
 	 */
 	public ArrayList<ProviderReport> produceAllProviderReports() {
 		ArrayList<ProviderReport> providerReportList = new ArrayList<ProviderReport>();

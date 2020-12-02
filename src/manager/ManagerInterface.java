@@ -148,7 +148,7 @@ public class ManagerInterface {
     /**
      * Verifies a member number exists
      * 
-     * @param String memberNumber
+     * @param memberNumber
      * @return boolean
      */
     public boolean verifyMember(String memberNumber) {
@@ -163,7 +163,7 @@ public class ManagerInterface {
     /**
      * Verifies a provider number exists
      * 
-     * @param String providerNumber
+     * @param providerNumber
      * @return boolean
      */
     public boolean verifyProvider(String providerNumber) {

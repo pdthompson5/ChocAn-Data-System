@@ -28,7 +28,7 @@ public class Provider extends SystemUser {
 
     /**
      * Gets list of services
-     * @return ArrayList<ServiceOffered> listOfServices
+     * @return listOfServices
      */
     public ArrayList<ServiceOffered> getListOfServices() {
         return this.listOfServices;

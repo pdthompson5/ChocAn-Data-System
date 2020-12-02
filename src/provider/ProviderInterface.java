@@ -71,7 +71,7 @@ public class ProviderInterface {
 	/**
 	 * Verifies a member number exists and is valid
 	 * 
-	 * @param String memberNumber
+	 * @param memberNumber
 	 * @return boolean
 	 */
 	public boolean verifyMember(String memberNumber) {
@@ -118,7 +118,7 @@ public class ProviderInterface {
 	/**
 	 * Bills ChocAn for a service provided
 	 * 
-	 * @param String memberNumber
+	 * @param memberNumber
 	 */
 	public void billChocAn(String memberNumber) {
 		if (!verifyMember(memberNumber)) {
@@ -141,7 +141,7 @@ public class ProviderInterface {
 	/**
 	 * Prompts user for a member number
 	 * 
-	 * @return String memberNumber
+	 * @return memberNumber
 	 */
 	private String promptForMemberNumber() {
 		Scanner myObj = new Scanner(System.in); // Create a Scanner object
@@ -331,7 +331,7 @@ public class ProviderInterface {
 	/**
 	 * Verifies a provider number exists
 	 * 
-	 * @param String providerNumber
+	 * @param providerNumber
 	 * @return boolean
 	 */
 	public boolean verifyProvider(String providerNumber) {

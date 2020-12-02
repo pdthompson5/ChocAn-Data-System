@@ -48,7 +48,7 @@ public class ProviderList {
     /**
      * Returns the entire provider list
      * 
-     * @return ArrayList<Provider> providerList
+     * @return providerList
      */
     public ArrayList<Provider> getProviderList() {
         return providerList;

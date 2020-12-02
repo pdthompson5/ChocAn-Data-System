@@ -120,7 +120,7 @@ public class MemberList {
 
     /**
      * Returns the entire member list
-     * @return ArrayList<Member> memberList
+     * @return memberList
      */
     public ArrayList<Member> getMemberList() {
         return this.memberList;
