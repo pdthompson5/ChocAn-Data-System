@@ -1,9 +1,0 @@
-Provider 1
-	Provider Name: Christopher Fryzel
-	Provider Number: 100000001
-	Fee to be paid: $3400.0
-	Provider Consultations: 6
-
-Number of Active Providers This Week:1
-Number of Consultations This Week: 6
-Total fee to be paid: $3400.0
