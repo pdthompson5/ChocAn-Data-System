@@ -7,7 +7,7 @@ Provider ZIP: 35401
 
 Service 1
      Date of Service: 11-22-2020
-     Date and Time Recived: 11-25-2020 17:04:45
+     Date and Time Recieved: 11-25-2020 17:04:45
      Member Name: Topher
      Member Number: 100000001
      Service Code: 234567
@@ -15,7 +15,7 @@ Service 1
 
 Service 2
      Date of Service: 11-22-2020
-     Date and Time Recived: 11-25-2020 17:04:45
+     Date and Time Recieved: 11-25-2020 17:04:45
      Member Name: Topher
      Member Number: 100000001
      Service Code: 234567
@@ -23,7 +23,7 @@ Service 2
 
 Service 3
      Date of Service: 11-22-2020
-     Date and Time Recived: 11-25-2020 17:04:45
+     Date and Time Recieved: 11-25-2020 17:04:45
      Member Name: Topher
      Member Number: 100000001
      Service Code: 234567
@@ -31,7 +31,7 @@ Service 3
 
 Service 4
      Date of Service: 11-22-2020
-     Date and Time Recived: 11-25-2020 17:04:45
+     Date and Time Recieved: 11-25-2020 17:04:45
      Member Name: Topher
      Member Number: 100000001
      Service Code: 234567
@@ -39,7 +39,7 @@ Service 4
 
 Service 5
      Date of Service: 11-22-2020
-     Date and Time Recived: 11-25-2020 17:04:45
+     Date and Time Recieved: 11-25-2020 17:04:45
      Member Name: Topher
      Member Number: 100000001
      Service Code: 234567
@@ -47,7 +47,7 @@ Service 5
 
 Service 6
      Date of Service: 11-22-2020
-     Date and Time Recived: 11-25-2020 17:04:45
+     Date and Time Recieved: 11-25-2020 17:04:45
      Member Name: Topher
      Member Number: 100000001
      Service Code: 234567

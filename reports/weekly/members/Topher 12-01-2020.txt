@@ -4,27 +4,27 @@ Member Street Address: 314 47th Street
 Member City: WS
 Member State: IL
 Member ZIP: 60558
-Service 01
+Service 1
 
      Date of Service: 11-22-2020
      Provider Name: Christopher Fryzel
      Name of Service: Chocolate Therapy
-Service 11
+Service 2
 
      Date of Service: 11-22-2020
      Provider Name: Christopher Fryzel
      Name of Service: Chocolate Therapy
-Service 21
+Service 3
 
      Date of Service: 08-31-1998
      Provider Name: Christopher Fryzel
      Name of Service: Chocolate Bath
-Service 31
+Service 4
 
      Date of Service: 08-31-1998
      Provider Name: Christopher Fryzel
      Name of Service: Chocolate Bath
-Service 41
+Service 5
 
      Date of Service: 08-31-2020
      Provider Name: Christopher Fryzel

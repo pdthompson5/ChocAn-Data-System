@@ -32,7 +32,7 @@ public class MainAccountingProcedureController {
         produceMemberReports();
         produceProviderReports();
         produceSummaryReport();
-        // produceEFTReport();
+        produceEFTReport();
     }
 
     private void produceMemberReports() {
@@ -59,9 +59,9 @@ public class MainAccountingProcedureController {
         reportController.produceSummaryReport().writeToTxtFile(eftSummaryPath);
     }
 
-    // private void produceEFTReport() {
-    // reportController.produceAllEFTData().writeToTxtFile(eftSummaryPath);
-    // }
+    private void produceEFTReport() {
+        reportController.produceEFTData().writeToTxtFile(eftSummaryPath);
+    }
 
     private void purgeDirectory(File dir) {
         for (File file : dir.listFiles()) {

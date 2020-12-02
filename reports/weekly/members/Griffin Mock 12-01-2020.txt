@@ -4,7 +4,7 @@ Member Street Address: 18575 SW Century Dr
 Member City: Bend
 Member State: OR
 Member ZIP: 97702
-Service 01
+Service 1
 
      Date of Service: 08-31-2020
      Provider Name: Christopher Fryzel
