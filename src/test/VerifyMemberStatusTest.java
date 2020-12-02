@@ -24,17 +24,17 @@ public class VerifyMemberStatusTest {
 	}
 
 	@Test
-	public void testVerifyMemberStatus() {
+	public void testVerifyMemberStatusWhenTrue() {
 		
-		boolean expected = false;
+		boolean expected = true;
 		boolean verify = providerController.verifyMemberStatus("100000001");
 		
 		assertEquals(expected, verify);
 	}
 	
 	@Test
-	public void testVerifyMemberStatusWhenTrue() {
-		boolean expected = true;
+	public void testVerifyMemberStatusWhenFalse() {
+		boolean expected = false;
 		boolean verify = providerController.verifyMemberStatus("100000002");
 		
 		assertEquals(expected, verify);
