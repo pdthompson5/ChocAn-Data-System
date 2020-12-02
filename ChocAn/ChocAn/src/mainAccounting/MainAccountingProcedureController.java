@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import reportController.ReportController;
 import reportController.memberReportController.MemberReport;
 import reportController.providerReportController.ProviderReport;
-import reportController.summaryReportController.SummaryReport;
-import reportController.eftReportController.EFTData;
 
 /**
  * Main Accounting Procedure Controller - Logic for the main accounting
@@ -21,9 +19,9 @@ public class MainAccountingProcedureController {
     private String providerPath = "reports/weekly/providers/";
     private String eftSummaryPath = "reports/weekly/";
 
-    public MainAccountingProcedureController() {
-    }
-
+    /**
+     * Starts the main accounting procedure
+     */
     public void runMainAccountingProcedure() {
         // Clear out all the old files (recursively deletes member and provider files)
         File dir = new File(eftSummaryPath);
@@ -32,9 +30,13 @@ public class MainAccountingProcedureController {
         produceMemberReports();
         produceProviderReports();
         produceSummaryReport();
-        // produceEFTReport();
+        produceEFTReport();
     }
 
+    /**
+     * Produces a report for each member serviced during the week, and saves the
+     * file to the local disk
+     */
     private void produceMemberReports() {
         // produce all the member reports
         ArrayList<MemberReport> memberReportList = new ArrayList<MemberReport>();
@@ -45,6 +47,10 @@ public class MainAccountingProcedureController {
         }
     }
 
+    /**
+     * Produces a report for each provider who provided a service during the week,
+     * and saves the file to the local disk
+     */
     private void produceProviderReports() {
         // produce all the provider reports
         ArrayList<ProviderReport> providerReportList = new ArrayList<ProviderReport>();
@@ -55,14 +61,27 @@ public class MainAccountingProcedureController {
         }
     }
 
+    /**
+     * Produces a report summarizing all the services that were given during the
+     * week
+     */
     private void produceSummaryReport() {
         reportController.produceSummaryReport().writeToTxtFile(eftSummaryPath);
     }
 
-    // private void produceEFTReport() {
-    // reportController.produceAllEFTData().writeToTxtFile(eftSummaryPath);
-    // }
+    /**
+     * Produces a report for the electronic funds transfer data for each provider
+     * that provided a service during the week
+     */
+    private void produceEFTReport() {
+        reportController.produceEFTData().writeToTxtFile(eftSummaryPath);
+    }
 
+    /**
+     * Deletes files from a previous run of the main accounting procedure
+     * 
+     * @param dir the directory from which to delete all files
+     */
     private void purgeDirectory(File dir) {
         for (File file : dir.listFiles()) {
             if (file.isDirectory())
