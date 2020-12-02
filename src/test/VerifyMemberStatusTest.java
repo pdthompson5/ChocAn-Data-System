@@ -14,13 +14,14 @@ public class VerifyMemberStatusTest {
 	
 	@Before
 	public void setUp() throws Exception {
+		Member member = new Member();
+		member.setMemberNumber("100000001");
+		member.setMemberStatus(false);
 	}
 
 	@Test
 	public void testVerifyMemberStatus() {
-		Member member = new Member();
-		member.setMemberNumber("100000001");
-		member.setMemberStatus(false);
+		
 		
 		providerController.verifyMemberExists("100000001");
 		//should return false
