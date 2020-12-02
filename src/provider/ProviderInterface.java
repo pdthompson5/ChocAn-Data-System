@@ -178,21 +178,27 @@ public class ProviderInterface {
 		String providerNumber = myObj.nextLine(); // Read user input
 
 		// Error check the entered provider number (formatting)
+		boolean isValid = true;
 		if (providerNumber.length() > 9) {
 			System.out.println("Provider number too long!");
-			promptForProviderNumber();
+			isValid = false;
 		}
 		if (providerNumber.length() < 9) {
 			System.out.println("Provider number too short!");
-			promptForProviderNumber();
+			isValid = false;
 		}
 		for (int i = 0; i < providerNumber.length(); ++i) {
 			if (!(Character.isDigit(providerNumber.charAt(i)))) {
 				System.out.println("Used non-digit characters!");
-				promptForProviderNumber();
+				isValid = false;
 			}
 		}
-		return providerNumber;
+
+		if (!isValid) {
+			return promptForMemberNumber();
+		} else {
+			return providerNumber;
+		}
 	}
 
 	/**
