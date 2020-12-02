@@ -17,6 +17,10 @@ public class VerifyMemberStatusTest {
 		Member member = new Member();
 		member.setMemberNumber("100000001");
 		member.setMemberStatus(false);
+		
+		Member member2 = new Member();
+		member2.setMemberNumber("100000000");
+		member2.setMemberStatus(true);
 	}
 
 	@Test
@@ -28,5 +32,12 @@ public class VerifyMemberStatusTest {
 		assertEquals(expected, verify);
 	}
 	
+	@Test
+	public void testVerifyMemberStatusWhenTrue() {
+		boolean expected = true;
+		boolean verify = providerController.verifyMemberExists("100000000");
+		
+		assertEquals(verify, expected);
+	}
 
 }
