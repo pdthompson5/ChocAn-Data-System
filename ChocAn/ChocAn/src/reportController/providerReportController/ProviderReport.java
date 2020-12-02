@@ -112,7 +112,7 @@ public class ProviderReport {
 			for (int i = 0; i < this.totalConsultations; i++) {
 				pw.println("Service " + (i+1));
 				pw.println("     Date of Service: " + this.dateOfService[i]);
-				pw.println("     Date and Time Recived: " + this.dateAndTimeRecieved[i]);
+				pw.println("     Date and Time Recieved: " + this.dateAndTimeRecieved[i]);
 				pw.println("     Member Name: " + this.memberName[i]);
 				pw.println("     Member Number: " + this.memberNumber[i]);
 				pw.println("     Service Code: " + this.serviceCode[i]);

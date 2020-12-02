@@ -89,7 +89,7 @@ public class MemberReport {
 
 			// print the services to a file
 			for (int i = 0; i < this.datesOfService.size(); i++) {
-				pw.println("Service " + i + 1);
+				pw.println("Service " + (i + 1));
 				pw.println(); // Separates services from member info and each other
 				pw.println("     Date of Service: " + this.datesOfService.get(i));
 				pw.println("     Provider Name: " + this.providerNames.get(i));

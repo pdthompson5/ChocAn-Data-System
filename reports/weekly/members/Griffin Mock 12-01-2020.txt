@@ -1,10 +1,11 @@
-Griffin Mock
-100000007
-18575 SW Century Dr
-Bend
-OR
-97702
+Member Name: Griffin Mock
+Member Number: 100000007
+Member Street Address: 18575 SW Century Dr
+Member City: Bend
+Member State: OR
+Member ZIP: 97702
+Service 01
 
-08-31-2020
-Christopher Fryzel
-Chocolate Bath
+     Date of Service: 08-31-2020
+     Provider Name: Christopher Fryzel
+     Name of Service: Chocolate Bath
