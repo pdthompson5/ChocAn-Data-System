@@ -11,7 +11,7 @@ import service.serviceOffered.providerDirectory.ProviderDirectory;
 import service.serviceOffered.serviceOffered.ServiceOffered;
 import systemUser.Provider;
 
-//@author
+//@author Topher Fryzel
 public class RequestProviderDirectoryTest {
 
 	private ProviderDirectory providerDirectory = new ProviderDirectory();
