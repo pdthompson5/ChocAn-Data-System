@@ -15,11 +15,11 @@ public class VerifyMemberStatusTest {
 	@Before
 	public void setUp() throws Exception {
 		Member member = new Member();
-		member.setMemberNumber("100000001");
+		member.setMemberNumber("100000023");
 		member.setMemberStatus(false);
 		
 		Member member2 = new Member();
-		member2.setMemberNumber("100000000");
+		member2.setMemberNumber("100000059");
 		member2.setMemberStatus(true);
 	}
 
@@ -27,7 +27,7 @@ public class VerifyMemberStatusTest {
 	public void testVerifyMemberStatus() {
 		
 		boolean expected = false;
-		boolean verify = providerController.verifyMemberExists("100000001");
+		boolean verify = providerController.verifyMemberExists("100000023");
 		
 		assertEquals(expected, verify);
 	}
@@ -35,9 +35,9 @@ public class VerifyMemberStatusTest {
 	@Test
 	public void testVerifyMemberStatusWhenTrue() {
 		boolean expected = true;
-		boolean verify = providerController.verifyMemberExists("100000000");
+		boolean verify = providerController.verifyMemberExists("100000059");
 		
-		assertEquals(verify, expected);
+		assertEquals(expected, verify);
 	}
 
 }
