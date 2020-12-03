@@ -39,12 +39,24 @@ public class AddProviderTest {
 			}
 		}
 
+		testOperatorController.deleteProvider(this.testProviderNumber);
 		assertTrue(foundVal);
 	}
 
 	@Test
 	public void deleteProviderSuccess() {
 		OperatorController testOperatorController = new OperatorController();
+		testOperatorController.addNewProvider("providerName", "providerStreetAddress", "providerCity", "providerState", "providerZip");
+
+		for (int i = 0; i < providers.size(); i++) {
+			if (providers.get(i).getName().equals("providerName")) {
+				foundVal = true;
+
+				// Store provider number for other tests and teardown
+				this.testProviderNumber = providers.get(i).getProviderNumber();
+			}
+		}
+
 		try {
 			assertTrue(testOperatorController.verifyProviderExists(this.testProviderNumber));
 			testOperatorController.deleteProvider(this.testProviderNumber);
@@ -56,11 +68,13 @@ public class AddProviderTest {
 
 	@Test
 	public void updateProviderShouldFail_ProviderDoesntExist() {
+
 		
 		try {
 			OperatorController testOperatorController = new OperatorController();
-			testOperatorController.updateProvider("providerNumber","providerName", "providerStreetAddress", "providerCity", "providerState", "providerZip");
-			String providerName = testOperatorController.getProvider("providerNumber").getName();
+			testOperatorController.deleteProvider(this.testProviderNumber); 
+			testOperatorController.updateProvider(this.testProviderNumber,"providerName", "providerStreetAddress", "providerCity", "providerState", "providerZip");
+			String providerName = testOperatorController.getProvider(this.testProviderNumber).getName();
 		} catch (Exception e) {
 			assertTrue(false);
 		}
