@@ -1,0 +1,31 @@
+Member Name: Christopher Fryzel
+Member Number: 100000001
+Member Street Address: 314 47th Street
+Member City: Tuscaloosa
+Member State: AL
+Member ZIP: 35401
+Service 1
+
+     Date of Service: 11-22-2020
+     Provider Name: Christopher Fryzel
+     Name of Service: Chocolate Therapy
+Service 2
+
+     Date of Service: 11-22-2020
+     Provider Name: Christopher Fryzel
+     Name of Service: Chocolate Therapy
+Service 3
+
+     Date of Service: 08-31-1998
+     Provider Name: Christopher Fryzel
+     Name of Service: Chocolate Bath
+Service 4
+
+     Date of Service: 08-31-1998
+     Provider Name: Christopher Fryzel
+     Name of Service: Chocolate Bath
+Service 5
+
+     Date of Service: 08-31-2020
+     Provider Name: Christopher Fryzel
+     Name of Service: Chocolate Bath

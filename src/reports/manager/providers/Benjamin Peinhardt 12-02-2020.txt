@@ -1,0 +1,17 @@
+Provider Name: Benjamin Peinhardt
+Provider Number: 100000008
+Provider Street Address: 512 North Lake Cove
+Provider City: Birmingham
+Provider State: AL
+Provider ZIP: 35242
+
+Service 1
+     Date of Service: 11-30-2020
+     Date and Time Recieved: 12-02-2020 14:49:35
+     Member Name: Austin Peinhardt
+     Member Number: 100000010
+     Service Code: 234567
+     Service Fee: 700.0
+
+Total Consultations: 1
+Fee for Week: 700.0

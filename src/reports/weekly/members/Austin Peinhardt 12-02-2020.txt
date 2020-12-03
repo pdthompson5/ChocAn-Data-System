@@ -1,0 +1,11 @@
+Member Name: Austin Peinhardt
+Member Number: 100000010
+Member Street Address: 512 North Lake Cove
+Member City: Birmingham
+Member State: AL
+Member ZIP: 35242
+Service 1
+
+     Date of Service: 11-30-2020
+     Provider Name: Benjamin Peinhardt
+     Name of Service: Chocolate Therapy

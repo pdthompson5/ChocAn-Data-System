@@ -1,0 +1,27 @@
+Provider 1
+	Provider Name: Christopher Fryzel
+	Provider Number: 100000001
+	Fee to be paid: $3400.0
+	Provider Consultations: 6
+
+Provider 2
+	Provider Name: Provider Bill
+	Provider Number: 100000005
+	Fee to be paid: $500.0
+	Provider Consultations: 1
+
+Provider 3
+	Provider Name: Griffin Mack
+	Provider Number: 100000007
+	Fee to be paid: $1400.0
+	Provider Consultations: 2
+
+Provider 4
+	Provider Name: Benjamin Peinhardt
+	Provider Number: 100000008
+	Fee to be paid: $700.0
+	Provider Consultations: 1
+
+Number of Active Providers This Week:4
+Number of Consultations This Week: 10
+Total fee to be paid: $6000.0

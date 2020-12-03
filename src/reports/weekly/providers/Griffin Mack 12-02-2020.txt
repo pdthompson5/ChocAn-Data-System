@@ -1,0 +1,25 @@
+Provider Name: Griffin Mack
+Provider Number: 100000007
+Provider Street Address: 18575 SW Century Dr
+Provider City: Bend
+Provider State: OR
+Provider ZIP: 97702
+
+Service 1
+     Date of Service: 11-26-2020
+     Date and Time Recieved: 12-02-2020 13:17:40
+     Member Name: Josiah
+     Member Number: 100000008
+     Service Code: 234567
+     Service Fee: 700.0
+
+Service 2
+     Date of Service: 11-26-2020
+     Date and Time Recieved: 12-02-2020 13:17:40
+     Member Name: Josiah
+     Member Number: 100000008
+     Service Code: 234567
+     Service Fee: 700.0
+
+Total Consultations: 2
+Fee for Week: 1400.0

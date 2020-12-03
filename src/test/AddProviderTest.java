@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
+import jdk.jfr.Timestamp;
 import operator.OperatorController;
 import systemUser.Provider;
 import systemUser.ProviderList;
@@ -16,8 +17,10 @@ import systemUser.ProviderList;
  */
 public class AddProviderTest {
 
+	private String testProviderNumber;
+
 	@Test
-	public void createProvider() {
+	public void createProviderSuccess() {
 
 		// Simulate creating the provider the way that the interface does
 		OperatorController testOperatorController = new OperatorController();
@@ -30,12 +33,36 @@ public class AddProviderTest {
 		for (int i = 0; i < providers.size(); i++) {
 			if (providers.get(i).getName().equals("providerName")) {
 				foundVal = true;
+
+				// Store provider number for other tests and teardown
+				this.testProviderNumber = providers.get(i).getProviderNumber();
 			}
 		}
 
 		assertTrue(foundVal);
 	}
 
-	
+	@Test
+	public void deleteProviderSuccess() {
+		OperatorController testOperatorController = new OperatorController();
+		try {
+			assertTrue(testOperatorController.verifyProviderExists(this.testProviderNumber));
+			testOperatorController.deleteProvider(this.testProviderNumber);
+			assertFalse(testOperatorController.verifyProviderExists(this.testProviderNumber));
+		} catch (Exception e) {
+			assertTrue(false);
+		}
+	}
 
+	@Test
+	public void updateProviderShouldFail_ProviderDoesntExist() {
+		
+		try {
+			OperatorController testOperatorController = new OperatorController();
+			testOperatorController.updateProvider("providerNumber","providerName", "providerStreetAddress", "providerCity", "providerState", "providerZip");
+			String providerName = testOperatorController.getProvider("providerNumber").getName();
+		} catch (Exception e) {
+			assertTrue(false);
+		}
+	}
 }

@@ -1,0 +1,16 @@
+Member Name: Josiah
+Member Number: 100000008
+Member Street Address: Willow Oak Drive
+Member City: Kansas City
+Member State: KS
+Member ZIP: 786543
+Service 1
+
+     Date of Service: 11-26-2020
+     Provider Name: Griffin Mack
+     Name of Service: Chocolate Therapy
+Service 2
+
+     Date of Service: 11-26-2020
+     Provider Name: Griffin Mack
+     Name of Service: Chocolate Therapy
