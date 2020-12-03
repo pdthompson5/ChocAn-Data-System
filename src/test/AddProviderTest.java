@@ -71,13 +71,14 @@ public class AddProviderTest {
 
 	@Test
 	public void updateProviderShouldFail_ProviderDoesntExist() {
-
-		
+	
 		try {
 			OperatorController testOperatorController = new OperatorController();
-			testOperatorController.deleteProvider(this.testProviderNumber); 
+			testOperatorController.deleteProvider(this.testProviderNumber);
 			testOperatorController.updateProvider(this.testProviderNumber,"providerName", "providerStreetAddress", "providerCity", "providerState", "providerZip");
 			String providerName = testOperatorController.getProvider(this.testProviderNumber).getName();
+			System.out.println(providerName);
+			System.out.println(providerName.charAt(0));
 		} catch (Exception e) {
 			assertTrue(false);
 		}
