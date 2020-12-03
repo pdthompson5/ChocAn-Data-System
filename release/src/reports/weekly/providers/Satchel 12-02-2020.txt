@@ -1,0 +1,33 @@
+Provider Name: Satchel
+Provider Number: 100000001
+Provider Street Address: 31235 11th Lane
+Provider City: Western Springs
+Provider State: IL
+Provider ZIP: 60558
+
+Service 1
+     Date of Service: 12-02-2020
+     Date and Time Recieved: 12-02-2020 11:12:24
+     Member Name: Brian
+     Member Number: 100000002
+     Service Code: 234567
+     Service Fee: 700.0
+
+Service 2
+     Date of Service: 12-02-2020
+     Date and Time Recieved: 12-02-2020 11:12:24
+     Member Name: Brian
+     Member Number: 100000002
+     Service Code: 234567
+     Service Fee: 700.0
+
+Service 3
+     Date of Service: 12-02-2020
+     Date and Time Recieved: 12-02-2020 11:12:24
+     Member Name: Brian
+     Member Number: 100000002
+     Service Code: 234567
+     Service Fee: 700.0
+
+Total Consultations: 3
+Fee for Week: 2100.0

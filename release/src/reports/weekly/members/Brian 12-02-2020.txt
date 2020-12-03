@@ -1,0 +1,21 @@
+Member Name: Brian
+Member Number: 100000002
+Member Street Address: 541 Elm St
+Member City: Hinsdale
+Member State: IL
+Member ZIP: 60525
+Service 1
+
+     Date of Service: 12-02-2020
+     Provider Name: Satchel
+     Name of Service: Chocolate Therapy
+Service 2
+
+     Date of Service: 11-30-2020
+     Provider Name: Ben
+     Name of Service: Chocolate Bath
+Service 3
+
+     Date of Service: 11-29-2020
+     Provider Name: Satchel
+     Name of Service: Chocolate Bath

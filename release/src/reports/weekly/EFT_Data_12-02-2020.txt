@@ -1,8 +1,12 @@
-Provider Name: Christopher Fryzel
-Provider Number: 100000001
-Fee to be paid: 3400.0
+Provider Name: Ben
+Provider Number: 100000000
+Fee to be paid: 2600.0
 
-Provider Name: Provider Bill
-Provider Number: 100000005
-Fee to be paid: 500.0
+Provider Name: Satchel
+Provider Number: 100000001
+Fee to be paid: 1900.0
+
+Provider Name: Topher
+Provider Number: 100000003
+Fee to be paid: 1200.0
 

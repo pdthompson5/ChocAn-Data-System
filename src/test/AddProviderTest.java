@@ -48,6 +48,9 @@ public class AddProviderTest {
 		OperatorController testOperatorController = new OperatorController();
 		testOperatorController.addNewProvider("providerName", "providerStreetAddress", "providerCity", "providerState", "providerZip");
 
+		ProviderList testProviderList = new ProviderList();
+		ArrayList<Provider> providers = testProviderList.getProviderList();
+		boolean foundVal = false;
 		for (int i = 0; i < providers.size(); i++) {
 			if (providers.get(i).getName().equals("providerName")) {
 				foundVal = true;

@@ -1,0 +1,11 @@
+Member Name: Benjamin
+Member Number: 100000004
+Member Street Address: 314 st
+Member City: Tuscaloosa
+Member State: AL
+Member ZIP: 60559
+Service 1
+
+     Date of Service: 12-02-2020
+     Provider Name: Topher
+     Name of Service: Chocolate Therapy

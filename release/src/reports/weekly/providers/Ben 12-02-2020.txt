@@ -1,0 +1,41 @@
+Provider Name: Ben
+Provider Number: 100000000
+Provider Street Address: 123 15 Street
+Provider City: Tuscaloosa
+Provider State: AL
+Provider ZIP: 31423
+
+Service 1
+     Date of Service: 12-02-2020
+     Date and Time Recieved: 12-02-2020 11:07:45
+     Member Name: Topher
+     Member Number: 100000000
+     Service Code: 234567
+     Service Fee: 700.0
+
+Service 2
+     Date of Service: 12-02-2020
+     Date and Time Recieved: 12-02-2020 11:07:45
+     Member Name: Topher
+     Member Number: 100000000
+     Service Code: 234567
+     Service Fee: 700.0
+
+Service 3
+     Date of Service: 12-02-2020
+     Date and Time Recieved: 12-02-2020 11:07:45
+     Member Name: Topher
+     Member Number: 100000000
+     Service Code: 234567
+     Service Fee: 700.0
+
+Service 4
+     Date of Service: 12-02-2020
+     Date and Time Recieved: 12-02-2020 11:07:45
+     Member Name: Topher
+     Member Number: 100000000
+     Service Code: 234567
+     Service Fee: 700.0
+
+Total Consultations: 4
+Fee for Week: 2800.0

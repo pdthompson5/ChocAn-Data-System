@@ -1,0 +1,11 @@
+Member Name: Chris
+Member Number: 100000001
+Member Street Address: 314 13TH Street
+Member City: Tuscaloosa
+Member State: AL
+Member ZIP: 35401
+Service 1
+
+     Date of Service: 10-29-2020
+     Provider Name: Satchel
+     Name of Service: Chocolate Therapy

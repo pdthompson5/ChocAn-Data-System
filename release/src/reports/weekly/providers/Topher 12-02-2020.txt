@@ -1,0 +1,25 @@
+Provider Name: Topher
+Provider Number: 100000003
+Provider Street Address: 345
+Provider City: Chicago
+Provider State: IL
+Provider ZIP: 60543
+
+Service 1
+     Date of Service: 12-02-2020
+     Date and Time Recieved: 12-02-2020 13:09:44
+     Member Name: Benjamin
+     Member Number: 100000004
+     Service Code: 234567
+     Service Fee: 700.0
+
+Service 2
+     Date of Service: 12-02-2020
+     Date and Time Recieved: 12-02-2020 13:09:44
+     Member Name: Benjamin
+     Member Number: 100000004
+     Service Code: 234567
+     Service Fee: 700.0
+
+Total Consultations: 2
+Fee for Week: 1400.0

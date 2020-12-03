@@ -1,0 +1,16 @@
+Member Name: Me
+Member Number: 100000003
+Member Street Address: 1234 Main St
+Member City: Chicago
+Member State: IL
+Member ZIP: 60432
+Service 1
+
+     Date of Service: 12-01-2020
+     Provider Name: Ben
+     Name of Service: Chocolate Therapy
+Service 2
+
+     Date of Service: 12-02-2020
+     Provider Name: Topher
+     Name of Service: Chocolate Bath
