@@ -23,6 +23,7 @@ public class OperatorController {
 		boolean memberStatus = true; // Members are valid when added to the system
 		this.memberList.createMember(memberName, memberStreetAddress, memberCity, memberState, memberZip, memberNumber,
 				memberStatus);
+		System.out.println("Added member " + memberName + "with member number: " + memberNumber);
 	}
 
 	public void addNewProvider(String providerName, String providerStreetAddress, String providerCity,
@@ -30,6 +31,7 @@ public class OperatorController {
 		String providerNumber = createUniqueProviderNumber();
 		this.providerList.createProvider(providerName, providerStreetAddress, providerCity, providerState, providerZip,
 				providerNumber);
+		System.out.println("Added provider " + providerName + "with provider number: " + providerNumber);
 	}
 
 	/**
